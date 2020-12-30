@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>What vaccine phase are you in</title>
+</head>
+<body>
+<div id="main">
+<div id="header"><h1>What California vaccine phase are you in</h1></div>
+
+<form  id="form1">
+<h3>How old are you?</h3>
+<label><input type="radio" checked="checked" name="age" id="young" value="1" />Under 16</label><br>
+<label><input type="radio" name="age" id="mid" value="16" />16-64</label><br>
+<label><input type="radio" name="age" id="old" value="65" />65-74</label><br>
+<label><input type="radio" name="age" id="oldest" value="75" />75+</label><br>
+
+<h3>Do you have any underlying health conditions or disabilities?</h3>
+<label><input type="radio" name="health" id="healthy" value="1" />Yes</label>
+<label><input type="radio" checked="checked" name="health" id="healthn" value="2" />No</label>
+
+<h3>Do you live in a nursing home or a congregate living facility?</h3>
+<label><input type="radio" name="nursing" id="nursingyes" value="1" />Yes</label>
+<label><input type="radio" checked="checked" name="nursing" id="nursingno" value="2" />No</label>
+
+<h3>Are you homeless?</h3>
+<label><input type="radio" name="home" id="homeyes" value="1" />Yes</label>
+<label><input type="radio" checked="checked" name="home" id="homeno" value="2" />No</label>
+
+<h3>Are you incarcerated?</h3>
+<label><input type="radio" name="inc" id="incy" value="1" />Yes</label>
+<label><input type="radio" checked="checked" name="inc" id="incn" value="2" />No</label>
+
+<p><h3>Do you work in these fields?</h3></p>
+<label><input type="radio" name="work" id="healthcare" value="500" />Health care worker</label>
+<label><input type="radio" name="work" id="skillednurse" value="500" />Skilled nursing facilities</label>
+<label><input type="radio" name="work" id="congregate" value="500" />Congregate living facilities</label><br>
+<label><input type="radio" name="work" id="ed" value="250" />Education</label>
+<label><input type="radio" name="work" id="congregate" value="250" />Emergency Services</label>
+<label><input type="radio" name="work" id="food" value="250" />Food (grocery workers)</label>
+<label><input type="radio" name="work" id="ag" value="250" />Agriculture</label><br>
+<label><input type="radio" name="work" id="trans" value="125" />Transportation and logistics</label>
+<label><input type="radio" name="work" id="ind" value="125" />Industrial, residiential and commercial sectors</label>
+<label><input type="radio" name="work" id="crit" value="125" />Critical manufacturing</label><br>
+<label><input type="radio" name="work" id="water" value="75" />Water and waste management</label>
+<label><input type="radio" name="work" id="def" value="75" />Defense, energy and chemical sectors</label>
+<label><input type="radio" name="work" id="comm" value="75" />Communications and IT workers</label><br>
+<label><input type="radio" name="work" id="gov" value="75" />Financial services and gov operations</label>
+<label><input type="radio" name="work" id="commu" value="75" />Community service</label>
+<br>
+<label><input type="radio" checked="checked" name="work" id="none" value="0" />None of these</label>
+<br><br>
+
+
+<button type="submit" value="Submit">Submit</button>
+
+</form>
+
+<h2><p id="answer"></p></h2>
+<h2><p id="answer2"></p></h2>
+</div>
+<script>
+	   document.getElementById("form1").onsubmit=function() {
+	   
+	   
+	   age = parseInt(document.querySelector('input[name = "age"]:checked').value);  
+	  
+	  nursing = parseInt(document.querySelector('input[name = "nursing"]:checked').value);
+	   
+	  home = parseInt(document.querySelector('input[name = "home"]:checked').value);
+      
+	 work = parseInt(document.querySelector('input[name = "work"]:checked').value);
+	 
+	 health = parseInt(document.querySelector('input[name = "health"]:checked').value);
+	 
+	 inc = parseInt(document.querySelector('input[name = "inc"]:checked').value);
+    
+	   total= age + nursing + home + work;
+	   workonly = work + 0;
+       ageonly = age + 0;
+       healthage = health + age;
+       healthagew = health + age + work;
+    
+
+ if(work == 500) {
+document.getElementById("answer2").innerHTML = "Phase 1A";
+}
+		else if(nursing == 1) {
+document.getElementById("answer2").innerHTML = "Phase 1A";
+}
+		else if(healthage == 66) {
+document.getElementById("answer2").innerHTML = "Phase 1B, Tier Two";
+}
+        else if(age == 75) {
+document.getElementById("answer2").innerHTML = "Phase 1B, Tier One";
+}
+	    else if(workonly == 250) {
+document.getElementById("answer2").innerHTML = "Phase 1B, Tier One";
+}
+        else if(workonly == 125) {
+document.getElementById("answer2").innerHTML = "Phase 1B, Tier Two";
+}
+        else if(inc == 1) {
+document.getElementById("answer2").innerHTML = "Phase 1B, Tier Two";
+}
+        else if(home == 1) {
+document.getElementById("answer2").innerHTML = "Phase 1B, Tier Two";
+}
+        else if(workonly == 75) {
+document.getElementById("answer2").innerHTML = "Phase 1C";
+}
+        else if(healthage == 17) {
+document.getElementById("answer2").innerHTML = "Phase 1C";
+}
+        else if(healthagew == 18) {
+document.getElementById("answer2").innerHTML = "Your place in line is still being determined";
+}
+ 		if(ageonly == 1) {
+document.getElementById("answer2").innerHTML = "You are not recommended to get the vaccine";
+}
+
+
+
+	   
+	   return false; // required to not refresh the page; just leave this here
+	   }// end the submit function
+</script>
+
+</body>
+</html>
