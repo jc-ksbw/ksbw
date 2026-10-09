@@ -1,0 +1,15 @@
+Race ID,Level,State,County,City,District,Office,Seat Name,Seat Number,Race Party,Type,Winners,Total Precincts,Candidate,First,Middle,Last,Suffix,Party,Incumbent
+CA-GOV,STATE,CA,,,,Governor,,,,,1,24000,,Jane,,Alvarez,,D,Y
+CA-GOV,STATE,CA,,,,Governor,,,,,1,24000,,Robert,T.,Whitfield,Jr.,R,
+CA-GOV,STATE,CA,,,,Governor,,,,,1,24000,,Dana,,Okafor,,G,
+CA-SEN,STATE,CA,,,,U.S. Senate,,,,,1,24000,Maria Gonzales,,,,,D,
+CA-SEN,STATE,CA,,,,U.S. Senate,,,,,1,24000,Thomas O'Brien,,,,,R,Y
+CA-PROP1,STATE,CA,,,,Proposition 1,,,,Proposition,1,24000,Yes,,,,,,
+CA-PROP1,STATE,CA,,,,Proposition 1,,,,Proposition,1,24000,No,,,,,,
+SLO-MAYOR,CITY,CA,San Luis Obispo,San Luis Obispo,,Mayor,,,,,1,42,Erin Castellanos,,,,,,Y
+SLO-MAYOR,CITY,CA,San Luis Obispo,San Luis Obispo,,Mayor,,,,,1,42,"Pat ""Skip"" Delaney",,,,,,
+SLO-CC,CITY,CA,San Luis Obispo,San Luis Obispo,,City Council,,,,,2,42,Aaron Lim,,,,,,
+SLO-CC,CITY,CA,San Luis Obispo,San Luis Obispo,,City Council,,,,,2,42,"Smith & Sons, Inc. (write-in)",,,,,,
+SLO-CC,CITY,CA,San Luis Obispo,San Luis Obispo,,City Council,,,,,2,42,Priya Nair,,,,,,
+CA-D24,DISTRICT,CA,,,24,U.S. House,,,,,1,310,Salud Carbajal,,,,,D,Y
+CA-D24,DISTRICT,CA,,,24,U.S. House,,,,,1,310,Brad Allen,,,,,R,

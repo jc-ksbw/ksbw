@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Console test runner for the UI-free core (CSV, importer, wire builder, socket client). Run with: dotnet run -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>ElectionRaceSetup.Tests</RootNamespace>
+    <OptionStrict>On</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <StartupObject>ElectionRaceSetup.Tests.TestRunner</StartupObject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="TestRunner.vb" />
+    <Compile Include="..\..\src\Models.vb" />
+    <Compile Include="..\..\src\CsvParser.vb" />
+    <Compile Include="..\..\src\RaceImporter.vb" />
+    <Compile Include="..\..\src\WireBuilder.vb" />
+    <Compile Include="..\..\src\MosClient.vb" />
+  </ItemGroup>
+
+</Project>
