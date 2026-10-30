@@ -1,0 +1,19 @@
+{
+  "contests": "Contest",
+  "candidates": "Candidates/Candidate",
+  "fields": {
+    "id": "@id",
+    "office": "@name",
+    "state": "@state",
+    "district": "@district",
+    "precinctsReporting": "@precinctsReporting",
+    "precinctsTotal": "@precinctsTotal"
+  },
+  "candidateFields": {
+    "name": "Name",
+    "party": "Party",
+    "votes": "Votes",
+    "winner": "Winner",
+    "incumbent": "Incumbent"
+  }
+}

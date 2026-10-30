@@ -5,7 +5,7 @@ Imports System.Text
 
 ''' <summary>
 ''' Builds the custom-wire messages Election Manager listens for. The layout is identical to
-''' SendRace() in the AP_Custom_Wire sample, with a zero vote count for every candidate.
+''' SendRace() in the AP_Custom_Wire sample, with zero votes unless the race carries results.
 ''' </summary>
 Public Module WireBuilder
 
@@ -49,7 +49,7 @@ Public Module WireBuilder
         o.Append(vbTab).Append("<TYPE>").Append(Esc(race.RaceType)).Append("</TYPE>").Append(vbLf)
         o.Append(vbTab).Append("<SEATNAME>").Append(Esc(race.SeatName)).Append("</SEATNAME>").Append(vbLf)
         o.Append(vbTab).Append("<SEATNUMBER>").Append(Esc(race.SeatNumber)).Append("</SEATNUMBER>").Append(vbLf)
-        o.Append(vbTab).Append("<PRECINCTS_REPORTING>0</PRECINCTS_REPORTING>").Append(vbLf)
+        o.Append(vbTab).Append("<PRECINCTS_REPORTING>").Append(race.PrecinctsReporting).Append("</PRECINCTS_REPORTING>").Append(vbLf)
         o.Append(vbTab).Append("<PRECINCTS_TOTAL>").Append(race.PrecinctsTotal).Append("</PRECINCTS_TOTAL>").Append(vbLf)
         o.Append(vbTab).Append("<CANDIDATES>").Append(vbLf)
 
@@ -61,10 +61,13 @@ Public Module WireBuilder
             o.Append(vbTab).Append(vbTab).Append(vbTab).Append("<LAST>").Append(Esc(c.LastName)).Append("</LAST>").Append(vbLf)
             o.Append(vbTab).Append(vbTab).Append(vbTab).Append("<SUFFIX>").Append(Esc(c.Suffix)).Append("</SUFFIX>").Append(vbLf)
             o.Append(vbTab).Append(vbTab).Append(vbTab).Append("<PARTY>").Append(Esc(c.Party)).Append("</PARTY>").Append(vbLf)
+            If c.Winner Then
+                o.Append(vbTab).Append(vbTab).Append(vbTab).Append("<WINNER>YES</WINNER>").Append(vbLf)
+            End If
             If c.Incumbent Then
                 o.Append(vbTab).Append(vbTab).Append(vbTab).Append("<INCUMBENT>YES</INCUMBENT>").Append(vbLf)
             End If
-            o.Append(vbTab).Append(vbTab).Append(vbTab).Append("<VOTES>0</VOTES>").Append(vbLf)
+            o.Append(vbTab).Append(vbTab).Append(vbTab).Append("<VOTES>").Append(c.Votes).Append("</VOTES>").Append(vbLf)
             o.Append(vbTab).Append(vbTab).Append(vbTab).Append("<DELEGATES></DELEGATES>").Append(vbLf)
             o.Append(vbTab).Append(vbTab).Append("</CANDIDATE>").Append(vbLf)
         Next

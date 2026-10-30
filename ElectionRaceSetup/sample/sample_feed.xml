@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ElectionResults date="2026-11-03" updated="2026-11-03T21:15:00Z">
+  <Contest id="X-GOV" name="Governor" state="CA" level="State" precinctsReporting="12000" precinctsTotal="24000">
+    <Candidates>
+      <Candidate><Name>Alvarez, Jane</Name><Party>DEM</Party><Votes>1,234,567</Votes><Incumbent>Y</Incumbent></Candidate>
+      <Candidate><Name>Robert Whitfield</Name><Party>REP</Party><Votes>1,200,345</Votes></Candidate>
+      <Candidate><Name>Dana Okafor</Name><Party>GRN</Party><Votes>55,012</Votes></Candidate>
+    </Candidates>
+  </Contest>
+  <Contest id="X-SEN" name="U.S. Senate" state="CA" level="State" precinctsReporting="12000" precinctsTotal="24000">
+    <Candidates>
+      <Candidate><Name>Maria Gonzales</Name><Party>DEM</Party><Votes>1301220</Votes></Candidate>
+      <Candidate><Name>Thomas O'Brien</Name><Party>REP</Party><Votes>1188004</Votes></Candidate>
+    </Candidates>
+  </Contest>
+  <Contest id="X-D24" name="U.S. House" district="24" state="CA" precinctsReporting="310" precinctsTotal="310">
+    <Candidates>
+      <Candidate><Name>Salud Carbajal</Name><Party>DEM</Party><Votes>131000</Votes><Winner>X</Winner></Candidate>
+      <Candidate><Name>Brad Allen</Name><Party>REP</Party><Votes>101000</Votes></Candidate>
+    </Candidates>
+  </Contest>
+</ElectionResults>

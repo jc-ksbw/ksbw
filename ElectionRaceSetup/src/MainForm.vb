@@ -20,6 +20,7 @@ Public Class MainForm
 
     Private _sendTotal As Integer
     Private _sendDone As Integer
+    Private _results As ResultsForm
 
     ' Controls
     Private txtHost As TextBox
@@ -41,6 +42,7 @@ Public Class MainForm
     Private btnPreview As Button
     Private btnSend As Button
     Private btnCancel As Button
+    Private btnResults As Button
     Private txtLog As TextBox
     Private statusConn As ToolStripStatusLabel
     Private statusSend As ToolStripStatusLabel
@@ -95,13 +97,13 @@ Public Class MainForm
         ckTest = New CheckBox With {.Text = "Send as TEST races", .AutoSize = True, .Margin = New Padding(0, 6, 0, 0)}
         numDelay = New NumericUpDown With {.Minimum = 0, .Maximum = 10000, .Increment = 100, .Value = 500, .Width = 65}
 
-        Dim connGroup As New GroupBox With {.Text = "Election Manager (MOS server)", .AutoSize = True, .Padding = New Padding(8, 4, 8, 8)}
-        Dim connFlow As New FlowLayoutPanel With {.AutoSize = True, .WrapContents = False}
+        Dim connGroup As New GroupBox With {.Text = "Election Manager (MOS server)", .Size = New Size(430, 62), .Margin = New Padding(3, 3, 12, 3)}
+        Dim connFlow As New FlowLayoutPanel With {.Dock = DockStyle.Fill, .WrapContents = False}
         connFlow.Controls.AddRange({MakeLabel("Host"), txtHost, MakeLabel("Port"), numPort, btnConnect})
         connGroup.Controls.Add(connFlow)
 
-        Dim elecGroup As New GroupBox With {.Text = "Election", .AutoSize = True, .Padding = New Padding(8, 4, 8, 8)}
-        Dim elecFlow As New FlowLayoutPanel With {.AutoSize = True, .WrapContents = False}
+        Dim elecGroup As New GroupBox With {.Text = "Election", .Size = New Size(640, 62)}
+        Dim elecFlow As New FlowLayoutPanel With {.Dock = DockStyle.Fill, .WrapContents = False}
         elecFlow.Controls.AddRange({MakeLabel("Date"), dtpElection, MakeLabel("Source"), txtSource, ckTest,
                                     MakeLabel("Delay (ms)"), numDelay})
         elecGroup.Controls.Add(elecFlow)
@@ -192,9 +194,11 @@ Public Class MainForm
         AddHandler btnPreview.Click, AddressOf OnPreviewClick
         AddHandler btnSend.Click, AddressOf OnSendClick
         AddHandler btnCancel.Click, AddressOf OnCancelClick
+        btnResults = New Button With {.Text = "Live results...", .AutoSize = True, .Margin = New Padding(24, 3, 3, 3)}
+        AddHandler btnResults.Click, AddressOf OnResultsClick
 
         Dim actions As New FlowLayoutPanel With {.Dock = DockStyle.Bottom, .AutoSize = True, .Padding = New Padding(8, 4, 8, 4)}
-        actions.Controls.AddRange({btnCheckAll, btnUncheckAll, btnPreview, btnSend, btnCancel})
+        actions.Controls.AddRange({btnCheckAll, btnUncheckAll, btnPreview, btnSend, btnCancel, btnResults})
 
         ' --- Log + status -------------------------------------------------------------------
         txtLog = New TextBox With {
@@ -253,7 +257,44 @@ Public Class MainForm
                  End Sub)
     End Sub
 
-    Private Function ElectionDateText() As String
+    ' --- Shared with the Live results window -------------------------------------------------------
+    Friend ReadOnly Property Client As MosClient
+        Get
+            Return _client
+        End Get
+    End Property
+
+    Friend ReadOnly Property Settings As AppSettings
+        Get
+            Return _settings
+        End Get
+    End Property
+
+    Friend ReadOnly Property SetupRaces As List(Of Race)
+        Get
+            Return _races
+        End Get
+    End Property
+
+    Friend ReadOnly Property SourceName As String
+        Get
+            Return txtSource.Text.Trim()
+        End Get
+    End Property
+
+    Friend ReadOnly Property IsTest As Boolean
+        Get
+            Return ckTest.Checked
+        End Get
+    End Property
+
+    Friend ReadOnly Property SendDelayMs As Integer
+        Get
+            Return CInt(numDelay.Value)
+        End Get
+    End Property
+
+    Friend Function ElectionDateText() As String
         Return dtpElection.Value.ToString("M/d/yyyy", CultureInfo.InvariantCulture)
     End Function
 
@@ -506,7 +547,15 @@ Public Class MainForm
         UpdateSendStatus()
     End Sub
 
+    Private Sub OnResultsClick(sender As Object, e As EventArgs)
+        If _results Is Nothing OrElse _results.IsDisposed Then _results = New ResultsForm(Me)
+        _results.Show()
+        _results.WindowState = FormWindowState.Normal
+        _results.Activate()
+    End Sub
+
     Private Sub OnMessageSent(tag As Object)
+        If Not TypeOf tag Is String Then Return   ' results sent from the Live results window
         _sendDone += 1
         UiLog("Sent race " & Convert.ToString(tag))
         UpdateSendStatus()
@@ -534,6 +583,7 @@ Public Class MainForm
             End If
         End If
         SaveSettings()
+        If _results IsNot Nothing AndAlso Not _results.IsDisposed Then _results.ShutDown()
         _client.Dispose()
         MyBase.OnFormClosing(e)
     End Sub

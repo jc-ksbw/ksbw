@@ -11,6 +11,10 @@ Public Class Candidate
     Public Property Party As String = ""
     Public Property Incumbent As Boolean
 
+    ''' <summary>Votes and winner flag are only filled in when sending results.</summary>
+    Public Property Votes As Long
+    Public Property Winner As Boolean
+
     ''' <summary>Name for display in the UI only.</summary>
     Public ReadOnly Property DisplayName As String
         Get
@@ -35,6 +39,10 @@ Public Class Race
     Public Property SeatNumber As String = ""
     Public Property Winners As Integer = 1
     Public Property PrecinctsTotal As Integer
+    Public Property PrecinctsReporting As Integer
+
+    ''' <summary>The ID this race has in a results feed, when that differs from ID.</summary>
+    Public Property FeedId As String = ""
 
     Public ReadOnly Property Candidates As New List(Of Candidate)
 

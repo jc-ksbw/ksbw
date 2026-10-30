@@ -29,13 +29,17 @@ Imports System.Xml
         End Sub
 
         Private Function SampleCsv() As String
+            Return SampleFile("sample_races.csv")
+        End Function
+
+        Private Function SampleFile(fileName As String) As String
             Dim dir = AppContext.BaseDirectory
             For i = 0 To 8
-                Dim p = Path.Combine(dir, "sample", "sample_races.csv")
+                Dim p = Path.Combine(dir, "sample", fileName)
                 If File.Exists(p) Then Return p
                 dir = Path.GetFullPath(Path.Combine(dir, ".."))
             Next
-            Throw New FileNotFoundException("sample_races.csv not found above " & AppContext.BaseDirectory)
+            Throw New FileNotFoundException(fileName & " not found above " & AppContext.BaseDirectory)
         End Function
 
         Private Function Load(path As String) As ImportResult
@@ -50,6 +54,13 @@ Imports System.Xml
             TestImporterProblems()
             TestWireXml()
             TestSocket()
+            TestJsonAndTree()
+            TestFeedAutoDetect()
+            TestFeedMapping()
+            TestMatching()
+            TestEngine()
+            TestResultsWire()
+            TestFetcher()
             Console.WriteLine()
             Console.WriteLine($"{_checks - _failures}/{_checks} checks passed")
             Return If(_failures = 0, 0, 1)
@@ -263,6 +274,373 @@ Imports System.Xml
             Next
             Eq(wellFormed, msgs.Length, "every received message carries well-formed RACE xml")
             Check(all.Contains("CA-SEN") AndAlso all.Contains("SLO-CC") AndAlso all.Contains("CA-D24"), "later races arrived after the reconnect")
+        End Sub
+
+        ' ---------------------------------------------------------------------------------------------
+        ' Results feeds
+
+        Private Function CountOf(Of T)(source As IEnumerable(Of T), predicate As Func(Of T, Boolean)) As Integer
+            Return source.Where(predicate).Count()
+        End Function
+
+        Private Function SetupRaces() As List(Of Race)
+            Return Load(SampleCsv()).Races
+        End Function
+
+        Private Function ReadSample(fileName As String) As List(Of FeedContest)
+            Return FeedReader.Read(File.ReadAllText(SampleFile(fileName)))
+        End Function
+
+        Private Function VotesIn(item As ResultItem) As Long()
+            Return item.Outgoing.Candidates.Select(Function(c) c.Votes).ToArray()
+        End Function
+
+        Private Sub TestJsonAndTree()
+            Console.WriteLine("Feed tree (JSON and XML)")
+            Dim j = FeedNode.ParseAny("{""a"": {""b"": [1, 2, {""c"": ""xé\n""}], ""t"": true, ""n"": null, ""big"": -1.5e3}}")
+            Eq(j.SelectNodes("a/b").Count, 3, "JSON array becomes repeated nodes")
+            Eq(j.Value("a/b"), "1", "first array item")
+            Eq(j.Value("a/b/c"), "xé", "a path runs through every array item and finds the object inside")
+            Eq(j.SelectNodes("a/b/c").Count, 1, "nested object inside array")
+            Eq(j.SelectNodes("a/b/c")(0).Text, "xé" & vbLf, "unicode and newline escapes decoded")
+            Eq(j.Value("a/t"), "true", "boolean literal")
+            Eq(j.Value("a/n"), "", "null is blank")
+            Eq(j.Value("a/big"), "-1.5e3", "number text kept as written")
+            Eq(j.SelectNodes("**/c").Count, 1, "** reaches any depth")
+
+            Dim esc = FeedNode.ParseAny("{""s"": ""café \""q\"" \\ \/ tab\t""}")
+            Eq(esc.Value("s"), "café ""q"" \ / tab", "string escapes decoded")
+
+            Dim arr = FeedNode.ParseAny("[{""id"":1},{""id"":2}]")
+            Eq(arr.SelectNodes("item").Count, 2, "root array items are named item")
+
+            For Each bad In {"{""a"": }", "{""a"": 1,}", "[1 2]", "{""a"": tru}", "{""a"": ""x}", "plain text", "{""a"": 1} extra"}
+                Dim threw = False
+                Try
+                    FeedNode.ParseAny(bad)
+                Catch ex As FormatException
+                    threw = True
+                End Try
+                Check(threw, "malformed input rejected: " & bad)
+            Next
+
+            Dim x = FeedNode.ParseAny("<?xml version=""1.0""?><!DOCTYPE r [<!ENTITY e ""boom"">]><r id=""7""><a k=""v"">hi</a><a>there</a><b/></r>")
+            Eq(x.Value("@id"), "7", "XML attribute on the current node")
+            Eq(x.SelectNodes("a").Count, 2, "repeated XML elements")
+            Eq(x.Value("a/@k"), "v", "attribute on a child path")
+            Eq(x.Value("a"), "hi", "element text")
+            Eq(FeedNode.Norm("Vote_Count "), "votecount", "names compare ignoring case and punctuation")
+        End Sub
+
+        Private Sub TestFeedAutoDetect()
+            Console.WriteLine("Feed auto-detect")
+            Dim js = ReadSample("sample_feed.json")
+            Eq(js.Count, 7, "JSON: 7 contests found")
+            Dim gov = js.Single(Function(c) c.FeedId = "9001")
+            Eq(gov.Office, "Governor", "JSON: office from ""title""")
+            Eq(gov.State, "CA", "JSON: state")
+            Eq(gov.Level, "STATE", "JSON: level ""statewide"" understood")
+            Eq(gov.PrecinctsReporting.Value, 12000, "JSON: precincts reporting")
+            Eq(gov.PrecinctsTotal.Value, 24000, "JSON: precincts total")
+            Eq(gov.Candidates.Count, 3, "JSON: three candidates")
+            Eq(gov.Candidates(0).FullName, "Jane Alvarez", "JSON: name from ""ballotName""")
+            Eq(gov.Candidates(0).Votes.Value, 1234567L, "JSON: votes from ""voteCount""")
+            Eq(gov.Candidates(0).Incumbent, True, "JSON: incumbent true")
+            Eq(js.Single(Function(c) c.FeedId = "9003").PrecinctsTotal.Value, 24000, "JSON: ""12000/24000"" gives both numbers")
+            Eq(js.Single(Function(c) c.FeedId = "9006").Candidates(0).Winner, True, "JSON: winner flag")
+            Eq(js.Single(Function(c) c.FeedId = "9004").City, "San Luis Obispo", "JSON: city")
+
+            Dim xm = ReadSample("sample_feed.xml")
+            Eq(xm.Count, 3, "XML: 3 contests found")
+            Dim xgov = xm.Single(Function(c) c.FeedId = "X-GOV")
+            Eq(xgov.Office, "Governor", "XML: office from the name attribute")
+            Eq(xgov.Candidates(0).FullName, "Alvarez, Jane", "XML: name element")
+            Eq(xgov.Candidates(0).Votes.Value, 1234567L, "XML: votes with thousands separators")
+            Eq(xgov.PrecinctsReporting.Value, 12000, "XML: precincts from attributes")
+            Eq(xm.Single(Function(c) c.FeedId = "X-D24").District, "24", "XML: district attribute")
+            Eq(xm.Single(Function(c) c.FeedId = "X-D24").Candidates(0).Winner, True, "XML: winner X")
+
+            Dim bad = FeedReader.Read("{""races"":[{""title"":""Mayor"",""candidates"":[{""name"":""A"",""votes"":""n/a""},{""name"":""B"",""votes"":-4},{""name"":""C"",""votes"":""""}]}]}")
+            Eq(bad.Count, 1, "odd votes: contest still found")
+            Check(Not bad(0).Candidates(0).Votes.HasValue, "text votes become unreadable, not 0")
+            Check(Not bad(0).Candidates(1).Votes.HasValue, "negative votes become unreadable")
+            Eq(bad(0).Candidates(2).Votes.Value, 0L, "blank votes count as 0")
+            Eq(bad(0).Warnings.Count, 2, "a warning for each unreadable vote count")
+
+            Eq(FeedReader.Read("{""hello"": ""world""}").Count, 0, "a feed with no contests gives an empty list")
+        End Sub
+
+        Private Sub TestFeedMapping()
+            Console.WriteLine("Feed mapping file")
+            Dim prof = FeedProfile.Parse(File.ReadAllText(SampleFile("sample_feed_mapping.json")))
+            Dim viaProfile = FeedReader.Read(File.ReadAllText(SampleFile("sample_feed.xml")), prof)
+            Dim viaAuto = ReadSample("sample_feed.xml")
+            Eq(viaProfile.Count, 3, "mapping file: 3 contests")
+            Eq(String.Join(",", viaProfile.Select(Function(c) c.FeedId)), String.Join(",", viaAuto.Select(Function(c) c.FeedId)), "same IDs as auto-detect")
+            Eq(viaProfile(0).Candidates(1).Votes.Value, viaAuto(0).Candidates(1).Votes.Value, "same votes as auto-detect")
+            Eq(viaProfile(2).District, "24", "mapped district attribute")
+
+            Dim threw = False
+            Try
+                FeedProfile.Parse("{""contests"": ""x""}")
+            Catch ex As FormatException
+                threw = True
+            End Try
+            Check(threw, "mapping file without ""candidates"" is rejected")
+
+            Dim custom = FeedProfile.Parse("{""contests"":""data/item"",""candidates"":""rows/row"",""fields"":{""office"":""label""},""candidateFields"":{""name"":""who"",""votes"":""n""}}")
+            Dim r = FeedReader.Read("{""data"":{""item"":[{""label"":""Sheriff"",""rows"":{""row"":[{""who"":""A B"",""n"":5},{""who"":""C D"",""n"":9}]}}]}}", custom)
+            Eq(r.Count, 1, "custom paths: one contest")
+            Eq(r(0).Office, "Sheriff", "custom office path")
+            Eq(r(0).Candidates.Count, 2, "custom candidate path")
+            Eq(r(0).Candidates(1).Votes.Value, 9L, "custom votes path")
+        End Sub
+
+        Private Sub TestMatching()
+            Console.WriteLine("Pairing races and candidates")
+            Check(RaceMatcher.Tokens("U.S. Senate").SetEquals(RaceMatcher.Tokens("United States Senator")), "U.S. Senate = United States Senator")
+            Check(RaceMatcher.Tokens("24th District").Contains("24"), "ordinals reduced to numbers")
+
+            Dim races = SetupRaces()
+            Dim d12 As New FeedContest With {.Office = "U.S. House", .District = "12", .State = "CA"}
+            Eq(RaceMatcher.Score(d12, races.Single(Function(r) r.ID = "CA-D24")), 0.0, "different district numbers never match")
+            Dim d24 As New FeedContest With {.Office = "U.S. House", .District = "24", .State = "CA"}
+            Check(RaceMatcher.Score(d24, races.Single(Function(r) r.ID = "CA-D24")) >= 0.99, "same district scores about 1")
+            Dim tx As New FeedContest With {.Office = "Governor", .State = "TX"}
+            Eq(RaceMatcher.Score(tx, races.Single(Function(r) r.ID = "CA-GOV")), 0.0, "different state never matches")
+            Dim rParty As New Race With {.Office = "Governor", .Party = "R", .State = "CA"}
+            Dim dParty As New FeedContest With {.Office = "Governor", .Party = "DEM", .State = "CA"}
+            Eq(RaceMatcher.Score(dParty, rParty), 0.0, "different primary party never matches")
+            Check(RaceMatcher.PartiesMatch("DEM", "D") AndAlso RaceMatcher.PartiesMatch("REP", "R") AndAlso Not RaceMatcher.PartiesMatch("DEM", "R"), "DEM = D, REP = R")
+
+            Dim m = RaceMatcher.FindRace(New FeedContest With {.Office = "Proposition 2", .State = "CA"}, races, Nothing)
+            Check(m.Race Is Nothing, "Proposition 2 does not match Proposition 1")
+            Dim byId = races.Single(Function(r) r.ID = "CA-GOV")
+            byId.FeedId = "ZZ-1"
+            Dim m2 = RaceMatcher.FindRace(New FeedContest With {.FeedId = "zz-1", .Office = "Something else entirely"}, races, Nothing)
+            Eq(m2.Race.ID, "CA-GOV", "Feed ID column wins over the text")
+            byId.FeedId = ""
+
+            Dim clearCut = New List(Of Race) From {
+                New Race With {.ID = "A", .Office = "School Board"},
+                New Race With {.ID = "B", .Office = "School Board Trustee"}
+            }
+            Eq(RaceMatcher.FindRace(New FeedContest With {.Office = "School Board"}, clearCut, Nothing).Race.ID, "A", "the clearly better of two similar races wins")
+
+            Dim ambiguous = New List(Of Race) From {
+                New Race With {.ID = "S1", .Office = "School Board", .SeatNumber = "1"},
+                New Race With {.ID = "S2", .Office = "School Board", .SeatNumber = "2"}
+            }
+            Dim amb = RaceMatcher.FindRace(New FeedContest With {.Office = "School Board"}, ambiguous, Nothing)
+            Check(amb.Race Is Nothing AndAlso amb.Suggestion <> "", "two equally good races: no automatic pick, a suggestion is given")
+
+            Dim dog As New FeedContest With {.Office = "Dog Catcher"}
+            Dim cw As New Dictionary(Of String, String)(StringComparer.OrdinalIgnoreCase) From {{dog.Key, "CA-PROP1"}}
+            Eq(RaceMatcher.FindRace(dog, races, cw).Race.ID, "CA-PROP1", "saved hand pairing is used")
+
+            ' candidates
+            Dim setup As New List(Of Candidate) From {
+                New Candidate With {.FirstName = "Jane", .LastName = "Smith", .Party = "D"},
+                New Candidate With {.FirstName = "John", .MiddleName = "A.", .LastName = "Smith", .Party = "R"},
+                New Candidate With {.FullName = "María Ñúñez"},
+                New Candidate With {.FullName = "Pat ""Skip"" O'Hara Jr."}
+            }
+            Dim feed As New List(Of FeedCandidate) From {
+                New FeedCandidate With {.FullName = "Smith, Jane"},
+                New FeedCandidate With {.FullName = "John Smith III"},
+                New FeedCandidate With {.FullName = "Maria Nunez"},
+                New FeedCandidate With {.FullName = "Patrick O'Hara"},
+                New FeedCandidate With {.FullName = "Nobody Here"}
+            }
+            Dim map = RaceMatcher.MatchCandidates(feed, setup)
+            Eq(map(0), 0, """Smith, Jane"" matches Jane Smith")
+            Eq(map(1), 1, """John Smith III"" matches John A. Smith")
+            Eq(map(2), 2, "accents ignored")
+            Eq(map(3), 3, "Patrick matches Pat (prefix of the first name); nickname in quotes ignored")
+            Eq(map(4), -1, "unknown name stays unmatched")
+
+            Dim twoSmiths As New List(Of Candidate) From {
+                New Candidate With {.FirstName = "Jane", .LastName = "Smith"}, New Candidate With {.FirstName = "John", .LastName = "Smith"}}
+            Eq(RaceMatcher.MatchCandidates({New FeedCandidate With {.FullName = "Smith"}}, twoSmiths)(0), -1, "last name alone is not guessed between two Smiths")
+            Eq(RaceMatcher.MatchCandidates({New FeedCandidate With {.FullName = "J. Smith", .Party = "R"}}, New List(Of Candidate) From {
+                New Candidate With {.FirstName = "Jane", .LastName = "Smith", .Party = "D"}, New Candidate With {.FirstName = "John", .LastName = "Smith", .Party = "R"}})(0), 1, "party breaks a tie between equal matches")
+            Dim nick = RaceMatcher.MatchCandidates({New FeedCandidate With {.FullName = "Mike Smith"}, New FeedCandidate With {.FullName = "Bob Jones"}},
+                                                   New List(Of Candidate) From {New Candidate With {.FullName = "Michael Smith"}, New Candidate With {.FullName = "Robert Jones"}})
+            Eq(nick(0), 0, "Mike matches Michael")
+            Eq(nick(1), 1, "Bob matches Robert")
+            Eq(RaceMatcher.MatchCandidates({New FeedCandidate With {.FullName = "Michael Smith"}}, New List(Of Candidate) From {New Candidate With {.FullName = "Mark Smith"}})(0), -1, "Michael is never matched to Mark just for sharing a last name and initial")
+            Check(RaceMatcher.IsWriteIn("Write-in") AndAlso RaceMatcher.IsWriteIn("Scattering") AndAlso Not RaceMatcher.IsWriteIn("Jane Doe"), "write-in lines recognised")
+        End Sub
+
+        Private Sub TestEngine()
+            Console.WriteLine("Results engine")
+            Dim races = SetupRaces()
+            Dim engine As New ResultsEngine
+            Dim items = engine.Evaluate(ReadSample("sample_feed.json"), races, "11/3/2026", "CSV", False)
+
+            Eq(CountOf(items, Function(i) i.Status = ResultStatus.Ready), 6, "JSON feed: 6 races ready")
+            Eq(CountOf(items, Function(i) i.Status = ResultStatus.Unmatched), 1, "JSON feed: the dog catcher is unmatched")
+            Eq(items.Single(Function(i) i.Status = ResultStatus.Unmatched).Contest.Office, "County Dog Catcher", "the unmatched one is the dog catcher")
+
+            Dim gov = items.Single(Function(i) i.Contest.FeedId = "9001")
+            Eq(gov.Race.ID, "CA-GOV", "Governor paired with CA-GOV")
+            Eq(String.Join(",", VotesIn(gov)), "1234567,1200345,55012", "votes land on the right setup candidates")
+            Eq(gov.Outgoing.Candidates(0).FirstName, "Jane", "outgoing names are the setup names")
+            Eq(gov.Outgoing.PrecinctsReporting, 12000, "precincts reporting sent")
+            Check(gov.Xml.Contains("<ID>CA-GOV</ID>") AndAlso gov.Xml.Contains("<SOURCE>CSV</SOURCE>") AndAlso gov.Xml.Contains("<TEST>NO</TEST>"), "id, source and test flag come from the setup race and window")
+
+            Dim sen = items.Single(Function(i) i.Contest.FeedId = "9002")
+            Eq(sen.Race.ID, "CA-SEN", "U.S. Senator paired with U.S. Senate")
+            Check(sen.Notes.Any(Function(n) n.Contains("Write-in")), "write-in line ignored with a note")
+            Eq(String.Join(",", VotesIn(sen)), "1301220,1188004", "senate votes")
+
+            Dim cc = items.Single(Function(i) i.Contest.FeedId = "9005")
+            Eq(cc.Race.ID, "SLO-CC", "City Council paired")
+            Eq(cc.MatchedCandidates, 3, "all three council candidates matched, including the odd name")
+            Eq(items.Single(Function(i) i.Contest.FeedId = "9004").Race.ID, "SLO-MAYOR", "mayor race paired despite the longer title")
+            Eq(items.Single(Function(i) i.Contest.FeedId = "9006").Race.ID, "CA-D24", "U.S. Representative, District 24 paired")
+            Check(items.Single(Function(i) i.Contest.FeedId = "9006").Xml.Contains("<WINNER>YES</WINNER>"), "winner flag reaches the XML")
+
+            ' sending marks races, and nothing changes -> nothing to send
+            For Each i In items.Where(Function(x) x.Status = ResultStatus.Ready).ToList()
+                engine.MarkSent(i)
+            Next
+            Dim again = engine.Evaluate(ReadSample("sample_feed.json"), races, "11/3/2026", "CSV", False)
+            Eq(CountOf(again, Function(i) i.Status = ResultStatus.Unchanged), 6, "re-reading the same feed: 6 unchanged")
+            Eq(CountOf(again, Function(i) i.Status = ResultStatus.Ready), 0, "nothing new to send")
+
+            ' votes go up -> ready; go down -> held
+            Dim up = ReadSample("sample_feed.json")
+            up.Single(Function(c) c.FeedId = "9001").Candidates(0).Votes = 1300000
+            Dim afterUp = engine.Evaluate(up, races, "11/3/2026", "CSV", False)
+            Eq(afterUp.Single(Function(i) i.Contest.FeedId = "9001").Status, ResultStatus.Ready, "more votes: ready to send")
+            Eq(CountOf(afterUp, Function(i) i.Status = ResultStatus.Unchanged), 5, "other races stay unchanged")
+
+            Dim down = ReadSample("sample_feed.json")
+            down.Single(Function(c) c.FeedId = "9001").Candidates(1).Votes = 1000
+            Dim afterDown = engine.Evaluate(down, races, "11/3/2026", "CSV", False)
+            Dim heldGov = afterDown.Single(Function(i) i.Contest.FeedId = "9001")
+            Eq(heldGov.Status, ResultStatus.Held, "fewer votes than last sent: held")
+            Check(heldGov.Notes.Any(Function(n) n.Contains("went down")), "the note says which candidate went down")
+
+            ' test flag change makes everything different again
+            Eq(engine.Evaluate(ReadSample("sample_feed.json"), races, "11/3/2026", "CSV", True).Where(Function(i) i.Status = ResultStatus.Ready).Count(), 6, "changing TEST/LIVE re-queues every race")
+
+            ' unknown candidate -> held
+            Dim extra = ReadSample("sample_feed.json")
+            extra.Single(Function(c) c.FeedId = "9002").Candidates.Add(New FeedCandidate With {.FullName = "Zed Zelenko", .Votes = 5})
+            Dim heldSen = engine.Evaluate(extra, races, "11/3/2026", "CSV", False).Single(Function(i) i.Contest.FeedId = "9002")
+            Eq(heldSen.Status, ResultStatus.Held, "a feed candidate not in the setup race: held")
+            Check(heldSen.Notes.Any(Function(n) n.Contains("Zed Zelenko")), "the note names the candidate")
+
+            ' bad numbers -> held
+            Dim bad = ReadSample("sample_feed.json")
+            bad.Single(Function(c) c.FeedId = "9004").PrecinctsReporting = 99
+            Eq(engine.Evaluate(bad, races, "11/3/2026", "CSV", False).Single(Function(i) i.Contest.FeedId = "9004").Status, ResultStatus.Held, "precincts reporting above total: held")
+            Dim unreadable = ReadSample("sample_feed.json")
+            unreadable.Single(Function(c) c.FeedId = "9001").Candidates(2).Votes = Nothing
+            Eq(engine.Evaluate(unreadable, races, "11/3/2026", "CSV", False).Single(Function(i) i.Contest.FeedId = "9001").Status, ResultStatus.Held, "unreadable votes: held")
+
+            ' two feed contests for one race -> second held
+            Dim dup = ReadSample("sample_feed.json")
+            dup.Add(New FeedContest With {.FeedId = "9001b", .Office = "Governor", .State = "CA"})
+            Dim dupItems = New ResultsEngine().Evaluate(dup, races, "11/3/2026", "CSV", False)
+            Check(dupItems.Where(Function(i) i.Notes.Any(Function(n) n.Contains("also paired"))).Count() = 1, "a race claimed twice: the second claim is flagged")
+
+            ' manual pairing
+            Dim manual As New ResultsEngine
+            Dim dogContest = ReadSample("sample_feed.json").Single(Function(c) c.FeedId = "9099")
+            manual.Crosswalk(dogContest.Key) = "SLO-CC"
+            Dim paired = manual.Evaluate({dogContest}, races, "11/3/2026", "CSV", False)(0)
+            Eq(paired.Race.ID, "SLO-CC", "a hand pairing is honoured")
+            Eq(paired.Status, ResultStatus.Held, "...but its candidates do not match, so it is held, not sent")
+
+            ' XML feed through the Feed ID column
+            Dim xmlRaces = SetupRaces()
+            xmlRaces.Single(Function(r) r.ID = "CA-GOV").FeedId = "X-GOV"
+            Dim xi = New ResultsEngine().Evaluate(ReadSample("sample_feed.xml"), xmlRaces, "11/3/2026", "CSV", True)
+            Eq(CountOf(xi, Function(i) i.Status = ResultStatus.Ready), 3, "XML feed: 3 ready")
+            Eq(xi.Single(Function(i) i.Contest.FeedId = "X-GOV").How, "Feed ID column", "XML governor paired through the Feed ID column")
+            Eq(String.Join(",", VotesIn(xi.Single(Function(i) i.Contest.FeedId = "X-GOV"))), "1234567,1200345,55012", "XML votes with ""Last, First"" names and a short first name")
+            Eq(String.Join(",", VotesIn(xi.Single(Function(i) i.Contest.FeedId = "X-D24"))), "131000,101000", "XML house votes")
+
+            ' saved pairings
+            Dim tmp = Path.Combine(Path.GetTempPath(), "crosswalk-" & Guid.NewGuid().ToString("N") & ".ini")
+            CrosswalkStore.Save(tmp, New Dictionary(Of String, String) From {{"a|b", "R1"}, {"9001", "CA-GOV"}})
+            Dim back = CrosswalkStore.Load(tmp)
+            Eq(back("a|b"), "R1", "saved pairings round-trip")
+            Eq(back("9001"), "CA-GOV", "second pairing round-trips")
+            File.Delete(tmp)
+        End Sub
+
+        Private Sub TestResultsWire()
+            Console.WriteLine("Wire XML with results")
+            Dim r As New Race With {.ID = "R1", .Office = "Mayor", .Level = "CITY", .State = "CA", .Winners = 1, .PrecinctsTotal = 40, .PrecinctsReporting = 12}
+            r.Candidates.Add(New Candidate With {.FullName = "A One", .Votes = 1234, .Winner = True, .Incumbent = True})
+            r.Candidates.Add(New Candidate With {.FullName = "B Two", .Votes = 999})
+            Dim xml = WireBuilder.BuildRaceXml(r, "11/3/2026", "CSV", False)
+            Dim doc As New Xml.XmlDocument
+            doc.LoadXml(xml)
+            Eq(doc.SelectSingleNode("/RACE/PRECINCTS_REPORTING").InnerText, "12", "precincts reporting")
+            Eq(doc.SelectSingleNode("/RACE/CANDIDATES/CANDIDATE[1]/VOTES").InnerText, "1234", "votes written")
+            Eq(doc.SelectSingleNode("/RACE/CANDIDATES/CANDIDATE[1]/WINNER").InnerText, "YES", "winner written")
+            Check(doc.SelectSingleNode("/RACE/CANDIDATES/CANDIDATE[2]/WINNER") Is Nothing, "no winner tag for the others")
+            Dim c1 = xml.IndexOf("<WINNER>", StringComparison.Ordinal)
+            Check(c1 > xml.IndexOf("<PARTY></PARTY>", xml.IndexOf("<CANDIDATE>", StringComparison.Ordinal), StringComparison.Ordinal) AndAlso
+                  c1 < xml.IndexOf("<INCUMBENT>", StringComparison.Ordinal) AndAlso
+                  xml.IndexOf("<INCUMBENT>", StringComparison.Ordinal) < xml.IndexOf("<VOTES>", StringComparison.Ordinal), "tag order matches the sample: PARTY, WINNER, INCUMBENT, VOTES")
+        End Sub
+
+        Private Sub TestFetcher()
+            Console.WriteLine("Feed fetching")
+            Dim jsonPath = SampleFile("sample_feed.json")
+            Eq(FeedFetcher.Load(jsonPath, "", "").Count, 7, "load from a file")
+            Eq(FeedFetcher.Load(SampleFile("sample_feed.xml"), "", SampleFile("sample_feed_mapping.json")).Count, 3, "load a file with a mapping file")
+
+            Dim missing = False
+            Try
+                FeedFetcher.FetchText(Path.Combine(Path.GetTempPath(), "no-such-feed-" & Guid.NewGuid().ToString("N") & ".json"), "")
+            Catch ex As IOException
+                missing = True
+            End Try
+            Check(missing, "a missing file raises an error")
+
+            Dim probe As New TcpListener(IPAddress.Loopback, 0)
+            probe.Start()
+            Dim port = CType(probe.LocalEndpoint, IPEndPoint).Port
+            probe.Stop()
+
+            Dim http As New HttpListener
+            http.Prefixes.Add($"http://127.0.0.1:{port}/")
+            http.Start()
+            Dim seenKey As String = ""
+            Dim body = File.ReadAllText(jsonPath)
+            Dim serverTask = Task.Run(Sub()
+                                          For i = 1 To 2
+                                              Dim ctx = http.GetContext()
+                                              If ctx.Request.Url.AbsolutePath = "/fail" Then
+                                                  ctx.Response.StatusCode = 500
+                                              Else
+                                                  seenKey = ctx.Request.Headers("X-Api-Key")
+                                                  Dim bytes = Encoding.UTF8.GetBytes(body)
+                                                  ctx.Response.ContentType = "application/json"
+                                                  ctx.Response.OutputStream.Write(bytes, 0, bytes.Length)
+                                              End If
+                                              ctx.Response.Close()
+                                          Next
+                                      End Sub)
+
+            Eq(FeedFetcher.Load($"http://127.0.0.1:{port}/feed", "X-Api-Key: abc123; Accept-Language: en", "").Count, 7, "load from a URL")
+            Eq(seenKey, "abc123", "custom header sent")
+            Dim failed = False
+            Try
+                FeedFetcher.FetchText($"http://127.0.0.1:{port}/fail", "")
+            Catch ex As WebException
+                failed = True
+            End Try
+            Check(failed, "an HTTP 500 raises an error")
+            serverTask.Wait(3000)
+            http.Stop()
         End Sub
 
     End Module

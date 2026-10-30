@@ -1,0 +1,61 @@
+{
+  "electionDate": "2026-11-03",
+  "lastUpdated": "2026-11-03T21:15:00Z",
+  "races": [
+    {
+      "raceId": "9001", "title": "Governor", "state": "CA", "level": "statewide",
+      "precinctsReporting": 12000, "precinctsTotal": 24000,
+      "candidates": [
+        { "ballotName": "Jane Alvarez", "party": "D", "voteCount": 1234567, "incumbent": true },
+        { "ballotName": "Robert T. Whitfield Jr.", "party": "R", "voteCount": 1200345 },
+        { "ballotName": "Dana Okafor", "party": "G", "voteCount": 55012 }
+      ]
+    },
+    {
+      "raceId": "9002", "title": "United States Senator", "state": "California", "level": "statewide",
+      "precinctsReporting": 12000, "precinctsTotal": 24000,
+      "candidates": [
+        { "ballotName": "Gonzales, Maria", "party": "DEM", "voteCount": 1301220 },
+        { "ballotName": "Thomas O'Brien", "party": "REP", "voteCount": 1188004, "incumbent": true },
+        { "ballotName": "Write-in", "party": "", "voteCount": 412 }
+      ]
+    },
+    {
+      "raceId": "9003", "title": "Proposition 1", "state": "CA", "level": "statewide",
+      "precinctsReporting": "12000/24000",
+      "candidates": [
+        { "ballotName": "Yes", "voteCount": 1500100 },
+        { "ballotName": "No", "voteCount": 990030 }
+      ]
+    },
+    {
+      "raceId": "9004", "title": "Mayor - City of San Luis Obispo", "state": "CA", "city": "San Luis Obispo", "county": "San Luis Obispo",
+      "precinctsReporting": 20, "precinctsTotal": 42,
+      "candidates": [
+        { "ballotName": "Erin Castellanos", "voteCount": 8120, "incumbent": true },
+        { "ballotName": "Pat Delaney", "voteCount": 7011 }
+      ]
+    },
+    {
+      "raceId": "9005", "title": "City Council", "state": "CA", "city": "San Luis Obispo", "county": "San Luis Obispo", "seats": 2,
+      "precinctsReporting": 20, "precinctsTotal": 42,
+      "candidates": [
+        { "ballotName": "Aaron Lim", "voteCount": 6500 },
+        { "ballotName": "Priya Nair", "voteCount": 7300 },
+        { "ballotName": "Smith & Sons, Inc. (write-in)", "voteCount": 12 }
+      ]
+    },
+    {
+      "raceId": "9006", "title": "U.S. Representative, District 24", "state": "CA",
+      "precinctsReporting": 150, "precinctsTotal": 310,
+      "candidates": [
+        { "ballotName": "Salud Carbajal", "party": "D", "voteCount": 98000, "incumbent": true, "winner": true },
+        { "ballotName": "Brad Allen", "party": "R", "voteCount": 71000 }
+      ]
+    },
+    {
+      "raceId": "9099", "title": "County Dog Catcher", "state": "CA",
+      "candidates": [ { "ballotName": "Rex Houndstooth", "voteCount": 3 } ]
+    }
+  ]
+}

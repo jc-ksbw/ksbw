@@ -7,6 +7,7 @@ Imports System.Text
 ''' <summary>Every CSV column the importer knows how to use.</summary>
 Public Enum RaceField
     RaceId
+    FeedId
     Office
     Level
     State
@@ -51,6 +52,7 @@ Public Module RaceImporter
     ''' <summary>Fields in the order they are shown in the column-mapping dialog. Aliases are tried in order.</summary>
     Public ReadOnly Fields As FieldDef() = {
         New FieldDef(RaceField.RaceId, "Race ID", "raceid", "contestid", "id", "race_id"),
+        New FieldDef(RaceField.FeedId, "Feed ID (race ID in the results feed)", "feedid", "feedraceid", "feedcontestid", "externalid", "resultsid"),
         New FieldDef(RaceField.Office, "Office / race title", "office", "officename", "racename", "race", "contest", "contestname", "title", "position"),
         New FieldDef(RaceField.Level, "Level", "level", "racelevel", "officelevel"),
         New FieldDef(RaceField.State, "State", "state", "statepostal", "statecode", "statepostalcode", "st"),
@@ -190,6 +192,7 @@ Public Module RaceImporter
 
             Dim race As New Race With {
                 .ID = Cell(row, map, RaceField.RaceId),
+                .FeedId = Cell(row, map, RaceField.FeedId),
                 .Office = Cell(row, map, RaceField.Office),
                 .Level = Cell(row, map, RaceField.Level),
                 .State = NormalizeState(Cell(row, map, RaceField.State)),
@@ -279,6 +282,7 @@ Public Module RaceImporter
                 target.Warnings.Add($"Row {rowNumber}: {p.Item1} ""{p.Item3}"" differs from ""{p.Item2}"" on the race's first row (first row used).")
             End If
         Next
+        If target.FeedId = "" Then target.FeedId = other.FeedId
         If target.Level = "" Then target.Level = other.Level
         If target.State = "" Then target.State = other.State
         If target.County = "" Then target.County = other.County

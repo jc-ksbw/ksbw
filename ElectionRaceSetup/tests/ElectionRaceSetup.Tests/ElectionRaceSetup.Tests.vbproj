@@ -18,6 +18,13 @@
     <Compile Include="..\..\src\RaceImporter.vb" />
     <Compile Include="..\..\src\WireBuilder.vb" />
     <Compile Include="..\..\src\MosClient.vb" />
+    <Compile Include="..\..\src\FeedNode.vb" />
+    <Compile Include="..\..\src\FeedModels.vb" />
+    <Compile Include="..\..\src\FeedReader.vb" />
+    <Compile Include="..\..\src\FeedFetcher.vb" />
+    <Compile Include="..\..\src\RaceMatcher.vb" />
+    <Compile Include="..\..\src\CrosswalkStore.vb" />
+    <Compile Include="..\..\src\ResultsEngine.vb" />
   </ItemGroup>
 
 </Project>

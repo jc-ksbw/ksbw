@@ -13,6 +13,11 @@ Public Class AppSettings
     Public Property DelayMs As Integer = 500
     Public Property LastCsv As String = ""
     Public Property ElectionDate As String = ""
+    Public Property FeedSource As String = ""
+    Public Property FeedHeaders As String = ""
+    Public Property FeedProfile As String = ""
+    Public Property FeedIntervalSec As Integer = 60
+    Public Property FeedAuto As Boolean
 
     Private Shared ReadOnly Property FilePath As String
         Get
@@ -42,6 +47,11 @@ Public Class AppSettings
                     Case "DelayMs" : s.DelayMs = ParseInt(value, s.DelayMs)
                     Case "LastCsv" : s.LastCsv = value
                     Case "ElectionDate" : s.ElectionDate = value
+                    Case "FeedSource" : s.FeedSource = value
+                    Case "FeedHeaders" : s.FeedHeaders = value
+                    Case "FeedProfile" : s.FeedProfile = value
+                    Case "FeedIntervalSec" : s.FeedIntervalSec = ParseInt(value, s.FeedIntervalSec)
+                    Case "FeedAuto" : s.FeedAuto = String.Equals(value, "true", StringComparison.OrdinalIgnoreCase)
                 End Select
             Next
         Catch
@@ -59,7 +69,12 @@ Public Class AppSettings
                 "IsTest=" & IsTest.ToString(),
                 "DelayMs=" & DelayMs.ToString(CultureInfo.InvariantCulture),
                 "LastCsv=" & LastCsv,
-                "ElectionDate=" & ElectionDate
+                "ElectionDate=" & ElectionDate,
+                "FeedSource=" & FeedSource,
+                "FeedHeaders=" & FeedHeaders,
+                "FeedProfile=" & FeedProfile,
+                "FeedIntervalSec=" & FeedIntervalSec.ToString(CultureInfo.InvariantCulture),
+                "FeedAuto=" & FeedAuto.ToString()
             })
         Catch
         End Try
