@@ -392,6 +392,25 @@ Public Module RaceMatcher
             result(i) = -1
         Next
         Dim used As New HashSet(Of Integer)
+
+        ' When both sides carry candidate IDs (the monitor API gives one), those settle it outright.
+        Dim byId As New Dictionary(Of String, Integer)(StringComparer.Ordinal)
+        For j = 0 To setup.Count - 1
+            Dim id = If(setup(j).FeedId, "")
+            If id <> "" AndAlso Not byId.ContainsKey(id) Then byId(id) = j
+        Next
+        If byId.Count > 0 Then
+            For i = 0 To feed.Count - 1
+                Dim id = If(feed(i).CandidateId, "")
+                Dim j As Integer
+                If id <> "" AndAlso byId.TryGetValue(id, j) AndAlso Not used.Contains(j) Then
+                    result(i) = j
+                    used.Add(j)
+                End If
+            Next
+            ' Every feed line carried an ID, so names are not consulted at all.
+            If feed.All(Function(f) f.CandidateId <> "") Then Return result
+        End If
         Dim fVar = feed.Select(Function(f) NameVariants(f.FullName)).ToList()
         Dim sVar = setup.Select(Function(s) NameVariants(SetupNameText(s))).ToList()
 

@@ -4,8 +4,10 @@ A small Windows app that reads a CSV of races and candidates and sends them to
 **Election Manager** over the custom-wire socket described in the *AP_Custom_Wire*
 sample, so the races can be set up without typing them in by hand.
 
-Race setup sends each race with **0 votes, 0 precincts reporting**. Results come from a JSON or
-XML feed in the same app - see "Live results" below.
+Race setup sends each race with **0 votes, 0 precincts reporting**. Results come from a feed in the
+same app. If that feed is the **Election Results Monitor API**, the app can also build the races
+themselves from its ballot definition, and then pair results by ID rather than by wording - see
+"Election Results Monitor API" below.
 
 ## Build
 
@@ -83,7 +85,69 @@ project (needs the .NET 8 SDK):
 
     cd tests/ElectionRaceSetup.Tests && dotnet run
 
-## Live results (JSON or XML feed)
+## Election Results Monitor API (the quickest path)
+
+When the feed address is the Election Results Monitor API (schema 2), the app uses its IDs instead
+of matching on wording, and nothing has to be paired by hand.
+
+**Set the races up from the ballot definition.** In the main window click **From API...**, give it
+the address (`http://127.0.0.1:8877`, or its `/api/contests`), and tick the contests you want. Each
+race is created with:
+
+| Race field | From the API |
+| --- | --- |
+| Race ID and Feed ID | `contest_id`, e.g. `ca-governor` - stable and shared across counties |
+| Office | `office`, or `Proposition 1` / `Measure E` from `measure_letter` |
+| Level | `jurisdiction_type` and `level` → NATIONAL, STATE, COUNTY, CITY or DISTRICT |
+| County / City / District | `jurisdiction`, plus `jurisdiction_counties` for a local race |
+| Seat name / number | `seat_type` and `seat_number`; the judge's name for a retention |
+| Winners | `vote_for` (1 when the API reports none) |
+| Type | PROPOSITION, MEASURE or RETENTION |
+| Candidates | `ballot_name`, `first`, `middle`, `last`, `suffix`, `party`, each keeping its candidate ID |
+
+Send those races, import them in Wire Manager once, and the setup is done. **Save as CSV...** keeps a
+copy (including the IDs) so the same setup can be reloaded without the API.
+
+**Then results pair exactly.** Open **Live results...**, point it at the same address and click
+**Fetch now**. The app reads `/api/results`, matches every contest by `contest_id` and every
+candidate by `candidate_id`, adds the counties together, and sends each race once. The line above
+the grid shows each county's status and the ballot version.
+
+**What the app sends to Election Manager** is only what its wire format can read: race ID, winners,
+level, state, county, city, district, office, type, seat, precincts reporting and total, and each
+candidate's name, party and votes (plus the county sub-races when that box is ticked). Everything
+else the API publishes - percentages, under and over votes, turnout, content hashes, thresholds,
+measure titles, source URLs, status labels, warnings - is used inside the app for pairing, safety
+checks and the display, and is never sent on.
+
+**Write-ins** are controlled by the dropdown in the Live results window:
+
+* *named + one Write-in line* (default) - certified write-in candidates are sent under their own
+  names, and the remaining write-in votes as a single "Write-in" line. The votes then add up to
+  each county's printed total.
+* *one Write-in line only* - every write-in vote in one line.
+* *leave out* - ballot candidates only; the votes will be slightly short of the county total.
+
+The write-in line is worked out as the county's contest total less the named candidates, which is
+correct whether a county prints a write-in total row that already contains its named write-ins
+(Monterey, Santa Cruz) or counts them on top (San Benito).
+
+**Safety.** A race is held rather than sent when the API flags that county's copy as unreliable
+(`worst_severity` of `error`, such as `total_mismatch`), when the API raises a county-wide error
+(`votes_before_polls_close`, `election_date_mismatch`), or when the write-in rows contradict each
+other. A county with nothing loaded (`not_started`) contributes nothing; a `zero_report` county is
+sent as the zeros it is, with a note. The app also warns when the API's `election_date` differs
+from the date it is sending under.
+
+**Polling is cheap.** The app sends the API's ETag back on each check, so a poll that finds nothing
+new costs one request and the screen simply notes "no change". The ballot definition is only
+re-read when `ballot_version` moves.
+
+The `sample/` folder holds a replica of the API to try against: `api_contests.json`,
+`api_results.json` (Monterey still a zero report), `api_results_live.json` (all three counties
+reporting) and the XML forms.
+
+## Live results (any other JSON or XML feed)
 
 Results use the same app, the same connection and the same message format as race setup.
 Click **Live results...** in the main window to open the results window (it shares the

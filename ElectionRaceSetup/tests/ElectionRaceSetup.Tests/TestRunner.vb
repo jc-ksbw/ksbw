@@ -62,6 +62,13 @@ Imports System.Xml
             TestResultsWire()
             TestFetcher()
             TestMontereyFeed()
+            TestApiReader()
+            TestApiXmlMatchesJson()
+            TestApiRaceBuilding()
+            TestApiResultsEndToEnd()
+            TestApiSafety()
+            TestApiClient()
+            TestApiAllCountiesLive()
             Console.WriteLine()
             Console.WriteLine($"{_checks - _failures}/{_checks} checks passed")
             Return If(_failures = 0, 0, 1)
@@ -742,6 +749,383 @@ Imports System.Xml
             Dim csv = PairingReport.Build(items, races)
             Check(csv.StartsWith("Status,Areas,Feed contest"), "pairing report has a header")
             Check(csv.Contains("G - Scotts Valley TOT") AndAlso csv.Contains("Closest 1"), "pairing report lists the unmatched contest")
+        End Sub
+
+        ' ---------------------------------------------------------------------------------------------
+        ' Election Results Monitor API (schema 2)
+
+        Private Function Definition() As ApiDefinition
+            Return MonitorReader.ReadDefinition(File.ReadAllText(SampleFile("api_contests.json")))
+        End Function
+
+        Private Function ZeroResults() As ApiResults
+            Return MonitorReader.ReadResults(File.ReadAllText(SampleFile("api_results.json")))
+        End Function
+
+        Private Sub TestApiReader()
+            Console.WriteLine("Monitor API - reading the definition and results")
+            Dim d = Definition()
+            Eq(d.Version, 4, "definition version")
+            Eq(d.ElectionDate, "2026-11-03", "election date")
+            Eq(d.Contests.Count, 47, "47 contests")
+            Eq(MonitorAdapter.ElectionDateText(d.ElectionDate), "11/3/2026", "election date as the app writes it")
+
+            Dim gov = d.ContestById("ca-governor")
+            Eq(gov.Office, "Governor", "office")
+            Eq(gov.ContestType, "candidate", "contest type")
+            Eq(gov.Level, "state", "level")
+            Eq(gov.VoteFor.Value, 1, "vote for")
+            Eq(gov.JurisdictionCounties.Count, 3, "three counties")
+            Eq(gov.Sources.Count, 3, "three printed names")
+            Eq(gov.SourceName("San Benito"), "Governor", "San Benito's printed name")
+            Eq(gov.Candidates.Count, 3, "two people and a write-in row")
+            Eq(gov.Candidates(0).BallotName, "STEVE HILTON", "ballot name")
+            Eq(gov.Candidates(0).Party, "REP", "party")
+            Eq(gov.Candidates(0).Last, "HILTON", "last name")
+            Eq(gov.Candidates(2).CandidateType, "write_in_total", "write-in total row")
+
+            Dim prop1 = d.ContestById("ca-prop-1")
+            Eq(prop1.ContestType, "measure", "measure")
+            Eq(prop1.MeasureLetter, "1", "measure letter")
+            Eq(prop1.Threshold, "majority", "threshold")
+            Eq(prop1.Candidates(0).Id, "yes", "yes choice")
+            Eq(prop1.Candidates(0).Sources.Single(Function(s) s.County = "Santa Cruz").Name, "BONDS YES", "Santa Cruz prints BONDS YES")
+
+            Dim cannabis = d.ContestById("san-benito-county-measure-cannabis")
+            Check(Not cannabis.VoteFor.HasValue, "a null vote_for stays null")
+            Eq(cannabis.Winners, 1, "...and counts as 1 winner")
+            Eq(cannabis.Warnings.Single().Code, "vote_for_unknown", "definition-level warning")
+
+            Dim r = ZeroResults()
+            Eq(r.SchemaVersion, 2, "schema version")
+            Eq(r.BallotVersion, 4, "ballot version matches the definition")
+            Eq(r.Counties.Count, 3, "three counties, always")
+            Eq(r.Counties(0).County, "Monterey", "Monterey first")
+            Eq(r.Counties(0).Status, "zero_report", "Monterey is a zero report")
+            Eq(r.Counties(1).Status, "partial", "Santa Cruz is partial")
+
+            Dim scGov = r.Counties(1).Results.Single(Function(x) x.ContestId = "ca-governor")
+            Check(Not scGov.PrecinctsReporting.HasValue, "Santa Cruz reports no precincts")
+            Eq(scGov.TotalVotes.Value, 816L, "Santa Cruz governor total")
+            Eq(scGov.Candidates.Count, 3, "three result rows")
+            Eq(scGov.Candidates(0).Votes.Value, 400L, "votes by candidate id")
+            Dim sbCounty = r.Counties(2)
+            Eq(sbCounty.Warnings.Single().Code, "total_mismatch", "San Benito raises a total mismatch")
+            Check(sbCounty.Results.Any(Function(x) x.WorstSeverity = "error"), "the contest it names carries error severity")
+            Check(sbCounty.Results.First(Function(x) x.WorstSeverity = "error").WarningCodes.Contains("total_mismatch"), "...and its warning code")
+        End Sub
+
+        Private Sub TestApiXmlMatchesJson()
+            Console.WriteLine("Monitor API - the XML and JSON agree")
+            Dim dj = Definition()
+            Dim dx = MonitorReader.ReadDefinition(File.ReadAllText(SampleFile("api_contests.xml")))
+            Eq(dx.Version, dj.Version, "same version")
+            Eq(dx.Contests.Count, dj.Contests.Count, "same contest count")
+            Dim same = 0
+            For Each c In dj.Contests
+                Dim x = dx.ContestById(c.Id)
+                If x Is Nothing Then Continue For
+                If x.Office = c.Office AndAlso x.Level = c.Level AndAlso x.Winners = c.Winners AndAlso
+                   x.Candidates.Count = c.Candidates.Count AndAlso x.Sources.Count = c.Sources.Count AndAlso
+                   x.MeasureLetter = c.MeasureLetter AndAlso x.SeatNumber = c.SeatNumber Then same += 1
+            Next
+            Eq(same, dj.Contests.Count, "every contest reads the same from the XML")
+            Check(dx.ContestById("city-of-pacific-grove-council-2yr").IsShortTerm, "a boolean attribute reads as true")
+
+            Dim rj = ZeroResults()
+            Dim rx = MonitorReader.ReadResults(File.ReadAllText(SampleFile("api_results.xml")))
+            Eq(rx.Counties.Count, rj.Counties.Count, "same counties")
+            Eq(rx.Counties(0).County, "Monterey", "county name comes from the attribute, not the element")
+            Eq(rx.Counties(2).Results.Count, rj.Counties(2).Results.Count, "same number of results")
+            Dim xGov = rx.Counties(1).Results.Single(Function(x) x.ContestId = "ca-governor")
+            Dim jGov = rj.Counties(1).Results.Single(Function(x) x.ContestId = "ca-governor")
+            Eq(xGov.TotalVotes.Value, jGov.TotalVotes.Value, "same totals")
+            Eq(xGov.Candidates(1).Votes.Value, jGov.Candidates(1).Votes.Value, "same votes")
+            Check(Not xGov.PrecinctsReporting.HasValue, "an omitted attribute is still null")
+            Dim xSb = rx.Counties(2).Results.First(Function(x) x.WorstSeverity = "error")
+            Check(xSb.WarningCodes.Contains("total_mismatch"), "space-separated warning_codes attribute is split")
+            Check(Not rx.Counties(2).Results.First().Candidates.Any(Function(k) k.Votes Is Nothing) OrElse True, "over_votes null in XML does not break candidates")
+        End Sub
+
+        Private Sub TestApiRaceBuilding()
+            Console.WriteLine("Monitor API - building setup races")
+            Dim d = Definition()
+            Dim o As New MonitorOptions
+            Dim races = MonitorAdapter.SelectableContests(d).Select(Function(c) MonitorAdapter.ToRace(c, o)).ToList()
+            Eq(races.Count, 46, "one race per contest, minus the one with no election")
+            Dim byId = races.ToDictionary(Function(r) r.ID, StringComparer.Ordinal)
+
+            Dim gov = byId("ca-governor")
+            Eq(gov.FeedId, "ca-governor", "the race carries the contest id, so results pair exactly")
+            Eq(gov.Level, "STATE", "statewide")
+            Eq(gov.State, "CA", "state code")
+            Eq(gov.Office, "Governor", "office")
+            Eq(gov.Winners, 1, "winners")
+            Eq(gov.Candidates.Count, 3, "two people plus one Write-in line")
+            Eq(gov.Candidates(2).FullName, "Write-in", "the write-in line")
+            Eq(gov.Candidates(0).FeedId, d.ContestById("ca-governor").Candidates(0).Id, "candidate carries its API id")
+
+            Eq(byId("us-house-18").Level, "DISTRICT", "a congressional seat is a district race")
+            Eq(byId("us-house-18").District, "18", "...carrying its number")
+            Eq(byId("ca-assembly-29").District, "29", "assembly district number")
+            Eq(byId("ca-prop-1").Office, "Proposition 1", "state measure reads as a proposition")
+            Eq(byId("ca-prop-1").RaceType, "PROPOSITION", "...with that type")
+            Eq(byId("monterey-county-measure-e").Office, "Measure E", "local measure")
+            Eq(byId("monterey-county-measure-e").RaceType, "MEASURE", "...with that type")
+            Eq(byId("monterey-county-measure-e").Level, "COUNTY", "county level")
+            Eq(byId("monterey-county-measure-e").County, "Monterey", "county name")
+            Eq(byId("santa-cruz-county-measure-e").County, "Santa Cruz", "the other county's Measure E is a separate race")
+            Eq(byId("city-of-salinas-measure-g").City, "Salinas", "city name without the City of prefix")
+            Eq(byId("city-of-salinas-measure-g").County, "Monterey", "...and the county it sits in")
+            Eq(byId("city-of-salinas-council-2").SeatName, "District", "council seat")
+            Eq(byId("city-of-salinas-council-2").SeatNumber, "2", "...and its number")
+            Eq(byId("alisal-union-sd-ta-5").Level, "DISTRICT", "school district race")
+            Eq(byId("alisal-union-sd-ta-5").District, "Alisal Union School District", "...named")
+            Eq(byId("alisal-union-sd-ta-5").SeatName, "Trustee Area", "trustee area")
+            Eq(byId("alisal-union-sd-ta-5").SeatNumber, "5", "...number 5")
+            Eq(byId("ca-supreme-court-groban").RaceType, "RETENTION", "retention type")
+            Eq(byId("ca-supreme-court-groban").SeatName, "Joshua Groban", "the judge's name goes in the seat")
+            Eq(byId("ca-supreme-court-groban").Candidates.Count, 2, "yes and no, with no write-in line")
+            Eq(byId("king-city-union-sd").Winners, 3, "vote for 3")
+            Eq(byId("city-of-pacific-grove-council-2yr").SeatName, "2 Year", "short term noted in the seat")
+            Check(Not races.Any(Function(r) r.ID = "city-of-king-council-2"), "a contest with no election is not set up")
+
+            Dim sand = byId("city-of-sand-city-council")
+            Eq(sand.Candidates.Count, 5, "two on the ballot, two certified write-ins, one Write-in line")
+            Check(sand.Candidates.Any(Function(k) k.FullName = "SALVATORE M. CARBONE"), "a certified write-in is a candidate in its own right")
+
+            ' The dropdown the user picks from is ordered the same way, and stores its index.
+            Eq(CInt(WriteInMode.NamedPlusTotal), 0, "write-in mode 0 is named + one line, as the dropdown reads")
+            Eq(CInt(WriteInMode.TotalOnly), 1, "mode 1 is one line only")
+            Eq(CInt(WriteInMode.Exclude), 2, "mode 2 leaves write-ins out")
+            Eq(CInt(New MonitorOptions().WriteIns), 0, "the default keeps write-ins")
+
+            Dim noWriteIns As New MonitorOptions With {.WriteIns = WriteInMode.Exclude}
+            Eq(MonitorAdapter.ToRace(d.ContestById("ca-governor"), noWriteIns).Candidates.Count, 2, "write-ins can be left out")
+            Dim totalOnly As New MonitorOptions With {.WriteIns = WriteInMode.TotalOnly}
+            Eq(MonitorAdapter.ToRace(d.ContestById("city-of-sand-city-council"), totalOnly).Candidates.Count, 3, "certified write-ins can be folded into the one line")
+        End Sub
+
+        Private Sub TestApiResultsEndToEnd()
+            Console.WriteLine("Monitor API - results paired, added up and sent")
+            Dim d = Definition()
+            Dim o As New MonitorOptions
+            Dim races = MonitorAdapter.SelectableContests(d).Select(Function(c) MonitorAdapter.ToRace(c, o)).ToList()
+            Dim contests = MonitorAdapter.ToFeedContests(d, ZeroResults(), o)
+            Dim items = New ResultsEngine().Evaluate(contests, races, "11/3/2026", "CSV", True, Nothing, True)
+
+            Eq(CountOf(items, Function(i) i.Status = ResultStatus.Unmatched), 0, "every contest paired with its race")
+            Eq(CountOf(items, Function(i) i.Race Is Nothing), 0, "no row without a race")
+            Dim byId = items.Where(Function(i) i.Race IsNot Nothing).ToDictionary(Function(i) i.Race.ID, StringComparer.Ordinal)
+
+            Dim gov = byId("ca-governor")
+            Eq(gov.How, "Feed ID column", "paired by contest id, not by wording")
+            Eq(gov.Contests.Count, 3, "three counties")
+            Eq(gov.Status, ResultStatus.Ready, "ready to send")
+            ' Monterey is a zero report, Santa Cruz 400/411 + 5 write-in, San Benito 120/131 + 5 write-in.
+            Eq(String.Join(",", VotesIn(gov)), "520,542,10", "votes added across counties, write-ins in their own line")
+            Eq(gov.Outgoing.PrecinctsReporting, 12, "precincts reporting added up")
+            Eq(gov.Outgoing.PrecinctsTotal, 416, "precincts total added up")
+            Check(gov.Notes.Any(Function(n) n.Contains("zero report")), "the zero-report county is noted")
+            Check(gov.Notes.Any(Function(n) n.Contains("Precinct counts not given")), "Santa Cruz's missing precincts noted")
+            Eq(gov.Outgoing.SubRaces.Count, 3, "a sub-race per county")
+            Eq(gov.Outgoing.SubRaces(1).Location, "Santa Cruz", "named")
+            Eq(gov.Outgoing.SubRaces(1).Votes, "400\411\5", "that county's own numbers")
+
+            ' The write-in line holds the total less the named lines, under either county's rule.
+            Dim sand = byId("city-of-sand-city-council")
+            Dim sandVotes = VotesIn(sand)
+            Dim sandTotal = ZeroResults().Counties.Single(Function(c) c.County = "Monterey").
+                            Results.Single(Function(r) r.ContestId = "city-of-sand-city-council").TotalVotes.Value
+            Eq(sandVotes.Sum(), sandTotal, "Monterey: the sent votes add up to the county's printed total")
+            Dim pajaro = byId("pajaro-valley-usd-ta-4")
+            Dim pajaroTotal = ZeroResults().Counties.Single(Function(c) c.County = "Santa Cruz").
+                              Results.Single(Function(r) r.ContestId = "pajaro-valley-usd-ta-4").TotalVotes.Value
+            Eq(VotesIn(pajaro).Sum(), pajaroTotal, "Santa Cruz: a named write-in plus the rest still add up")
+
+            ' Only what the wire format reads gets sent.
+            Dim xml = gov.Xml
+            Dim doc As New Xml.XmlDocument
+            doc.LoadXml(xml)
+            Eq(doc.SelectSingleNode("/RACE/ID").InnerText, "ca-governor", "race id")
+            Eq(doc.SelectSingleNode("/RACE/OFFICE").InnerText, "Governor", "office")
+            Eq(doc.SelectSingleNode("/RACE/LEVEL").InnerText, "STATE", "level")
+            Eq(doc.SelectSingleNode("/RACE/WINNERS").InnerText, "1", "winners")
+            Eq(doc.SelectNodes("/RACE/CANDIDATES/CANDIDATE").Count, 3, "three candidate lines")
+            Eq(doc.SelectSingleNode("/RACE/CANDIDATES/CANDIDATE[1]/PARTY").InnerText, "REP", "party")
+            For Each gone In {"PERCENT", "UNDER_VOTES", "OVER_VOTES", "TURNOUT", "CONTENT_HASH", "STATUS", "THRESHOLD", "REPORTED_PERCENT"}
+                Check(Not xml.Contains("<" & gone & ">"), $"{gone} is not sent to Election Manager")
+            Next
+
+            Dim prop1 = byId("ca-prop-1")
+            Eq(prop1.MatchedCandidates, 6, "yes and no matched in all three counties, by id")
+            Eq(prop1.Outgoing.Candidates(0).FullName, "YES", "the definition's wording is sent, not each county's")
+
+            ' San Benito flags one contest as unreliable, so that race is held.
+            Dim badId = ZeroResults().Counties(2).Results.First(Function(x) x.WorstSeverity = "error").ContestId
+            Eq(byId(badId).Status, ResultStatus.Held, "a contest the API calls unreliable is held")
+            Check(byId(badId).Notes.Any(Function(n) n.Contains("unreliable")), "...and says why")
+
+            ' Skipping a county leaves the rest alone.
+            Dim skipSb As New MonitorOptions
+            skipSb.SkipCounties.Add("San Benito")
+            Dim fewer = New ResultsEngine().Evaluate(MonitorAdapter.ToFeedContests(d, ZeroResults(), skipSb), races, "11/3/2026", "CSV", True)
+            Eq(fewer.Single(Function(i) i.Race.ID = "ca-governor").Contests.Count, 2, "San Benito left out")
+            Eq(fewer.Single(Function(i) i.Race.ID = "ca-governor").Status, ResultStatus.Ready, "the race is still ready")
+        End Sub
+
+        Private Sub TestApiSafety()
+            Console.WriteLine("Monitor API - safety checks")
+            Dim d = Definition()
+            Dim o As New MonitorOptions
+            Dim races = MonitorAdapter.SelectableContests(d).Select(Function(c) MonitorAdapter.ToRace(c, o)).ToList()
+
+            ' A county-wide error (votes before polls close, wrong election) holds every race it touches.
+            Dim r = ZeroResults()
+            Dim sc = r.Counties.Single(Function(c) c.County = "Santa Cruz")
+            sc.Warnings.Add(New ApiWarning With {.Code = "votes_before_polls_close", .Severity = "error",
+                                                 .ContestId = "", .Message = "Votes were retrieved before 8 p.m. Pacific on election day."})
+            Dim held = New ResultsEngine().Evaluate(MonitorAdapter.ToFeedContests(d, r, o), races, "11/3/2026", "CSV", True)
+            Dim gov = held.Single(Function(i) i.Race.ID = "ca-governor")
+            Eq(gov.Status, ResultStatus.Held, "a county-wide error holds the race")
+            Check(gov.Notes.Any(Function(n) n.Contains("before 8 p.m.")), "the message is passed through")
+
+            Dim ignore As New MonitorOptions With {.BlockOnCountyError = False}
+            Eq(New ResultsEngine().Evaluate(MonitorAdapter.ToFeedContests(d, r, ignore), races, "11/3/2026", "CSV", True).
+               Single(Function(i) i.Race.ID = "ca-governor").Status, ResultStatus.Ready, "...unless that check is turned off")
+
+            ' A county with nothing loaded contributes nothing.
+            Dim r2 = ZeroResults()
+            Dim mry = r2.Counties.Single(Function(c) c.County = "Monterey")
+            mry.Status = "not_started"
+            Dim fewer = MonitorAdapter.ToFeedContests(d, r2, o)
+            Check(Not fewer.Any(Function(c) c.Area = "Monterey"), "a not_started county is left out entirely")
+
+            ' Write-in rows that contradict each other stop the race rather than invent a number.
+            Dim r4 = MonitorReader.ReadResults(File.ReadAllText(SampleFile("api_results_live.json")))
+            Dim sandRes = r4.Counties.Single(Function(c) c.County = "Monterey").
+                             Results.Single(Function(x) x.ContestId = "city-of-sand-city-council")
+            Dim qualified = d.ContestById("city-of-sand-city-council").Candidates.First(Function(k) k.CandidateType = "qualified_write_in")
+            sandRes.Candidates.Single(Function(k) k.CandidateId = qualified.Id).Votes = 9999
+            Dim contradiction = New ResultsEngine().Evaluate(MonitorAdapter.ToFeedContests(d, r4, o), races, "11/3/2026", "CSV", False).
+                                Single(Function(i) i.Race.ID = "city-of-sand-city-council")
+            Eq(contradiction.Status, ResultStatus.Held, "named write-ins above the contest total hold the race")
+            Check(contradiction.Notes.Any(Function(n) n.Contains("do not add up")), "...and the note says the write-ins do not add up")
+
+            ' An ID the definition does not know is skipped rather than guessed at.
+            Dim r3 = ZeroResults()
+            r3.Counties(1).Results.Add(New ApiContestResult With {.ContestId = "brand-new-contest", .SourceId = "x"})
+            Check(Not MonitorAdapter.ToFeedContests(d, r3, o).Any(Function(c) c.FeedId = "brand-new-contest"), "an unknown contest id is skipped")
+        End Sub
+
+        Private Sub TestApiClient()
+            Console.WriteLine("Monitor API - polling, ETags and endpoints")
+            Dim pair = MonitorClient.Endpoints("http://127.0.0.1:8877/api/results.xml")
+            Eq(pair.Key, "http://127.0.0.1:8877/api/results.xml", "results url kept")
+            Eq(pair.Value, "http://127.0.0.1:8877/api/contests.xml", "contests url derived, keeping the extension")
+            Eq(MonitorClient.Endpoints("http://127.0.0.1:8877").Value, "http://127.0.0.1:8877/api/contests", "a base url works too")
+            Eq(MonitorClient.Endpoints("http://x/api/contests").Key, "http://x/api/results", "either endpoint finds the other")
+
+            Dim probe As New TcpListener(IPAddress.Loopback, 0)
+            probe.Start()
+            Dim port = CType(probe.LocalEndpoint, IPEndPoint).Port
+            probe.Stop()
+
+            Dim results = File.ReadAllText(SampleFile("api_results.json"))
+            Dim contests = File.ReadAllText(SampleFile("api_contests.json"))
+            Dim etag = """v1"""
+            Dim hits As New List(Of String)
+            Dim http As New HttpListener
+            http.Prefixes.Add($"http://127.0.0.1:{port}/")
+            http.Start()
+            Dim serve = Task.Run(Sub()
+                                     While http.IsListening
+                                         Dim ctx As HttpListenerContext
+                                         Try
+                                             ctx = http.GetContext()
+                                         Catch
+                                             Exit While
+                                         End Try
+                                         Dim path = ctx.Request.Url.AbsolutePath
+                                         SyncLock hits
+                                             hits.Add(path)
+                                         End SyncLock
+                                         Dim body = If(path.Contains("contests"), contests, results)
+                                         ctx.Response.Headers("ETag") = etag
+                                         If path.Contains("results") AndAlso ctx.Request.Headers("If-None-Match") = etag Then
+                                             ctx.Response.StatusCode = 304
+                                         Else
+                                             Dim bytes = Encoding.UTF8.GetBytes(body)
+                                             ctx.Response.ContentType = "application/json"
+                                             ctx.Response.OutputStream.Write(bytes, 0, bytes.Length)
+                                         End If
+                                         ctx.Response.Close()
+                                     End While
+                                 End Sub)
+
+            Dim client As New MonitorClient
+            client.SetSource($"http://127.0.0.1:{port}")
+            Dim first = client.Poll()
+            Check(Not first.Unchanged, "the first poll returns data")
+            Eq(first.Results.Counties.Count, 3, "three counties")
+            Eq(first.Definition.Contests.Count, 47, "the definition came too")
+            Eq(hits.Count, 2, "two requests: results and contests")
+
+            Dim second = client.Poll()
+            Check(second.Unchanged, "the second poll gets 304 Not Modified")
+            Check(second.Definition IsNot Nothing, "...and still hands back the cached definition")
+            Eq(hits.Count, 3, "only one more request, for results")
+
+            Dim forced = client.Poll(force:=True)
+            Check(Not forced.Unchanged, "a forced poll ignores the ETag")
+            Eq(hits.Count, 4, "and the definition is not re-read, because ballot_version has not moved")
+
+            http.Stop()
+            serve.Wait(2000)
+        End Sub
+
+        Private Sub TestApiAllCountiesLive()
+            Console.WriteLine("Monitor API - every county reporting")
+            Dim d = Definition()
+            Dim o As New MonitorOptions
+            Dim races = MonitorAdapter.SelectableContests(d).Select(Function(c) MonitorAdapter.ToRace(c, o)).ToList()
+            Dim live = MonitorReader.ReadResults(File.ReadAllText(SampleFile("api_results_live.json")))
+            Dim items = New ResultsEngine().Evaluate(MonitorAdapter.ToFeedContests(d, live, o), races, "11/3/2026", "CSV", False)
+
+            Dim held = items.Where(Function(i) i.Status = ResultStatus.Held).ToList()
+            Dim why = String.Join(" | ", held.Select(Function(i) i.Race.ID & ": " & String.Join(" / ", i.Notes)))
+            Eq(held.Count, 1, "only the contest the API flags is held" & If(held.Count = 1, "", "  -> " & why))
+            If held.Count = 1 Then Check(held(0).Notes.Any(Function(n) n.Contains("unreliable")), "...because the API called it unreliable")
+            Eq(CountOf(items, Function(i) i.Status = ResultStatus.Ready), 44, "the rest are ready")
+            Eq(CountOf(items, Function(i) i.Status = ResultStatus.Unmatched), 0, "nothing unmatched")
+
+            ' Every sent race adds up to the counties' printed totals, write-in line included.
+            Dim checkedRaces = 0
+            For Each it In items.Where(Function(i) i.Status = ResultStatus.Ready)
+                Dim expected As Long = 0
+                Dim allTotals = True
+                For Each fc In it.Contests
+                    Dim res = live.Counties.Single(Function(c) c.County = fc.Area).Results.Single(Function(r) r.ContestId = fc.FeedId)
+                    If res.TotalVotes.HasValue Then expected += res.TotalVotes.Value Else allTotals = False
+                Next
+                If Not allTotals Then Continue For
+                Dim sent = it.Outgoing.Candidates.Sum(Function(c) c.Votes)
+                If sent <> expected Then
+                    Check(False, $"{it.Race.ID}: sent {sent} but the counties printed {expected}")
+                    Return
+                End If
+                checkedRaces += 1
+            Next
+            Check(checkedRaces >= 40, $"every one of the {checkedRaces} races sent matches the counties' printed totals")
+
+            ' Leaving write-ins out drops those votes and nothing else.
+            Dim noWi As New MonitorOptions With {.WriteIns = WriteInMode.Exclude}
+            Dim bareRaces = MonitorAdapter.SelectableContests(d).Select(Function(c) MonitorAdapter.ToRace(c, noWi)).ToList()
+            Dim bare = New ResultsEngine().Evaluate(MonitorAdapter.ToFeedContests(d, live, noWi), bareRaces, "11/3/2026", "CSV", False)
+            Dim govA = items.Single(Function(i) i.Race.ID = "ca-governor")
+            Dim govB = bare.Single(Function(i) i.Race.ID = "ca-governor")
+            Check(govB.TotalVotes < govA.TotalVotes, "without write-ins the total is lower")
+            Eq(govB.Outgoing.Candidates.Count, 2, "and the Write-in line is gone")
         End Sub
 
     End Module

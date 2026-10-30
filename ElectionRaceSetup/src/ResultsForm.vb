@@ -30,6 +30,7 @@ Public Class ResultsForm
     Private _rebuilding As Boolean
     Private _allowClose As Boolean
     Private _warnedDisconnected As Boolean
+    Private _lastSummary As String = ""
 
     Private txtSource As TextBox
     Private txtHeaders As TextBox
@@ -37,6 +38,10 @@ Public Class ResultsForm
     Private txtSkip As TextBox
     Private ckSubs As CheckBox
     Private btnReport As Button
+    Private cboWriteIns As ComboBox
+    Private lblApi As Label
+    Private ReadOnly _monitor As New MonitorClient
+    Private _apiMode As Boolean
     Private numInterval As NumericUpDown
     Private ckAuto As CheckBox
     Private btnPoll As Button
@@ -70,6 +75,7 @@ Public Class ResultsForm
         ckAuto.Checked = s.FeedAuto
         txtSkip.Text = s.FeedSkipAreas
         ckSubs.Checked = s.FeedSubRaces
+        cboWriteIns.SelectedIndex = Math.Max(0, Math.Min(2, s.ApiWriteIns))
 
         For Each kv In CrosswalkStore.Load(_crosswalkPath)
             _engine.Crosswalk(kv.Key) = kv.Value
@@ -122,7 +128,7 @@ Public Class ResultsForm
         btnPoll = New Button With {.Text = "Start polling", .AutoSize = True, .MinimumSize = New Size(100, 27)}
         btnFetch = New Button With {.Text = "Fetch now", .AutoSize = True}
         AddHandler btnPoll.Click, AddressOf OnPollClick
-        AddHandler btnFetch.Click, Sub() FetchNow()
+        AddHandler btnFetch.Click, Sub() FetchNow(force:=True)
         AddHandler ckAuto.CheckedChanged, Sub() SaveSettings()
 
         Dim controlRow As New FlowLayoutPanel With {.Dock = DockStyle.Top, .AutoSize = True, .Padding = New Padding(8, 4, 8, 0)}
@@ -133,6 +139,17 @@ Public Class ResultsForm
                                           End Sub
         controlRow.Controls.AddRange({MakeLabel("Check every (s)"), numInterval, btnPoll, btnFetch, ckAuto, ckSubs})
 
+        cboWriteIns = New ComboBox With {.DropDownStyle = ComboBoxStyle.DropDownList, .Width = 230, .Margin = New Padding(12, 3, 0, 0)}
+        cboWriteIns.Items.AddRange({"Write-ins: named + one Write-in line", "Write-ins: one Write-in line only", "Write-ins: leave out"})
+        cboWriteIns.Visible = False
+        AddHandler cboWriteIns.SelectedIndexChanged, Sub()
+                                                        _main.Settings.ApiWriteIns = cboWriteIns.SelectedIndex
+                                                        SaveSettings()
+                                                        If _apiMode Then FetchNow(force:=True)
+                                                    End Sub
+        controlRow.Controls.Add(cboWriteIns)
+
+        lblApi = New Label With {.Dock = DockStyle.Top, .Height = 22, .Padding = New Padding(10, 4, 0, 0), .ForeColor = Color.FromArgb(70, 70, 70)}
         lblInfo = New Label With {.Dock = DockStyle.Top, .Height = 24, .Padding = New Padding(10, 6, 0, 0)}
         lblSummary = New Label With {.Dock = DockStyle.Top, .Height = 24, .Padding = New Padding(10, 4, 0, 0), .Text = "Fetch the feed to see its contests."}
 
@@ -189,6 +206,7 @@ Public Class ResultsForm
         Controls.Add(logPanel)
         Controls.Add(lblState)
         Controls.Add(lblSummary)
+        Controls.Add(lblApi)
         Controls.Add(lblInfo)
         Controls.Add(controlRow)
         Controls.Add(feedTable)
@@ -279,20 +297,84 @@ Public Class ResultsForm
         UpdateButtons()
     End Sub
 
-    Private Sub FetchNow()
+    ''' <summary>What one fetch produced, whether it came from the monitor API or a plain feed.</summary>
+    Private Class Fetched
+        Public Property Contests As List(Of FeedContest)
+        Public Property Unchanged As Boolean
+        Public Property ApiMode As Boolean
+        Public Property CountyLine As String = ""
+        Public ReadOnly Property Notes As New List(Of String)
+    End Class
+
+    Private Sub FetchNow(Optional force As Boolean = False)
         If _busy Then Return
         Dim source = txtSource.Text.Trim()
         If source = "" Then
-            Log("Enter a feed file or URL first.")
+            Log("Enter a feed address, an API address or a file first.")
             Return
         End If
         _busy = True
         lblSummary.Text = "Fetching..."
+        SaveSettings()                ' so the skip list and write-in choice reach the worker
         Dim headers = txtHeaders.Text
         Dim profilePath = txtProfile.Text.Trim()
-        Dim work = Task.Run(Function() FeedFetcher.Load(source, headers, profilePath))
+        Dim options = _main.ApiOptions()
+        Dim work = Task.Run(Function() Pull(source, headers, profilePath, options, force))
         work.ContinueWith(Sub(t) UiInvoke(Sub() OnFetched(t)))
     End Sub
+
+    ''' <summary>
+    ''' Runs on a worker thread. Tries the Election Results Monitor API first, because it pairs by ID;
+    ''' anything else is read as a plain results feed.
+    ''' </summary>
+    Private Function Pull(source As String, headers As String, profilePath As String,
+                          options As MonitorOptions, force As Boolean) As Fetched
+        Dim outcome As New Fetched
+        _monitor.Headers = headers
+
+        If _monitor.ResultsUrl = "" OrElse Not String.Equals(_monitor.ResultsUrl, MonitorClient.Endpoints(source).Key, StringComparison.OrdinalIgnoreCase) Then
+            _monitor.SetSource(source)
+        End If
+
+        Dim probe As FetchResult = Nothing
+        Try
+            probe = _monitor.Fetch(_monitor.ResultsUrl)
+        Catch ex As Exception
+            ' Not the API, or not reachable there: fall back to reading the address as a plain feed.
+        End Try
+
+        If probe IsNot Nothing AndAlso probe.Text <> "" Then
+            Dim looksApi = False
+            Try
+                looksApi = MonitorReader.LooksLikeResults(FeedNode.ParseAny(probe.Text))
+            Catch
+            End Try
+            If looksApi Then
+                outcome.ApiMode = True
+                Dim snap = _monitor.Poll(force)
+                outcome.Notes.AddRange(snap.Notes)
+                If snap.Unchanged OrElse snap.Results Is Nothing Then
+                    outcome.Unchanged = True
+                    Return outcome
+                End If
+                outcome.Contests = MonitorAdapter.ToFeedContests(snap.Definition, snap.Results, options)
+                outcome.CountyLine = "Counties: " & String.Join("   ", snap.Results.Counties.Select(
+                    Function(c) $"{c.County} {c.Status.Replace("_", " ")}" & If(c.ErrorText <> "", " (check failed)", ""))) &
+                    $"   ballot version {snap.Results.BallotVersion}"
+                Dim apiDate = MonitorAdapter.ElectionDateText(snap.Results.ElectionDate)
+                If apiDate <> "" AndAlso apiDate <> _main.ElectionDateText() Then
+                    outcome.Notes.Add($"The API's election date is {apiDate} but this app is sending {_main.ElectionDateText()}.")
+                End If
+                For Each c In snap.Results.Counties
+                    If c.ErrorText <> "" Then outcome.Notes.Add($"{c.County}: last check failed - {c.ErrorText}")
+                Next
+                Return outcome
+            End If
+        End If
+
+        outcome.Contests = FeedFetcher.Load(source, headers, profilePath)
+        Return outcome
+    End Function
 
     Private Sub UiInvoke(action As Action)
         If IsDisposed OrElse Not IsHandleCreated Then Return
@@ -303,7 +385,7 @@ Public Class ResultsForm
         End Try
     End Sub
 
-    Private Sub OnFetched(t As Task(Of List(Of FeedContest)))
+    Private Sub OnFetched(t As Task(Of Fetched))
         _busy = False
         If t.IsFaulted OrElse t.IsCanceled Then
             Dim msg = If(t.Exception IsNot Nothing, t.Exception.GetBaseException().Message, "cancelled")
@@ -311,8 +393,27 @@ Public Class ResultsForm
             Log("Feed error: " & msg)
             Return
         End If
-        _contests = t.Result
-        If _contests.Count = 0 Then Log("The feed was read but no contests were found. Try a mapping file.")
+
+        Dim got = t.Result
+        _apiMode = got.ApiMode
+        cboWriteIns.Visible = got.ApiMode
+        txtProfile.Enabled = Not got.ApiMode
+        If got.CountyLine <> "" Then lblApi.Text = got.CountyLine
+        For Each n In got.Notes
+            Log("  ! " & n)
+        Next
+
+        If got.Unchanged Then
+            ' The API says nothing has moved, so the rows on screen are still current.
+            lblSummary.Text = If(_lastSummary <> "", _lastSummary, "No change.") & $"   (no change at {Date.Now:HH:mm:ss})"
+            UpdateButtons()
+            Return
+        End If
+
+        _contests = got.Contests
+        If _contests.Count = 0 Then
+            Log(If(got.ApiMode, "The API returned no county results yet.", "The feed was read but no contests were found. Try a mapping file."))
+        End If
         Reevaluate()
         If ckAuto.Checked Then AutoSend()
     End Sub
@@ -334,8 +435,9 @@ Public Class ResultsForm
         Dim paired = New HashSet(Of String)(_items.Where(Function(it) it.Race IsNot Nothing).Select(Function(it) it.Race.ID), StringComparer.OrdinalIgnoreCase)
         Dim missing = races.Where(Function(r) Not paired.Contains(r.ID)).Count()
         Dim fedContests = _items.Sum(Function(it) it.Contests.Count)
-        lblSummary.Text = $"{_items.Count} races/contests from {fedContests} feed contests: {ready} ready, {held} held, {none} with no match, {same} unchanged." &
-                          If(_engine.SkippedCount > 0, $"  {_engine.SkippedCount} skipped.", "") & $"  {missing} setup race(s) have no feed data."
+        _lastSummary = $"{_items.Count} races/contests from {fedContests} feed contests: {ready} ready, {held} held, {none} with no match, {same} unchanged." &
+                       If(_engine.SkippedCount > 0, $"  {_engine.SkippedCount} skipped.", "") & $"  {missing} setup race(s) have no feed data."
+        lblSummary.Text = _lastSummary
         UpdateButtons()
     End Sub
 

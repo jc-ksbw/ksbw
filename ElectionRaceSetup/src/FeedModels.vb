@@ -13,6 +13,9 @@ Public Class FeedCandidate
 
     ''' <summary>The feed itself marks this as a write-in.</summary>
     Public Property WriteIn As Boolean
+
+    ''' <summary>The candidate's ID in the feed, when it has one (the monitor API gives one).</summary>
+    Public Property CandidateId As String = ""
 End Class
 
 ''' <summary>One contest (race) as the feed describes it, before it is paired with a setup race.</summary>
@@ -34,8 +37,20 @@ Public Class FeedContest
     ''' <summary>The county (or other reporting area) this contest was reported under. Blank if the feed has no such grouping.</summary>
     Public Property Area As String = ""
 
-    ''' <summary>From a "(Vote for N)" in the contest name.</summary>
+    ''' <summary>From a "(Vote for N)" in the contest name, or the API's vote_for.</summary>
     Public Property Winners As Integer?
+
+    ''' <summary>API only: candidate, measure or retention.</summary>
+    Public Property ContestType As String = ""
+
+    ''' <summary>API only: the county's status - zero_report, partial, final, certified.</summary>
+    Public Property CountyStatus As String = ""
+
+    ''' <summary>API only: the worst severity among warnings naming this contest in this county.</summary>
+    Public Property WorstSeverity As String = ""
+
+    ''' <summary>Reasons this county's numbers must not be sent automatically.</summary>
+    Public ReadOnly Property Blockers As New List(Of String)
     Public ReadOnly Property Candidates As New List(Of FeedCandidate)
     Public ReadOnly Property Warnings As New List(Of String)
 

@@ -1,0 +1,809 @@
+<?xml version="1.0" encoding="utf-8"?>
+<contests version="4" updated_at="2026-11-04T05:30:00Z" election_date="2026-11-03">
+<contest id="ca-governor" contest_type="candidate" status="contested" level="state" jurisdiction="California" jurisdiction_type="state" office="Governor" seat_type="single_office" vote_for="1" is_short_term="false">
+<jurisdiction_county>Monterey</jurisdiction_county>
+<jurisdiction_county>Santa Cruz</jurisdiction_county>
+<jurisdiction_county>San Benito</jurisdiction_county>
+<source county="Monterey" source_id="Governor (Vote for 1)" source_name="Governor (Vote for 1)"/>
+<source county="Santa Cruz" source_id="NameRace_9" source_name="Governor (Vote for 1)"/>
+<source county="San Benito" source_id="san-benito:governor" source_name="Governor"/>
+<candidate id="c_bdd0ad2d3f" candidate_type="ballot" candidate_status="active" ballot_name="STEVE HILTON" first="STEVE" last="HILTON" party="REP">
+<source county="Monterey" ballot_name="STEVE HILTON"/>
+<source county="Santa Cruz" ballot_name="STEVE HILTON"/>
+<source county="San Benito" ballot_name="STEVE HILTON"/>
+</candidate>
+<candidate id="c_7d87819f1a" candidate_type="ballot" candidate_status="active" ballot_name="XAVIER BECERRA" first="XAVIER" last="BECERRA" party="DEM">
+<source county="Monterey" ballot_name="XAVIER BECERRA"/>
+<source county="Santa Cruz" ballot_name="XAVIER BECERRA"/>
+<source county="San Benito" ballot_name="XAVIER BECERRA"/>
+</candidate>
+<candidate id="write_in_total" candidate_type="write_in_total" candidate_status="active" ballot_name="Write-in" label="Write-in">
+<source county="Monterey" ballot_name="Write-in"/>
+<source county="Santa Cruz" ballot_name="Write-in"/>
+<source county="San Benito" ballot_name="Write-in"/>
+</candidate>
+</contest>
+<contest id="ca-lieutenant-governor" contest_type="candidate" status="contested" level="state" jurisdiction="California" jurisdiction_type="state" office="Lieutenant Governor" seat_type="single_office" vote_for="1" is_short_term="false">
+<jurisdiction_county>Monterey</jurisdiction_county>
+<jurisdiction_county>Santa Cruz</jurisdiction_county>
+<jurisdiction_county>San Benito</jurisdiction_county>
+<source county="Monterey" source_id="Lieutenant Governor (Vote for 1)" source_name="Lieutenant Governor (Vote for 1)"/>
+<source county="Santa Cruz" source_id="NameRace_33" source_name="Lieutenant Governor (Vote for 1)"/>
+<source county="San Benito" source_id="san-benito:governor" source_name="Lieutenant Governor"/>
+<candidate id="c_bf3609bda8" candidate_type="ballot" candidate_status="active" ballot_name="GLORIA ROMERO" first="GLORIA" last="ROMERO" party="REP">
+<source county="Monterey" ballot_name="GLORIA ROMERO"/>
+<source county="Santa Cruz" ballot_name="GLORIA ROMERO"/>
+<source county="San Benito" ballot_name="GLORIA ROMERO"/>
+</candidate>
+<candidate id="c_bd3fafb333" candidate_type="ballot" candidate_status="active" ballot_name="FIONA MA" first="FIONA" last="MA" party="DEM">
+<source county="Monterey" ballot_name="FIONA MA"/>
+<source county="Santa Cruz" ballot_name="FIONA MA"/>
+<source county="San Benito" ballot_name="FIONA MA"/>
+</candidate>
+<candidate id="write_in_total" candidate_type="write_in_total" candidate_status="active" ballot_name="Write-in" label="Write-in">
+<source county="Monterey" ballot_name="Write-in"/>
+<source county="Santa Cruz" ballot_name="Write-in"/>
+<source county="San Benito" ballot_name="Write-in"/>
+</candidate>
+</contest>
+<contest id="ca-secretary-of-state" contest_type="candidate" status="contested" level="state" jurisdiction="California" jurisdiction_type="state" office="Secretary of State" seat_type="single_office" vote_for="1" is_short_term="false">
+<jurisdiction_county>Monterey</jurisdiction_county>
+<jurisdiction_county>Santa Cruz</jurisdiction_county>
+<jurisdiction_county>San Benito</jurisdiction_county>
+<source county="Monterey" source_id="Secretary of State (Vote for 1)" source_name="Secretary of State (Vote for 1)"/>
+<source county="Santa Cruz" source_id="NameRace_44" source_name="Secretary of State (Vote for 1)"/>
+<source county="San Benito" source_id="san-benito:state" source_name="Secretary of State"/>
+<candidate id="c_59d4df385b" candidate_type="ballot" candidate_status="active" ballot_name="DONALD P. (DON) WAGNER" first="DONALD" middle="P. (DON)" last="WAGNER" party="REP">
+<source county="Monterey" ballot_name="DONALD P. (DON) WAGNER"/>
+<source county="Santa Cruz" ballot_name="DONALD P. (DON) WAGNER"/>
+<source county="San Benito" ballot_name="DONALD P. (DON) WAGNER"/>
+</candidate>
+<candidate id="c_420f465bf4" candidate_type="ballot" candidate_status="active" ballot_name="SHIRLEY N. WEBER" first="SHIRLEY" middle="N." last="WEBER" party="DEM">
+<source county="Monterey" ballot_name="SHIRLEY N. WEBER"/>
+<source county="Santa Cruz" ballot_name="SHIRLEY N. WEBER"/>
+<source county="San Benito" ballot_name="SHIRLEY N. WEBER"/>
+</candidate>
+<candidate id="write_in_total" candidate_type="write_in_total" candidate_status="active" ballot_name="Write-in" label="Write-in">
+<source county="Monterey" ballot_name="Write-in"/>
+<source county="Santa Cruz" ballot_name="Write-in"/>
+<source county="San Benito" ballot_name="Write-in"/>
+</candidate>
+</contest>
+<contest id="ca-controller" contest_type="candidate" status="contested" level="state" jurisdiction="California" jurisdiction_type="state" office="Controller" seat_type="single_office" vote_for="1" is_short_term="false">
+<jurisdiction_county>Monterey</jurisdiction_county>
+<jurisdiction_county>Santa Cruz</jurisdiction_county>
+<jurisdiction_county>San Benito</jurisdiction_county>
+<source county="Monterey" source_id="Controller (Vote for 1)" source_name="Controller (Vote for 1)"/>
+<source county="Santa Cruz" source_id="NameRace_24" source_name="Controller (Vote for 1)"/>
+<source county="San Benito" source_id="san-benito:controller" source_name="Controller"/>
+<candidate id="c_7e311215ff" candidate_type="ballot" candidate_status="active" ballot_name="MALIA M. COHEN" first="MALIA" middle="M." last="COHEN" party="DEM">
+<source county="Monterey" ballot_name="MALIA M. COHEN"/>
+<source county="Santa Cruz" ballot_name="MALIA M. COHEN"/>
+<source county="San Benito" ballot_name="MALIA M. COHEN"/>
+</candidate>
+<candidate id="c_4ebea55a89" candidate_type="ballot" candidate_status="active" ballot_name="HERB W MORGAN" first="HERB" middle="W" last="MORGAN" party="REP">
+<source county="Monterey" ballot_name="HERB W MORGAN"/>
+<source county="Santa Cruz" ballot_name="HERB W MORGAN"/>
+<source county="San Benito" ballot_name="HERB W MORGAN"/>
+</candidate>
+<candidate id="c_2289af25cc" candidate_type="ballot" candidate_status="active" ballot_name="MEGHANN ADAMS" first="MEGHANN" last="ADAMS" party="PF">
+<source county="Monterey" ballot_name="MEGHANN ADAMS"/>
+<source county="Santa Cruz" ballot_name="MEGHANN ADAMS"/>
+<source county="San Benito" ballot_name="MEGHANN ADAMS"/>
+</candidate>
+<candidate id="unqualified_write_in" candidate_type="unqualified_write_in" candidate_status="active" ballot_name="Unqualified Write In" label="Unqualified Write In">
+<source county="Monterey" ballot_name="Unqualified Write In"/>
+<source county="Santa Cruz" ballot_name="Unqualified Write In"/>
+<source county="San Benito" ballot_name="Unqualified Write In"/>
+</candidate>
+</contest>
+<contest id="ca-treasurer" contest_type="candidate" status="contested" level="state" jurisdiction="California" jurisdiction_type="state" office="Treasurer" seat_type="single_office" vote_for="1" is_short_term="false">
+<jurisdiction_county>Monterey</jurisdiction_county>
+<jurisdiction_county>Santa Cruz</jurisdiction_county>
+<jurisdiction_county>San Benito</jurisdiction_county>
+<source county="Monterey" source_id="State Treasurer (Vote for 1)" source_name="State Treasurer (Vote for 1)"/>
+<source county="Santa Cruz" source_id="NameRace_81" source_name="Treasurer (Vote for 1)"/>
+<source county="San Benito" source_id="san-benito:treasurer" source_name="Treasurer"/>
+<candidate id="c_aae3caddda" candidate_type="ballot" candidate_status="active" ballot_name="JENNIFER HAWKS" first="JENNIFER" last="HAWKS" party="REP">
+<source county="Monterey" ballot_name="JENNIFER HAWKS"/>
+<source county="Santa Cruz" ballot_name="JENNIFER HAWKS"/>
+<source county="San Benito" ballot_name="JENNIFER HAWKS"/>
+</candidate>
+<candidate id="c_a8f18d793e" candidate_type="ballot" candidate_status="active" ballot_name="ELENI KOUNALAKIS" first="ELENI" last="KOUNALAKIS" party="DEM">
+<source county="Monterey" ballot_name="ELENI KOUNALAKIS"/>
+<source county="Santa Cruz" ballot_name="ELENI KOUNALAKIS"/>
+<source county="San Benito" ballot_name="ELENI KOUNALAKIS"/>
+</candidate>
+<candidate id="write_in_total" candidate_type="write_in_total" candidate_status="active" ballot_name="Write-in" label="Write-in">
+<source county="Monterey" ballot_name="Write-in"/>
+<source county="Santa Cruz" ballot_name="Write-in"/>
+<source county="San Benito" ballot_name="Write-in"/>
+</candidate>
+</contest>
+<contest id="ca-attorney-general" contest_type="candidate" status="contested" level="state" jurisdiction="California" jurisdiction_type="state" office="Attorney General" seat_type="single_office" vote_for="1" is_short_term="false">
+<jurisdiction_county>Monterey</jurisdiction_county>
+<jurisdiction_county>Santa Cruz</jurisdiction_county>
+<jurisdiction_county>San Benito</jurisdiction_county>
+<source county="Monterey" source_id="Attorney General (Vote for 1)" source_name="Attorney General (Vote for 1)"/>
+<source county="Santa Cruz" source_id="NameRace_16" source_name="Attorney General (Vote for 1)"/>
+<source county="San Benito" source_id="san-benito:general" source_name="Attorney General"/>
+<candidate id="c_7c49735e10" candidate_type="ballot" candidate_status="active" ballot_name="ROB BONTA" first="ROB" last="BONTA" party="DEM">
+<source county="Monterey" ballot_name="ROB BONTA"/>
+<source county="Santa Cruz" ballot_name="ROB BONTA"/>
+<source county="San Benito" ballot_name="ROB BONTA"/>
+</candidate>
+<candidate id="c_8cd587f2d1" candidate_type="ballot" candidate_status="active" ballot_name="MICHAEL E. GATES" first="MICHAEL" middle="E." last="GATES" party="REP">
+<source county="Monterey" ballot_name="MICHAEL E. GATES"/>
+<source county="Santa Cruz" ballot_name="MICHAEL E. GATES"/>
+<source county="San Benito" ballot_name="MICHAEL E. GATES"/>
+</candidate>
+<candidate id="write_in_total" candidate_type="write_in_total" candidate_status="active" ballot_name="Write-in" label="Write-in">
+<source county="Monterey" ballot_name="Write-in"/>
+<source county="Santa Cruz" ballot_name="Write-in"/>
+<source county="San Benito" ballot_name="Write-in"/>
+</candidate>
+</contest>
+<contest id="ca-insurance-commissioner" contest_type="candidate" status="contested" level="state" jurisdiction="California" jurisdiction_type="state" office="Insurance Commissioner" seat_type="single_office" vote_for="1" is_short_term="false">
+<jurisdiction_county>Monterey</jurisdiction_county>
+<jurisdiction_county>Santa Cruz</jurisdiction_county>
+<jurisdiction_county>San Benito</jurisdiction_county>
+<source county="Monterey" source_id="Insurance Commissioner (Vote for 1)" source_name="Insurance Commissioner (Vote for 1)"/>
+<source county="Santa Cruz" source_id="NameRace_45" source_name="Insurance Commissioner (Vote for 1)"/>
+<source county="San Benito" source_id="san-benito:commissioner" source_name="Insurance Commissioner"/>
+<candidate id="c_79d997e365" candidate_type="ballot" candidate_status="active" ballot_name="JANE KIM" first="JANE" last="KIM" party="DEM">
+<source county="Monterey" ballot_name="JANE KIM"/>
+<source county="Santa Cruz" ballot_name="JANE KIM"/>
+<source county="San Benito" ballot_name="JANE KIM"/>
+</candidate>
+<candidate id="c_0101fca04d" candidate_type="ballot" candidate_status="active" ballot_name="BEN ALLEN" first="BEN" last="ALLEN" party="DEM">
+<source county="Monterey" ballot_name="BEN ALLEN"/>
+<source county="Santa Cruz" ballot_name="BEN ALLEN"/>
+<source county="San Benito" ballot_name="BEN ALLEN"/>
+</candidate>
+<candidate id="write_in_total" candidate_type="write_in_total" candidate_status="active" ballot_name="Write-in" label="Write-in">
+<source county="Monterey" ballot_name="Write-in"/>
+<source county="Santa Cruz" ballot_name="Write-in"/>
+<source county="San Benito" ballot_name="Write-in"/>
+</candidate>
+</contest>
+<contest id="ca-boe-2" contest_type="candidate" status="contested" level="state" jurisdiction="California" jurisdiction_type="state" office="Board of Equalization Member" seat_type="district" seat_number="2" vote_for="1" is_short_term="false">
+<jurisdiction_county>Monterey</jurisdiction_county>
+<jurisdiction_county>Santa Cruz</jurisdiction_county>
+<jurisdiction_county>San Benito</jurisdiction_county>
+<source county="Monterey" source_id="State Board of Equalization Board Member District 2 (Vote for 1)" source_name="State Board of Equalization Board Member District 2 (Vote for 1)"/>
+<source county="Santa Cruz" source_id="NameRace_89" source_name="Board of Equalization, District 2 (Vote for 1)"/>
+<source county="San Benito" source_id="san-benito:2" source_name="Member State Board of Equal. District 2"/>
+<candidate id="c_11ec9f56d0" candidate_type="ballot" candidate_status="active" ballot_name="JOHN PIMENTEL" first="JOHN" last="PIMENTEL" party="DEM">
+<source county="Monterey" ballot_name="JOHN PIMENTEL"/>
+<source county="Santa Cruz" ballot_name="JOHN PIMENTEL"/>
+<source county="San Benito" ballot_name="JOHN PIMENTEL"/>
+</candidate>
+<candidate id="c_b131cda65a" candidate_type="ballot" candidate_status="active" ballot_name="SALLY J. LIEBER" first="SALLY" middle="J." last="LIEBER" party="DEM">
+<source county="Monterey" ballot_name="SALLY J. LIEBER"/>
+<source county="Santa Cruz" ballot_name="SALLY J. LIEBER"/>
+<source county="San Benito" ballot_name="SALLY J. LIEBER"/>
+</candidate>
+<candidate id="write_in_total" candidate_type="write_in_total" candidate_status="active" ballot_name="Write-in" label="Write-in">
+<source county="Monterey" ballot_name="Write-in"/>
+<source county="Santa Cruz" ballot_name="Write-in"/>
+<source county="San Benito" ballot_name="Write-in"/>
+</candidate>
+</contest>
+<contest id="ca-superintendent" contest_type="candidate" status="contested" level="state" jurisdiction="California" jurisdiction_type="state" office="Superintendent of Public Instruction" seat_type="single_office" vote_for="1" is_short_term="false">
+<jurisdiction_county>Monterey</jurisdiction_county>
+<jurisdiction_county>Santa Cruz</jurisdiction_county>
+<jurisdiction_county>San Benito</jurisdiction_county>
+<source county="Monterey" source_id="Superintendent of Public Instruction (Vote for 1)" source_name="Superintendent of Public Instruction (Vote for 1)"/>
+<source county="Santa Cruz" source_id="NameRace_1" source_name="Superintendent of Public Instruction (Vote for 1)"/>
+<source county="San Benito" source_id="san-benito:superintendent" source_name="State Superintendent of Public Instruction"/>
+<candidate id="c_23e68353eb" candidate_type="ballot" candidate_status="active" ballot_name="SONJA SHAW" first="SONJA" last="SHAW">
+<source county="Monterey" ballot_name="SONJA SHAW"/>
+<source county="Santa Cruz" ballot_name="SONJA SHAW"/>
+<source county="San Benito" ballot_name="SONJA SHAW"/>
+</candidate>
+<candidate id="c_ab59582f95" candidate_type="ballot" candidate_status="active" ballot_name="RICHARD BARRERA" first="RICHARD" last="BARRERA">
+<source county="Monterey" ballot_name="RICHARD BARRERA"/>
+<source county="Santa Cruz" ballot_name="RICHARD BARRERA"/>
+<source county="San Benito" ballot_name="RICHARD BARRERA"/>
+</candidate>
+<candidate id="write_in_total" candidate_type="write_in_total" candidate_status="active" ballot_name="Write-in" label="Write-in">
+<source county="Monterey" ballot_name="Write-in"/>
+<source county="Santa Cruz" ballot_name="Write-in"/>
+<source county="San Benito" ballot_name="Write-in"/>
+</candidate>
+</contest>
+<contest id="us-house-18" contest_type="candidate" status="contested" level="federal" jurisdiction="18th Congressional District" jurisdiction_type="state" office="United States Representative" seat_type="district" seat_number="18" vote_for="1" is_short_term="false">
+<jurisdiction_county>Monterey</jurisdiction_county>
+<jurisdiction_county>Santa Cruz</jurisdiction_county>
+<jurisdiction_county>San Benito</jurisdiction_county>
+<source county="Monterey" source_id="United States Representative District 18 (Vote for 1)" source_name="United States Representative District 18 (Vote for 1)"/>
+<source county="Santa Cruz" source_id="NameRace_53" source_name="US Representative 18th Congressional District (Vote for 1)"/>
+<source county="San Benito" source_id="san-benito:18" source_name="US Congress District 18"/>
+<candidate id="c_40a992f38f" candidate_type="ballot" candidate_status="active" ballot_name="ZOE LOFGREN" first="ZOE" last="LOFGREN" party="DEM">
+<source county="Monterey" ballot_name="ZOE LOFGREN"/>
+<source county="Santa Cruz" ballot_name="ZOE LOFGREN"/>
+<source county="San Benito" ballot_name="ZOE LOFGREN"/>
+</candidate>
+<candidate id="c_dc946b2770" candidate_type="ballot" candidate_status="active" ballot_name="SHANE LEWIS" first="SHANE" last="LEWIS" party="REP">
+<source county="Monterey" ballot_name="SHANE LEWIS"/>
+<source county="Santa Cruz" ballot_name="SHANE LEWIS"/>
+<source county="San Benito" ballot_name="SHANE LEWIS"/>
+</candidate>
+<candidate id="write_in_total" candidate_type="write_in_total" candidate_status="active" ballot_name="Write-in" label="Write-in">
+<source county="Monterey" ballot_name="Write-in"/>
+<source county="Santa Cruz" ballot_name="Write-in"/>
+<source county="San Benito" ballot_name="Write-in"/>
+</candidate>
+</contest>
+<contest id="us-house-19" contest_type="candidate" status="contested" level="federal" jurisdiction="19th Congressional District" jurisdiction_type="state" office="United States Representative" seat_type="district" seat_number="19" vote_for="1" is_short_term="false">
+<jurisdiction_county>Monterey</jurisdiction_county>
+<jurisdiction_county>Santa Cruz</jurisdiction_county>
+<source county="Monterey" source_id="United States Representative District 19 (Vote for 1)" source_name="United States Representative District 19 (Vote for 1)"/>
+<source county="Santa Cruz" source_id="NameRace_24" source_name="US Representative 19th Congressional District (Vote for 1)"/>
+<candidate id="c_8471ea8fd0" candidate_type="ballot" candidate_status="active" ballot_name="JIMMY PANETTA" first="JIMMY" last="PANETTA" party="DEM">
+<source county="Monterey" ballot_name="JIMMY PANETTA"/>
+<source county="Santa Cruz" ballot_name="JIMMY PANETTA"/>
+</candidate>
+<candidate id="c_9eb8d6b0d3" candidate_type="ballot" candidate_status="active" ballot_name="PETER COE VERBICA" first="PETER" middle="COE" last="VERBICA" party="REP">
+<source county="Monterey" ballot_name="PETER COE VERBICA"/>
+<source county="Santa Cruz" ballot_name="PETER COE VERBICA"/>
+</candidate>
+<candidate id="write_in_total" candidate_type="write_in_total" candidate_status="active" ballot_name="Write-in" label="Write-in">
+<source county="Monterey" ballot_name="Write-in"/>
+<source county="Santa Cruz" ballot_name="Write-in"/>
+</candidate>
+</contest>
+<contest id="ca-assembly-28" contest_type="candidate" status="contested" level="state" jurisdiction="28th Assembly District" jurisdiction_type="state" office="Member of the State Assembly" seat_type="district" seat_number="28" vote_for="1" is_short_term="false">
+<jurisdiction_county>Santa Cruz</jurisdiction_county>
+<source county="Santa Cruz" source_id="NameRace_61" source_name="State Assembly Member 28th District (Vote for 1)"/>
+<candidate id="c_b1013e8dfc" candidate_type="ballot" candidate_status="active" ballot_name="CAROL PEFLEY" first="CAROL" last="PEFLEY" party="REP">
+<source county="Santa Cruz" ballot_name="CAROL PEFLEY"/>
+</candidate>
+<candidate id="c_b3ef757c62" candidate_type="ballot" candidate_status="active" ballot_name="GAIL PELLERIN" first="GAIL" last="PELLERIN" party="DEM">
+<source county="Santa Cruz" ballot_name="GAIL PELLERIN"/>
+</candidate>
+<candidate id="write_in_total" candidate_type="write_in_total" candidate_status="active" ballot_name="Write-in" label="Write-in">
+<source county="Santa Cruz" ballot_name="Write-in"/>
+</candidate>
+</contest>
+<contest id="ca-assembly-29" contest_type="candidate" status="contested" level="state" jurisdiction="29th Assembly District" jurisdiction_type="state" office="Member of the State Assembly" seat_type="district" seat_number="29" vote_for="1" is_short_term="false">
+<jurisdiction_county>Monterey</jurisdiction_county>
+<jurisdiction_county>Santa Cruz</jurisdiction_county>
+<jurisdiction_county>San Benito</jurisdiction_county>
+<source county="Monterey" source_id="Member of the State Assembly District 29 (Vote for 1)" source_name="Member of the State Assembly District 29 (Vote for 1)"/>
+<source county="Santa Cruz" source_id="NameRace_89" source_name="State Assembly Member 29th District (Vote for 1)"/>
+<source county="San Benito" source_id="san-benito:29" source_name="Member of the State Assembly District 29"/>
+<candidate id="c_7516655173" candidate_type="ballot" candidate_status="active" ballot_name="DENNIS P. SANCHEZ" first="DENNIS" middle="P." last="SANCHEZ" party="REP">
+<source county="Monterey" ballot_name="DENNIS P. SANCHEZ"/>
+<source county="Santa Cruz" ballot_name="DENNIS P. SANCHEZ"/>
+<source county="San Benito" ballot_name="DENNIS P. SANCHEZ"/>
+</candidate>
+<candidate id="c_d718b43392" candidate_type="ballot" candidate_status="active" ballot_name="ROBERT RIVAS" first="ROBERT" last="RIVAS" party="DEM">
+<source county="Monterey" ballot_name="ROBERT RIVAS"/>
+<source county="Santa Cruz" ballot_name="ROBERT RIVAS"/>
+<source county="San Benito" ballot_name="ROBERT RIVAS"/>
+</candidate>
+<candidate id="write_in_total" candidate_type="write_in_total" candidate_status="active" ballot_name="Write-in" label="Write-in">
+<source county="Monterey" ballot_name="Write-in"/>
+<source county="Santa Cruz" ballot_name="Write-in"/>
+<source county="San Benito" ballot_name="Write-in"/>
+</candidate>
+</contest>
+<contest id="ca-assembly-30" contest_type="candidate" status="contested" level="state" jurisdiction="30th Assembly District" jurisdiction_type="state" office="Member of the State Assembly" seat_type="district" seat_number="30" vote_for="1" is_short_term="false">
+<jurisdiction_county>Monterey</jurisdiction_county>
+<jurisdiction_county>Santa Cruz</jurisdiction_county>
+<source county="Monterey" source_id="Member of the State Assembly District 30 (Vote for 1)" source_name="Member of the State Assembly District 30 (Vote for 1)"/>
+<source county="Santa Cruz" source_id="NameRace_8" source_name="State Assembly Member 30th District (Vote for 1)"/>
+<candidate id="c_f47c7c4d08" candidate_type="ballot" candidate_status="active" ballot_name="DAWN ADDIS" first="DAWN" last="ADDIS" party="DEM">
+<source county="Monterey" ballot_name="DAWN ADDIS"/>
+<source county="Santa Cruz" ballot_name="DAWN ADDIS"/>
+</candidate>
+<candidate id="c_5d208c74a7" candidate_type="ballot" candidate_status="active" ballot_name="SHANNON KESSLER" first="SHANNON" last="KESSLER" party="REP">
+<source county="Monterey" ballot_name="SHANNON KESSLER"/>
+<source county="Santa Cruz" ballot_name="SHANNON KESSLER"/>
+</candidate>
+<candidate id="write_in_total" candidate_type="write_in_total" candidate_status="active" ballot_name="Write-in" label="Write-in">
+<source county="Monterey" ballot_name="Write-in"/>
+<source county="Santa Cruz" ballot_name="Write-in"/>
+</candidate>
+</contest>
+<contest id="ca-supreme-court-groban" contest_type="retention" status="contested" level="state" jurisdiction="California" jurisdiction_type="state" office="Associate Justice of the Supreme Court" vote_for="1" retention_name="Joshua Groban" is_short_term="false">
+<jurisdiction_county>Monterey</jurisdiction_county>
+<jurisdiction_county>Santa Cruz</jurisdiction_county>
+<jurisdiction_county>San Benito</jurisdiction_county>
+<source county="Monterey" source_id="Associate Justice of the Supreme Court (Joshua Groban) (Vote for 1)" source_name="Associate Justice of the Supreme Court (Joshua Groban) (Vote for 1)"/>
+<source county="Santa Cruz" source_id="NameRace_47" source_name="Supreme Court Associate Justice Joshua Groban (Vote for 1)"/>
+<source county="San Benito" source_id="san-benito:groban" source_name="Supreme Court Associate Justice Joshua Groban"/>
+<candidate id="yes" candidate_type="ballot" candidate_status="active" ballot_name="YES" label="YES">
+<source county="Monterey" ballot_name="YES"/>
+<source county="Santa Cruz" ballot_name="YES"/>
+<source county="San Benito" ballot_name="YES"/>
+</candidate>
+<candidate id="no" candidate_type="ballot" candidate_status="active" ballot_name="NO" label="NO">
+<source county="Monterey" ballot_name="NO"/>
+<source county="Santa Cruz" ballot_name="NO"/>
+<source county="San Benito" ballot_name="NO"/>
+</candidate>
+</contest>
+<contest id="ca-appeal-6-wilson" contest_type="retention" status="contested" level="state" jurisdiction="Sixth Appellate District" jurisdiction_type="state" office="Associate Justice, Court of Appeal" vote_for="1" retention_name="Charles E. Wilson II" is_short_term="false">
+<jurisdiction_county>Monterey</jurisdiction_county>
+<jurisdiction_county>Santa Cruz</jurisdiction_county>
+<source county="Monterey" source_id="Associate Justice, Court of Appeal, Sixth District (Charles E. Wilson II) (Vote for 1)" source_name="Associate Justice, Court of Appeal, Sixth District (Charles E. Wilson II) (Vote for 1)"/>
+<source county="Santa Cruz" source_id="NameRace_46" source_name="Associate Justice 6th Appellate Dist. Charles E Wilson II (Vote for 1)"/>
+<candidate id="yes" candidate_type="ballot" candidate_status="active" ballot_name="YES" label="YES">
+<source county="Monterey" ballot_name="YES"/>
+<source county="Santa Cruz" ballot_name="YES"/>
+</candidate>
+<candidate id="no" candidate_type="ballot" candidate_status="active" ballot_name="NO" label="NO">
+<source county="Monterey" ballot_name="NO"/>
+<source county="Santa Cruz" ballot_name="NO"/>
+</candidate>
+</contest>
+<contest id="ca-appeal-6-chung" contest_type="retention" status="contested" level="state" jurisdiction="Sixth Appellate District" jurisdiction_type="state" office="Associate Justice, Court of Appeal" vote_for="1" retention_name="Frederick S. Chung" is_short_term="false">
+<jurisdiction_county>Monterey</jurisdiction_county>
+<jurisdiction_county>Santa Cruz</jurisdiction_county>
+<source county="Monterey" source_id="Associate Justice, Court of Appeal, Sixth District (Frederick S. Chung) (Vote for 1)" source_name="Associate Justice, Court of Appeal, Sixth District (Frederick S. Chung) (Vote for 1)"/>
+<source county="Santa Cruz" source_id="NameRace_2" source_name="Associate Justice 6th Appellate Dist. Frederick S Chung (Vote for 1)"/>
+<candidate id="yes" candidate_type="ballot" candidate_status="active" ballot_name="YES" label="YES">
+<source county="Monterey" ballot_name="YES"/>
+<source county="Santa Cruz" ballot_name="YES"/>
+</candidate>
+<candidate id="no" candidate_type="ballot" candidate_status="active" ballot_name="NO" label="NO">
+<source county="Monterey" ballot_name="NO"/>
+<source county="Santa Cruz" ballot_name="NO"/>
+</candidate>
+</contest>
+<contest id="ca-prop-1" contest_type="measure" status="contested" level="state" jurisdiction="California" jurisdiction_type="state" vote_for="1" measure_letter="1" measure_title="The Veterans And Affordable Housing Bond Act Of 2026" threshold="majority" is_short_term="false">
+<jurisdiction_county>Monterey</jurisdiction_county>
+<jurisdiction_county>Santa Cruz</jurisdiction_county>
+<jurisdiction_county>San Benito</jurisdiction_county>
+<source county="Monterey" source_id="Proposition 1 (Vote for 1)" source_name="Proposition 1 (Vote for 1)"/>
+<source county="Santa Cruz" source_id="NameRace_83" source_name="1 - The Veterans And Affordable Housing Bond Act Of 2026 (Vote for 1)"/>
+<source county="San Benito" source_id="san-benito:1" source_name="Proposition 1"/>
+<candidate id="yes" candidate_type="ballot" candidate_status="active" ballot_name="YES" label="YES">
+<source county="Monterey" ballot_name="YES"/>
+<source county="Santa Cruz" ballot_name="BONDS YES"/>
+<source county="San Benito" ballot_name="YES"/>
+</candidate>
+<candidate id="no" candidate_type="ballot" candidate_status="active" ballot_name="NO" label="NO">
+<source county="Monterey" ballot_name="NO"/>
+<source county="Santa Cruz" ballot_name="BONDS NO"/>
+<source county="San Benito" ballot_name="NO"/>
+</candidate>
+</contest>
+<contest id="ca-prop-2" contest_type="measure" status="contested" level="state" jurisdiction="California" jurisdiction_type="state" vote_for="1" measure_letter="2" measure_title="Save For California&#x27;s Future Act" threshold="majority" is_short_term="false">
+<jurisdiction_county>Monterey</jurisdiction_county>
+<jurisdiction_county>Santa Cruz</jurisdiction_county>
+<jurisdiction_county>San Benito</jurisdiction_county>
+<source county="Monterey" source_id="Proposition 2 (Vote for 1)" source_name="Proposition 2 (Vote for 1)"/>
+<source county="Santa Cruz" source_id="NameRace_2" source_name="2 - Save For California&#x27;s Future Act (Vote for 1)"/>
+<source county="San Benito" source_id="san-benito:2" source_name="Proposition 2"/>
+<candidate id="yes" candidate_type="ballot" candidate_status="active" ballot_name="YES" label="YES">
+<source county="Monterey" ballot_name="YES"/>
+<source county="Santa Cruz" ballot_name="YES"/>
+<source county="San Benito" ballot_name="YES"/>
+</candidate>
+<candidate id="no" candidate_type="ballot" candidate_status="active" ballot_name="NO" label="NO">
+<source county="Monterey" ballot_name="NO"/>
+<source county="Santa Cruz" ballot_name="NO"/>
+<source county="San Benito" ballot_name="NO"/>
+</candidate>
+</contest>
+<contest id="ca-prop-37" contest_type="measure" status="contested" level="state" jurisdiction="California" jurisdiction_type="state" vote_for="1" measure_letter="37" measure_title="Creates Loan Program For Middle-income Buyers Of Qualified New Homes" threshold="majority" is_short_term="false">
+<jurisdiction_county>Monterey</jurisdiction_county>
+<jurisdiction_county>Santa Cruz</jurisdiction_county>
+<jurisdiction_county>San Benito</jurisdiction_county>
+<source county="Monterey" source_id="Proposition 37 (Vote for 1)" source_name="Proposition 37 (Vote for 1)"/>
+<source county="Santa Cruz" source_id="NameRace_40" source_name="37 - Creates Loan Program For Middle-income Buyers Of Qualified New Homes (Vote for 1)"/>
+<source county="San Benito" source_id="san-benito:37" source_name="Proposition 37"/>
+<candidate id="yes" candidate_type="ballot" candidate_status="active" ballot_name="YES" label="YES">
+<source county="Monterey" ballot_name="YES"/>
+<source county="Santa Cruz" ballot_name="YES"/>
+<source county="San Benito" ballot_name="YES"/>
+</candidate>
+<candidate id="no" candidate_type="ballot" candidate_status="active" ballot_name="NO" label="NO">
+<source county="Monterey" ballot_name="NO"/>
+<source county="Santa Cruz" ballot_name="NO"/>
+<source county="San Benito" ballot_name="NO"/>
+</candidate>
+</contest>
+<contest id="ca-prop-38" contest_type="measure" status="contested" level="state" jurisdiction="California" jurisdiction_type="state" vote_for="1" measure_letter="38" measure_title="Authorizes Bonds For Immunology Research" threshold="majority" is_short_term="false">
+<jurisdiction_county>Monterey</jurisdiction_county>
+<jurisdiction_county>Santa Cruz</jurisdiction_county>
+<jurisdiction_county>San Benito</jurisdiction_county>
+<source county="Monterey" source_id="Proposition 38 (Vote for 1)" source_name="Proposition 38 (Vote for 1)"/>
+<source county="Santa Cruz" source_id="NameRace_23" source_name="38 - Authorizes Bonds For Immunology Research (Vote for 1)"/>
+<source county="San Benito" source_id="san-benito:38" source_name="Proposition 38"/>
+<candidate id="yes" candidate_type="ballot" candidate_status="active" ballot_name="YES" label="YES">
+<source county="Monterey" ballot_name="YES"/>
+<source county="Santa Cruz" ballot_name="BONDS YES"/>
+<source county="San Benito" ballot_name="YES"/>
+</candidate>
+<candidate id="no" candidate_type="ballot" candidate_status="active" ballot_name="NO" label="NO">
+<source county="Monterey" ballot_name="NO"/>
+<source county="Santa Cruz" ballot_name="BONDS NO"/>
+<source county="San Benito" ballot_name="NO"/>
+</candidate>
+</contest>
+<contest id="monterey-county-board-of-education-ta-1" contest_type="candidate" status="contested" level="county" jurisdiction="Monterey County Office of Education" jurisdiction_type="county_office_of_education" office="Governing Board Member" seat_type="trustee_area" seat_number="1" vote_for="1" is_short_term="false">
+<jurisdiction_county>Monterey</jurisdiction_county>
+<source county="Monterey" source_id="Monterey County Board of Education Governing Board Member Trustee Area 1 (Vote for 1)" source_name="Monterey County Board of Education Governing Board Member Trustee Area 1 (Vote for 1)"/>
+<candidate id="c_cd6a069867" candidate_type="ballot" candidate_status="active" ballot_name="MEGAN WHILDEN" first="MEGAN" last="WHILDEN">
+<source county="Monterey" ballot_name="MEGAN WHILDEN"/>
+</candidate>
+<candidate id="c_6e7036be2a" candidate_type="ballot" candidate_status="active" ballot_name="RITA PATEL" first="RITA" last="PATEL">
+<source county="Monterey" ballot_name="RITA PATEL"/>
+</candidate>
+<candidate id="write_in_total" candidate_type="write_in_total" candidate_status="active" ballot_name="Write-in" label="Write-in">
+<source county="Monterey" ballot_name="Write-in"/>
+</candidate>
+</contest>
+<contest id="hartnell-ccd-ta-5" contest_type="candidate" status="contested" level="district" jurisdiction="Hartnell Community College District" jurisdiction_type="community_college_district" office="Governing Board Member" seat_type="trustee_area" seat_number="5" vote_for="1" is_short_term="false">
+<jurisdiction_county>Monterey</jurisdiction_county>
+<source county="Monterey" source_id="Hartnell Community College District Governing Board Member Trustee Area 5 (Vote for 1)" source_name="Hartnell Community College District Governing Board Member Trustee Area 5 (Vote for 1)"/>
+<candidate id="c_4a1c44e254" candidate_type="ballot" candidate_status="active" ballot_name="PATRICIA COYT" first="PATRICIA" last="COYT">
+<source county="Monterey" ballot_name="PATRICIA COYT"/>
+</candidate>
+<candidate id="c_be1285da51" candidate_type="ballot" candidate_status="active" ballot_name="FELICIA PEREZ KAUSIN" first="FELICIA" middle="PEREZ" last="KAUSIN">
+<source county="Monterey" ballot_name="FELICIA PEREZ KAUSIN"/>
+</candidate>
+<candidate id="write_in_total" candidate_type="write_in_total" candidate_status="active" ballot_name="Write-in" label="Write-in">
+<source county="Monterey" ballot_name="Write-in"/>
+</candidate>
+</contest>
+<contest id="alisal-union-sd-ta-5" contest_type="candidate" status="contested" level="district" jurisdiction="Alisal Union School District" jurisdiction_type="school_district" office="Governing Board Member" seat_type="trustee_area" seat_number="5" vote_for="1" is_short_term="false">
+<jurisdiction_county>Monterey</jurisdiction_county>
+<source county="Monterey" source_id="Alisal Union School District Governing Board Member Trustee Area 5 (Vote for 1)" source_name="Alisal Union School District Governing Board Member Trustee Area 5 (Vote for 1)"/>
+<candidate id="c_145f6db777" candidate_type="ballot" candidate_status="active" ballot_name="MARIA M. JIMENEZ" first="MARIA" middle="M." last="JIMENEZ">
+<source county="Monterey" ballot_name="MARIA M. JIMENEZ"/>
+</candidate>
+<candidate id="c_b3cd30bd61" candidate_type="ballot" candidate_status="active" ballot_name="AURELIA ALVAREZ-SILVA" first="AURELIA" last="ALVAREZ-SILVA">
+<source county="Monterey" ballot_name="AURELIA ALVAREZ-SILVA"/>
+</candidate>
+<candidate id="c_8126f55d0b" candidate_type="ballot" candidate_status="active" ballot_name="JESUS R. VELASQUEZ" first="JESUS" middle="R." last="VELASQUEZ">
+<source county="Monterey" ballot_name="JESUS R. VELASQUEZ"/>
+</candidate>
+<candidate id="write_in_total" candidate_type="write_in_total" candidate_status="active" ballot_name="Write-in" label="Write-in">
+<source county="Monterey" ballot_name="Write-in"/>
+</candidate>
+</contest>
+<contest id="king-city-union-sd" contest_type="candidate" status="contested" level="district" jurisdiction="King City Union School District" jurisdiction_type="school_district" office="Governing Board Member" seat_type="at_large" vote_for="3" is_short_term="false">
+<jurisdiction_county>Monterey</jurisdiction_county>
+<source county="Monterey" source_id="King City Union School District Governing Board Member (Vote for 3)" source_name="King City Union School District Governing Board Member (Vote for 3)"/>
+<candidate id="c_5fff37d20e" candidate_type="ballot" candidate_status="active" ballot_name="SUSAN E KING" first="SUSAN" middle="E" last="KING">
+<source county="Monterey" ballot_name="SUSAN E KING"/>
+</candidate>
+<candidate id="c_5b0cfa19eb" candidate_type="ballot" candidate_status="active" ballot_name="YESENIA ZAVALA" first="YESENIA" last="ZAVALA">
+<source county="Monterey" ballot_name="YESENIA ZAVALA"/>
+</candidate>
+<candidate id="c_0afb6e9f53" candidate_type="ballot" candidate_status="active" ballot_name="FRANKY LOPEZ JR" first="FRANKY" middle="LOPEZ" last="JR">
+<source county="Monterey" ballot_name="FRANKY LOPEZ JR"/>
+</candidate>
+<candidate id="c_b1684116e8" candidate_type="ballot" candidate_status="active" ballot_name="SONIA VALERIO QUIROZ" first="SONIA" middle="VALERIO" last="QUIROZ">
+<source county="Monterey" ballot_name="SONIA VALERIO QUIROZ"/>
+</candidate>
+<candidate id="c_1c67dcc9a2" candidate_type="ballot" candidate_status="active" ballot_name="MONIQUE D ROSS" first="MONIQUE" middle="D" last="ROSS">
+<source county="Monterey" ballot_name="MONIQUE D ROSS"/>
+</candidate>
+<candidate id="write_in_total" candidate_type="write_in_total" candidate_status="active" ballot_name="Write-in" label="Write-in">
+<source county="Monterey" ballot_name="Write-in"/>
+</candidate>
+</contest>
+<contest id="king-city-joint-usd" contest_type="candidate" status="contested" level="district" jurisdiction="King City Joint Unified School District" jurisdiction_type="school_district" office="Governing Board Member" seat_type="at_large" vote_for="5" is_short_term="false">
+<jurisdiction_county>Monterey</jurisdiction_county>
+<source county="Monterey" source_id="King City Joint Unified School District Governing Board Member (Vote for 5)" source_name="King City Joint Unified School District Governing Board Member (Vote for 5)"/>
+<candidate id="c_c7193ff0d9" candidate_type="ballot" candidate_status="active" ballot_name="MINDY HUNT" first="MINDY" last="HUNT">
+<source county="Monterey" ballot_name="MINDY HUNT"/>
+</candidate>
+<candidate id="c_5fff37d20e" candidate_type="ballot" candidate_status="active" ballot_name="SUSAN E KING" first="SUSAN" middle="E" last="KING">
+<source county="Monterey" ballot_name="SUSAN E KING"/>
+</candidate>
+<candidate id="c_5b0cfa19eb" candidate_type="ballot" candidate_status="active" ballot_name="YESENIA ZAVALA" first="YESENIA" last="ZAVALA">
+<source county="Monterey" ballot_name="YESENIA ZAVALA"/>
+</candidate>
+<candidate id="c_0afb6e9f53" candidate_type="ballot" candidate_status="active" ballot_name="FRANKY LOPEZ JR" first="FRANKY" middle="LOPEZ" last="JR">
+<source county="Monterey" ballot_name="FRANKY LOPEZ JR"/>
+</candidate>
+<candidate id="c_d547b91c73" candidate_type="ballot" candidate_status="active" ballot_name="MIGUEL LOMELI" first="MIGUEL" last="LOMELI">
+<source county="Monterey" ballot_name="MIGUEL LOMELI"/>
+</candidate>
+<candidate id="c_b1684116e8" candidate_type="ballot" candidate_status="active" ballot_name="SONIA VALERIO QUIROZ" first="SONIA" middle="VALERIO" last="QUIROZ">
+<source county="Monterey" ballot_name="SONIA VALERIO QUIROZ"/>
+</candidate>
+<candidate id="c_bfe8df50ea" candidate_type="ballot" candidate_status="active" ballot_name="LINDA BENWAY" first="LINDA" last="BENWAY">
+<source county="Monterey" ballot_name="LINDA BENWAY"/>
+</candidate>
+<candidate id="c_1c67dcc9a2" candidate_type="ballot" candidate_status="active" ballot_name="MONIQUE D ROSS" first="MONIQUE" middle="D" last="ROSS">
+<source county="Monterey" ballot_name="MONIQUE D ROSS"/>
+</candidate>
+<candidate id="c_03a036663e" candidate_type="ballot" candidate_status="active" ballot_name="DAVID GABONI" first="DAVID" last="GABONI">
+<source county="Monterey" ballot_name="DAVID GABONI"/>
+</candidate>
+<candidate id="c_11faf86623" candidate_type="ballot" candidate_status="active" ballot_name="LESLIE GIRARD" first="LESLIE" last="GIRARD">
+<source county="Monterey" ballot_name="LESLIE GIRARD"/>
+</candidate>
+<candidate id="write_in_total" candidate_type="write_in_total" candidate_status="active" ballot_name="Write-in" label="Write-in">
+<source county="Monterey" ballot_name="Write-in"/>
+</candidate>
+</contest>
+<contest id="pacific-grove-usd-ta-1" contest_type="candidate" status="contested" level="district" jurisdiction="Pacific Grove Unified School District" jurisdiction_type="school_district" office="Governing Board Member" seat_type="trustee_area" seat_number="1" vote_for="1" is_short_term="false">
+<jurisdiction_county>Monterey</jurisdiction_county>
+<source county="Monterey" source_id="Pacific Grove Unified School District Governing Board Member Trustee Area 1 (Vote for 1)" source_name="Pacific Grove Unified School District Governing Board Member Trustee Area 1 (Vote for 1)"/>
+<candidate id="c_6f3609884b" candidate_type="ballot" candidate_status="active" ballot_name="CHARLES &quot;CHUCK&quot; BRINKER" first="CHARLES" middle="&quot;CHUCK&quot;" last="BRINKER" nickname="CHUCK">
+<source county="Monterey" ballot_name="CHARLES &quot;CHUCK&quot; BRINKER"/>
+</candidate>
+<candidate id="c_bc979acc38" candidate_type="ballot" candidate_status="active" ballot_name="STEPHEN BENNETT" first="STEPHEN" last="BENNETT">
+<source county="Monterey" ballot_name="STEPHEN BENNETT"/>
+</candidate>
+<candidate id="c_1c39dd015a" candidate_type="ballot" candidate_status="active" ballot_name="DAN MILLER" first="DAN" last="MILLER">
+<source county="Monterey" ballot_name="DAN MILLER"/>
+</candidate>
+<candidate id="write_in_total" candidate_type="write_in_total" candidate_status="active" ballot_name="Write-in" label="Write-in">
+<source county="Monterey" ballot_name="Write-in"/>
+</candidate>
+</contest>
+<contest id="city-of-salinas-mayor" contest_type="candidate" status="contested" level="city" jurisdiction="City of Salinas" jurisdiction_type="city" office="Mayor" seat_type="single_office" vote_for="1" is_short_term="false">
+<jurisdiction_county>Monterey</jurisdiction_county>
+<source county="Monterey" source_id="City of Salinas Mayor (Vote for 1)" source_name="City of Salinas Mayor (Vote for 1)"/>
+<candidate id="c_c5b27a0071" candidate_type="ballot" candidate_status="active" ballot_name="DENNIS DONOHUE" first="DENNIS" last="DONOHUE">
+<source county="Monterey" ballot_name="DENNIS DONOHUE"/>
+</candidate>
+<candidate id="c_9290200e8a" candidate_type="ballot" candidate_status="active" ballot_name="PETER SZALAI" first="PETER" last="SZALAI">
+<source county="Monterey" ballot_name="PETER SZALAI"/>
+</candidate>
+<candidate id="c_ad3c825174" candidate_type="ballot" candidate_status="active" ballot_name="HEZEKIAH GONZALEZ" first="HEZEKIAH" last="GONZALEZ">
+<source county="Monterey" ballot_name="HEZEKIAH GONZALEZ"/>
+</candidate>
+<candidate id="c_769028282f" candidate_type="ballot" candidate_status="active" ballot_name="DANIEL MUNOZ" first="DANIEL" last="MUNOZ">
+<source county="Monterey" ballot_name="DANIEL MUNOZ"/>
+</candidate>
+<candidate id="write_in_total" candidate_type="write_in_total" candidate_status="active" ballot_name="Write-in" label="Write-in">
+<source county="Monterey" ballot_name="Write-in"/>
+</candidate>
+</contest>
+<contest id="city-of-salinas-council-2" contest_type="candidate" status="contested" level="city" jurisdiction="City of Salinas" jurisdiction_type="city" office="Member, City Council" seat_type="district" seat_number="2" vote_for="1" is_short_term="false">
+<jurisdiction_county>Monterey</jurisdiction_county>
+<source county="Monterey" source_id="City of Salinas Member, City Council District 2 (Vote for 1)" source_name="City of Salinas Member, City Council District 2 (Vote for 1)"/>
+<candidate id="c_79628d55df" candidate_type="ballot" candidate_status="active" ballot_name="TONY BARRERA" first="TONY" last="BARRERA">
+<source county="Monterey" ballot_name="TONY BARRERA"/>
+</candidate>
+<candidate id="c_715402256b" candidate_type="ballot" candidate_status="active" ballot_name="JOSE GUERRA" first="JOSE" last="GUERRA">
+<source county="Monterey" ballot_name="JOSE GUERRA"/>
+</candidate>
+<candidate id="write_in_total" candidate_type="write_in_total" candidate_status="active" ballot_name="Write-in" label="Write-in">
+<source county="Monterey" ballot_name="Write-in"/>
+</candidate>
+</contest>
+<contest id="city-of-monterey-mayor" contest_type="candidate" status="contested" level="city" jurisdiction="City of Monterey" jurisdiction_type="city" office="Mayor" seat_type="single_office" vote_for="1" is_short_term="false">
+<jurisdiction_county>Monterey</jurisdiction_county>
+<source county="Monterey" source_id="City of Monterey Mayor (Vote for 1)" source_name="City of Monterey Mayor (Vote for 1)"/>
+<candidate id="c_8c16aaecb2" candidate_type="ballot" candidate_status="active" ballot_name="TYLLER WILLIAMSON" first="TYLLER" last="WILLIAMSON">
+<source county="Monterey" ballot_name="TYLLER WILLIAMSON"/>
+</candidate>
+<candidate id="c_a6a62d51a9" candidate_type="ballot" candidate_status="active" ballot_name="VINCE MALFITANO" first="VINCE" last="MALFITANO">
+<source county="Monterey" ballot_name="VINCE MALFITANO"/>
+</candidate>
+<candidate id="write_in_total" candidate_type="write_in_total" candidate_status="active" ballot_name="Write-in" label="Write-in">
+<source county="Monterey" ballot_name="Write-in"/>
+</candidate>
+</contest>
+<contest id="city-of-pacific-grove-council-2yr" contest_type="candidate" status="contested" level="city" jurisdiction="City of Pacific Grove" jurisdiction_type="city" office="Member, City Council" seat_type="at_large" term_years="2" vote_for="1" is_short_term="true">
+<jurisdiction_county>Monterey</jurisdiction_county>
+<source county="Monterey" source_id="City of Pacific Grove Member, City Council, 2 Year (Vote for 1)" source_name="City of Pacific Grove Member, City Council, 2 Year (Vote for 1)"/>
+<candidate id="c_04da5abde1" candidate_type="ballot" candidate_status="active" ballot_name="JAMES ORLANDO OGLE III" first="JAMES" middle="ORLANDO OGLE" last="III">
+<source county="Monterey" ballot_name="JAMES ORLANDO OGLE III"/>
+</candidate>
+<candidate id="c_f52fb6efd7" candidate_type="ballot" candidate_status="active" ballot_name="LORI MCDONNELL" first="LORI" last="MCDONNELL">
+<source county="Monterey" ballot_name="LORI MCDONNELL"/>
+</candidate>
+<candidate id="write_in_total" candidate_type="write_in_total" candidate_status="active" ballot_name="Write-in" label="Write-in">
+<source county="Monterey" ballot_name="Write-in"/>
+</candidate>
+</contest>
+<contest id="city-of-sand-city-council" contest_type="candidate" status="contested" level="city" jurisdiction="City of Sand City" jurisdiction_type="city" office="Member, City Council" seat_type="at_large" vote_for="2" is_short_term="false">
+<jurisdiction_county>Monterey</jurisdiction_county>
+<source county="Monterey" source_id="City of Sand City Member, City Council (Vote for 2)" source_name="City of Sand City Member, City Council (Vote for 2)"/>
+<candidate id="c_72bb639215" candidate_type="ballot" candidate_status="active" ballot_name="LUKE KILPATRICK" first="LUKE" last="KILPATRICK">
+<source county="Monterey" ballot_name="LUKE KILPATRICK"/>
+</candidate>
+<candidate id="c_1908253cc9" candidate_type="ballot" candidate_status="active" ballot_name="JUSTIN R. RUMPS" first="JUSTIN" middle="R." last="RUMPS">
+<source county="Monterey" ballot_name="JUSTIN R. RUMPS"/>
+</candidate>
+<candidate id="c_94f9d65a5a" candidate_type="qualified_write_in" candidate_status="active" ballot_name="SALVATORE M. CARBONE" first="SALVATORE" middle="M." last="CARBONE">
+<source county="Monterey" ballot_name="SALVATORE M. CARBONE"/>
+</candidate>
+<candidate id="c_e8401c718a" candidate_type="qualified_write_in" candidate_status="active" ballot_name="KIM SCUDDER" first="KIM" last="SCUDDER">
+<source county="Monterey" ballot_name="KIM SCUDDER"/>
+</candidate>
+<candidate id="write_in_total" candidate_type="write_in_total" candidate_status="active" ballot_name="Write-in" label="Write-in">
+<source county="Monterey" ballot_name="Write-in"/>
+</candidate>
+</contest>
+<contest id="city-of-del-rey-oaks-mayor" contest_type="candidate" status="unopposed" level="city" jurisdiction="City of Del Rey Oaks" jurisdiction_type="city" office="Mayor" seat_type="single_office" vote_for="1" is_short_term="false">
+<jurisdiction_county>Monterey</jurisdiction_county>
+<source county="Monterey" source_id="City of Del Rey Oaks Mayor (Vote for 1)" source_name="City of Del Rey Oaks Mayor (Vote for 1)"/>
+<candidate id="c_e0213c0ddb" candidate_type="ballot" candidate_status="active" ballot_name="SCOTT DONALDSON" first="SCOTT" last="DONALDSON">
+<source county="Monterey" ballot_name="SCOTT DONALDSON"/>
+</candidate>
+<candidate id="write_in_total" candidate_type="write_in_total" candidate_status="active" ballot_name="Write-in" label="Write-in">
+<source county="Monterey" ballot_name="Write-in"/>
+</candidate>
+</contest>
+<contest id="city-of-santa-cruz-mayor" contest_type="candidate" status="contested" level="city" jurisdiction="City of Santa Cruz" jurisdiction_type="city" office="Mayor" seat_type="single_office" vote_for="1" is_short_term="false">
+<jurisdiction_county>Santa Cruz</jurisdiction_county>
+<source county="Santa Cruz" source_id="NameRace_51" source_name="City of Santa Cruz Mayor (Vote for 1)"/>
+<candidate id="c_7d1e672435" candidate_type="ballot" candidate_status="active" ballot_name="RYAN COONERTY" first="RYAN" last="COONERTY">
+<source county="Santa Cruz" ballot_name="RYAN COONERTY"/>
+</candidate>
+<candidate id="c_f80aa410e7" candidate_type="ballot" candidate_status="active" ballot_name="AMI CHEN MILLS" first="AMI" middle="CHEN" last="MILLS">
+<source county="Santa Cruz" ballot_name="AMI CHEN MILLS"/>
+</candidate>
+<candidate id="write_in_total" candidate_type="write_in_total" candidate_status="active" ballot_name="Write-in" label="Write-in">
+<source county="Santa Cruz" ballot_name="Write-in"/>
+</candidate>
+<candidate id="unqualified_write_in" candidate_type="unqualified_write_in" candidate_status="active" ballot_name="Unqualified Write In" label="Unqualified Write In">
+<source county="Santa Cruz" ballot_name="Unqualified Write In"/>
+</candidate>
+</contest>
+<contest id="city-of-capitola-council" contest_type="candidate" status="contested" level="city" jurisdiction="City of Capitola" jurisdiction_type="city" office="Councilmember" seat_type="at_large" vote_for="3" is_short_term="false">
+<jurisdiction_county>Santa Cruz</jurisdiction_county>
+<source county="Santa Cruz" source_id="NameRace_8" source_name="City of Capitola Councilmember (Vote for 3)"/>
+<candidate id="c_109d98f78e" candidate_type="ballot" candidate_status="active" ballot_name="PETER WILK" first="PETER" last="WILK">
+<source county="Santa Cruz" ballot_name="PETER WILK"/>
+</candidate>
+<candidate id="c_625a331f51" candidate_type="ballot" candidate_status="active" ballot_name="TROY &quot;TJ&quot; WELCH" first="TROY" middle="&quot;TJ&quot;" last="WELCH" nickname="TJ">
+<source county="Santa Cruz" ballot_name="TROY &quot;TJ&quot; WELCH"/>
+</candidate>
+<candidate id="c_bbb3051b68" candidate_type="ballot" candidate_status="active" ballot_name="CAMI CORVIN" first="CAMI" last="CORVIN">
+<source county="Santa Cruz" ballot_name="CAMI CORVIN"/>
+</candidate>
+<candidate id="c_66fef055f1" candidate_type="ballot" candidate_status="active" ballot_name="JOE CLARKE" first="JOE" last="CLARKE">
+<source county="Santa Cruz" ballot_name="JOE CLARKE"/>
+</candidate>
+<candidate id="c_bc5413db78" candidate_type="ballot" candidate_status="active" ballot_name="TORY DEL FAVERO" first="TORY" middle="DEL" last="FAVERO">
+<source county="Santa Cruz" ballot_name="TORY DEL FAVERO"/>
+</candidate>
+<candidate id="write_in_total" candidate_type="write_in_total" candidate_status="active" ballot_name="Write-in" label="Write-in">
+<source county="Santa Cruz" ballot_name="Write-in"/>
+</candidate>
+<candidate id="unqualified_write_in" candidate_type="unqualified_write_in" candidate_status="active" ballot_name="Unqualified Write In" label="Unqualified Write In">
+<source county="Santa Cruz" ballot_name="Unqualified Write In"/>
+</candidate>
+</contest>
+<contest id="city-of-watsonville-council-3" contest_type="candidate" status="unopposed" level="city" jurisdiction="City of Watsonville" jurisdiction_type="city" office="Councilmember" seat_type="district" seat_number="3" vote_for="1" is_short_term="false">
+<jurisdiction_county>Santa Cruz</jurisdiction_county>
+<source county="Santa Cruz" source_id="NameRace_42" source_name="City of Watsonville Councilmember - Dist 3 (Vote for 1)"/>
+<candidate id="c_8d0154fe27" candidate_type="ballot" candidate_status="active" ballot_name="MARIA OROZCO" first="MARIA" last="OROZCO">
+<source county="Santa Cruz" ballot_name="MARIA OROZCO"/>
+</candidate>
+<candidate id="write_in_total" candidate_type="write_in_total" candidate_status="active" ballot_name="Write-in" label="Write-in">
+<source county="Santa Cruz" ballot_name="Write-in"/>
+</candidate>
+<candidate id="unqualified_write_in" candidate_type="unqualified_write_in" candidate_status="active" ballot_name="Unqualified Write In" label="Unqualified Write In">
+<source county="Santa Cruz" ballot_name="Unqualified Write In"/>
+</candidate>
+</contest>
+<contest id="pajaro-valley-usd-ta-4" contest_type="candidate" status="contested" level="district" jurisdiction="Pajaro Valley Unified School District" jurisdiction_type="school_district" office="Governing Board Member" seat_type="trustee_area" seat_number="4" vote_for="1" is_short_term="false">
+<jurisdiction_county>Santa Cruz</jurisdiction_county>
+<source county="Santa Cruz" source_id="NameRace_11" source_name="Pajaro Valley Unified School District Governing Board Member - Trustee Area 4 (Vote for 1)"/>
+<candidate id="c_2b9701f799" candidate_type="ballot" candidate_status="active" ballot_name="DANIEL DODGE, JR" first="DANIEL" middle="DODGE" last="JR">
+<source county="Santa Cruz" ballot_name="DANIEL DODGE, JR"/>
+</candidate>
+<candidate id="c_0f7a549ac2" candidate_type="ballot" candidate_status="active" ballot_name="ERIBERTO ESTRADA, IV" first="ERIBERTO" middle="ESTRADA" last="IV">
+<source county="Santa Cruz" ballot_name="ERIBERTO ESTRADA, IV"/>
+</candidate>
+<candidate id="c_fb1af2787d" candidate_type="qualified_write_in" candidate_status="active" ballot_name="Margarita Carrillo" first="Margarita" last="Carrillo">
+<source county="Santa Cruz" ballot_name="Margarita Carrillo"/>
+</candidate>
+<candidate id="write_in_total" candidate_type="write_in_total" candidate_status="active" ballot_name="Write-in" label="Write-in">
+<source county="Santa Cruz" ballot_name="Write-in"/>
+</candidate>
+<candidate id="unqualified_write_in" candidate_type="unqualified_write_in" candidate_status="active" ballot_name="Unqualified Write In" label="Unqualified Write In">
+<source county="Santa Cruz" ballot_name="Unqualified Write In"/>
+</candidate>
+</contest>
+<contest id="felton-fire-protection-district" contest_type="candidate" status="contested" level="district" jurisdiction="Felton Fire Protection District" jurisdiction_type="special_district" office="Director" seat_type="at_large" vote_for="2" is_short_term="false">
+<jurisdiction_county>Santa Cruz</jurisdiction_county>
+<source county="Santa Cruz" source_id="NameRace_61" source_name="Felton Fire Protection District Director (Vote for 2)"/>
+<candidate id="c_c8e5c6f8ef" candidate_type="ballot" candidate_status="active" ballot_name="CRAIG WINTER" first="CRAIG" last="WINTER">
+<source county="Santa Cruz" ballot_name="CRAIG WINTER"/>
+</candidate>
+<candidate id="c_92b6cca73e" candidate_type="ballot" candidate_status="active" ballot_name="NORMAN CRANDELL" first="NORMAN" last="CRANDELL">
+<source county="Santa Cruz" ballot_name="NORMAN CRANDELL"/>
+</candidate>
+<candidate id="c_68933580e3" candidate_type="ballot" candidate_status="active" ballot_name="JAMES ANDERSON" first="JAMES" last="ANDERSON">
+<source county="Santa Cruz" ballot_name="JAMES ANDERSON"/>
+</candidate>
+<candidate id="c_d4426d2e64" candidate_type="ballot" candidate_status="active" ballot_name="BILL FINLAYSON" first="BILL" last="FINLAYSON">
+<source county="Santa Cruz" ballot_name="BILL FINLAYSON"/>
+</candidate>
+<candidate id="write_in_total" candidate_type="write_in_total" candidate_status="active" ballot_name="Write-in" label="Write-in">
+<source county="Santa Cruz" ballot_name="Write-in"/>
+</candidate>
+</contest>
+<contest id="monterey-county-measure-e" contest_type="measure" status="contested" level="county" jurisdiction="County of Monterey" jurisdiction_type="county" vote_for="1" measure_letter="E" is_short_term="false">
+<jurisdiction_county>Monterey</jurisdiction_county>
+<source county="Monterey" source_id="Measure E: County of Monterey (Vote for 1)" source_name="Measure E: County of Monterey (Vote for 1)"/>
+<candidate id="yes" candidate_type="ballot" candidate_status="active" ballot_name="YES" label="YES">
+<source county="Monterey" ballot_name="YES"/>
+</candidate>
+<candidate id="no" candidate_type="ballot" candidate_status="active" ballot_name="NO" label="NO">
+<source county="Monterey" ballot_name="NO"/>
+</candidate>
+</contest>
+<contest id="city-of-salinas-measure-g" contest_type="measure" status="contested" level="city" jurisdiction="City of Salinas" jurisdiction_type="city" vote_for="1" measure_letter="G" is_short_term="false">
+<jurisdiction_county>Monterey</jurisdiction_county>
+<source county="Monterey" source_id="Measure G: City of Salinas (Vote for 1)" source_name="Measure G: City of Salinas (Vote for 1)"/>
+<candidate id="yes" candidate_type="ballot" candidate_status="active" ballot_name="YES" label="YES">
+<source county="Monterey" ballot_name="YES"/>
+</candidate>
+<candidate id="no" candidate_type="ballot" candidate_status="active" ballot_name="NO" label="NO">
+<source county="Monterey" ballot_name="NO"/>
+</candidate>
+</contest>
+<contest id="city-of-salinas-measure-h" contest_type="measure" status="contested" level="city" jurisdiction="City of Salinas" jurisdiction_type="city" vote_for="1" measure_letter="H" is_short_term="false">
+<jurisdiction_county>Monterey</jurisdiction_county>
+<source county="Monterey" source_id="Measure H: City of Salinas (Vote for 1)" source_name="Measure H: City of Salinas (Vote for 1)"/>
+<candidate id="yes" candidate_type="ballot" candidate_status="active" ballot_name="YES" label="YES">
+<source county="Monterey" ballot_name="YES"/>
+</candidate>
+<candidate id="no" candidate_type="ballot" candidate_status="active" ballot_name="NO" label="NO">
+<source county="Monterey" ballot_name="NO"/>
+</candidate>
+</contest>
+<contest id="carmel-usd-measure-i" contest_type="measure" status="contested" level="district" jurisdiction="Carmel Unified School District" jurisdiction_type="school_district" vote_for="1" measure_letter="I" threshold="55%" is_short_term="false">
+<jurisdiction_county>Monterey</jurisdiction_county>
+<source county="Monterey" source_id="Measure I: Carmel Unified School District (Vote for 1)" source_name="Measure I: Carmel Unified School District (Vote for 1)"/>
+<candidate id="yes" candidate_type="ballot" candidate_status="active" ballot_name="YES" label="YES">
+<source county="Monterey" ballot_name="YES"/>
+</candidate>
+<candidate id="no" candidate_type="ballot" candidate_status="active" ballot_name="NO" label="NO">
+<source county="Monterey" ballot_name="NO"/>
+</candidate>
+</contest>
+<contest id="santa-cruz-county-measure-d" contest_type="measure" status="contested" level="county" vote_for="1" measure_letter="D" measure_title="Offshore Drilling" threshold="majority" is_short_term="false">
+<jurisdiction_county>Santa Cruz</jurisdiction_county>
+<source county="Santa Cruz" source_id="NameRace_87" source_name="D - Offshore Drilling - Majority to Pass (Vote for 1)"/>
+<candidate id="yes" candidate_type="ballot" candidate_status="active" ballot_name="YES" label="YES">
+<source county="Santa Cruz" ballot_name="YES"/>
+</candidate>
+<candidate id="no" candidate_type="ballot" candidate_status="active" ballot_name="NO" label="NO">
+<source county="Santa Cruz" ballot_name="NO"/>
+</candidate>
+</contest>
+<contest id="santa-cruz-county-measure-e" contest_type="measure" status="contested" level="county" vote_for="1" measure_letter="E" measure_title="Sales Tax" threshold="majority" is_short_term="false">
+<jurisdiction_county>Santa Cruz</jurisdiction_county>
+<source county="Santa Cruz" source_id="NameRace_31" source_name="E - Sales Tax - Majority to Pass (Vote for 1)"/>
+<candidate id="yes" candidate_type="ballot" candidate_status="active" ballot_name="YES" label="YES">
+<source county="Santa Cruz" ballot_name="YES"/>
+</candidate>
+<candidate id="no" candidate_type="ballot" candidate_status="active" ballot_name="NO" label="NO">
+<source county="Santa Cruz" ballot_name="NO"/>
+</candidate>
+</contest>
+<contest id="san-benito-county-measure-cannabis" contest_type="measure" status="contested" level="county" jurisdiction="County of San Benito" jurisdiction_type="county" measure_title="Cannabis Business Activities Tax" is_short_term="false">
+<jurisdiction_county>San Benito</jurisdiction_county>
+<source county="San Benito" source_id="san-benito:cannabis" source_name="Cannabis Business Activities Tax"/>
+<candidate id="yes" candidate_type="ballot" candidate_status="active" ballot_name="YES" label="YES">
+<source county="San Benito" ballot_name="YES"/>
+</candidate>
+<candidate id="no" candidate_type="ballot" candidate_status="active" ballot_name="NO" label="NO">
+<source county="San Benito" ballot_name="NO"/>
+</candidate>
+<warning code="vote_for_unknown" severity="info" contest_id="san-benito-county-measure-cannabis">No county printed a vote for; status assumes 1.</warning>
+</contest>
+<contest id="north-county-recreation-measure-v" contest_type="measure" status="contested" level="district" jurisdiction="North County Public Recreation District" jurisdiction_type="special_district" vote_for="1" measure_letter="V" is_short_term="false">
+<jurisdiction_county>Monterey</jurisdiction_county>
+<candidate id="yes" candidate_type="ballot" candidate_status="active" ballot_name="YES" label="YES">
+</candidate>
+<candidate id="no" candidate_type="ballot" candidate_status="active" ballot_name="NO" label="NO">
+</candidate>
+</contest>
+<contest id="city-of-king-council-2" contest_type="candidate" status="no_election" level="city" jurisdiction="City of King" jurisdiction_type="city" office="Member, City Council" seat_type="district" seat_number="2" vote_for="1" is_short_term="false">
+<jurisdiction_county>Monterey</jurisdiction_county>
+<candidate id="c_cebe517e90" candidate_type="ballot" candidate_status="active" ballot_name="MIKE LEBARRE" first="MIKE" last="LEBARRE">
+</candidate>
+<candidate id="write_in_total" candidate_type="write_in_total" candidate_status="active" ballot_name="Write-in" label="Write-in">
+</candidate>
+</contest>
+</contests>

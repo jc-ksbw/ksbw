@@ -11,6 +11,9 @@ Public Class Candidate
     Public Property Party As String = ""
     Public Property Incumbent As Boolean
 
+    ''' <summary>The candidate's ID in the results feed, when it has one. Makes pairing exact.</summary>
+    Public Property FeedId As String = ""
+
     ''' <summary>Votes and winner flag are only filled in when sending results.</summary>
     Public Property Votes As Long
     Public Property Winner As Boolean

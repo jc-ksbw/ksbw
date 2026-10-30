@@ -20,6 +20,9 @@ Public Class AppSettings
     Public Property FeedAuto As Boolean
     Public Property FeedSkipAreas As String = ""
     Public Property FeedSubRaces As Boolean
+    Public Property ApiUrl As String = ""
+    Public Property ApiWriteIns As Integer = 0
+    Public Property ApiBlockOnCountyError As Boolean = True
 
     Private Shared ReadOnly Property FilePath As String
         Get
@@ -56,6 +59,9 @@ Public Class AppSettings
                     Case "FeedAuto" : s.FeedAuto = String.Equals(value, "true", StringComparison.OrdinalIgnoreCase)
                     Case "FeedSkipAreas" : s.FeedSkipAreas = value
                     Case "FeedSubRaces" : s.FeedSubRaces = String.Equals(value, "true", StringComparison.OrdinalIgnoreCase)
+                    Case "ApiUrl" : s.ApiUrl = value
+                    Case "ApiWriteIns" : s.ApiWriteIns = ParseInt(value, s.ApiWriteIns)
+                    Case "ApiBlockOnCountyError" : s.ApiBlockOnCountyError = Not String.Equals(value, "false", StringComparison.OrdinalIgnoreCase)
                 End Select
             Next
         Catch
@@ -80,7 +86,10 @@ Public Class AppSettings
                 "FeedIntervalSec=" & FeedIntervalSec.ToString(CultureInfo.InvariantCulture),
                 "FeedAuto=" & FeedAuto.ToString(),
                 "FeedSkipAreas=" & FeedSkipAreas,
-                "FeedSubRaces=" & FeedSubRaces.ToString()
+                "FeedSubRaces=" & FeedSubRaces.ToString(),
+                "ApiUrl=" & ApiUrl,
+                "ApiWriteIns=" & ApiWriteIns.ToString(CultureInfo.InvariantCulture),
+                "ApiBlockOnCountyError=" & ApiBlockOnCountyError.ToString()
             })
         Catch
         End Try

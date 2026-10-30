@@ -34,6 +34,8 @@ Public Class MainForm
     Private btnBrowse As Button
     Private btnReload As Button
     Private btnMap As Button
+    Private btnApi As Button
+    Private btnSaveCsv As Button
     Private gridRaces As DataGridView
     Private gridCands As DataGridView
     Private lblRaceSummary As Label
@@ -120,17 +122,24 @@ Public Class MainForm
         AddHandler btnReload.Click, Sub() LoadCsv(txtCsv.Text, False)
         AddHandler btnMap.Click, AddressOf OnMapClick
 
-        Dim csvRow As New TableLayoutPanel With {.Dock = DockStyle.Top, .AutoSize = True, .ColumnCount = 5, .Padding = New Padding(8, 6, 8, 0)}
+        btnApi = New Button With {.Text = "From API...", .AutoSize = True}
+        btnSaveCsv = New Button With {.Text = "Save as CSV...", .AutoSize = True}
+        AddHandler btnApi.Click, AddressOf OnApiClick
+        AddHandler btnSaveCsv.Click, AddressOf OnSaveCsvClick
+
+        Dim csvRow As New TableLayoutPanel With {.Dock = DockStyle.Top, .AutoSize = True, .ColumnCount = 7, .Padding = New Padding(8, 6, 8, 0)}
         csvRow.ColumnStyles.Add(New ColumnStyle(SizeType.AutoSize))
         csvRow.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 100))
-        csvRow.ColumnStyles.Add(New ColumnStyle(SizeType.AutoSize))
-        csvRow.ColumnStyles.Add(New ColumnStyle(SizeType.AutoSize))
-        csvRow.ColumnStyles.Add(New ColumnStyle(SizeType.AutoSize))
-        csvRow.Controls.Add(MakeLabel("Races CSV"), 0, 0)
+        For i = 1 To 5
+            csvRow.ColumnStyles.Add(New ColumnStyle(SizeType.AutoSize))
+        Next
+        csvRow.Controls.Add(MakeLabel("Races"), 0, 0)
         csvRow.Controls.Add(txtCsv, 1, 0)
         csvRow.Controls.Add(btnBrowse, 2, 0)
         csvRow.Controls.Add(btnReload, 3, 0)
         csvRow.Controls.Add(btnMap, 4, 0)
+        csvRow.Controls.Add(btnApi, 5, 0)
+        csvRow.Controls.Add(btnSaveCsv, 6, 0)
 
         ' --- Races grid + candidate grid ----------------------------------------------------
         gridRaces = MakeGrid()
@@ -323,7 +332,8 @@ Public Class MainForm
         btnCheckAll.Enabled = _races.Count > 0
         btnUncheckAll.Enabled = _races.Count > 0
         btnMap.Enabled = _rows IsNot Nothing
-        btnReload.Enabled = txtCsv.Text <> ""
+        btnReload.Enabled = txtCsv.Text <> "" AndAlso _rows IsNot Nothing
+        btnSaveCsv.Enabled = _races.Count > 0
         btnCancel.Enabled = _client.PendingCount > 0
     End Sub
 
@@ -547,6 +557,89 @@ Public Class MainForm
         UpdateSendStatus()
     End Sub
 
+    ''' <summary>Builds the race list from the API's ballot definition instead of a CSV.</summary>
+    Private Sub OnApiClick(sender As Object, e As EventArgs)
+        Dim url = _settings.ApiUrl
+        If url = "" Then url = _settings.FeedSource
+        url = Prompt.Ask(Me, "Election Results Monitor API", "Address of the API (its base, or its /api/contests):", If(url <> "", url, "http://127.0.0.1:8877"))
+        If url Is Nothing Then Return
+
+        Dim client As New MonitorClient
+        client.SetSource(url)
+        client.Headers = _settings.FeedHeaders
+        Dim definition As ApiDefinition
+        Try
+            Cursor = Cursors.WaitCursor
+            definition = client.LoadDefinition()
+        Catch ex As Exception
+            MessageBox.Show(Me, "Could not read the ballot definition:" & vbCrLf & ex.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        Finally
+            Cursor = Cursors.Default
+        End Try
+
+        _settings.ApiUrl = url
+        If _settings.FeedSource = "" Then _settings.FeedSource = client.ResultsUrl
+        SaveSettings()
+
+        Dim options = ApiOptions()
+        Using dlg As New ApiRacesForm(definition, options)
+            If dlg.ShowDialog(Me) <> DialogResult.OK Then Return
+            _settings.ApiWriteIns = CInt(options.WriteIns)
+            SaveSettings()
+
+            _rows = Nothing
+            _map = New Dictionary(Of RaceField, Integer)
+            _mapHeaderKey = ""
+            txtCsv.Text = $"(from the API - ballot version {definition.Version}, {definition.Contests.Count} contests)"
+            _races = dlg.Result
+
+            Dim summary As New ImportResult
+            For Each m In definition.OverrideErrors
+                summary.Messages.Add("API override problem: " & m)
+            Next
+            RefreshRaceGrid(summary)
+            UiLog($"Loaded {_races.Count} race(s) from the API, ballot version {definition.Version}.")
+            For Each m In summary.Messages
+                UiLog("  ! " & m)
+            Next
+
+            Dim apiDate = MonitorAdapter.ElectionDateText(definition.ElectionDate)
+            If apiDate <> "" AndAlso apiDate <> ElectionDateText() Then
+                If MessageBox.Show(Me, $"The API's election date is {apiDate}; this window is set to {ElectionDateText()}." & vbCrLf & vbCrLf &
+                                   "Use the API's date?", Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+                    Dim d As Date
+                    If Date.TryParseExact(apiDate, "M/d/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, d) Then dtpElection.Value = d
+                    SaveSettings()
+                End If
+            End If
+        End Using
+    End Sub
+
+    Friend Function ApiOptions() As MonitorOptions
+        Dim o As New MonitorOptions With {
+            .WriteIns = CType(Math.Max(0, Math.Min(2, _settings.ApiWriteIns)), WriteInMode),
+            .BlockOnCountyError = _settings.ApiBlockOnCountyError}
+        For Each c In _settings.FeedSkipAreas.Split(";"c, ","c)
+            If c.Trim() <> "" Then o.SkipCounties.Add(c.Trim())
+        Next
+        Return o
+    End Function
+
+    ''' <summary>Writes the current races out as a CSV, so a setup built from the API can be kept.</summary>
+    Private Sub OnSaveCsvClick(sender As Object, e As EventArgs)
+        If _races.Count = 0 Then Return
+        Using dlg As New SaveFileDialog With {.Filter = "CSV files (*.csv)|*.csv", .FileName = "races.csv", .Title = "Save races as CSV"}
+            If dlg.ShowDialog(Me) <> DialogResult.OK Then Return
+            Try
+                File.WriteAllText(dlg.FileName, RaceCsv.Build(_races), New System.Text.UTF8Encoding(True))
+                UiLog("Saved " & _races.Count & " race(s) to " & dlg.FileName)
+            Catch ex As Exception
+                MessageBox.Show(Me, "Could not save:" & vbCrLf & ex.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+        End Using
+    End Sub
+
     Private Sub OnResultsClick(sender As Object, e As EventArgs)
         If _results Is Nothing OrElse _results.IsDisposed Then _results = New ResultsForm(Me)
         _results.Show()
@@ -590,7 +683,7 @@ Public Class MainForm
 
     Protected Overrides Sub OnShown(e As EventArgs)
         MyBase.OnShown(e)
-        If txtCsv.Text <> "" AndAlso File.Exists(txtCsv.Text) Then LoadCsv(txtCsv.Text, False)
+        If txtCsv.Text <> "" AndAlso Not txtCsv.Text.StartsWith("(", StringComparison.Ordinal) AndAlso File.Exists(txtCsv.Text) Then LoadCsv(txtCsv.Text, False)
     End Sub
 
 End Class

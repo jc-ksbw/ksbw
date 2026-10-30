@@ -187,6 +187,9 @@ Public Class ResultsEngine
             For Each w In c.Warnings
                 item.Notes.Add(w)
             Next
+            For Each b In c.Blockers
+                held.Add(b)
+            Next
             If c.Winners.HasValue AndAlso c.Winners.Value <> race.Winners Then
                 item.Notes.Add($"Feed says vote for {c.Winners.Value}; the setup race has {race.Winners} winner(s).")
             End If
@@ -204,7 +207,12 @@ Public Class ResultsEngine
                     Continue For
                 End If
                 If Not fc.Votes.HasValue Then
-                    held.Add($"Votes for {fc.FullName}{If(c.Area <> "", " (" & c.Area & ")", "")} could not be read as a whole number.")
+                    Dim whose = If(c.Area <> "", " (" & c.Area & ")", "")
+                    If fc.WriteIn Then
+                        held.Add($"Write-in votes{whose} do not add up: the named write-ins come to more than the contest total.")
+                    Else
+                        held.Add($"Votes for {fc.FullName}{whose} could not be read as a whole number.")
+                    End If
                     Continue For
                 End If
                 seenInFeed.Add(map(i))

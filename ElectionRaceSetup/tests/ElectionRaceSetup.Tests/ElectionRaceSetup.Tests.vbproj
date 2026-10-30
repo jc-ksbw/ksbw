@@ -25,6 +25,10 @@
     <Compile Include="..\..\src\RaceMatcher.vb" />
     <Compile Include="..\..\src\CrosswalkStore.vb" />
     <Compile Include="..\..\src\ResultsEngine.vb" />
+    <Compile Include="..\..\src\MonitorModels.vb" />
+    <Compile Include="..\..\src\MonitorReader.vb" />
+    <Compile Include="..\..\src\MonitorAdapter.vb" />
+    <Compile Include="..\..\src\MonitorClient.vb" />
   </ItemGroup>
 
 </Project>

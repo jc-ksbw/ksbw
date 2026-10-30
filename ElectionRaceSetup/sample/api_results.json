@@ -1,0 +1,2771 @@
+{
+ "schema_version": 2,
+ "generated_at": "2026-11-04T06:05:08Z",
+ "election_date": "2026-11-03",
+ "ballot_version": 4,
+ "percent_scale": "0-100",
+ "content_hash": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+ "counties": [
+  {
+   "county": "Monterey",
+   "status": "zero_report",
+   "status_label": "Summary Report 00 - Zero Proof",
+   "election_label": "November 3, 2026 Statewide General Election",
+   "fetched_at": "2026-11-04T06:00:00Z",
+   "last_attempt_at": "2026-11-04T06:00:00Z",
+   "content_changed_at": "2026-11-04T05:00:00Z",
+   "content_hash": "8f24be6007b20ece3e79e7587998adaa2a121d28630a0dfaf8b1d220e728df16",
+   "county_timestamp": null,
+   "county_timestamp_text": null,
+   "source_url": "http://example.invalid/Monterey.pdf",
+   "turnout": {
+    "registered_voters": 220213,
+    "ballots_cast": 0
+   },
+   "error": null,
+   "notice": null,
+   "warnings": [],
+   "results": [
+    {
+     "contest_id": "ca-governor",
+     "source_id": "Governor (Vote for 1)",
+     "precincts": {
+      "reporting": 0,
+      "total": 208
+     },
+     "total_votes": 0,
+     "under_votes": 0,
+     "over_votes": 0,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "c_bdd0ad2d3f",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "c_7d87819f1a",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "write_in_total",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      }
+     ]
+    },
+    {
+     "contest_id": "ca-lieutenant-governor",
+     "source_id": "Lieutenant Governor (Vote for 1)",
+     "precincts": {
+      "reporting": 0,
+      "total": 208
+     },
+     "total_votes": 0,
+     "under_votes": 0,
+     "over_votes": 0,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "c_bf3609bda8",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "c_bd3fafb333",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "write_in_total",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      }
+     ]
+    },
+    {
+     "contest_id": "ca-secretary-of-state",
+     "source_id": "Secretary of State (Vote for 1)",
+     "precincts": {
+      "reporting": 0,
+      "total": 208
+     },
+     "total_votes": 0,
+     "under_votes": 0,
+     "over_votes": 0,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "c_59d4df385b",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "c_420f465bf4",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "write_in_total",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      }
+     ]
+    },
+    {
+     "contest_id": "ca-controller",
+     "source_id": "Controller (Vote for 1)",
+     "precincts": {
+      "reporting": 0,
+      "total": 208
+     },
+     "total_votes": 0,
+     "under_votes": 0,
+     "over_votes": 0,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "c_7e311215ff",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "c_4ebea55a89",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "c_2289af25cc",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "unqualified_write_in",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      }
+     ]
+    },
+    {
+     "contest_id": "ca-treasurer",
+     "source_id": "State Treasurer (Vote for 1)",
+     "precincts": {
+      "reporting": 0,
+      "total": 208
+     },
+     "total_votes": 0,
+     "under_votes": 0,
+     "over_votes": 0,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "c_aae3caddda",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "c_a8f18d793e",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "write_in_total",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      }
+     ]
+    },
+    {
+     "contest_id": "ca-attorney-general",
+     "source_id": "Attorney General (Vote for 1)",
+     "precincts": {
+      "reporting": 0,
+      "total": 208
+     },
+     "total_votes": 0,
+     "under_votes": 0,
+     "over_votes": 0,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "c_7c49735e10",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "c_8cd587f2d1",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "write_in_total",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      }
+     ]
+    },
+    {
+     "contest_id": "ca-insurance-commissioner",
+     "source_id": "Insurance Commissioner (Vote for 1)",
+     "precincts": {
+      "reporting": 0,
+      "total": 208
+     },
+     "total_votes": 0,
+     "under_votes": 0,
+     "over_votes": 0,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "c_79d997e365",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "c_0101fca04d",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "write_in_total",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      }
+     ]
+    },
+    {
+     "contest_id": "ca-boe-2",
+     "source_id": "State Board of Equalization Board Member District 2 (Vote for 1)",
+     "precincts": {
+      "reporting": 0,
+      "total": 208
+     },
+     "total_votes": 0,
+     "under_votes": 0,
+     "over_votes": 0,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "c_11ec9f56d0",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "c_b131cda65a",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "write_in_total",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      }
+     ]
+    },
+    {
+     "contest_id": "ca-superintendent",
+     "source_id": "Superintendent of Public Instruction (Vote for 1)",
+     "precincts": {
+      "reporting": 0,
+      "total": 208
+     },
+     "total_votes": 0,
+     "under_votes": 0,
+     "over_votes": 0,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "c_23e68353eb",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "c_ab59582f95",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "write_in_total",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      }
+     ]
+    },
+    {
+     "contest_id": "us-house-18",
+     "source_id": "United States Representative District 18 (Vote for 1)",
+     "precincts": {
+      "reporting": 0,
+      "total": 208
+     },
+     "total_votes": 0,
+     "under_votes": 0,
+     "over_votes": 0,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "c_40a992f38f",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "c_dc946b2770",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "write_in_total",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      }
+     ]
+    },
+    {
+     "contest_id": "us-house-19",
+     "source_id": "United States Representative District 19 (Vote for 1)",
+     "precincts": {
+      "reporting": 0,
+      "total": 208
+     },
+     "total_votes": 0,
+     "under_votes": 0,
+     "over_votes": 0,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "c_8471ea8fd0",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "c_9eb8d6b0d3",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "write_in_total",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      }
+     ]
+    },
+    {
+     "contest_id": "ca-assembly-29",
+     "source_id": "Member of the State Assembly District 29 (Vote for 1)",
+     "precincts": {
+      "reporting": 0,
+      "total": 208
+     },
+     "total_votes": 0,
+     "under_votes": 0,
+     "over_votes": 0,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "c_7516655173",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "c_d718b43392",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "write_in_total",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      }
+     ]
+    },
+    {
+     "contest_id": "ca-assembly-30",
+     "source_id": "Member of the State Assembly District 30 (Vote for 1)",
+     "precincts": {
+      "reporting": 0,
+      "total": 208
+     },
+     "total_votes": 0,
+     "under_votes": 0,
+     "over_votes": 0,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "c_f47c7c4d08",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "c_5d208c74a7",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "write_in_total",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      }
+     ]
+    },
+    {
+     "contest_id": "ca-supreme-court-groban",
+     "source_id": "Associate Justice of the Supreme Court (Joshua Groban) (Vote for 1)",
+     "precincts": {
+      "reporting": 0,
+      "total": 208
+     },
+     "total_votes": 0,
+     "under_votes": 0,
+     "over_votes": 0,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "yes",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "no",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      }
+     ]
+    },
+    {
+     "contest_id": "ca-appeal-6-wilson",
+     "source_id": "Associate Justice, Court of Appeal, Sixth District (Charles E. Wilson II) (Vote for 1)",
+     "precincts": {
+      "reporting": 0,
+      "total": 208
+     },
+     "total_votes": 0,
+     "under_votes": 0,
+     "over_votes": 0,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "yes",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "no",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      }
+     ]
+    },
+    {
+     "contest_id": "ca-appeal-6-chung",
+     "source_id": "Associate Justice, Court of Appeal, Sixth District (Frederick S. Chung) (Vote for 1)",
+     "precincts": {
+      "reporting": 0,
+      "total": 208
+     },
+     "total_votes": 0,
+     "under_votes": 0,
+     "over_votes": 0,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "yes",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "no",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      }
+     ]
+    },
+    {
+     "contest_id": "ca-prop-1",
+     "source_id": "Proposition 1 (Vote for 1)",
+     "precincts": {
+      "reporting": 0,
+      "total": 208
+     },
+     "total_votes": 0,
+     "under_votes": 0,
+     "over_votes": 0,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "yes",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "no",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      }
+     ]
+    },
+    {
+     "contest_id": "ca-prop-2",
+     "source_id": "Proposition 2 (Vote for 1)",
+     "precincts": {
+      "reporting": 0,
+      "total": 208
+     },
+     "total_votes": 0,
+     "under_votes": 0,
+     "over_votes": 0,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "yes",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "no",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      }
+     ]
+    },
+    {
+     "contest_id": "ca-prop-37",
+     "source_id": "Proposition 37 (Vote for 1)",
+     "precincts": {
+      "reporting": 0,
+      "total": 208
+     },
+     "total_votes": 0,
+     "under_votes": 0,
+     "over_votes": 0,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "yes",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "no",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      }
+     ]
+    },
+    {
+     "contest_id": "ca-prop-38",
+     "source_id": "Proposition 38 (Vote for 1)",
+     "precincts": {
+      "reporting": 0,
+      "total": 208
+     },
+     "total_votes": 0,
+     "under_votes": 0,
+     "over_votes": 0,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "yes",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "no",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      }
+     ]
+    },
+    {
+     "contest_id": "monterey-county-board-of-education-ta-1",
+     "source_id": "Monterey County Board of Education Governing Board Member Trustee Area 1 (Vote for 1)",
+     "precincts": {
+      "reporting": 0,
+      "total": 20
+     },
+     "total_votes": 0,
+     "under_votes": 0,
+     "over_votes": 0,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "c_cd6a069867",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "c_6e7036be2a",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "write_in_total",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      }
+     ]
+    },
+    {
+     "contest_id": "hartnell-ccd-ta-5",
+     "source_id": "Hartnell Community College District Governing Board Member Trustee Area 5 (Vote for 1)",
+     "precincts": {
+      "reporting": 0,
+      "total": 20
+     },
+     "total_votes": 0,
+     "under_votes": 0,
+     "over_votes": 0,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "c_4a1c44e254",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "c_be1285da51",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "write_in_total",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      }
+     ]
+    },
+    {
+     "contest_id": "alisal-union-sd-ta-5",
+     "source_id": "Alisal Union School District Governing Board Member Trustee Area 5 (Vote for 1)",
+     "precincts": {
+      "reporting": 0,
+      "total": 20
+     },
+     "total_votes": 0,
+     "under_votes": 0,
+     "over_votes": 0,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "c_145f6db777",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "c_b3cd30bd61",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "c_8126f55d0b",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "write_in_total",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      }
+     ]
+    },
+    {
+     "contest_id": "king-city-union-sd",
+     "source_id": "King City Union School District Governing Board Member (Vote for 3)",
+     "precincts": {
+      "reporting": 0,
+      "total": 20
+     },
+     "total_votes": 0,
+     "under_votes": 0,
+     "over_votes": 0,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "c_5fff37d20e",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "c_5b0cfa19eb",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "c_0afb6e9f53",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "c_b1684116e8",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "c_1c67dcc9a2",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "write_in_total",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      }
+     ]
+    },
+    {
+     "contest_id": "king-city-joint-usd",
+     "source_id": "King City Joint Unified School District Governing Board Member (Vote for 5)",
+     "precincts": {
+      "reporting": 0,
+      "total": 20
+     },
+     "total_votes": 0,
+     "under_votes": 0,
+     "over_votes": 0,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "c_c7193ff0d9",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "c_5fff37d20e",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "c_5b0cfa19eb",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "c_0afb6e9f53",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "c_d547b91c73",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "c_b1684116e8",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "c_bfe8df50ea",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "c_1c67dcc9a2",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "c_03a036663e",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "c_11faf86623",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "write_in_total",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      }
+     ]
+    },
+    {
+     "contest_id": "pacific-grove-usd-ta-1",
+     "source_id": "Pacific Grove Unified School District Governing Board Member Trustee Area 1 (Vote for 1)",
+     "precincts": {
+      "reporting": 0,
+      "total": 20
+     },
+     "total_votes": 0,
+     "under_votes": 0,
+     "over_votes": 0,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "c_6f3609884b",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "c_bc979acc38",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "c_1c39dd015a",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "write_in_total",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      }
+     ]
+    },
+    {
+     "contest_id": "city-of-salinas-mayor",
+     "source_id": "City of Salinas Mayor (Vote for 1)",
+     "precincts": {
+      "reporting": 0,
+      "total": 20
+     },
+     "total_votes": 0,
+     "under_votes": 0,
+     "over_votes": 0,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "c_c5b27a0071",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "c_9290200e8a",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "c_ad3c825174",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "c_769028282f",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "write_in_total",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      }
+     ]
+    },
+    {
+     "contest_id": "city-of-salinas-council-2",
+     "source_id": "City of Salinas Member, City Council District 2 (Vote for 1)",
+     "precincts": {
+      "reporting": 0,
+      "total": 20
+     },
+     "total_votes": 0,
+     "under_votes": 0,
+     "over_votes": 0,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "c_79628d55df",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "c_715402256b",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "write_in_total",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      }
+     ]
+    },
+    {
+     "contest_id": "city-of-monterey-mayor",
+     "source_id": "City of Monterey Mayor (Vote for 1)",
+     "precincts": {
+      "reporting": 0,
+      "total": 20
+     },
+     "total_votes": 0,
+     "under_votes": 0,
+     "over_votes": 0,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "c_8c16aaecb2",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "c_a6a62d51a9",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "write_in_total",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      }
+     ]
+    },
+    {
+     "contest_id": "city-of-pacific-grove-council-2yr",
+     "source_id": "City of Pacific Grove Member, City Council, 2 Year (Vote for 1)",
+     "precincts": {
+      "reporting": 0,
+      "total": 20
+     },
+     "total_votes": 0,
+     "under_votes": 0,
+     "over_votes": 0,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "c_04da5abde1",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "c_f52fb6efd7",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "write_in_total",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      }
+     ]
+    },
+    {
+     "contest_id": "city-of-sand-city-council",
+     "source_id": "City of Sand City Member, City Council (Vote for 2)",
+     "precincts": {
+      "reporting": 0,
+      "total": 20
+     },
+     "total_votes": 0,
+     "under_votes": 0,
+     "over_votes": 0,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "c_72bb639215",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "c_1908253cc9",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "c_94f9d65a5a",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "c_e8401c718a",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "write_in_total",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      }
+     ]
+    },
+    {
+     "contest_id": "city-of-del-rey-oaks-mayor",
+     "source_id": "City of Del Rey Oaks Mayor (Vote for 1)",
+     "precincts": {
+      "reporting": 0,
+      "total": 20
+     },
+     "total_votes": 0,
+     "under_votes": 0,
+     "over_votes": 0,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "c_e0213c0ddb",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "write_in_total",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      }
+     ]
+    },
+    {
+     "contest_id": "monterey-county-measure-e",
+     "source_id": "Measure E: County of Monterey (Vote for 1)",
+     "precincts": {
+      "reporting": 0,
+      "total": 20
+     },
+     "total_votes": 0,
+     "under_votes": 0,
+     "over_votes": 0,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "yes",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "no",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      }
+     ]
+    },
+    {
+     "contest_id": "city-of-salinas-measure-g",
+     "source_id": "Measure G: City of Salinas (Vote for 1)",
+     "precincts": {
+      "reporting": 0,
+      "total": 20
+     },
+     "total_votes": 0,
+     "under_votes": 0,
+     "over_votes": 0,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "yes",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "no",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      }
+     ]
+    },
+    {
+     "contest_id": "city-of-salinas-measure-h",
+     "source_id": "Measure H: City of Salinas (Vote for 1)",
+     "precincts": {
+      "reporting": 0,
+      "total": 20
+     },
+     "total_votes": 0,
+     "under_votes": 0,
+     "over_votes": 0,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "yes",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "no",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      }
+     ]
+    },
+    {
+     "contest_id": "carmel-usd-measure-i",
+     "source_id": "Measure I: Carmel Unified School District (Vote for 1)",
+     "precincts": {
+      "reporting": 0,
+      "total": 20
+     },
+     "total_votes": 0,
+     "under_votes": 0,
+     "over_votes": 0,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "yes",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      },
+      {
+       "candidate_id": "no",
+       "votes": 0,
+       "percent": null,
+       "reported_percent": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "county": "Santa Cruz",
+   "status": "partial",
+   "status_label": "Unofficial Election Night Results",
+   "election_label": "November 3, 2026 Statewide General Election",
+   "fetched_at": "2026-11-04T06:00:00Z",
+   "last_attempt_at": "2026-11-04T06:00:00Z",
+   "content_changed_at": "2026-11-04T05:00:00Z",
+   "content_hash": "1da72f7b0c0884a0f37ec308aa7f688de2cbf417a6f837700621423f1b42ccdc",
+   "county_timestamp": "2026-11-04T05:45:00Z",
+   "county_timestamp_text": "November 3, 2026 9:45 PM",
+   "source_url": "http://example.invalid/SantaCruz.pdf",
+   "turnout": {
+    "registered_voters": 150000,
+    "ballots_cast": 50000
+   },
+   "error": null,
+   "notice": null,
+   "warnings": [],
+   "results": [
+    {
+     "contest_id": "ca-governor",
+     "source_id": "NameRace_9",
+     "precincts": {
+      "reporting": null,
+      "total": null
+     },
+     "total_votes": 816,
+     "under_votes": 7,
+     "over_votes": 1,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "c_bdd0ad2d3f",
+       "votes": 400,
+       "percent": 49.02,
+       "reported_percent": 49.02
+      },
+      {
+       "candidate_id": "c_7d87819f1a",
+       "votes": 411,
+       "percent": 50.37,
+       "reported_percent": 50.37
+      },
+      {
+       "candidate_id": "write_in_total",
+       "votes": 5,
+       "percent": 0.61,
+       "reported_percent": 0.61
+      }
+     ]
+    },
+    {
+     "contest_id": "ca-lieutenant-governor",
+     "source_id": "NameRace_33",
+     "precincts": {
+      "reporting": null,
+      "total": null
+     },
+     "total_votes": 830,
+     "under_votes": 7,
+     "over_votes": 1,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "c_bf3609bda8",
+       "votes": 407,
+       "percent": 49.04,
+       "reported_percent": 49.04
+      },
+      {
+       "candidate_id": "c_bd3fafb333",
+       "votes": 418,
+       "percent": 50.36,
+       "reported_percent": 50.36
+      },
+      {
+       "candidate_id": "write_in_total",
+       "votes": 5,
+       "percent": 0.6,
+       "reported_percent": 0.6
+      }
+     ]
+    },
+    {
+     "contest_id": "ca-secretary-of-state",
+     "source_id": "NameRace_44",
+     "precincts": {
+      "reporting": null,
+      "total": null
+     },
+     "total_votes": 844,
+     "under_votes": 7,
+     "over_votes": 1,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "c_59d4df385b",
+       "votes": 414,
+       "percent": 49.05,
+       "reported_percent": 49.05
+      },
+      {
+       "candidate_id": "c_420f465bf4",
+       "votes": 425,
+       "percent": 50.36,
+       "reported_percent": 50.36
+      },
+      {
+       "candidate_id": "write_in_total",
+       "votes": 5,
+       "percent": 0.59,
+       "reported_percent": 0.59
+      }
+     ]
+    },
+    {
+     "contest_id": "ca-controller",
+     "source_id": "NameRace_24",
+     "precincts": {
+      "reporting": null,
+      "total": null
+     },
+     "total_votes": 1298,
+     "under_votes": 7,
+     "over_votes": 1,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "c_7e311215ff",
+       "votes": 421,
+       "percent": 32.43,
+       "reported_percent": 32.43
+      },
+      {
+       "candidate_id": "c_4ebea55a89",
+       "votes": 432,
+       "percent": 33.28,
+       "reported_percent": 33.28
+      },
+      {
+       "candidate_id": "c_2289af25cc",
+       "votes": 443,
+       "percent": 34.13,
+       "reported_percent": 34.13
+      },
+      {
+       "candidate_id": "unqualified_write_in",
+       "votes": 2,
+       "percent": 0.15,
+       "reported_percent": 0.15
+      }
+     ]
+    },
+    {
+     "contest_id": "ca-treasurer",
+     "source_id": "NameRace_81",
+     "precincts": {
+      "reporting": null,
+      "total": null
+     },
+     "total_votes": 872,
+     "under_votes": 7,
+     "over_votes": 1,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "c_aae3caddda",
+       "votes": 428,
+       "percent": 49.08,
+       "reported_percent": 49.08
+      },
+      {
+       "candidate_id": "c_a8f18d793e",
+       "votes": 439,
+       "percent": 50.34,
+       "reported_percent": 50.34
+      },
+      {
+       "candidate_id": "write_in_total",
+       "votes": 5,
+       "percent": 0.57,
+       "reported_percent": 0.57
+      }
+     ]
+    },
+    {
+     "contest_id": "ca-attorney-general",
+     "source_id": "NameRace_16",
+     "precincts": {
+      "reporting": null,
+      "total": null
+     },
+     "total_votes": 886,
+     "under_votes": 7,
+     "over_votes": 1,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "c_7c49735e10",
+       "votes": 435,
+       "percent": 49.1,
+       "reported_percent": 49.1
+      },
+      {
+       "candidate_id": "c_8cd587f2d1",
+       "votes": 446,
+       "percent": 50.34,
+       "reported_percent": 50.34
+      },
+      {
+       "candidate_id": "write_in_total",
+       "votes": 5,
+       "percent": 0.56,
+       "reported_percent": 0.56
+      }
+     ]
+    },
+    {
+     "contest_id": "ca-insurance-commissioner",
+     "source_id": "NameRace_45",
+     "precincts": {
+      "reporting": null,
+      "total": null
+     },
+     "total_votes": 900,
+     "under_votes": 7,
+     "over_votes": 1,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "c_79d997e365",
+       "votes": 442,
+       "percent": 49.11,
+       "reported_percent": 49.11
+      },
+      {
+       "candidate_id": "c_0101fca04d",
+       "votes": 453,
+       "percent": 50.33,
+       "reported_percent": 50.33
+      },
+      {
+       "candidate_id": "write_in_total",
+       "votes": 5,
+       "percent": 0.56,
+       "reported_percent": 0.56
+      }
+     ]
+    },
+    {
+     "contest_id": "ca-boe-2",
+     "source_id": "NameRace_89",
+     "precincts": {
+      "reporting": null,
+      "total": null
+     },
+     "total_votes": 914,
+     "under_votes": 7,
+     "over_votes": 1,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "c_11ec9f56d0",
+       "votes": 449,
+       "percent": 49.12,
+       "reported_percent": 49.12
+      },
+      {
+       "candidate_id": "c_b131cda65a",
+       "votes": 460,
+       "percent": 50.33,
+       "reported_percent": 50.33
+      },
+      {
+       "candidate_id": "write_in_total",
+       "votes": 5,
+       "percent": 0.55,
+       "reported_percent": 0.55
+      }
+     ]
+    },
+    {
+     "contest_id": "ca-superintendent",
+     "source_id": "NameRace_1",
+     "precincts": {
+      "reporting": null,
+      "total": null
+     },
+     "total_votes": 928,
+     "under_votes": 7,
+     "over_votes": 1,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "c_23e68353eb",
+       "votes": 456,
+       "percent": 49.14,
+       "reported_percent": 49.14
+      },
+      {
+       "candidate_id": "c_ab59582f95",
+       "votes": 467,
+       "percent": 50.32,
+       "reported_percent": 50.32
+      },
+      {
+       "candidate_id": "write_in_total",
+       "votes": 5,
+       "percent": 0.54,
+       "reported_percent": 0.54
+      }
+     ]
+    },
+    {
+     "contest_id": "us-house-18",
+     "source_id": "NameRace_53",
+     "precincts": {
+      "reporting": null,
+      "total": null
+     },
+     "total_votes": 942,
+     "under_votes": 7,
+     "over_votes": 1,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "c_40a992f38f",
+       "votes": 463,
+       "percent": 49.15,
+       "reported_percent": 49.15
+      },
+      {
+       "candidate_id": "c_dc946b2770",
+       "votes": 474,
+       "percent": 50.32,
+       "reported_percent": 50.32
+      },
+      {
+       "candidate_id": "write_in_total",
+       "votes": 5,
+       "percent": 0.53,
+       "reported_percent": 0.53
+      }
+     ]
+    },
+    {
+     "contest_id": "us-house-19",
+     "source_id": "NameRace_24",
+     "precincts": {
+      "reporting": null,
+      "total": null
+     },
+     "total_votes": 956,
+     "under_votes": 7,
+     "over_votes": 1,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "c_8471ea8fd0",
+       "votes": 470,
+       "percent": 49.16,
+       "reported_percent": 49.16
+      },
+      {
+       "candidate_id": "c_9eb8d6b0d3",
+       "votes": 481,
+       "percent": 50.31,
+       "reported_percent": 50.31
+      },
+      {
+       "candidate_id": "write_in_total",
+       "votes": 5,
+       "percent": 0.52,
+       "reported_percent": 0.52
+      }
+     ]
+    },
+    {
+     "contest_id": "ca-assembly-28",
+     "source_id": "NameRace_61",
+     "precincts": {
+      "reporting": null,
+      "total": null
+     },
+     "total_votes": 970,
+     "under_votes": 7,
+     "over_votes": 1,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "c_b1013e8dfc",
+       "votes": 477,
+       "percent": 49.18,
+       "reported_percent": 49.18
+      },
+      {
+       "candidate_id": "c_b3ef757c62",
+       "votes": 488,
+       "percent": 50.31,
+       "reported_percent": 50.31
+      },
+      {
+       "candidate_id": "write_in_total",
+       "votes": 5,
+       "percent": 0.52,
+       "reported_percent": 0.52
+      }
+     ]
+    },
+    {
+     "contest_id": "ca-assembly-29",
+     "source_id": "NameRace_89",
+     "precincts": {
+      "reporting": null,
+      "total": null
+     },
+     "total_votes": 984,
+     "under_votes": 7,
+     "over_votes": 1,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "c_7516655173",
+       "votes": 484,
+       "percent": 49.19,
+       "reported_percent": 49.19
+      },
+      {
+       "candidate_id": "c_d718b43392",
+       "votes": 495,
+       "percent": 50.3,
+       "reported_percent": 50.3
+      },
+      {
+       "candidate_id": "write_in_total",
+       "votes": 5,
+       "percent": 0.51,
+       "reported_percent": 0.51
+      }
+     ]
+    },
+    {
+     "contest_id": "ca-assembly-30",
+     "source_id": "NameRace_8",
+     "precincts": {
+      "reporting": null,
+      "total": null
+     },
+     "total_votes": 998,
+     "under_votes": 7,
+     "over_votes": 1,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "c_f47c7c4d08",
+       "votes": 491,
+       "percent": 49.2,
+       "reported_percent": 49.2
+      },
+      {
+       "candidate_id": "c_5d208c74a7",
+       "votes": 502,
+       "percent": 50.3,
+       "reported_percent": 50.3
+      },
+      {
+       "candidate_id": "write_in_total",
+       "votes": 5,
+       "percent": 0.5,
+       "reported_percent": 0.5
+      }
+     ]
+    },
+    {
+     "contest_id": "ca-supreme-court-groban",
+     "source_id": "NameRace_47",
+     "precincts": {
+      "reporting": null,
+      "total": null
+     },
+     "total_votes": 1007,
+     "under_votes": 7,
+     "over_votes": 1,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "yes",
+       "votes": 498,
+       "percent": 49.45,
+       "reported_percent": 49.45
+      },
+      {
+       "candidate_id": "no",
+       "votes": 509,
+       "percent": 50.55,
+       "reported_percent": 50.55
+      }
+     ]
+    },
+    {
+     "contest_id": "ca-appeal-6-wilson",
+     "source_id": "NameRace_46",
+     "precincts": {
+      "reporting": null,
+      "total": null
+     },
+     "total_votes": 1021,
+     "under_votes": 7,
+     "over_votes": 1,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "yes",
+       "votes": 505,
+       "percent": 49.46,
+       "reported_percent": 49.46
+      },
+      {
+       "candidate_id": "no",
+       "votes": 516,
+       "percent": 50.54,
+       "reported_percent": 50.54
+      }
+     ]
+    },
+    {
+     "contest_id": "ca-appeal-6-chung",
+     "source_id": "NameRace_2",
+     "precincts": {
+      "reporting": null,
+      "total": null
+     },
+     "total_votes": 1035,
+     "under_votes": 7,
+     "over_votes": 1,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "yes",
+       "votes": 512,
+       "percent": 49.47,
+       "reported_percent": 49.47
+      },
+      {
+       "candidate_id": "no",
+       "votes": 523,
+       "percent": 50.53,
+       "reported_percent": 50.53
+      }
+     ]
+    },
+    {
+     "contest_id": "ca-prop-1",
+     "source_id": "NameRace_83",
+     "precincts": {
+      "reporting": null,
+      "total": null
+     },
+     "total_votes": 1049,
+     "under_votes": 7,
+     "over_votes": 1,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "yes",
+       "votes": 519,
+       "percent": 49.48,
+       "reported_percent": 49.48
+      },
+      {
+       "candidate_id": "no",
+       "votes": 530,
+       "percent": 50.52,
+       "reported_percent": 50.52
+      }
+     ]
+    },
+    {
+     "contest_id": "ca-prop-2",
+     "source_id": "NameRace_2",
+     "precincts": {
+      "reporting": null,
+      "total": null
+     },
+     "total_votes": 1063,
+     "under_votes": 7,
+     "over_votes": 1,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "yes",
+       "votes": 526,
+       "percent": 49.48,
+       "reported_percent": 49.48
+      },
+      {
+       "candidate_id": "no",
+       "votes": 537,
+       "percent": 50.52,
+       "reported_percent": 50.52
+      }
+     ]
+    },
+    {
+     "contest_id": "ca-prop-37",
+     "source_id": "NameRace_40",
+     "precincts": {
+      "reporting": null,
+      "total": null
+     },
+     "total_votes": 1077,
+     "under_votes": 7,
+     "over_votes": 1,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "yes",
+       "votes": 533,
+       "percent": 49.49,
+       "reported_percent": 49.49
+      },
+      {
+       "candidate_id": "no",
+       "votes": 544,
+       "percent": 50.51,
+       "reported_percent": 50.51
+      }
+     ]
+    },
+    {
+     "contest_id": "ca-prop-38",
+     "source_id": "NameRace_23",
+     "precincts": {
+      "reporting": null,
+      "total": null
+     },
+     "total_votes": 1091,
+     "under_votes": 7,
+     "over_votes": 1,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "yes",
+       "votes": 540,
+       "percent": 49.5,
+       "reported_percent": 49.5
+      },
+      {
+       "candidate_id": "no",
+       "votes": 551,
+       "percent": 50.5,
+       "reported_percent": 50.5
+      }
+     ]
+    },
+    {
+     "contest_id": "city-of-santa-cruz-mayor",
+     "source_id": "NameRace_51",
+     "precincts": {
+      "reporting": null,
+      "total": null
+     },
+     "total_votes": 1278,
+     "under_votes": 7,
+     "over_votes": 1,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "c_7d1e672435",
+       "votes": 631,
+       "percent": 49.37,
+       "reported_percent": 49.37
+      },
+      {
+       "candidate_id": "c_f80aa410e7",
+       "votes": 642,
+       "percent": 50.23,
+       "reported_percent": 50.23
+      },
+      {
+       "candidate_id": "write_in_total",
+       "votes": 5,
+       "percent": 0.39,
+       "reported_percent": 0.39
+      },
+      {
+       "candidate_id": "unqualified_write_in",
+       "votes": 2,
+       "percent": 0.16,
+       "reported_percent": 0.16
+      }
+     ]
+    },
+    {
+     "contest_id": "city-of-capitola-council",
+     "source_id": "NameRace_8",
+     "precincts": {
+      "reporting": null,
+      "total": null
+     },
+     "total_votes": 3305,
+     "under_votes": 7,
+     "over_votes": 1,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "c_109d98f78e",
+       "votes": 638,
+       "percent": 19.3,
+       "reported_percent": 19.3
+      },
+      {
+       "candidate_id": "c_625a331f51",
+       "votes": 649,
+       "percent": 19.64,
+       "reported_percent": 19.64
+      },
+      {
+       "candidate_id": "c_bbb3051b68",
+       "votes": 660,
+       "percent": 19.97,
+       "reported_percent": 19.97
+      },
+      {
+       "candidate_id": "c_66fef055f1",
+       "votes": 671,
+       "percent": 20.3,
+       "reported_percent": 20.3
+      },
+      {
+       "candidate_id": "c_bc5413db78",
+       "votes": 682,
+       "percent": 20.64,
+       "reported_percent": 20.64
+      },
+      {
+       "candidate_id": "write_in_total",
+       "votes": 5,
+       "percent": 0.15,
+       "reported_percent": 0.15
+      },
+      {
+       "candidate_id": "unqualified_write_in",
+       "votes": 2,
+       "percent": 0.06,
+       "reported_percent": 0.06
+      }
+     ]
+    },
+    {
+     "contest_id": "city-of-watsonville-council-3",
+     "source_id": "NameRace_42",
+     "precincts": {
+      "reporting": null,
+      "total": null
+     },
+     "total_votes": 650,
+     "under_votes": 7,
+     "over_votes": 1,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "c_8d0154fe27",
+       "votes": 645,
+       "percent": 99.23,
+       "reported_percent": 99.23
+      },
+      {
+       "candidate_id": "write_in_total",
+       "votes": 5,
+       "percent": 0.77,
+       "reported_percent": 0.77
+      },
+      {
+       "candidate_id": "unqualified_write_in",
+       "votes": 2,
+       "percent": 0.31,
+       "reported_percent": 0.31
+      }
+     ]
+    },
+    {
+     "contest_id": "pajaro-valley-usd-ta-4",
+     "source_id": "NameRace_11",
+     "precincts": {
+      "reporting": null,
+      "total": null
+     },
+     "total_votes": 1323,
+     "under_votes": 7,
+     "over_votes": 1,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "c_2b9701f799",
+       "votes": 652,
+       "percent": 49.28,
+       "reported_percent": 49.28
+      },
+      {
+       "candidate_id": "c_0f7a549ac2",
+       "votes": 663,
+       "percent": 50.11,
+       "reported_percent": 50.11
+      },
+      {
+       "candidate_id": "c_fb1af2787d",
+       "votes": 3,
+       "percent": 0.23,
+       "reported_percent": 0.23
+      },
+      {
+       "candidate_id": "write_in_total",
+       "votes": 8,
+       "percent": 0.6,
+       "reported_percent": 0.6
+      },
+      {
+       "candidate_id": "unqualified_write_in",
+       "votes": 2,
+       "percent": 0.15,
+       "reported_percent": 0.15
+      }
+     ]
+    },
+    {
+     "contest_id": "felton-fire-protection-district",
+     "source_id": "NameRace_61",
+     "precincts": {
+      "reporting": null,
+      "total": null
+     },
+     "total_votes": 2707,
+     "under_votes": 7,
+     "over_votes": 1,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "c_c8e5c6f8ef",
+       "votes": 659,
+       "percent": 24.34,
+       "reported_percent": 24.34
+      },
+      {
+       "candidate_id": "c_92b6cca73e",
+       "votes": 670,
+       "percent": 24.75,
+       "reported_percent": 24.75
+      },
+      {
+       "candidate_id": "c_68933580e3",
+       "votes": 681,
+       "percent": 25.16,
+       "reported_percent": 25.16
+      },
+      {
+       "candidate_id": "c_d4426d2e64",
+       "votes": 692,
+       "percent": 25.56,
+       "reported_percent": 25.56
+      },
+      {
+       "candidate_id": "write_in_total",
+       "votes": 5,
+       "percent": 0.18,
+       "reported_percent": 0.18
+      }
+     ]
+    },
+    {
+     "contest_id": "santa-cruz-county-measure-d",
+     "source_id": "NameRace_87",
+     "precincts": {
+      "reporting": null,
+      "total": null
+     },
+     "total_votes": 1399,
+     "under_votes": 7,
+     "over_votes": 1,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "yes",
+       "votes": 694,
+       "percent": 49.61,
+       "reported_percent": 49.61
+      },
+      {
+       "candidate_id": "no",
+       "votes": 705,
+       "percent": 50.39,
+       "reported_percent": 50.39
+      }
+     ]
+    },
+    {
+     "contest_id": "santa-cruz-county-measure-e",
+     "source_id": "NameRace_31",
+     "precincts": {
+      "reporting": null,
+      "total": null
+     },
+     "total_votes": 1413,
+     "under_votes": 7,
+     "over_votes": 1,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "yes",
+       "votes": 701,
+       "percent": 49.61,
+       "reported_percent": 49.61
+      },
+      {
+       "candidate_id": "no",
+       "votes": 712,
+       "percent": 50.39,
+       "reported_percent": 50.39
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "county": "San Benito",
+   "status": "partial",
+   "status_label": "Semi-Official Election Night Results",
+   "election_label": "November 3, 2026 Statewide General Election",
+   "fetched_at": "2026-11-04T06:00:00Z",
+   "last_attempt_at": "2026-11-04T06:00:00Z",
+   "content_changed_at": "2026-11-04T05:00:00Z",
+   "content_hash": "aab0e6612a57fdb4e9e916be20a967deebdefa7f0b04e2aedd725d47f35a8ef0",
+   "county_timestamp": "2026-11-04T05:45:00Z",
+   "county_timestamp_text": "November 3, 2026 9:45 PM",
+   "source_url": "http://example.invalid/SanBenito.pdf",
+   "turnout": {
+    "registered_voters": 150000,
+    "ballots_cast": 50000
+   },
+   "error": null,
+   "notice": null,
+   "warnings": [
+    {
+     "code": "total_mismatch",
+     "severity": "error",
+     "contest_id": "ca-lieutenant-governor",
+     "candidate_id": null,
+     "message": "Candidate votes do not equal the report total."
+    }
+   ],
+   "results": [
+    {
+     "contest_id": "ca-governor",
+     "source_id": "san-benito:governor",
+     "precincts": {
+      "reporting": 12,
+      "total": 208
+     },
+     "total_votes": 256,
+     "under_votes": 7,
+     "over_votes": null,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "c_bdd0ad2d3f",
+       "votes": 120,
+       "percent": 46.88,
+       "reported_percent": 46.88
+      },
+      {
+       "candidate_id": "c_7d87819f1a",
+       "votes": 131,
+       "percent": 51.17,
+       "reported_percent": 51.17
+      },
+      {
+       "candidate_id": "write_in_total",
+       "votes": 5,
+       "percent": 1.95,
+       "reported_percent": 1.95
+      }
+     ]
+    },
+    {
+     "contest_id": "ca-lieutenant-governor",
+     "source_id": "san-benito:governor",
+     "precincts": {
+      "reporting": 12,
+      "total": 208
+     },
+     "total_votes": 270,
+     "under_votes": 7,
+     "over_votes": null,
+     "warning_codes": [
+      "total_mismatch"
+     ],
+     "worst_severity": "error",
+     "candidates": [
+      {
+       "candidate_id": "c_bf3609bda8",
+       "votes": 127,
+       "percent": 47.04,
+       "reported_percent": 47.04
+      },
+      {
+       "candidate_id": "c_bd3fafb333",
+       "votes": 138,
+       "percent": 51.11,
+       "reported_percent": 51.11
+      },
+      {
+       "candidate_id": "write_in_total",
+       "votes": 5,
+       "percent": 1.85,
+       "reported_percent": 1.85
+      }
+     ]
+    },
+    {
+     "contest_id": "ca-secretary-of-state",
+     "source_id": "san-benito:state",
+     "precincts": {
+      "reporting": 12,
+      "total": 208
+     },
+     "total_votes": 284,
+     "under_votes": 7,
+     "over_votes": null,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "c_59d4df385b",
+       "votes": 134,
+       "percent": 47.18,
+       "reported_percent": 47.18
+      },
+      {
+       "candidate_id": "c_420f465bf4",
+       "votes": 145,
+       "percent": 51.06,
+       "reported_percent": 51.06
+      },
+      {
+       "candidate_id": "write_in_total",
+       "votes": 5,
+       "percent": 1.76,
+       "reported_percent": 1.76
+      }
+     ]
+    },
+    {
+     "contest_id": "ca-controller",
+     "source_id": "san-benito:controller",
+     "precincts": {
+      "reporting": 12,
+      "total": 208
+     },
+     "total_votes": 458,
+     "under_votes": 7,
+     "over_votes": null,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "c_7e311215ff",
+       "votes": 141,
+       "percent": 30.79,
+       "reported_percent": 30.79
+      },
+      {
+       "candidate_id": "c_4ebea55a89",
+       "votes": 152,
+       "percent": 33.19,
+       "reported_percent": 33.19
+      },
+      {
+       "candidate_id": "c_2289af25cc",
+       "votes": 163,
+       "percent": 35.59,
+       "reported_percent": 35.59
+      },
+      {
+       "candidate_id": "unqualified_write_in",
+       "votes": 2,
+       "percent": 0.44,
+       "reported_percent": 0.44
+      }
+     ]
+    },
+    {
+     "contest_id": "ca-treasurer",
+     "source_id": "san-benito:treasurer",
+     "precincts": {
+      "reporting": 12,
+      "total": 208
+     },
+     "total_votes": 312,
+     "under_votes": 7,
+     "over_votes": null,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "c_aae3caddda",
+       "votes": 148,
+       "percent": 47.44,
+       "reported_percent": 47.44
+      },
+      {
+       "candidate_id": "c_a8f18d793e",
+       "votes": 159,
+       "percent": 50.96,
+       "reported_percent": 50.96
+      },
+      {
+       "candidate_id": "write_in_total",
+       "votes": 5,
+       "percent": 1.6,
+       "reported_percent": 1.6
+      }
+     ]
+    },
+    {
+     "contest_id": "ca-attorney-general",
+     "source_id": "san-benito:general",
+     "precincts": {
+      "reporting": 12,
+      "total": 208
+     },
+     "total_votes": 326,
+     "under_votes": 7,
+     "over_votes": null,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "c_7c49735e10",
+       "votes": 155,
+       "percent": 47.55,
+       "reported_percent": 47.55
+      },
+      {
+       "candidate_id": "c_8cd587f2d1",
+       "votes": 166,
+       "percent": 50.92,
+       "reported_percent": 50.92
+      },
+      {
+       "candidate_id": "write_in_total",
+       "votes": 5,
+       "percent": 1.53,
+       "reported_percent": 1.53
+      }
+     ]
+    },
+    {
+     "contest_id": "ca-insurance-commissioner",
+     "source_id": "san-benito:commissioner",
+     "precincts": {
+      "reporting": 12,
+      "total": 208
+     },
+     "total_votes": 340,
+     "under_votes": 7,
+     "over_votes": null,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "c_79d997e365",
+       "votes": 162,
+       "percent": 47.65,
+       "reported_percent": 47.65
+      },
+      {
+       "candidate_id": "c_0101fca04d",
+       "votes": 173,
+       "percent": 50.88,
+       "reported_percent": 50.88
+      },
+      {
+       "candidate_id": "write_in_total",
+       "votes": 5,
+       "percent": 1.47,
+       "reported_percent": 1.47
+      }
+     ]
+    },
+    {
+     "contest_id": "ca-boe-2",
+     "source_id": "san-benito:2",
+     "precincts": {
+      "reporting": 12,
+      "total": 208
+     },
+     "total_votes": 354,
+     "under_votes": 7,
+     "over_votes": null,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "c_11ec9f56d0",
+       "votes": 169,
+       "percent": 47.74,
+       "reported_percent": 47.74
+      },
+      {
+       "candidate_id": "c_b131cda65a",
+       "votes": 180,
+       "percent": 50.85,
+       "reported_percent": 50.85
+      },
+      {
+       "candidate_id": "write_in_total",
+       "votes": 5,
+       "percent": 1.41,
+       "reported_percent": 1.41
+      }
+     ]
+    },
+    {
+     "contest_id": "ca-superintendent",
+     "source_id": "san-benito:superintendent",
+     "precincts": {
+      "reporting": 12,
+      "total": 208
+     },
+     "total_votes": 368,
+     "under_votes": 7,
+     "over_votes": null,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "c_23e68353eb",
+       "votes": 176,
+       "percent": 47.83,
+       "reported_percent": 47.83
+      },
+      {
+       "candidate_id": "c_ab59582f95",
+       "votes": 187,
+       "percent": 50.82,
+       "reported_percent": 50.82
+      },
+      {
+       "candidate_id": "write_in_total",
+       "votes": 5,
+       "percent": 1.36,
+       "reported_percent": 1.36
+      }
+     ]
+    },
+    {
+     "contest_id": "us-house-18",
+     "source_id": "san-benito:18",
+     "precincts": {
+      "reporting": 12,
+      "total": 208
+     },
+     "total_votes": 382,
+     "under_votes": 7,
+     "over_votes": null,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "c_40a992f38f",
+       "votes": 183,
+       "percent": 47.91,
+       "reported_percent": 47.91
+      },
+      {
+       "candidate_id": "c_dc946b2770",
+       "votes": 194,
+       "percent": 50.79,
+       "reported_percent": 50.79
+      },
+      {
+       "candidate_id": "write_in_total",
+       "votes": 5,
+       "percent": 1.31,
+       "reported_percent": 1.31
+      }
+     ]
+    },
+    {
+     "contest_id": "ca-assembly-29",
+     "source_id": "san-benito:29",
+     "precincts": {
+      "reporting": 12,
+      "total": 208
+     },
+     "total_votes": 424,
+     "under_votes": 7,
+     "over_votes": null,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "c_7516655173",
+       "votes": 204,
+       "percent": 48.11,
+       "reported_percent": 48.11
+      },
+      {
+       "candidate_id": "c_d718b43392",
+       "votes": 215,
+       "percent": 50.71,
+       "reported_percent": 50.71
+      },
+      {
+       "candidate_id": "write_in_total",
+       "votes": 5,
+       "percent": 1.18,
+       "reported_percent": 1.18
+      }
+     ]
+    },
+    {
+     "contest_id": "ca-supreme-court-groban",
+     "source_id": "san-benito:groban",
+     "precincts": {
+      "reporting": 12,
+      "total": 208
+     },
+     "total_votes": 447,
+     "under_votes": 7,
+     "over_votes": null,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "yes",
+       "votes": 218,
+       "percent": 48.77,
+       "reported_percent": 48.77
+      },
+      {
+       "candidate_id": "no",
+       "votes": 229,
+       "percent": 51.23,
+       "reported_percent": 51.23
+      }
+     ]
+    },
+    {
+     "contest_id": "ca-prop-1",
+     "source_id": "san-benito:1",
+     "precincts": {
+      "reporting": 12,
+      "total": 208
+     },
+     "total_votes": 489,
+     "under_votes": 7,
+     "over_votes": null,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "yes",
+       "votes": 239,
+       "percent": 48.88,
+       "reported_percent": 48.88
+      },
+      {
+       "candidate_id": "no",
+       "votes": 250,
+       "percent": 51.12,
+       "reported_percent": 51.12
+      }
+     ]
+    },
+    {
+     "contest_id": "ca-prop-2",
+     "source_id": "san-benito:2",
+     "precincts": {
+      "reporting": 12,
+      "total": 208
+     },
+     "total_votes": 503,
+     "under_votes": 7,
+     "over_votes": null,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "yes",
+       "votes": 246,
+       "percent": 48.91,
+       "reported_percent": 48.91
+      },
+      {
+       "candidate_id": "no",
+       "votes": 257,
+       "percent": 51.09,
+       "reported_percent": 51.09
+      }
+     ]
+    },
+    {
+     "contest_id": "ca-prop-37",
+     "source_id": "san-benito:37",
+     "precincts": {
+      "reporting": 12,
+      "total": 208
+     },
+     "total_votes": 517,
+     "under_votes": 7,
+     "over_votes": null,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "yes",
+       "votes": 253,
+       "percent": 48.94,
+       "reported_percent": 48.94
+      },
+      {
+       "candidate_id": "no",
+       "votes": 264,
+       "percent": 51.06,
+       "reported_percent": 51.06
+      }
+     ]
+    },
+    {
+     "contest_id": "ca-prop-38",
+     "source_id": "san-benito:38",
+     "precincts": {
+      "reporting": 12,
+      "total": 208
+     },
+     "total_votes": 531,
+     "under_votes": 7,
+     "over_votes": null,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "yes",
+       "votes": 260,
+       "percent": 48.96,
+       "reported_percent": 48.96
+      },
+      {
+       "candidate_id": "no",
+       "votes": 271,
+       "percent": 51.04,
+       "reported_percent": 51.04
+      }
+     ]
+    },
+    {
+     "contest_id": "san-benito-county-measure-cannabis",
+     "source_id": "san-benito:cannabis",
+     "precincts": {
+      "reporting": 12,
+      "total": 20
+     },
+     "total_votes": 867,
+     "under_votes": 7,
+     "over_votes": null,
+     "warning_codes": [],
+     "worst_severity": null,
+     "candidates": [
+      {
+       "candidate_id": "yes",
+       "votes": 428,
+       "percent": 49.37,
+       "reported_percent": 49.37
+      },
+      {
+       "candidate_id": "no",
+       "votes": 439,
+       "percent": 50.63,
+       "reported_percent": 50.63
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

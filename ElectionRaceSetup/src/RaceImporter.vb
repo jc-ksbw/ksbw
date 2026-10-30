@@ -27,6 +27,7 @@ Public Enum RaceField
     CandSuffix
     CandParty
     Incumbent
+    CandId
 End Enum
 
 Public Class FieldDef
@@ -71,7 +72,8 @@ Public Module RaceImporter
         New FieldDef(RaceField.CandLast, "Candidate last name", "last", "lastname", "candidatelast", "candidatelastname"),
         New FieldDef(RaceField.CandSuffix, "Candidate suffix", "suffix", "namesuffix", "candidatesuffix"),
         New FieldDef(RaceField.CandParty, "Candidate party", "party", "candidateparty", "candparty", "partyabbr"),
-        New FieldDef(RaceField.Incumbent, "Incumbent (Y/N)", "incumbent", "isincumbent", "inc")
+        New FieldDef(RaceField.Incumbent, "Incumbent (Y/N)", "incumbent", "isincumbent", "inc"),
+        New FieldDef(RaceField.CandId, "Candidate ID (in the results feed)", "candidateid", "candid", "candidatefeedid")
     }
 
     Private ReadOnly StateCodes As New Dictionary(Of String, String)(StringComparer.OrdinalIgnoreCase) From {
@@ -254,7 +256,8 @@ Public Module RaceImporter
                 .LastName = Cell(row, map, RaceField.CandLast),
                 .Suffix = Cell(row, map, RaceField.CandSuffix),
                 .Party = Cell(row, map, RaceField.CandParty),
-                .Incumbent = IsYes(Cell(row, map, RaceField.Incumbent))
+                .Incumbent = IsYes(Cell(row, map, RaceField.Incumbent)),
+                .FeedId = Cell(row, map, RaceField.CandId)
             }
             If cand.DisplayName <> "" Then target.Candidates.Add(cand)
         Next

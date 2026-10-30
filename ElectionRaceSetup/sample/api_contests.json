@@ -1,0 +1,5069 @@
+{
+ "version": 4,
+ "updated_at": "2026-11-04T05:30:00Z",
+ "election_date": "2026-11-03",
+ "override_errors": [],
+ "contests": [
+  {
+   "id": "ca-governor",
+   "contest_type": "candidate",
+   "status": "contested",
+   "level": "state",
+   "jurisdiction": "California",
+   "jurisdiction_type": "state",
+   "office": "Governor",
+   "seat_type": "single_office",
+   "seat_number": null,
+   "term_years": null,
+   "is_short_term": false,
+   "vote_for": 1,
+   "measure_letter": null,
+   "measure_title": null,
+   "threshold": null,
+   "retention_name": null,
+   "jurisdiction_counties": [
+    "Monterey",
+    "Santa Cruz",
+    "San Benito"
+   ],
+   "candidates": [
+    {
+     "id": "c_bdd0ad2d3f",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "STEVE HILTON",
+     "label": null,
+     "first": "STEVE",
+     "middle": null,
+     "last": "HILTON",
+     "suffix": null,
+     "nickname": null,
+     "party": "REP",
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "STEVE HILTON"
+      },
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "STEVE HILTON"
+      },
+      {
+       "county": "San Benito",
+       "ballot_name": "STEVE HILTON"
+      }
+     ]
+    },
+    {
+     "id": "c_7d87819f1a",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "XAVIER BECERRA",
+     "label": null,
+     "first": "XAVIER",
+     "middle": null,
+     "last": "BECERRA",
+     "suffix": null,
+     "nickname": null,
+     "party": "DEM",
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "XAVIER BECERRA"
+      },
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "XAVIER BECERRA"
+      },
+      {
+       "county": "San Benito",
+       "ballot_name": "XAVIER BECERRA"
+      }
+     ]
+    },
+    {
+     "id": "write_in_total",
+     "candidate_type": "write_in_total",
+     "candidate_status": "active",
+     "ballot_name": "Write-in",
+     "label": "Write-in",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "Write-in"
+      },
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "Write-in"
+      },
+      {
+       "county": "San Benito",
+       "ballot_name": "Write-in"
+      }
+     ]
+    }
+   ],
+   "warnings": [],
+   "sources": [
+    {
+     "county": "Monterey",
+     "source_id": "Governor (Vote for 1)",
+     "source_name": "Governor (Vote for 1)"
+    },
+    {
+     "county": "Santa Cruz",
+     "source_id": "NameRace_9",
+     "source_name": "Governor (Vote for 1)"
+    },
+    {
+     "county": "San Benito",
+     "source_id": "san-benito:governor",
+     "source_name": "Governor"
+    }
+   ]
+  },
+  {
+   "id": "ca-lieutenant-governor",
+   "contest_type": "candidate",
+   "status": "contested",
+   "level": "state",
+   "jurisdiction": "California",
+   "jurisdiction_type": "state",
+   "office": "Lieutenant Governor",
+   "seat_type": "single_office",
+   "seat_number": null,
+   "term_years": null,
+   "is_short_term": false,
+   "vote_for": 1,
+   "measure_letter": null,
+   "measure_title": null,
+   "threshold": null,
+   "retention_name": null,
+   "jurisdiction_counties": [
+    "Monterey",
+    "Santa Cruz",
+    "San Benito"
+   ],
+   "candidates": [
+    {
+     "id": "c_bf3609bda8",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "GLORIA ROMERO",
+     "label": null,
+     "first": "GLORIA",
+     "middle": null,
+     "last": "ROMERO",
+     "suffix": null,
+     "nickname": null,
+     "party": "REP",
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "GLORIA ROMERO"
+      },
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "GLORIA ROMERO"
+      },
+      {
+       "county": "San Benito",
+       "ballot_name": "GLORIA ROMERO"
+      }
+     ]
+    },
+    {
+     "id": "c_bd3fafb333",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "FIONA MA",
+     "label": null,
+     "first": "FIONA",
+     "middle": null,
+     "last": "MA",
+     "suffix": null,
+     "nickname": null,
+     "party": "DEM",
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "FIONA MA"
+      },
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "FIONA MA"
+      },
+      {
+       "county": "San Benito",
+       "ballot_name": "FIONA MA"
+      }
+     ]
+    },
+    {
+     "id": "write_in_total",
+     "candidate_type": "write_in_total",
+     "candidate_status": "active",
+     "ballot_name": "Write-in",
+     "label": "Write-in",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "Write-in"
+      },
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "Write-in"
+      },
+      {
+       "county": "San Benito",
+       "ballot_name": "Write-in"
+      }
+     ]
+    }
+   ],
+   "warnings": [],
+   "sources": [
+    {
+     "county": "Monterey",
+     "source_id": "Lieutenant Governor (Vote for 1)",
+     "source_name": "Lieutenant Governor (Vote for 1)"
+    },
+    {
+     "county": "Santa Cruz",
+     "source_id": "NameRace_33",
+     "source_name": "Lieutenant Governor (Vote for 1)"
+    },
+    {
+     "county": "San Benito",
+     "source_id": "san-benito:governor",
+     "source_name": "Lieutenant Governor"
+    }
+   ]
+  },
+  {
+   "id": "ca-secretary-of-state",
+   "contest_type": "candidate",
+   "status": "contested",
+   "level": "state",
+   "jurisdiction": "California",
+   "jurisdiction_type": "state",
+   "office": "Secretary of State",
+   "seat_type": "single_office",
+   "seat_number": null,
+   "term_years": null,
+   "is_short_term": false,
+   "vote_for": 1,
+   "measure_letter": null,
+   "measure_title": null,
+   "threshold": null,
+   "retention_name": null,
+   "jurisdiction_counties": [
+    "Monterey",
+    "Santa Cruz",
+    "San Benito"
+   ],
+   "candidates": [
+    {
+     "id": "c_59d4df385b",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "DONALD P. (DON) WAGNER",
+     "label": null,
+     "first": "DONALD",
+     "middle": "P. (DON)",
+     "last": "WAGNER",
+     "suffix": null,
+     "nickname": null,
+     "party": "REP",
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "DONALD P. (DON) WAGNER"
+      },
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "DONALD P. (DON) WAGNER"
+      },
+      {
+       "county": "San Benito",
+       "ballot_name": "DONALD P. (DON) WAGNER"
+      }
+     ]
+    },
+    {
+     "id": "c_420f465bf4",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "SHIRLEY N. WEBER",
+     "label": null,
+     "first": "SHIRLEY",
+     "middle": "N.",
+     "last": "WEBER",
+     "suffix": null,
+     "nickname": null,
+     "party": "DEM",
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "SHIRLEY N. WEBER"
+      },
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "SHIRLEY N. WEBER"
+      },
+      {
+       "county": "San Benito",
+       "ballot_name": "SHIRLEY N. WEBER"
+      }
+     ]
+    },
+    {
+     "id": "write_in_total",
+     "candidate_type": "write_in_total",
+     "candidate_status": "active",
+     "ballot_name": "Write-in",
+     "label": "Write-in",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "Write-in"
+      },
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "Write-in"
+      },
+      {
+       "county": "San Benito",
+       "ballot_name": "Write-in"
+      }
+     ]
+    }
+   ],
+   "warnings": [],
+   "sources": [
+    {
+     "county": "Monterey",
+     "source_id": "Secretary of State (Vote for 1)",
+     "source_name": "Secretary of State (Vote for 1)"
+    },
+    {
+     "county": "Santa Cruz",
+     "source_id": "NameRace_44",
+     "source_name": "Secretary of State (Vote for 1)"
+    },
+    {
+     "county": "San Benito",
+     "source_id": "san-benito:state",
+     "source_name": "Secretary of State"
+    }
+   ]
+  },
+  {
+   "id": "ca-controller",
+   "contest_type": "candidate",
+   "status": "contested",
+   "level": "state",
+   "jurisdiction": "California",
+   "jurisdiction_type": "state",
+   "office": "Controller",
+   "seat_type": "single_office",
+   "seat_number": null,
+   "term_years": null,
+   "is_short_term": false,
+   "vote_for": 1,
+   "measure_letter": null,
+   "measure_title": null,
+   "threshold": null,
+   "retention_name": null,
+   "jurisdiction_counties": [
+    "Monterey",
+    "Santa Cruz",
+    "San Benito"
+   ],
+   "candidates": [
+    {
+     "id": "c_7e311215ff",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "MALIA M. COHEN",
+     "label": null,
+     "first": "MALIA",
+     "middle": "M.",
+     "last": "COHEN",
+     "suffix": null,
+     "nickname": null,
+     "party": "DEM",
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "MALIA M. COHEN"
+      },
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "MALIA M. COHEN"
+      },
+      {
+       "county": "San Benito",
+       "ballot_name": "MALIA M. COHEN"
+      }
+     ]
+    },
+    {
+     "id": "c_4ebea55a89",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "HERB W MORGAN",
+     "label": null,
+     "first": "HERB",
+     "middle": "W",
+     "last": "MORGAN",
+     "suffix": null,
+     "nickname": null,
+     "party": "REP",
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "HERB W MORGAN"
+      },
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "HERB W MORGAN"
+      },
+      {
+       "county": "San Benito",
+       "ballot_name": "HERB W MORGAN"
+      }
+     ]
+    },
+    {
+     "id": "c_2289af25cc",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "MEGHANN ADAMS",
+     "label": null,
+     "first": "MEGHANN",
+     "middle": null,
+     "last": "ADAMS",
+     "suffix": null,
+     "nickname": null,
+     "party": "PF",
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "MEGHANN ADAMS"
+      },
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "MEGHANN ADAMS"
+      },
+      {
+       "county": "San Benito",
+       "ballot_name": "MEGHANN ADAMS"
+      }
+     ]
+    },
+    {
+     "id": "unqualified_write_in",
+     "candidate_type": "unqualified_write_in",
+     "candidate_status": "active",
+     "ballot_name": "Unqualified Write In",
+     "label": "Unqualified Write In",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "Unqualified Write In"
+      },
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "Unqualified Write In"
+      },
+      {
+       "county": "San Benito",
+       "ballot_name": "Unqualified Write In"
+      }
+     ]
+    }
+   ],
+   "warnings": [],
+   "sources": [
+    {
+     "county": "Monterey",
+     "source_id": "Controller (Vote for 1)",
+     "source_name": "Controller (Vote for 1)"
+    },
+    {
+     "county": "Santa Cruz",
+     "source_id": "NameRace_24",
+     "source_name": "Controller (Vote for 1)"
+    },
+    {
+     "county": "San Benito",
+     "source_id": "san-benito:controller",
+     "source_name": "Controller"
+    }
+   ]
+  },
+  {
+   "id": "ca-treasurer",
+   "contest_type": "candidate",
+   "status": "contested",
+   "level": "state",
+   "jurisdiction": "California",
+   "jurisdiction_type": "state",
+   "office": "Treasurer",
+   "seat_type": "single_office",
+   "seat_number": null,
+   "term_years": null,
+   "is_short_term": false,
+   "vote_for": 1,
+   "measure_letter": null,
+   "measure_title": null,
+   "threshold": null,
+   "retention_name": null,
+   "jurisdiction_counties": [
+    "Monterey",
+    "Santa Cruz",
+    "San Benito"
+   ],
+   "candidates": [
+    {
+     "id": "c_aae3caddda",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "JENNIFER HAWKS",
+     "label": null,
+     "first": "JENNIFER",
+     "middle": null,
+     "last": "HAWKS",
+     "suffix": null,
+     "nickname": null,
+     "party": "REP",
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "JENNIFER HAWKS"
+      },
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "JENNIFER HAWKS"
+      },
+      {
+       "county": "San Benito",
+       "ballot_name": "JENNIFER HAWKS"
+      }
+     ]
+    },
+    {
+     "id": "c_a8f18d793e",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "ELENI KOUNALAKIS",
+     "label": null,
+     "first": "ELENI",
+     "middle": null,
+     "last": "KOUNALAKIS",
+     "suffix": null,
+     "nickname": null,
+     "party": "DEM",
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "ELENI KOUNALAKIS"
+      },
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "ELENI KOUNALAKIS"
+      },
+      {
+       "county": "San Benito",
+       "ballot_name": "ELENI KOUNALAKIS"
+      }
+     ]
+    },
+    {
+     "id": "write_in_total",
+     "candidate_type": "write_in_total",
+     "candidate_status": "active",
+     "ballot_name": "Write-in",
+     "label": "Write-in",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "Write-in"
+      },
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "Write-in"
+      },
+      {
+       "county": "San Benito",
+       "ballot_name": "Write-in"
+      }
+     ]
+    }
+   ],
+   "warnings": [],
+   "sources": [
+    {
+     "county": "Monterey",
+     "source_id": "State Treasurer (Vote for 1)",
+     "source_name": "State Treasurer (Vote for 1)"
+    },
+    {
+     "county": "Santa Cruz",
+     "source_id": "NameRace_81",
+     "source_name": "Treasurer (Vote for 1)"
+    },
+    {
+     "county": "San Benito",
+     "source_id": "san-benito:treasurer",
+     "source_name": "Treasurer"
+    }
+   ]
+  },
+  {
+   "id": "ca-attorney-general",
+   "contest_type": "candidate",
+   "status": "contested",
+   "level": "state",
+   "jurisdiction": "California",
+   "jurisdiction_type": "state",
+   "office": "Attorney General",
+   "seat_type": "single_office",
+   "seat_number": null,
+   "term_years": null,
+   "is_short_term": false,
+   "vote_for": 1,
+   "measure_letter": null,
+   "measure_title": null,
+   "threshold": null,
+   "retention_name": null,
+   "jurisdiction_counties": [
+    "Monterey",
+    "Santa Cruz",
+    "San Benito"
+   ],
+   "candidates": [
+    {
+     "id": "c_7c49735e10",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "ROB BONTA",
+     "label": null,
+     "first": "ROB",
+     "middle": null,
+     "last": "BONTA",
+     "suffix": null,
+     "nickname": null,
+     "party": "DEM",
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "ROB BONTA"
+      },
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "ROB BONTA"
+      },
+      {
+       "county": "San Benito",
+       "ballot_name": "ROB BONTA"
+      }
+     ]
+    },
+    {
+     "id": "c_8cd587f2d1",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "MICHAEL E. GATES",
+     "label": null,
+     "first": "MICHAEL",
+     "middle": "E.",
+     "last": "GATES",
+     "suffix": null,
+     "nickname": null,
+     "party": "REP",
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "MICHAEL E. GATES"
+      },
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "MICHAEL E. GATES"
+      },
+      {
+       "county": "San Benito",
+       "ballot_name": "MICHAEL E. GATES"
+      }
+     ]
+    },
+    {
+     "id": "write_in_total",
+     "candidate_type": "write_in_total",
+     "candidate_status": "active",
+     "ballot_name": "Write-in",
+     "label": "Write-in",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "Write-in"
+      },
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "Write-in"
+      },
+      {
+       "county": "San Benito",
+       "ballot_name": "Write-in"
+      }
+     ]
+    }
+   ],
+   "warnings": [],
+   "sources": [
+    {
+     "county": "Monterey",
+     "source_id": "Attorney General (Vote for 1)",
+     "source_name": "Attorney General (Vote for 1)"
+    },
+    {
+     "county": "Santa Cruz",
+     "source_id": "NameRace_16",
+     "source_name": "Attorney General (Vote for 1)"
+    },
+    {
+     "county": "San Benito",
+     "source_id": "san-benito:general",
+     "source_name": "Attorney General"
+    }
+   ]
+  },
+  {
+   "id": "ca-insurance-commissioner",
+   "contest_type": "candidate",
+   "status": "contested",
+   "level": "state",
+   "jurisdiction": "California",
+   "jurisdiction_type": "state",
+   "office": "Insurance Commissioner",
+   "seat_type": "single_office",
+   "seat_number": null,
+   "term_years": null,
+   "is_short_term": false,
+   "vote_for": 1,
+   "measure_letter": null,
+   "measure_title": null,
+   "threshold": null,
+   "retention_name": null,
+   "jurisdiction_counties": [
+    "Monterey",
+    "Santa Cruz",
+    "San Benito"
+   ],
+   "candidates": [
+    {
+     "id": "c_79d997e365",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "JANE KIM",
+     "label": null,
+     "first": "JANE",
+     "middle": null,
+     "last": "KIM",
+     "suffix": null,
+     "nickname": null,
+     "party": "DEM",
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "JANE KIM"
+      },
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "JANE KIM"
+      },
+      {
+       "county": "San Benito",
+       "ballot_name": "JANE KIM"
+      }
+     ]
+    },
+    {
+     "id": "c_0101fca04d",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "BEN ALLEN",
+     "label": null,
+     "first": "BEN",
+     "middle": null,
+     "last": "ALLEN",
+     "suffix": null,
+     "nickname": null,
+     "party": "DEM",
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "BEN ALLEN"
+      },
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "BEN ALLEN"
+      },
+      {
+       "county": "San Benito",
+       "ballot_name": "BEN ALLEN"
+      }
+     ]
+    },
+    {
+     "id": "write_in_total",
+     "candidate_type": "write_in_total",
+     "candidate_status": "active",
+     "ballot_name": "Write-in",
+     "label": "Write-in",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "Write-in"
+      },
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "Write-in"
+      },
+      {
+       "county": "San Benito",
+       "ballot_name": "Write-in"
+      }
+     ]
+    }
+   ],
+   "warnings": [],
+   "sources": [
+    {
+     "county": "Monterey",
+     "source_id": "Insurance Commissioner (Vote for 1)",
+     "source_name": "Insurance Commissioner (Vote for 1)"
+    },
+    {
+     "county": "Santa Cruz",
+     "source_id": "NameRace_45",
+     "source_name": "Insurance Commissioner (Vote for 1)"
+    },
+    {
+     "county": "San Benito",
+     "source_id": "san-benito:commissioner",
+     "source_name": "Insurance Commissioner"
+    }
+   ]
+  },
+  {
+   "id": "ca-boe-2",
+   "contest_type": "candidate",
+   "status": "contested",
+   "level": "state",
+   "jurisdiction": "California",
+   "jurisdiction_type": "state",
+   "office": "Board of Equalization Member",
+   "seat_type": "district",
+   "seat_number": "2",
+   "term_years": null,
+   "is_short_term": false,
+   "vote_for": 1,
+   "measure_letter": null,
+   "measure_title": null,
+   "threshold": null,
+   "retention_name": null,
+   "jurisdiction_counties": [
+    "Monterey",
+    "Santa Cruz",
+    "San Benito"
+   ],
+   "candidates": [
+    {
+     "id": "c_11ec9f56d0",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "JOHN PIMENTEL",
+     "label": null,
+     "first": "JOHN",
+     "middle": null,
+     "last": "PIMENTEL",
+     "suffix": null,
+     "nickname": null,
+     "party": "DEM",
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "JOHN PIMENTEL"
+      },
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "JOHN PIMENTEL"
+      },
+      {
+       "county": "San Benito",
+       "ballot_name": "JOHN PIMENTEL"
+      }
+     ]
+    },
+    {
+     "id": "c_b131cda65a",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "SALLY J. LIEBER",
+     "label": null,
+     "first": "SALLY",
+     "middle": "J.",
+     "last": "LIEBER",
+     "suffix": null,
+     "nickname": null,
+     "party": "DEM",
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "SALLY J. LIEBER"
+      },
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "SALLY J. LIEBER"
+      },
+      {
+       "county": "San Benito",
+       "ballot_name": "SALLY J. LIEBER"
+      }
+     ]
+    },
+    {
+     "id": "write_in_total",
+     "candidate_type": "write_in_total",
+     "candidate_status": "active",
+     "ballot_name": "Write-in",
+     "label": "Write-in",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "Write-in"
+      },
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "Write-in"
+      },
+      {
+       "county": "San Benito",
+       "ballot_name": "Write-in"
+      }
+     ]
+    }
+   ],
+   "warnings": [],
+   "sources": [
+    {
+     "county": "Monterey",
+     "source_id": "State Board of Equalization Board Member District 2 (Vote for 1)",
+     "source_name": "State Board of Equalization Board Member District 2 (Vote for 1)"
+    },
+    {
+     "county": "Santa Cruz",
+     "source_id": "NameRace_89",
+     "source_name": "Board of Equalization, District 2 (Vote for 1)"
+    },
+    {
+     "county": "San Benito",
+     "source_id": "san-benito:2",
+     "source_name": "Member State Board of Equal. District 2"
+    }
+   ]
+  },
+  {
+   "id": "ca-superintendent",
+   "contest_type": "candidate",
+   "status": "contested",
+   "level": "state",
+   "jurisdiction": "California",
+   "jurisdiction_type": "state",
+   "office": "Superintendent of Public Instruction",
+   "seat_type": "single_office",
+   "seat_number": null,
+   "term_years": null,
+   "is_short_term": false,
+   "vote_for": 1,
+   "measure_letter": null,
+   "measure_title": null,
+   "threshold": null,
+   "retention_name": null,
+   "jurisdiction_counties": [
+    "Monterey",
+    "Santa Cruz",
+    "San Benito"
+   ],
+   "candidates": [
+    {
+     "id": "c_23e68353eb",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "SONJA SHAW",
+     "label": null,
+     "first": "SONJA",
+     "middle": null,
+     "last": "SHAW",
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "SONJA SHAW"
+      },
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "SONJA SHAW"
+      },
+      {
+       "county": "San Benito",
+       "ballot_name": "SONJA SHAW"
+      }
+     ]
+    },
+    {
+     "id": "c_ab59582f95",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "RICHARD BARRERA",
+     "label": null,
+     "first": "RICHARD",
+     "middle": null,
+     "last": "BARRERA",
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "RICHARD BARRERA"
+      },
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "RICHARD BARRERA"
+      },
+      {
+       "county": "San Benito",
+       "ballot_name": "RICHARD BARRERA"
+      }
+     ]
+    },
+    {
+     "id": "write_in_total",
+     "candidate_type": "write_in_total",
+     "candidate_status": "active",
+     "ballot_name": "Write-in",
+     "label": "Write-in",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "Write-in"
+      },
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "Write-in"
+      },
+      {
+       "county": "San Benito",
+       "ballot_name": "Write-in"
+      }
+     ]
+    }
+   ],
+   "warnings": [],
+   "sources": [
+    {
+     "county": "Monterey",
+     "source_id": "Superintendent of Public Instruction (Vote for 1)",
+     "source_name": "Superintendent of Public Instruction (Vote for 1)"
+    },
+    {
+     "county": "Santa Cruz",
+     "source_id": "NameRace_1",
+     "source_name": "Superintendent of Public Instruction (Vote for 1)"
+    },
+    {
+     "county": "San Benito",
+     "source_id": "san-benito:superintendent",
+     "source_name": "State Superintendent of Public Instruction"
+    }
+   ]
+  },
+  {
+   "id": "us-house-18",
+   "contest_type": "candidate",
+   "status": "contested",
+   "level": "federal",
+   "jurisdiction": "18th Congressional District",
+   "jurisdiction_type": "state",
+   "office": "United States Representative",
+   "seat_type": "district",
+   "seat_number": "18",
+   "term_years": null,
+   "is_short_term": false,
+   "vote_for": 1,
+   "measure_letter": null,
+   "measure_title": null,
+   "threshold": null,
+   "retention_name": null,
+   "jurisdiction_counties": [
+    "Monterey",
+    "Santa Cruz",
+    "San Benito"
+   ],
+   "candidates": [
+    {
+     "id": "c_40a992f38f",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "ZOE LOFGREN",
+     "label": null,
+     "first": "ZOE",
+     "middle": null,
+     "last": "LOFGREN",
+     "suffix": null,
+     "nickname": null,
+     "party": "DEM",
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "ZOE LOFGREN"
+      },
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "ZOE LOFGREN"
+      },
+      {
+       "county": "San Benito",
+       "ballot_name": "ZOE LOFGREN"
+      }
+     ]
+    },
+    {
+     "id": "c_dc946b2770",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "SHANE LEWIS",
+     "label": null,
+     "first": "SHANE",
+     "middle": null,
+     "last": "LEWIS",
+     "suffix": null,
+     "nickname": null,
+     "party": "REP",
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "SHANE LEWIS"
+      },
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "SHANE LEWIS"
+      },
+      {
+       "county": "San Benito",
+       "ballot_name": "SHANE LEWIS"
+      }
+     ]
+    },
+    {
+     "id": "write_in_total",
+     "candidate_type": "write_in_total",
+     "candidate_status": "active",
+     "ballot_name": "Write-in",
+     "label": "Write-in",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "Write-in"
+      },
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "Write-in"
+      },
+      {
+       "county": "San Benito",
+       "ballot_name": "Write-in"
+      }
+     ]
+    }
+   ],
+   "warnings": [],
+   "sources": [
+    {
+     "county": "Monterey",
+     "source_id": "United States Representative District 18 (Vote for 1)",
+     "source_name": "United States Representative District 18 (Vote for 1)"
+    },
+    {
+     "county": "Santa Cruz",
+     "source_id": "NameRace_53",
+     "source_name": "US Representative 18th Congressional District (Vote for 1)"
+    },
+    {
+     "county": "San Benito",
+     "source_id": "san-benito:18",
+     "source_name": "US Congress District 18"
+    }
+   ]
+  },
+  {
+   "id": "us-house-19",
+   "contest_type": "candidate",
+   "status": "contested",
+   "level": "federal",
+   "jurisdiction": "19th Congressional District",
+   "jurisdiction_type": "state",
+   "office": "United States Representative",
+   "seat_type": "district",
+   "seat_number": "19",
+   "term_years": null,
+   "is_short_term": false,
+   "vote_for": 1,
+   "measure_letter": null,
+   "measure_title": null,
+   "threshold": null,
+   "retention_name": null,
+   "jurisdiction_counties": [
+    "Monterey",
+    "Santa Cruz"
+   ],
+   "candidates": [
+    {
+     "id": "c_8471ea8fd0",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "JIMMY PANETTA",
+     "label": null,
+     "first": "JIMMY",
+     "middle": null,
+     "last": "PANETTA",
+     "suffix": null,
+     "nickname": null,
+     "party": "DEM",
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "JIMMY PANETTA"
+      },
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "JIMMY PANETTA"
+      }
+     ]
+    },
+    {
+     "id": "c_9eb8d6b0d3",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "PETER COE VERBICA",
+     "label": null,
+     "first": "PETER",
+     "middle": "COE",
+     "last": "VERBICA",
+     "suffix": null,
+     "nickname": null,
+     "party": "REP",
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "PETER COE VERBICA"
+      },
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "PETER COE VERBICA"
+      }
+     ]
+    },
+    {
+     "id": "write_in_total",
+     "candidate_type": "write_in_total",
+     "candidate_status": "active",
+     "ballot_name": "Write-in",
+     "label": "Write-in",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "Write-in"
+      },
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "Write-in"
+      }
+     ]
+    }
+   ],
+   "warnings": [],
+   "sources": [
+    {
+     "county": "Monterey",
+     "source_id": "United States Representative District 19 (Vote for 1)",
+     "source_name": "United States Representative District 19 (Vote for 1)"
+    },
+    {
+     "county": "Santa Cruz",
+     "source_id": "NameRace_24",
+     "source_name": "US Representative 19th Congressional District (Vote for 1)"
+    }
+   ]
+  },
+  {
+   "id": "ca-assembly-28",
+   "contest_type": "candidate",
+   "status": "contested",
+   "level": "state",
+   "jurisdiction": "28th Assembly District",
+   "jurisdiction_type": "state",
+   "office": "Member of the State Assembly",
+   "seat_type": "district",
+   "seat_number": "28",
+   "term_years": null,
+   "is_short_term": false,
+   "vote_for": 1,
+   "measure_letter": null,
+   "measure_title": null,
+   "threshold": null,
+   "retention_name": null,
+   "jurisdiction_counties": [
+    "Santa Cruz"
+   ],
+   "candidates": [
+    {
+     "id": "c_b1013e8dfc",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "CAROL PEFLEY",
+     "label": null,
+     "first": "CAROL",
+     "middle": null,
+     "last": "PEFLEY",
+     "suffix": null,
+     "nickname": null,
+     "party": "REP",
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "CAROL PEFLEY"
+      }
+     ]
+    },
+    {
+     "id": "c_b3ef757c62",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "GAIL PELLERIN",
+     "label": null,
+     "first": "GAIL",
+     "middle": null,
+     "last": "PELLERIN",
+     "suffix": null,
+     "nickname": null,
+     "party": "DEM",
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "GAIL PELLERIN"
+      }
+     ]
+    },
+    {
+     "id": "write_in_total",
+     "candidate_type": "write_in_total",
+     "candidate_status": "active",
+     "ballot_name": "Write-in",
+     "label": "Write-in",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "Write-in"
+      }
+     ]
+    }
+   ],
+   "warnings": [],
+   "sources": [
+    {
+     "county": "Santa Cruz",
+     "source_id": "NameRace_61",
+     "source_name": "State Assembly Member 28th District (Vote for 1)"
+    }
+   ]
+  },
+  {
+   "id": "ca-assembly-29",
+   "contest_type": "candidate",
+   "status": "contested",
+   "level": "state",
+   "jurisdiction": "29th Assembly District",
+   "jurisdiction_type": "state",
+   "office": "Member of the State Assembly",
+   "seat_type": "district",
+   "seat_number": "29",
+   "term_years": null,
+   "is_short_term": false,
+   "vote_for": 1,
+   "measure_letter": null,
+   "measure_title": null,
+   "threshold": null,
+   "retention_name": null,
+   "jurisdiction_counties": [
+    "Monterey",
+    "Santa Cruz",
+    "San Benito"
+   ],
+   "candidates": [
+    {
+     "id": "c_7516655173",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "DENNIS P. SANCHEZ",
+     "label": null,
+     "first": "DENNIS",
+     "middle": "P.",
+     "last": "SANCHEZ",
+     "suffix": null,
+     "nickname": null,
+     "party": "REP",
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "DENNIS P. SANCHEZ"
+      },
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "DENNIS P. SANCHEZ"
+      },
+      {
+       "county": "San Benito",
+       "ballot_name": "DENNIS P. SANCHEZ"
+      }
+     ]
+    },
+    {
+     "id": "c_d718b43392",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "ROBERT RIVAS",
+     "label": null,
+     "first": "ROBERT",
+     "middle": null,
+     "last": "RIVAS",
+     "suffix": null,
+     "nickname": null,
+     "party": "DEM",
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "ROBERT RIVAS"
+      },
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "ROBERT RIVAS"
+      },
+      {
+       "county": "San Benito",
+       "ballot_name": "ROBERT RIVAS"
+      }
+     ]
+    },
+    {
+     "id": "write_in_total",
+     "candidate_type": "write_in_total",
+     "candidate_status": "active",
+     "ballot_name": "Write-in",
+     "label": "Write-in",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "Write-in"
+      },
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "Write-in"
+      },
+      {
+       "county": "San Benito",
+       "ballot_name": "Write-in"
+      }
+     ]
+    }
+   ],
+   "warnings": [],
+   "sources": [
+    {
+     "county": "Monterey",
+     "source_id": "Member of the State Assembly District 29 (Vote for 1)",
+     "source_name": "Member of the State Assembly District 29 (Vote for 1)"
+    },
+    {
+     "county": "Santa Cruz",
+     "source_id": "NameRace_89",
+     "source_name": "State Assembly Member 29th District (Vote for 1)"
+    },
+    {
+     "county": "San Benito",
+     "source_id": "san-benito:29",
+     "source_name": "Member of the State Assembly District 29"
+    }
+   ]
+  },
+  {
+   "id": "ca-assembly-30",
+   "contest_type": "candidate",
+   "status": "contested",
+   "level": "state",
+   "jurisdiction": "30th Assembly District",
+   "jurisdiction_type": "state",
+   "office": "Member of the State Assembly",
+   "seat_type": "district",
+   "seat_number": "30",
+   "term_years": null,
+   "is_short_term": false,
+   "vote_for": 1,
+   "measure_letter": null,
+   "measure_title": null,
+   "threshold": null,
+   "retention_name": null,
+   "jurisdiction_counties": [
+    "Monterey",
+    "Santa Cruz"
+   ],
+   "candidates": [
+    {
+     "id": "c_f47c7c4d08",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "DAWN ADDIS",
+     "label": null,
+     "first": "DAWN",
+     "middle": null,
+     "last": "ADDIS",
+     "suffix": null,
+     "nickname": null,
+     "party": "DEM",
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "DAWN ADDIS"
+      },
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "DAWN ADDIS"
+      }
+     ]
+    },
+    {
+     "id": "c_5d208c74a7",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "SHANNON KESSLER",
+     "label": null,
+     "first": "SHANNON",
+     "middle": null,
+     "last": "KESSLER",
+     "suffix": null,
+     "nickname": null,
+     "party": "REP",
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "SHANNON KESSLER"
+      },
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "SHANNON KESSLER"
+      }
+     ]
+    },
+    {
+     "id": "write_in_total",
+     "candidate_type": "write_in_total",
+     "candidate_status": "active",
+     "ballot_name": "Write-in",
+     "label": "Write-in",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "Write-in"
+      },
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "Write-in"
+      }
+     ]
+    }
+   ],
+   "warnings": [],
+   "sources": [
+    {
+     "county": "Monterey",
+     "source_id": "Member of the State Assembly District 30 (Vote for 1)",
+     "source_name": "Member of the State Assembly District 30 (Vote for 1)"
+    },
+    {
+     "county": "Santa Cruz",
+     "source_id": "NameRace_8",
+     "source_name": "State Assembly Member 30th District (Vote for 1)"
+    }
+   ]
+  },
+  {
+   "id": "ca-supreme-court-groban",
+   "contest_type": "retention",
+   "status": "contested",
+   "level": "state",
+   "jurisdiction": "California",
+   "jurisdiction_type": "state",
+   "office": "Associate Justice of the Supreme Court",
+   "seat_type": null,
+   "seat_number": null,
+   "term_years": null,
+   "is_short_term": false,
+   "vote_for": 1,
+   "measure_letter": null,
+   "measure_title": null,
+   "threshold": null,
+   "retention_name": "Joshua Groban",
+   "jurisdiction_counties": [
+    "Monterey",
+    "Santa Cruz",
+    "San Benito"
+   ],
+   "candidates": [
+    {
+     "id": "yes",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "YES",
+     "label": "YES",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "YES"
+      },
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "YES"
+      },
+      {
+       "county": "San Benito",
+       "ballot_name": "YES"
+      }
+     ]
+    },
+    {
+     "id": "no",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "NO",
+     "label": "NO",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "NO"
+      },
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "NO"
+      },
+      {
+       "county": "San Benito",
+       "ballot_name": "NO"
+      }
+     ]
+    }
+   ],
+   "warnings": [],
+   "sources": [
+    {
+     "county": "Monterey",
+     "source_id": "Associate Justice of the Supreme Court (Joshua Groban) (Vote for 1)",
+     "source_name": "Associate Justice of the Supreme Court (Joshua Groban) (Vote for 1)"
+    },
+    {
+     "county": "Santa Cruz",
+     "source_id": "NameRace_47",
+     "source_name": "Supreme Court Associate Justice Joshua Groban (Vote for 1)"
+    },
+    {
+     "county": "San Benito",
+     "source_id": "san-benito:groban",
+     "source_name": "Supreme Court Associate Justice Joshua Groban"
+    }
+   ]
+  },
+  {
+   "id": "ca-appeal-6-wilson",
+   "contest_type": "retention",
+   "status": "contested",
+   "level": "state",
+   "jurisdiction": "Sixth Appellate District",
+   "jurisdiction_type": "state",
+   "office": "Associate Justice, Court of Appeal",
+   "seat_type": null,
+   "seat_number": null,
+   "term_years": null,
+   "is_short_term": false,
+   "vote_for": 1,
+   "measure_letter": null,
+   "measure_title": null,
+   "threshold": null,
+   "retention_name": "Charles E. Wilson II",
+   "jurisdiction_counties": [
+    "Monterey",
+    "Santa Cruz"
+   ],
+   "candidates": [
+    {
+     "id": "yes",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "YES",
+     "label": "YES",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "YES"
+      },
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "YES"
+      }
+     ]
+    },
+    {
+     "id": "no",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "NO",
+     "label": "NO",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "NO"
+      },
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "NO"
+      }
+     ]
+    }
+   ],
+   "warnings": [],
+   "sources": [
+    {
+     "county": "Monterey",
+     "source_id": "Associate Justice, Court of Appeal, Sixth District (Charles E. Wilson II) (Vote for 1)",
+     "source_name": "Associate Justice, Court of Appeal, Sixth District (Charles E. Wilson II) (Vote for 1)"
+    },
+    {
+     "county": "Santa Cruz",
+     "source_id": "NameRace_46",
+     "source_name": "Associate Justice 6th Appellate Dist. Charles E Wilson II (Vote for 1)"
+    }
+   ]
+  },
+  {
+   "id": "ca-appeal-6-chung",
+   "contest_type": "retention",
+   "status": "contested",
+   "level": "state",
+   "jurisdiction": "Sixth Appellate District",
+   "jurisdiction_type": "state",
+   "office": "Associate Justice, Court of Appeal",
+   "seat_type": null,
+   "seat_number": null,
+   "term_years": null,
+   "is_short_term": false,
+   "vote_for": 1,
+   "measure_letter": null,
+   "measure_title": null,
+   "threshold": null,
+   "retention_name": "Frederick S. Chung",
+   "jurisdiction_counties": [
+    "Monterey",
+    "Santa Cruz"
+   ],
+   "candidates": [
+    {
+     "id": "yes",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "YES",
+     "label": "YES",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "YES"
+      },
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "YES"
+      }
+     ]
+    },
+    {
+     "id": "no",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "NO",
+     "label": "NO",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "NO"
+      },
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "NO"
+      }
+     ]
+    }
+   ],
+   "warnings": [],
+   "sources": [
+    {
+     "county": "Monterey",
+     "source_id": "Associate Justice, Court of Appeal, Sixth District (Frederick S. Chung) (Vote for 1)",
+     "source_name": "Associate Justice, Court of Appeal, Sixth District (Frederick S. Chung) (Vote for 1)"
+    },
+    {
+     "county": "Santa Cruz",
+     "source_id": "NameRace_2",
+     "source_name": "Associate Justice 6th Appellate Dist. Frederick S Chung (Vote for 1)"
+    }
+   ]
+  },
+  {
+   "id": "ca-prop-1",
+   "contest_type": "measure",
+   "status": "contested",
+   "level": "state",
+   "jurisdiction": "California",
+   "jurisdiction_type": "state",
+   "office": null,
+   "seat_type": null,
+   "seat_number": null,
+   "term_years": null,
+   "is_short_term": false,
+   "vote_for": 1,
+   "measure_letter": "1",
+   "measure_title": "The Veterans And Affordable Housing Bond Act Of 2026",
+   "threshold": "majority",
+   "retention_name": null,
+   "jurisdiction_counties": [
+    "Monterey",
+    "Santa Cruz",
+    "San Benito"
+   ],
+   "candidates": [
+    {
+     "id": "yes",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "YES",
+     "label": "YES",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "YES"
+      },
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "BONDS YES"
+      },
+      {
+       "county": "San Benito",
+       "ballot_name": "YES"
+      }
+     ]
+    },
+    {
+     "id": "no",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "NO",
+     "label": "NO",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "NO"
+      },
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "BONDS NO"
+      },
+      {
+       "county": "San Benito",
+       "ballot_name": "NO"
+      }
+     ]
+    }
+   ],
+   "warnings": [],
+   "sources": [
+    {
+     "county": "Monterey",
+     "source_id": "Proposition 1 (Vote for 1)",
+     "source_name": "Proposition 1 (Vote for 1)"
+    },
+    {
+     "county": "Santa Cruz",
+     "source_id": "NameRace_83",
+     "source_name": "1 - The Veterans And Affordable Housing Bond Act Of 2026 (Vote for 1)"
+    },
+    {
+     "county": "San Benito",
+     "source_id": "san-benito:1",
+     "source_name": "Proposition 1"
+    }
+   ]
+  },
+  {
+   "id": "ca-prop-2",
+   "contest_type": "measure",
+   "status": "contested",
+   "level": "state",
+   "jurisdiction": "California",
+   "jurisdiction_type": "state",
+   "office": null,
+   "seat_type": null,
+   "seat_number": null,
+   "term_years": null,
+   "is_short_term": false,
+   "vote_for": 1,
+   "measure_letter": "2",
+   "measure_title": "Save For California's Future Act",
+   "threshold": "majority",
+   "retention_name": null,
+   "jurisdiction_counties": [
+    "Monterey",
+    "Santa Cruz",
+    "San Benito"
+   ],
+   "candidates": [
+    {
+     "id": "yes",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "YES",
+     "label": "YES",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "YES"
+      },
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "YES"
+      },
+      {
+       "county": "San Benito",
+       "ballot_name": "YES"
+      }
+     ]
+    },
+    {
+     "id": "no",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "NO",
+     "label": "NO",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "NO"
+      },
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "NO"
+      },
+      {
+       "county": "San Benito",
+       "ballot_name": "NO"
+      }
+     ]
+    }
+   ],
+   "warnings": [],
+   "sources": [
+    {
+     "county": "Monterey",
+     "source_id": "Proposition 2 (Vote for 1)",
+     "source_name": "Proposition 2 (Vote for 1)"
+    },
+    {
+     "county": "Santa Cruz",
+     "source_id": "NameRace_2",
+     "source_name": "2 - Save For California's Future Act (Vote for 1)"
+    },
+    {
+     "county": "San Benito",
+     "source_id": "san-benito:2",
+     "source_name": "Proposition 2"
+    }
+   ]
+  },
+  {
+   "id": "ca-prop-37",
+   "contest_type": "measure",
+   "status": "contested",
+   "level": "state",
+   "jurisdiction": "California",
+   "jurisdiction_type": "state",
+   "office": null,
+   "seat_type": null,
+   "seat_number": null,
+   "term_years": null,
+   "is_short_term": false,
+   "vote_for": 1,
+   "measure_letter": "37",
+   "measure_title": "Creates Loan Program For Middle-income Buyers Of Qualified New Homes",
+   "threshold": "majority",
+   "retention_name": null,
+   "jurisdiction_counties": [
+    "Monterey",
+    "Santa Cruz",
+    "San Benito"
+   ],
+   "candidates": [
+    {
+     "id": "yes",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "YES",
+     "label": "YES",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "YES"
+      },
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "YES"
+      },
+      {
+       "county": "San Benito",
+       "ballot_name": "YES"
+      }
+     ]
+    },
+    {
+     "id": "no",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "NO",
+     "label": "NO",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "NO"
+      },
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "NO"
+      },
+      {
+       "county": "San Benito",
+       "ballot_name": "NO"
+      }
+     ]
+    }
+   ],
+   "warnings": [],
+   "sources": [
+    {
+     "county": "Monterey",
+     "source_id": "Proposition 37 (Vote for 1)",
+     "source_name": "Proposition 37 (Vote for 1)"
+    },
+    {
+     "county": "Santa Cruz",
+     "source_id": "NameRace_40",
+     "source_name": "37 - Creates Loan Program For Middle-income Buyers Of Qualified New Homes (Vote for 1)"
+    },
+    {
+     "county": "San Benito",
+     "source_id": "san-benito:37",
+     "source_name": "Proposition 37"
+    }
+   ]
+  },
+  {
+   "id": "ca-prop-38",
+   "contest_type": "measure",
+   "status": "contested",
+   "level": "state",
+   "jurisdiction": "California",
+   "jurisdiction_type": "state",
+   "office": null,
+   "seat_type": null,
+   "seat_number": null,
+   "term_years": null,
+   "is_short_term": false,
+   "vote_for": 1,
+   "measure_letter": "38",
+   "measure_title": "Authorizes Bonds For Immunology Research",
+   "threshold": "majority",
+   "retention_name": null,
+   "jurisdiction_counties": [
+    "Monterey",
+    "Santa Cruz",
+    "San Benito"
+   ],
+   "candidates": [
+    {
+     "id": "yes",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "YES",
+     "label": "YES",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "YES"
+      },
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "BONDS YES"
+      },
+      {
+       "county": "San Benito",
+       "ballot_name": "YES"
+      }
+     ]
+    },
+    {
+     "id": "no",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "NO",
+     "label": "NO",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "NO"
+      },
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "BONDS NO"
+      },
+      {
+       "county": "San Benito",
+       "ballot_name": "NO"
+      }
+     ]
+    }
+   ],
+   "warnings": [],
+   "sources": [
+    {
+     "county": "Monterey",
+     "source_id": "Proposition 38 (Vote for 1)",
+     "source_name": "Proposition 38 (Vote for 1)"
+    },
+    {
+     "county": "Santa Cruz",
+     "source_id": "NameRace_23",
+     "source_name": "38 - Authorizes Bonds For Immunology Research (Vote for 1)"
+    },
+    {
+     "county": "San Benito",
+     "source_id": "san-benito:38",
+     "source_name": "Proposition 38"
+    }
+   ]
+  },
+  {
+   "id": "monterey-county-board-of-education-ta-1",
+   "contest_type": "candidate",
+   "status": "contested",
+   "level": "county",
+   "jurisdiction": "Monterey County Office of Education",
+   "jurisdiction_type": "county_office_of_education",
+   "office": "Governing Board Member",
+   "seat_type": "trustee_area",
+   "seat_number": "1",
+   "term_years": null,
+   "is_short_term": false,
+   "vote_for": 1,
+   "measure_letter": null,
+   "measure_title": null,
+   "threshold": null,
+   "retention_name": null,
+   "jurisdiction_counties": [
+    "Monterey"
+   ],
+   "candidates": [
+    {
+     "id": "c_cd6a069867",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "MEGAN WHILDEN",
+     "label": null,
+     "first": "MEGAN",
+     "middle": null,
+     "last": "WHILDEN",
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "MEGAN WHILDEN"
+      }
+     ]
+    },
+    {
+     "id": "c_6e7036be2a",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "RITA PATEL",
+     "label": null,
+     "first": "RITA",
+     "middle": null,
+     "last": "PATEL",
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "RITA PATEL"
+      }
+     ]
+    },
+    {
+     "id": "write_in_total",
+     "candidate_type": "write_in_total",
+     "candidate_status": "active",
+     "ballot_name": "Write-in",
+     "label": "Write-in",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "Write-in"
+      }
+     ]
+    }
+   ],
+   "warnings": [],
+   "sources": [
+    {
+     "county": "Monterey",
+     "source_id": "Monterey County Board of Education Governing Board Member Trustee Area 1 (Vote for 1)",
+     "source_name": "Monterey County Board of Education Governing Board Member Trustee Area 1 (Vote for 1)"
+    }
+   ]
+  },
+  {
+   "id": "hartnell-ccd-ta-5",
+   "contest_type": "candidate",
+   "status": "contested",
+   "level": "district",
+   "jurisdiction": "Hartnell Community College District",
+   "jurisdiction_type": "community_college_district",
+   "office": "Governing Board Member",
+   "seat_type": "trustee_area",
+   "seat_number": "5",
+   "term_years": null,
+   "is_short_term": false,
+   "vote_for": 1,
+   "measure_letter": null,
+   "measure_title": null,
+   "threshold": null,
+   "retention_name": null,
+   "jurisdiction_counties": [
+    "Monterey"
+   ],
+   "candidates": [
+    {
+     "id": "c_4a1c44e254",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "PATRICIA COYT",
+     "label": null,
+     "first": "PATRICIA",
+     "middle": null,
+     "last": "COYT",
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "PATRICIA COYT"
+      }
+     ]
+    },
+    {
+     "id": "c_be1285da51",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "FELICIA PEREZ KAUSIN",
+     "label": null,
+     "first": "FELICIA",
+     "middle": "PEREZ",
+     "last": "KAUSIN",
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "FELICIA PEREZ KAUSIN"
+      }
+     ]
+    },
+    {
+     "id": "write_in_total",
+     "candidate_type": "write_in_total",
+     "candidate_status": "active",
+     "ballot_name": "Write-in",
+     "label": "Write-in",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "Write-in"
+      }
+     ]
+    }
+   ],
+   "warnings": [],
+   "sources": [
+    {
+     "county": "Monterey",
+     "source_id": "Hartnell Community College District Governing Board Member Trustee Area 5 (Vote for 1)",
+     "source_name": "Hartnell Community College District Governing Board Member Trustee Area 5 (Vote for 1)"
+    }
+   ]
+  },
+  {
+   "id": "alisal-union-sd-ta-5",
+   "contest_type": "candidate",
+   "status": "contested",
+   "level": "district",
+   "jurisdiction": "Alisal Union School District",
+   "jurisdiction_type": "school_district",
+   "office": "Governing Board Member",
+   "seat_type": "trustee_area",
+   "seat_number": "5",
+   "term_years": null,
+   "is_short_term": false,
+   "vote_for": 1,
+   "measure_letter": null,
+   "measure_title": null,
+   "threshold": null,
+   "retention_name": null,
+   "jurisdiction_counties": [
+    "Monterey"
+   ],
+   "candidates": [
+    {
+     "id": "c_145f6db777",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "MARIA M. JIMENEZ",
+     "label": null,
+     "first": "MARIA",
+     "middle": "M.",
+     "last": "JIMENEZ",
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "MARIA M. JIMENEZ"
+      }
+     ]
+    },
+    {
+     "id": "c_b3cd30bd61",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "AURELIA ALVAREZ-SILVA",
+     "label": null,
+     "first": "AURELIA",
+     "middle": null,
+     "last": "ALVAREZ-SILVA",
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "AURELIA ALVAREZ-SILVA"
+      }
+     ]
+    },
+    {
+     "id": "c_8126f55d0b",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "JESUS R. VELASQUEZ",
+     "label": null,
+     "first": "JESUS",
+     "middle": "R.",
+     "last": "VELASQUEZ",
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "JESUS R. VELASQUEZ"
+      }
+     ]
+    },
+    {
+     "id": "write_in_total",
+     "candidate_type": "write_in_total",
+     "candidate_status": "active",
+     "ballot_name": "Write-in",
+     "label": "Write-in",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "Write-in"
+      }
+     ]
+    }
+   ],
+   "warnings": [],
+   "sources": [
+    {
+     "county": "Monterey",
+     "source_id": "Alisal Union School District Governing Board Member Trustee Area 5 (Vote for 1)",
+     "source_name": "Alisal Union School District Governing Board Member Trustee Area 5 (Vote for 1)"
+    }
+   ]
+  },
+  {
+   "id": "king-city-union-sd",
+   "contest_type": "candidate",
+   "status": "contested",
+   "level": "district",
+   "jurisdiction": "King City Union School District",
+   "jurisdiction_type": "school_district",
+   "office": "Governing Board Member",
+   "seat_type": "at_large",
+   "seat_number": null,
+   "term_years": null,
+   "is_short_term": false,
+   "vote_for": 3,
+   "measure_letter": null,
+   "measure_title": null,
+   "threshold": null,
+   "retention_name": null,
+   "jurisdiction_counties": [
+    "Monterey"
+   ],
+   "candidates": [
+    {
+     "id": "c_5fff37d20e",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "SUSAN E KING",
+     "label": null,
+     "first": "SUSAN",
+     "middle": "E",
+     "last": "KING",
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "SUSAN E KING"
+      }
+     ]
+    },
+    {
+     "id": "c_5b0cfa19eb",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "YESENIA ZAVALA",
+     "label": null,
+     "first": "YESENIA",
+     "middle": null,
+     "last": "ZAVALA",
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "YESENIA ZAVALA"
+      }
+     ]
+    },
+    {
+     "id": "c_0afb6e9f53",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "FRANKY LOPEZ JR",
+     "label": null,
+     "first": "FRANKY",
+     "middle": "LOPEZ",
+     "last": "JR",
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "FRANKY LOPEZ JR"
+      }
+     ]
+    },
+    {
+     "id": "c_b1684116e8",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "SONIA VALERIO QUIROZ",
+     "label": null,
+     "first": "SONIA",
+     "middle": "VALERIO",
+     "last": "QUIROZ",
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "SONIA VALERIO QUIROZ"
+      }
+     ]
+    },
+    {
+     "id": "c_1c67dcc9a2",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "MONIQUE D ROSS",
+     "label": null,
+     "first": "MONIQUE",
+     "middle": "D",
+     "last": "ROSS",
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "MONIQUE D ROSS"
+      }
+     ]
+    },
+    {
+     "id": "write_in_total",
+     "candidate_type": "write_in_total",
+     "candidate_status": "active",
+     "ballot_name": "Write-in",
+     "label": "Write-in",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "Write-in"
+      }
+     ]
+    }
+   ],
+   "warnings": [],
+   "sources": [
+    {
+     "county": "Monterey",
+     "source_id": "King City Union School District Governing Board Member (Vote for 3)",
+     "source_name": "King City Union School District Governing Board Member (Vote for 3)"
+    }
+   ]
+  },
+  {
+   "id": "king-city-joint-usd",
+   "contest_type": "candidate",
+   "status": "contested",
+   "level": "district",
+   "jurisdiction": "King City Joint Unified School District",
+   "jurisdiction_type": "school_district",
+   "office": "Governing Board Member",
+   "seat_type": "at_large",
+   "seat_number": null,
+   "term_years": null,
+   "is_short_term": false,
+   "vote_for": 5,
+   "measure_letter": null,
+   "measure_title": null,
+   "threshold": null,
+   "retention_name": null,
+   "jurisdiction_counties": [
+    "Monterey"
+   ],
+   "candidates": [
+    {
+     "id": "c_c7193ff0d9",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "MINDY HUNT",
+     "label": null,
+     "first": "MINDY",
+     "middle": null,
+     "last": "HUNT",
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "MINDY HUNT"
+      }
+     ]
+    },
+    {
+     "id": "c_5fff37d20e",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "SUSAN E KING",
+     "label": null,
+     "first": "SUSAN",
+     "middle": "E",
+     "last": "KING",
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "SUSAN E KING"
+      }
+     ]
+    },
+    {
+     "id": "c_5b0cfa19eb",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "YESENIA ZAVALA",
+     "label": null,
+     "first": "YESENIA",
+     "middle": null,
+     "last": "ZAVALA",
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "YESENIA ZAVALA"
+      }
+     ]
+    },
+    {
+     "id": "c_0afb6e9f53",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "FRANKY LOPEZ JR",
+     "label": null,
+     "first": "FRANKY",
+     "middle": "LOPEZ",
+     "last": "JR",
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "FRANKY LOPEZ JR"
+      }
+     ]
+    },
+    {
+     "id": "c_d547b91c73",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "MIGUEL LOMELI",
+     "label": null,
+     "first": "MIGUEL",
+     "middle": null,
+     "last": "LOMELI",
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "MIGUEL LOMELI"
+      }
+     ]
+    },
+    {
+     "id": "c_b1684116e8",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "SONIA VALERIO QUIROZ",
+     "label": null,
+     "first": "SONIA",
+     "middle": "VALERIO",
+     "last": "QUIROZ",
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "SONIA VALERIO QUIROZ"
+      }
+     ]
+    },
+    {
+     "id": "c_bfe8df50ea",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "LINDA BENWAY",
+     "label": null,
+     "first": "LINDA",
+     "middle": null,
+     "last": "BENWAY",
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "LINDA BENWAY"
+      }
+     ]
+    },
+    {
+     "id": "c_1c67dcc9a2",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "MONIQUE D ROSS",
+     "label": null,
+     "first": "MONIQUE",
+     "middle": "D",
+     "last": "ROSS",
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "MONIQUE D ROSS"
+      }
+     ]
+    },
+    {
+     "id": "c_03a036663e",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "DAVID GABONI",
+     "label": null,
+     "first": "DAVID",
+     "middle": null,
+     "last": "GABONI",
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "DAVID GABONI"
+      }
+     ]
+    },
+    {
+     "id": "c_11faf86623",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "LESLIE GIRARD",
+     "label": null,
+     "first": "LESLIE",
+     "middle": null,
+     "last": "GIRARD",
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "LESLIE GIRARD"
+      }
+     ]
+    },
+    {
+     "id": "write_in_total",
+     "candidate_type": "write_in_total",
+     "candidate_status": "active",
+     "ballot_name": "Write-in",
+     "label": "Write-in",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "Write-in"
+      }
+     ]
+    }
+   ],
+   "warnings": [],
+   "sources": [
+    {
+     "county": "Monterey",
+     "source_id": "King City Joint Unified School District Governing Board Member (Vote for 5)",
+     "source_name": "King City Joint Unified School District Governing Board Member (Vote for 5)"
+    }
+   ]
+  },
+  {
+   "id": "pacific-grove-usd-ta-1",
+   "contest_type": "candidate",
+   "status": "contested",
+   "level": "district",
+   "jurisdiction": "Pacific Grove Unified School District",
+   "jurisdiction_type": "school_district",
+   "office": "Governing Board Member",
+   "seat_type": "trustee_area",
+   "seat_number": "1",
+   "term_years": null,
+   "is_short_term": false,
+   "vote_for": 1,
+   "measure_letter": null,
+   "measure_title": null,
+   "threshold": null,
+   "retention_name": null,
+   "jurisdiction_counties": [
+    "Monterey"
+   ],
+   "candidates": [
+    {
+     "id": "c_6f3609884b",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "CHARLES \"CHUCK\" BRINKER",
+     "label": null,
+     "first": "CHARLES",
+     "middle": "\"CHUCK\"",
+     "last": "BRINKER",
+     "suffix": null,
+     "nickname": "CHUCK",
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "CHARLES \"CHUCK\" BRINKER"
+      }
+     ]
+    },
+    {
+     "id": "c_bc979acc38",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "STEPHEN BENNETT",
+     "label": null,
+     "first": "STEPHEN",
+     "middle": null,
+     "last": "BENNETT",
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "STEPHEN BENNETT"
+      }
+     ]
+    },
+    {
+     "id": "c_1c39dd015a",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "DAN MILLER",
+     "label": null,
+     "first": "DAN",
+     "middle": null,
+     "last": "MILLER",
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "DAN MILLER"
+      }
+     ]
+    },
+    {
+     "id": "write_in_total",
+     "candidate_type": "write_in_total",
+     "candidate_status": "active",
+     "ballot_name": "Write-in",
+     "label": "Write-in",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "Write-in"
+      }
+     ]
+    }
+   ],
+   "warnings": [],
+   "sources": [
+    {
+     "county": "Monterey",
+     "source_id": "Pacific Grove Unified School District Governing Board Member Trustee Area 1 (Vote for 1)",
+     "source_name": "Pacific Grove Unified School District Governing Board Member Trustee Area 1 (Vote for 1)"
+    }
+   ]
+  },
+  {
+   "id": "city-of-salinas-mayor",
+   "contest_type": "candidate",
+   "status": "contested",
+   "level": "city",
+   "jurisdiction": "City of Salinas",
+   "jurisdiction_type": "city",
+   "office": "Mayor",
+   "seat_type": "single_office",
+   "seat_number": null,
+   "term_years": null,
+   "is_short_term": false,
+   "vote_for": 1,
+   "measure_letter": null,
+   "measure_title": null,
+   "threshold": null,
+   "retention_name": null,
+   "jurisdiction_counties": [
+    "Monterey"
+   ],
+   "candidates": [
+    {
+     "id": "c_c5b27a0071",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "DENNIS DONOHUE",
+     "label": null,
+     "first": "DENNIS",
+     "middle": null,
+     "last": "DONOHUE",
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "DENNIS DONOHUE"
+      }
+     ]
+    },
+    {
+     "id": "c_9290200e8a",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "PETER SZALAI",
+     "label": null,
+     "first": "PETER",
+     "middle": null,
+     "last": "SZALAI",
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "PETER SZALAI"
+      }
+     ]
+    },
+    {
+     "id": "c_ad3c825174",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "HEZEKIAH GONZALEZ",
+     "label": null,
+     "first": "HEZEKIAH",
+     "middle": null,
+     "last": "GONZALEZ",
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "HEZEKIAH GONZALEZ"
+      }
+     ]
+    },
+    {
+     "id": "c_769028282f",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "DANIEL MUNOZ",
+     "label": null,
+     "first": "DANIEL",
+     "middle": null,
+     "last": "MUNOZ",
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "DANIEL MUNOZ"
+      }
+     ]
+    },
+    {
+     "id": "write_in_total",
+     "candidate_type": "write_in_total",
+     "candidate_status": "active",
+     "ballot_name": "Write-in",
+     "label": "Write-in",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "Write-in"
+      }
+     ]
+    }
+   ],
+   "warnings": [],
+   "sources": [
+    {
+     "county": "Monterey",
+     "source_id": "City of Salinas Mayor (Vote for 1)",
+     "source_name": "City of Salinas Mayor (Vote for 1)"
+    }
+   ]
+  },
+  {
+   "id": "city-of-salinas-council-2",
+   "contest_type": "candidate",
+   "status": "contested",
+   "level": "city",
+   "jurisdiction": "City of Salinas",
+   "jurisdiction_type": "city",
+   "office": "Member, City Council",
+   "seat_type": "district",
+   "seat_number": "2",
+   "term_years": null,
+   "is_short_term": false,
+   "vote_for": 1,
+   "measure_letter": null,
+   "measure_title": null,
+   "threshold": null,
+   "retention_name": null,
+   "jurisdiction_counties": [
+    "Monterey"
+   ],
+   "candidates": [
+    {
+     "id": "c_79628d55df",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "TONY BARRERA",
+     "label": null,
+     "first": "TONY",
+     "middle": null,
+     "last": "BARRERA",
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "TONY BARRERA"
+      }
+     ]
+    },
+    {
+     "id": "c_715402256b",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "JOSE GUERRA",
+     "label": null,
+     "first": "JOSE",
+     "middle": null,
+     "last": "GUERRA",
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "JOSE GUERRA"
+      }
+     ]
+    },
+    {
+     "id": "write_in_total",
+     "candidate_type": "write_in_total",
+     "candidate_status": "active",
+     "ballot_name": "Write-in",
+     "label": "Write-in",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "Write-in"
+      }
+     ]
+    }
+   ],
+   "warnings": [],
+   "sources": [
+    {
+     "county": "Monterey",
+     "source_id": "City of Salinas Member, City Council District 2 (Vote for 1)",
+     "source_name": "City of Salinas Member, City Council District 2 (Vote for 1)"
+    }
+   ]
+  },
+  {
+   "id": "city-of-monterey-mayor",
+   "contest_type": "candidate",
+   "status": "contested",
+   "level": "city",
+   "jurisdiction": "City of Monterey",
+   "jurisdiction_type": "city",
+   "office": "Mayor",
+   "seat_type": "single_office",
+   "seat_number": null,
+   "term_years": null,
+   "is_short_term": false,
+   "vote_for": 1,
+   "measure_letter": null,
+   "measure_title": null,
+   "threshold": null,
+   "retention_name": null,
+   "jurisdiction_counties": [
+    "Monterey"
+   ],
+   "candidates": [
+    {
+     "id": "c_8c16aaecb2",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "TYLLER WILLIAMSON",
+     "label": null,
+     "first": "TYLLER",
+     "middle": null,
+     "last": "WILLIAMSON",
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "TYLLER WILLIAMSON"
+      }
+     ]
+    },
+    {
+     "id": "c_a6a62d51a9",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "VINCE MALFITANO",
+     "label": null,
+     "first": "VINCE",
+     "middle": null,
+     "last": "MALFITANO",
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "VINCE MALFITANO"
+      }
+     ]
+    },
+    {
+     "id": "write_in_total",
+     "candidate_type": "write_in_total",
+     "candidate_status": "active",
+     "ballot_name": "Write-in",
+     "label": "Write-in",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "Write-in"
+      }
+     ]
+    }
+   ],
+   "warnings": [],
+   "sources": [
+    {
+     "county": "Monterey",
+     "source_id": "City of Monterey Mayor (Vote for 1)",
+     "source_name": "City of Monterey Mayor (Vote for 1)"
+    }
+   ]
+  },
+  {
+   "id": "city-of-pacific-grove-council-2yr",
+   "contest_type": "candidate",
+   "status": "contested",
+   "level": "city",
+   "jurisdiction": "City of Pacific Grove",
+   "jurisdiction_type": "city",
+   "office": "Member, City Council",
+   "seat_type": "at_large",
+   "seat_number": null,
+   "term_years": 2,
+   "is_short_term": true,
+   "vote_for": 1,
+   "measure_letter": null,
+   "measure_title": null,
+   "threshold": null,
+   "retention_name": null,
+   "jurisdiction_counties": [
+    "Monterey"
+   ],
+   "candidates": [
+    {
+     "id": "c_04da5abde1",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "JAMES ORLANDO OGLE III",
+     "label": null,
+     "first": "JAMES",
+     "middle": "ORLANDO OGLE",
+     "last": "III",
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "JAMES ORLANDO OGLE III"
+      }
+     ]
+    },
+    {
+     "id": "c_f52fb6efd7",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "LORI MCDONNELL",
+     "label": null,
+     "first": "LORI",
+     "middle": null,
+     "last": "MCDONNELL",
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "LORI MCDONNELL"
+      }
+     ]
+    },
+    {
+     "id": "write_in_total",
+     "candidate_type": "write_in_total",
+     "candidate_status": "active",
+     "ballot_name": "Write-in",
+     "label": "Write-in",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "Write-in"
+      }
+     ]
+    }
+   ],
+   "warnings": [],
+   "sources": [
+    {
+     "county": "Monterey",
+     "source_id": "City of Pacific Grove Member, City Council, 2 Year (Vote for 1)",
+     "source_name": "City of Pacific Grove Member, City Council, 2 Year (Vote for 1)"
+    }
+   ]
+  },
+  {
+   "id": "city-of-sand-city-council",
+   "contest_type": "candidate",
+   "status": "contested",
+   "level": "city",
+   "jurisdiction": "City of Sand City",
+   "jurisdiction_type": "city",
+   "office": "Member, City Council",
+   "seat_type": "at_large",
+   "seat_number": null,
+   "term_years": null,
+   "is_short_term": false,
+   "vote_for": 2,
+   "measure_letter": null,
+   "measure_title": null,
+   "threshold": null,
+   "retention_name": null,
+   "jurisdiction_counties": [
+    "Monterey"
+   ],
+   "candidates": [
+    {
+     "id": "c_72bb639215",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "LUKE KILPATRICK",
+     "label": null,
+     "first": "LUKE",
+     "middle": null,
+     "last": "KILPATRICK",
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "LUKE KILPATRICK"
+      }
+     ]
+    },
+    {
+     "id": "c_1908253cc9",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "JUSTIN R. RUMPS",
+     "label": null,
+     "first": "JUSTIN",
+     "middle": "R.",
+     "last": "RUMPS",
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "JUSTIN R. RUMPS"
+      }
+     ]
+    },
+    {
+     "id": "c_94f9d65a5a",
+     "candidate_type": "qualified_write_in",
+     "candidate_status": "active",
+     "ballot_name": "SALVATORE M. CARBONE",
+     "label": null,
+     "first": "SALVATORE",
+     "middle": "M.",
+     "last": "CARBONE",
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "SALVATORE M. CARBONE"
+      }
+     ]
+    },
+    {
+     "id": "c_e8401c718a",
+     "candidate_type": "qualified_write_in",
+     "candidate_status": "active",
+     "ballot_name": "KIM SCUDDER",
+     "label": null,
+     "first": "KIM",
+     "middle": null,
+     "last": "SCUDDER",
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "KIM SCUDDER"
+      }
+     ]
+    },
+    {
+     "id": "write_in_total",
+     "candidate_type": "write_in_total",
+     "candidate_status": "active",
+     "ballot_name": "Write-in",
+     "label": "Write-in",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "Write-in"
+      }
+     ]
+    }
+   ],
+   "warnings": [],
+   "sources": [
+    {
+     "county": "Monterey",
+     "source_id": "City of Sand City Member, City Council (Vote for 2)",
+     "source_name": "City of Sand City Member, City Council (Vote for 2)"
+    }
+   ]
+  },
+  {
+   "id": "city-of-del-rey-oaks-mayor",
+   "contest_type": "candidate",
+   "status": "unopposed",
+   "level": "city",
+   "jurisdiction": "City of Del Rey Oaks",
+   "jurisdiction_type": "city",
+   "office": "Mayor",
+   "seat_type": "single_office",
+   "seat_number": null,
+   "term_years": null,
+   "is_short_term": false,
+   "vote_for": 1,
+   "measure_letter": null,
+   "measure_title": null,
+   "threshold": null,
+   "retention_name": null,
+   "jurisdiction_counties": [
+    "Monterey"
+   ],
+   "candidates": [
+    {
+     "id": "c_e0213c0ddb",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "SCOTT DONALDSON",
+     "label": null,
+     "first": "SCOTT",
+     "middle": null,
+     "last": "DONALDSON",
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "SCOTT DONALDSON"
+      }
+     ]
+    },
+    {
+     "id": "write_in_total",
+     "candidate_type": "write_in_total",
+     "candidate_status": "active",
+     "ballot_name": "Write-in",
+     "label": "Write-in",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "Write-in"
+      }
+     ]
+    }
+   ],
+   "warnings": [],
+   "sources": [
+    {
+     "county": "Monterey",
+     "source_id": "City of Del Rey Oaks Mayor (Vote for 1)",
+     "source_name": "City of Del Rey Oaks Mayor (Vote for 1)"
+    }
+   ]
+  },
+  {
+   "id": "city-of-santa-cruz-mayor",
+   "contest_type": "candidate",
+   "status": "contested",
+   "level": "city",
+   "jurisdiction": "City of Santa Cruz",
+   "jurisdiction_type": "city",
+   "office": "Mayor",
+   "seat_type": "single_office",
+   "seat_number": null,
+   "term_years": null,
+   "is_short_term": false,
+   "vote_for": 1,
+   "measure_letter": null,
+   "measure_title": null,
+   "threshold": null,
+   "retention_name": null,
+   "jurisdiction_counties": [
+    "Santa Cruz"
+   ],
+   "candidates": [
+    {
+     "id": "c_7d1e672435",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "RYAN COONERTY",
+     "label": null,
+     "first": "RYAN",
+     "middle": null,
+     "last": "COONERTY",
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "RYAN COONERTY"
+      }
+     ]
+    },
+    {
+     "id": "c_f80aa410e7",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "AMI CHEN MILLS",
+     "label": null,
+     "first": "AMI",
+     "middle": "CHEN",
+     "last": "MILLS",
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "AMI CHEN MILLS"
+      }
+     ]
+    },
+    {
+     "id": "write_in_total",
+     "candidate_type": "write_in_total",
+     "candidate_status": "active",
+     "ballot_name": "Write-in",
+     "label": "Write-in",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "Write-in"
+      }
+     ]
+    },
+    {
+     "id": "unqualified_write_in",
+     "candidate_type": "unqualified_write_in",
+     "candidate_status": "active",
+     "ballot_name": "Unqualified Write In",
+     "label": "Unqualified Write In",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "Unqualified Write In"
+      }
+     ]
+    }
+   ],
+   "warnings": [],
+   "sources": [
+    {
+     "county": "Santa Cruz",
+     "source_id": "NameRace_51",
+     "source_name": "City of Santa Cruz Mayor (Vote for 1)"
+    }
+   ]
+  },
+  {
+   "id": "city-of-capitola-council",
+   "contest_type": "candidate",
+   "status": "contested",
+   "level": "city",
+   "jurisdiction": "City of Capitola",
+   "jurisdiction_type": "city",
+   "office": "Councilmember",
+   "seat_type": "at_large",
+   "seat_number": null,
+   "term_years": null,
+   "is_short_term": false,
+   "vote_for": 3,
+   "measure_letter": null,
+   "measure_title": null,
+   "threshold": null,
+   "retention_name": null,
+   "jurisdiction_counties": [
+    "Santa Cruz"
+   ],
+   "candidates": [
+    {
+     "id": "c_109d98f78e",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "PETER WILK",
+     "label": null,
+     "first": "PETER",
+     "middle": null,
+     "last": "WILK",
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "PETER WILK"
+      }
+     ]
+    },
+    {
+     "id": "c_625a331f51",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "TROY \"TJ\" WELCH",
+     "label": null,
+     "first": "TROY",
+     "middle": "\"TJ\"",
+     "last": "WELCH",
+     "suffix": null,
+     "nickname": "TJ",
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "TROY \"TJ\" WELCH"
+      }
+     ]
+    },
+    {
+     "id": "c_bbb3051b68",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "CAMI CORVIN",
+     "label": null,
+     "first": "CAMI",
+     "middle": null,
+     "last": "CORVIN",
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "CAMI CORVIN"
+      }
+     ]
+    },
+    {
+     "id": "c_66fef055f1",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "JOE CLARKE",
+     "label": null,
+     "first": "JOE",
+     "middle": null,
+     "last": "CLARKE",
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "JOE CLARKE"
+      }
+     ]
+    },
+    {
+     "id": "c_bc5413db78",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "TORY DEL FAVERO",
+     "label": null,
+     "first": "TORY",
+     "middle": "DEL",
+     "last": "FAVERO",
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "TORY DEL FAVERO"
+      }
+     ]
+    },
+    {
+     "id": "write_in_total",
+     "candidate_type": "write_in_total",
+     "candidate_status": "active",
+     "ballot_name": "Write-in",
+     "label": "Write-in",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "Write-in"
+      }
+     ]
+    },
+    {
+     "id": "unqualified_write_in",
+     "candidate_type": "unqualified_write_in",
+     "candidate_status": "active",
+     "ballot_name": "Unqualified Write In",
+     "label": "Unqualified Write In",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "Unqualified Write In"
+      }
+     ]
+    }
+   ],
+   "warnings": [],
+   "sources": [
+    {
+     "county": "Santa Cruz",
+     "source_id": "NameRace_8",
+     "source_name": "City of Capitola Councilmember (Vote for 3)"
+    }
+   ]
+  },
+  {
+   "id": "city-of-watsonville-council-3",
+   "contest_type": "candidate",
+   "status": "unopposed",
+   "level": "city",
+   "jurisdiction": "City of Watsonville",
+   "jurisdiction_type": "city",
+   "office": "Councilmember",
+   "seat_type": "district",
+   "seat_number": "3",
+   "term_years": null,
+   "is_short_term": false,
+   "vote_for": 1,
+   "measure_letter": null,
+   "measure_title": null,
+   "threshold": null,
+   "retention_name": null,
+   "jurisdiction_counties": [
+    "Santa Cruz"
+   ],
+   "candidates": [
+    {
+     "id": "c_8d0154fe27",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "MARIA OROZCO",
+     "label": null,
+     "first": "MARIA",
+     "middle": null,
+     "last": "OROZCO",
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "MARIA OROZCO"
+      }
+     ]
+    },
+    {
+     "id": "write_in_total",
+     "candidate_type": "write_in_total",
+     "candidate_status": "active",
+     "ballot_name": "Write-in",
+     "label": "Write-in",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "Write-in"
+      }
+     ]
+    },
+    {
+     "id": "unqualified_write_in",
+     "candidate_type": "unqualified_write_in",
+     "candidate_status": "active",
+     "ballot_name": "Unqualified Write In",
+     "label": "Unqualified Write In",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "Unqualified Write In"
+      }
+     ]
+    }
+   ],
+   "warnings": [],
+   "sources": [
+    {
+     "county": "Santa Cruz",
+     "source_id": "NameRace_42",
+     "source_name": "City of Watsonville Councilmember - Dist 3 (Vote for 1)"
+    }
+   ]
+  },
+  {
+   "id": "pajaro-valley-usd-ta-4",
+   "contest_type": "candidate",
+   "status": "contested",
+   "level": "district",
+   "jurisdiction": "Pajaro Valley Unified School District",
+   "jurisdiction_type": "school_district",
+   "office": "Governing Board Member",
+   "seat_type": "trustee_area",
+   "seat_number": "4",
+   "term_years": null,
+   "is_short_term": false,
+   "vote_for": 1,
+   "measure_letter": null,
+   "measure_title": null,
+   "threshold": null,
+   "retention_name": null,
+   "jurisdiction_counties": [
+    "Santa Cruz"
+   ],
+   "candidates": [
+    {
+     "id": "c_2b9701f799",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "DANIEL DODGE, JR",
+     "label": null,
+     "first": "DANIEL",
+     "middle": "DODGE",
+     "last": "JR",
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "DANIEL DODGE, JR"
+      }
+     ]
+    },
+    {
+     "id": "c_0f7a549ac2",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "ERIBERTO ESTRADA, IV",
+     "label": null,
+     "first": "ERIBERTO",
+     "middle": "ESTRADA",
+     "last": "IV",
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "ERIBERTO ESTRADA, IV"
+      }
+     ]
+    },
+    {
+     "id": "c_fb1af2787d",
+     "candidate_type": "qualified_write_in",
+     "candidate_status": "active",
+     "ballot_name": "Margarita Carrillo",
+     "label": null,
+     "first": "Margarita",
+     "middle": null,
+     "last": "Carrillo",
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "Margarita Carrillo"
+      }
+     ]
+    },
+    {
+     "id": "write_in_total",
+     "candidate_type": "write_in_total",
+     "candidate_status": "active",
+     "ballot_name": "Write-in",
+     "label": "Write-in",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "Write-in"
+      }
+     ]
+    },
+    {
+     "id": "unqualified_write_in",
+     "candidate_type": "unqualified_write_in",
+     "candidate_status": "active",
+     "ballot_name": "Unqualified Write In",
+     "label": "Unqualified Write In",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "Unqualified Write In"
+      }
+     ]
+    }
+   ],
+   "warnings": [],
+   "sources": [
+    {
+     "county": "Santa Cruz",
+     "source_id": "NameRace_11",
+     "source_name": "Pajaro Valley Unified School District Governing Board Member - Trustee Area 4 (Vote for 1)"
+    }
+   ]
+  },
+  {
+   "id": "felton-fire-protection-district",
+   "contest_type": "candidate",
+   "status": "contested",
+   "level": "district",
+   "jurisdiction": "Felton Fire Protection District",
+   "jurisdiction_type": "special_district",
+   "office": "Director",
+   "seat_type": "at_large",
+   "seat_number": null,
+   "term_years": null,
+   "is_short_term": false,
+   "vote_for": 2,
+   "measure_letter": null,
+   "measure_title": null,
+   "threshold": null,
+   "retention_name": null,
+   "jurisdiction_counties": [
+    "Santa Cruz"
+   ],
+   "candidates": [
+    {
+     "id": "c_c8e5c6f8ef",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "CRAIG WINTER",
+     "label": null,
+     "first": "CRAIG",
+     "middle": null,
+     "last": "WINTER",
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "CRAIG WINTER"
+      }
+     ]
+    },
+    {
+     "id": "c_92b6cca73e",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "NORMAN CRANDELL",
+     "label": null,
+     "first": "NORMAN",
+     "middle": null,
+     "last": "CRANDELL",
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "NORMAN CRANDELL"
+      }
+     ]
+    },
+    {
+     "id": "c_68933580e3",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "JAMES ANDERSON",
+     "label": null,
+     "first": "JAMES",
+     "middle": null,
+     "last": "ANDERSON",
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "JAMES ANDERSON"
+      }
+     ]
+    },
+    {
+     "id": "c_d4426d2e64",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "BILL FINLAYSON",
+     "label": null,
+     "first": "BILL",
+     "middle": null,
+     "last": "FINLAYSON",
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "BILL FINLAYSON"
+      }
+     ]
+    },
+    {
+     "id": "write_in_total",
+     "candidate_type": "write_in_total",
+     "candidate_status": "active",
+     "ballot_name": "Write-in",
+     "label": "Write-in",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "Write-in"
+      }
+     ]
+    }
+   ],
+   "warnings": [],
+   "sources": [
+    {
+     "county": "Santa Cruz",
+     "source_id": "NameRace_61",
+     "source_name": "Felton Fire Protection District Director (Vote for 2)"
+    }
+   ]
+  },
+  {
+   "id": "monterey-county-measure-e",
+   "contest_type": "measure",
+   "status": "contested",
+   "level": "county",
+   "jurisdiction": "County of Monterey",
+   "jurisdiction_type": "county",
+   "office": null,
+   "seat_type": null,
+   "seat_number": null,
+   "term_years": null,
+   "is_short_term": false,
+   "vote_for": 1,
+   "measure_letter": "E",
+   "measure_title": null,
+   "threshold": null,
+   "retention_name": null,
+   "jurisdiction_counties": [
+    "Monterey"
+   ],
+   "candidates": [
+    {
+     "id": "yes",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "YES",
+     "label": "YES",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "YES"
+      }
+     ]
+    },
+    {
+     "id": "no",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "NO",
+     "label": "NO",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "NO"
+      }
+     ]
+    }
+   ],
+   "warnings": [],
+   "sources": [
+    {
+     "county": "Monterey",
+     "source_id": "Measure E: County of Monterey (Vote for 1)",
+     "source_name": "Measure E: County of Monterey (Vote for 1)"
+    }
+   ]
+  },
+  {
+   "id": "city-of-salinas-measure-g",
+   "contest_type": "measure",
+   "status": "contested",
+   "level": "city",
+   "jurisdiction": "City of Salinas",
+   "jurisdiction_type": "city",
+   "office": null,
+   "seat_type": null,
+   "seat_number": null,
+   "term_years": null,
+   "is_short_term": false,
+   "vote_for": 1,
+   "measure_letter": "G",
+   "measure_title": null,
+   "threshold": null,
+   "retention_name": null,
+   "jurisdiction_counties": [
+    "Monterey"
+   ],
+   "candidates": [
+    {
+     "id": "yes",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "YES",
+     "label": "YES",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "YES"
+      }
+     ]
+    },
+    {
+     "id": "no",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "NO",
+     "label": "NO",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "NO"
+      }
+     ]
+    }
+   ],
+   "warnings": [],
+   "sources": [
+    {
+     "county": "Monterey",
+     "source_id": "Measure G: City of Salinas (Vote for 1)",
+     "source_name": "Measure G: City of Salinas (Vote for 1)"
+    }
+   ]
+  },
+  {
+   "id": "city-of-salinas-measure-h",
+   "contest_type": "measure",
+   "status": "contested",
+   "level": "city",
+   "jurisdiction": "City of Salinas",
+   "jurisdiction_type": "city",
+   "office": null,
+   "seat_type": null,
+   "seat_number": null,
+   "term_years": null,
+   "is_short_term": false,
+   "vote_for": 1,
+   "measure_letter": "H",
+   "measure_title": null,
+   "threshold": null,
+   "retention_name": null,
+   "jurisdiction_counties": [
+    "Monterey"
+   ],
+   "candidates": [
+    {
+     "id": "yes",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "YES",
+     "label": "YES",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "YES"
+      }
+     ]
+    },
+    {
+     "id": "no",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "NO",
+     "label": "NO",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "NO"
+      }
+     ]
+    }
+   ],
+   "warnings": [],
+   "sources": [
+    {
+     "county": "Monterey",
+     "source_id": "Measure H: City of Salinas (Vote for 1)",
+     "source_name": "Measure H: City of Salinas (Vote for 1)"
+    }
+   ]
+  },
+  {
+   "id": "carmel-usd-measure-i",
+   "contest_type": "measure",
+   "status": "contested",
+   "level": "district",
+   "jurisdiction": "Carmel Unified School District",
+   "jurisdiction_type": "school_district",
+   "office": null,
+   "seat_type": null,
+   "seat_number": null,
+   "term_years": null,
+   "is_short_term": false,
+   "vote_for": 1,
+   "measure_letter": "I",
+   "measure_title": null,
+   "threshold": "55%",
+   "retention_name": null,
+   "jurisdiction_counties": [
+    "Monterey"
+   ],
+   "candidates": [
+    {
+     "id": "yes",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "YES",
+     "label": "YES",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "YES"
+      }
+     ]
+    },
+    {
+     "id": "no",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "NO",
+     "label": "NO",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Monterey",
+       "ballot_name": "NO"
+      }
+     ]
+    }
+   ],
+   "warnings": [],
+   "sources": [
+    {
+     "county": "Monterey",
+     "source_id": "Measure I: Carmel Unified School District (Vote for 1)",
+     "source_name": "Measure I: Carmel Unified School District (Vote for 1)"
+    }
+   ]
+  },
+  {
+   "id": "santa-cruz-county-measure-d",
+   "contest_type": "measure",
+   "status": "contested",
+   "level": "county",
+   "jurisdiction": null,
+   "jurisdiction_type": null,
+   "office": null,
+   "seat_type": null,
+   "seat_number": null,
+   "term_years": null,
+   "is_short_term": false,
+   "vote_for": 1,
+   "measure_letter": "D",
+   "measure_title": "Offshore Drilling",
+   "threshold": "majority",
+   "retention_name": null,
+   "jurisdiction_counties": [
+    "Santa Cruz"
+   ],
+   "candidates": [
+    {
+     "id": "yes",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "YES",
+     "label": "YES",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "YES"
+      }
+     ]
+    },
+    {
+     "id": "no",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "NO",
+     "label": "NO",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "NO"
+      }
+     ]
+    }
+   ],
+   "warnings": [],
+   "sources": [
+    {
+     "county": "Santa Cruz",
+     "source_id": "NameRace_87",
+     "source_name": "D - Offshore Drilling - Majority to Pass (Vote for 1)"
+    }
+   ]
+  },
+  {
+   "id": "santa-cruz-county-measure-e",
+   "contest_type": "measure",
+   "status": "contested",
+   "level": "county",
+   "jurisdiction": null,
+   "jurisdiction_type": null,
+   "office": null,
+   "seat_type": null,
+   "seat_number": null,
+   "term_years": null,
+   "is_short_term": false,
+   "vote_for": 1,
+   "measure_letter": "E",
+   "measure_title": "Sales Tax",
+   "threshold": "majority",
+   "retention_name": null,
+   "jurisdiction_counties": [
+    "Santa Cruz"
+   ],
+   "candidates": [
+    {
+     "id": "yes",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "YES",
+     "label": "YES",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "YES"
+      }
+     ]
+    },
+    {
+     "id": "no",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "NO",
+     "label": "NO",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "Santa Cruz",
+       "ballot_name": "NO"
+      }
+     ]
+    }
+   ],
+   "warnings": [],
+   "sources": [
+    {
+     "county": "Santa Cruz",
+     "source_id": "NameRace_31",
+     "source_name": "E - Sales Tax - Majority to Pass (Vote for 1)"
+    }
+   ]
+  },
+  {
+   "id": "san-benito-county-measure-cannabis",
+   "contest_type": "measure",
+   "status": "contested",
+   "level": "county",
+   "jurisdiction": "County of San Benito",
+   "jurisdiction_type": "county",
+   "office": null,
+   "seat_type": null,
+   "seat_number": null,
+   "term_years": null,
+   "is_short_term": false,
+   "vote_for": null,
+   "measure_letter": null,
+   "measure_title": "Cannabis Business Activities Tax",
+   "threshold": null,
+   "retention_name": null,
+   "jurisdiction_counties": [
+    "San Benito"
+   ],
+   "candidates": [
+    {
+     "id": "yes",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "YES",
+     "label": "YES",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "San Benito",
+       "ballot_name": "YES"
+      }
+     ]
+    },
+    {
+     "id": "no",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "NO",
+     "label": "NO",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": [
+      {
+       "county": "San Benito",
+       "ballot_name": "NO"
+      }
+     ]
+    }
+   ],
+   "warnings": [
+    {
+     "code": "vote_for_unknown",
+     "severity": "info",
+     "contest_id": "san-benito-county-measure-cannabis",
+     "candidate_id": null,
+     "message": "No county printed a vote for; status assumes 1."
+    }
+   ],
+   "sources": [
+    {
+     "county": "San Benito",
+     "source_id": "san-benito:cannabis",
+     "source_name": "Cannabis Business Activities Tax"
+    }
+   ]
+  },
+  {
+   "id": "north-county-recreation-measure-v",
+   "contest_type": "measure",
+   "status": "contested",
+   "level": "district",
+   "jurisdiction": "North County Public Recreation District",
+   "jurisdiction_type": "special_district",
+   "office": null,
+   "seat_type": null,
+   "seat_number": null,
+   "term_years": null,
+   "is_short_term": false,
+   "vote_for": 1,
+   "measure_letter": "V",
+   "measure_title": null,
+   "threshold": null,
+   "retention_name": null,
+   "jurisdiction_counties": [
+    "Monterey"
+   ],
+   "candidates": [
+    {
+     "id": "yes",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "YES",
+     "label": "YES",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": []
+    },
+    {
+     "id": "no",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "NO",
+     "label": "NO",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": []
+    }
+   ],
+   "warnings": [],
+   "sources": []
+  },
+  {
+   "id": "city-of-king-council-2",
+   "contest_type": "candidate",
+   "status": "no_election",
+   "level": "city",
+   "jurisdiction": "City of King",
+   "jurisdiction_type": "city",
+   "office": "Member, City Council",
+   "seat_type": "district",
+   "seat_number": "2",
+   "term_years": null,
+   "is_short_term": false,
+   "vote_for": 1,
+   "measure_letter": null,
+   "measure_title": null,
+   "threshold": null,
+   "retention_name": null,
+   "jurisdiction_counties": [
+    "Monterey"
+   ],
+   "candidates": [
+    {
+     "id": "c_cebe517e90",
+     "candidate_type": "ballot",
+     "candidate_status": "active",
+     "ballot_name": "MIKE LEBARRE",
+     "label": null,
+     "first": "MIKE",
+     "middle": null,
+     "last": "LEBARRE",
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": []
+    },
+    {
+     "id": "write_in_total",
+     "candidate_type": "write_in_total",
+     "candidate_status": "active",
+     "ballot_name": "Write-in",
+     "label": "Write-in",
+     "first": null,
+     "middle": null,
+     "last": null,
+     "suffix": null,
+     "nickname": null,
+     "party": null,
+     "person_id": null,
+     "sources": []
+    }
+   ],
+   "warnings": [],
+   "sources": []
+  }
+ ]
+}
