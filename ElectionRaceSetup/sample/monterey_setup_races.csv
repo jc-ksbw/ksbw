@@ -1,0 +1,119 @@
+Race ID,Level,State,County,City,District,Office,Winners,Total Precincts,Candidate,Party
+CA-GOV,STATE,CA,,,,Governor,1,208,Steve Hilton,R
+CA-GOV,STATE,CA,,,,Governor,1,208,Xavier Becerra,D
+CA-LTGOV,STATE,CA,,,,Lieutenant Governor,1,208,Gloria Romero,R
+CA-LTGOV,STATE,CA,,,,Lieutenant Governor,1,208,Fiona Ma,D
+CA-SOS,STATE,CA,,,,Secretary of State,1,208,Don Wagner,R
+CA-SOS,STATE,CA,,,,Secretary of State,1,208,Shirley Weber,D
+CA-CONTROLLER,STATE,CA,,,,State Controller,1,208,Malia Cohen,D
+CA-CONTROLLER,STATE,CA,,,,State Controller,1,208,Herb Morgan,R
+CA-TREASURER,STATE,CA,,,,Treasurer,1,208,Jennifer Hawks,R
+CA-TREASURER,STATE,CA,,,,Treasurer,1,208,Eleni Kounalakis,D
+CA-BOE2,STATE,CA,,,2,Board of Equalization,1,208,John Pimentel,D
+CA-BOE2,STATE,CA,,,2,Board of Equalization,1,208,Sally Lieber,D
+CA-CD18,DISTRICT,CA,,,18,U.S. House,1,112,Zoe Lofgren,D
+CA-CD18,DISTRICT,CA,,,18,U.S. House,1,112,Shane Lewis,R
+CA-CD19,DISTRICT,CA,,,19,U.S. Representative,1,96,Jimmy Panetta,D
+CA-CD19,DISTRICT,CA,,,19,U.S. Representative,1,96,Peter Verbica,R
+CA-AD28,DISTRICT,CA,,,28,State Assembly,1,100,Carol Pefley,R
+CA-AD28,DISTRICT,CA,,,28,State Assembly,1,100,Gail Pellerin,D
+CA-AD29,DISTRICT,CA,,,29,State Assembly,1,123,Dennis Sanchez,R
+CA-AD29,DISTRICT,CA,,,29,State Assembly,1,123,Robert Rivas,D
+CA-AD30,DISTRICT,CA,,,30,State Assembly,1,85,Dawn Addis,D
+CA-AD30,DISTRICT,CA,,,30,State Assembly,1,85,Shannon Kessler,R
+CA-GROBAN,STATE,CA,,,,CA Supreme Court Justice Joshua Groban - Retain?,1,208,Yes,
+CA-GROBAN,STATE,CA,,,,CA Supreme Court Justice Joshua Groban - Retain?,1,208,No,
+CA-WILSON,STATE,CA,,,,6th District Court of Appeal Justice Charles Wilson - Retain?,1,208,Yes,
+CA-WILSON,STATE,CA,,,,6th District Court of Appeal Justice Charles Wilson - Retain?,1,208,No,
+CA-CHUNG,STATE,CA,,,,6th District Court of Appeal Justice Frederick Chung - Retain?,1,208,Yes,
+CA-CHUNG,STATE,CA,,,,6th District Court of Appeal Justice Frederick Chung - Retain?,1,208,No,
+CA-SPI,STATE,CA,,,,State Superintendent of Public Instruction,1,208,Sonja Shaw,
+CA-SPI,STATE,CA,,,,State Superintendent of Public Instruction,1,208,Richard Barrera,
+CA-PROP1,STATE,CA,,,,Prop 1,1,208,Yes,
+CA-PROP1,STATE,CA,,,,Prop 1,1,208,No,
+CA-PROP2,STATE,CA,,,,Prop 2,1,208,Yes,
+CA-PROP2,STATE,CA,,,,Prop 2,1,208,No,
+CA-PROP37,STATE,CA,,,,Prop 37,1,208,Yes,
+CA-PROP37,STATE,CA,,,,Prop 37,1,208,No,
+MRY-BOE1,COUNTY,CA,Monterey,,,County Board of Education Trustee Area 1,1,37,Megan Whilden,
+MRY-BOE1,COUNTY,CA,Monterey,,,County Board of Education Trustee Area 1,1,37,Rita Patel,
+MRY-MEASE,COUNTY,CA,Monterey,,,Measure E,1,208,Yes,
+MRY-MEASE,COUNTY,CA,Monterey,,,Measure E,1,208,No,
+SC-MEASD,COUNTY,CA,Santa Cruz,,,Measure D,1,150,Yes,
+SC-MEASD,COUNTY,CA,Santa Cruz,,,Measure D,1,150,No,
+SC-MEASE,COUNTY,CA,Santa Cruz,,,Measure E,1,150,Yes,
+SC-MEASE,COUNTY,CA,Santa Cruz,,,Measure E,1,150,No,
+KC-UNION,DISTRICT,CA,Monterey,,,King City Union Elementary School Board,3,8,Susan King,
+KC-UNION,DISTRICT,CA,Monterey,,,King City Union Elementary School Board,3,8,Yesenia Zavala,
+KC-UNION,DISTRICT,CA,Monterey,,,King City Union Elementary School Board,3,8,Franky Lopez Jr.,
+KC-UNION,DISTRICT,CA,Monterey,,,King City Union Elementary School Board,3,8,Sonia Valerio Quiroz,
+KC-UNION,DISTRICT,CA,Monterey,,,King City Union Elementary School Board,3,8,Monique Ross,
+KC-JOINT,DISTRICT,CA,Monterey,,,King City Joint Unified School Board,5,12,Mindy Hunt,
+KC-JOINT,DISTRICT,CA,Monterey,,,King City Joint Unified School Board,5,12,Susan King,
+KC-JOINT,DISTRICT,CA,Monterey,,,King City Joint Unified School Board,5,12,Yesenia Zavala,
+KC-JOINT,DISTRICT,CA,Monterey,,,King City Joint Unified School Board,5,12,Franky Lopez Jr.,
+KC-JOINT,DISTRICT,CA,Monterey,,,King City Joint Unified School Board,5,12,Miguel Lomeli,
+KC-JOINT,DISTRICT,CA,Monterey,,,King City Joint Unified School Board,5,12,Sonia Valerio Quiroz,
+KC-JOINT,DISTRICT,CA,Monterey,,,King City Joint Unified School Board,5,12,Linda Benway,
+KC-JOINT,DISTRICT,CA,Monterey,,,King City Joint Unified School Board,5,12,Monique Ross,
+KC-JOINT,DISTRICT,CA,Monterey,,,King City Joint Unified School Board,5,12,David Gaboni,
+KC-JOINT,DISTRICT,CA,Monterey,,,King City Joint Unified School Board,5,12,Leslie Girard,
+SMC-JUHSD,DISTRICT,CA,Monterey,,,South Monterey County High School District Board,3,18,Miguel Lomeli,
+SMC-JUHSD,DISTRICT,CA,Monterey,,,South Monterey County High School District Board,3,18,Paul Dake,
+SMC-JUHSD,DISTRICT,CA,Monterey,,,South Monterey County High School District Board,3,18,Sonia Valerio Quiroz,
+SMC-JUHSD,DISTRICT,CA,Monterey,,,South Monterey County High School District Board,3,18,Leslie Girard,
+GUSD,DISTRICT,CA,Monterey,,,Greenfield Unified School Board,5,7,Sonia Heredia,
+GUSD,DISTRICT,CA,Monterey,,,Greenfield Unified School Board,5,7,David Kong,
+GUSD,DISTRICT,CA,Monterey,,,Greenfield Unified School Board,5,7,Lorena Chavez,
+GUSD,DISTRICT,CA,Monterey,,,Greenfield Unified School Board,5,7,Denise Jaime,
+GUSD,DISTRICT,CA,Monterey,,,Greenfield Unified School Board,5,7,Lucila Ayala,
+GUSD,DISTRICT,CA,Monterey,,,Greenfield Unified School Board,5,7,Paul Dake,
+GUSD,DISTRICT,CA,Monterey,,,Greenfield Unified School Board,5,7,Josefina Silva,
+GUSD,DISTRICT,CA,Monterey,,,Greenfield Unified School Board,5,7,Juergen Smith,
+GUSD,DISTRICT,CA,Monterey,,,Greenfield Unified School Board,5,7,Gabriela Mora,
+GUSD,DISTRICT,CA,Monterey,,,Greenfield Unified School Board,5,7,Jose Madrid,
+GUESD-1,DISTRICT,CA,Monterey,,,Greenfield Union School Board - Trustee Area 1,1,3,David Kong,
+GUESD-1,DISTRICT,CA,Monterey,,,Greenfield Union School Board - Trustee Area 1,1,3,Josefina Silva,
+PGUSD-1,DISTRICT,CA,Monterey,,,Pacific Grove Unified School Board Trustee Area 1,1,2,Chuck Brinker,
+PGUSD-1,DISTRICT,CA,Monterey,,,Pacific Grove Unified School Board Trustee Area 1,1,2,Stephen Bennett,
+PGUSD-1,DISTRICT,CA,Monterey,,,Pacific Grove Unified School Board Trustee Area 1,1,2,Dan Miller,
+PAJARO-4,DISTRICT,CA,Santa Cruz,,,Pajaro Valley Unified School Board Trustee Area 4,1,20,Daniel Dodge Jr.,
+PAJARO-4,DISTRICT,CA,Santa Cruz,,,Pajaro Valley Unified School Board Trustee Area 4,1,20,Eriberto Estrada IV,
+SAL-MAYOR,CITY,CA,Monterey,Salinas,,Mayor,1,53,Dennis Donohue,
+SAL-MAYOR,CITY,CA,Monterey,Salinas,,Mayor,1,53,Peter Szalai,
+SAL-MAYOR,CITY,CA,Monterey,Salinas,,Mayor,1,53,Hezekiah Gonzalez,
+SAL-MAYOR,CITY,CA,Monterey,Salinas,,Mayor,1,53,Daniel Munoz,
+SAL-D2,CITY,CA,Monterey,Salinas,2,City Council District 2,1,6,Tony Barrera,
+SAL-D2,CITY,CA,Monterey,Salinas,2,City Council District 2,1,6,Jose Guerra,
+SAL-D3,CITY,CA,Monterey,Salinas,3,City Council District 3,1,10,Margaret D'Arrigo,
+SAL-D3,CITY,CA,Monterey,Salinas,3,City Council District 3,1,10,Cary Swensen,
+SAL-D3,CITY,CA,Monterey,Salinas,3,City Council District 3,1,10,Brent Bagley,
+SAL-MEASG,CITY,CA,Monterey,Salinas,,Measure G,1,53,Yes,
+SAL-MEASG,CITY,CA,Monterey,Salinas,,Measure G,1,53,No,
+SAL-MEASH,CITY,CA,Monterey,Salinas,,Measure H,1,53,Yes,
+SAL-MEASH,CITY,CA,Monterey,Salinas,,Measure H,1,53,No,
+CARMEL-MAYOR,CITY,CA,Monterey,Carmel-by-the-Sea,,Mayor,1,2,David Boland,
+CARMEL-MAYOR,CITY,CA,Monterey,Carmel-by-the-Sea,,Mayor,1,2,Hans Buder,
+CARMEL-CC,CITY,CA,Monterey,Carmel-by-the-Sea,,City Council,2,2,Stefan Karapetkov,
+CARMEL-CC,CITY,CA,Monterey,Carmel-by-the-Sea,,City Council,2,2,Alissandra Dramov,
+CARMEL-CC,CITY,CA,Monterey,Carmel-by-the-Sea,,City Council,2,2,Bobby Richards,
+MRY-MAYOR,CITY,CA,Monterey,Monterey,,Mayor,1,15,Tyller Williamson,
+MRY-MAYOR,CITY,CA,Monterey,Monterey,,Mayor,1,15,Vince Malfitano,
+PG-CC2YR,CITY,CA,Monterey,Pacific Grove,,City Council (2-year term),1,6,James Ogle III,
+PG-CC2YR,CITY,CA,Monterey,Pacific Grove,,City Council (2-year term),1,6,Lori McDonnell,
+SAND-CC,CITY,CA,Monterey,Sand City,,City Council,2,1,Luke Kilpatrick,
+SAND-CC,CITY,CA,Monterey,Sand City,,City Council,2,1,Justin Rumps,
+CARMEL-USD-I,DISTRICT,CA,Monterey,,,Measure I - Carmel Unified School District,1,19,Yes,
+CARMEL-USD-I,DISTRICT,CA,Monterey,,,Measure I - Carmel Unified School District,1,19,No,
+CAP-CC,CITY,CA,Santa Cruz,Capitola,,City Council,3,15,Peter Wilk,
+CAP-CC,CITY,CA,Santa Cruz,Capitola,,City Council,3,15,TJ Welch,
+CAP-CC,CITY,CA,Santa Cruz,Capitola,,City Council,3,15,Cami Corvin,
+CAP-CC,CITY,CA,Santa Cruz,Capitola,,City Council,3,15,Joe Clarke,
+CAP-CC,CITY,CA,Santa Cruz,Capitola,,City Council,3,15,Tory Del Favero,
+SCZ-MAYOR,CITY,CA,Santa Cruz,Santa Cruz,,Mayor,1,40,Ryan Coonerty,
+SCZ-MAYOR,CITY,CA,Santa Cruz,Santa Cruz,,Mayor,1,40,Ami Chen Mills,
+WAT-D3,CITY,CA,Santa Cruz,Watsonville,3,City Council District 3,1,5,Maria Orozco,
+FELTON-FIRE,DISTRICT,CA,Santa Cruz,,,Felton Fire Protection District Board,2,6,Craig Winter,
+FELTON-FIRE,DISTRICT,CA,Santa Cruz,,,Felton Fire Protection District Board,2,6,Norman Crandell,
+FELTON-FIRE,DISTRICT,CA,Santa Cruz,,,Felton Fire Protection District Board,2,6,James Anderson,
+FELTON-FIRE,DISTRICT,CA,Santa Cruz,,,Felton Fire Protection District Board,2,6,Bill Finlayson,

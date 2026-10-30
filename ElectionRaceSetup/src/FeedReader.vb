@@ -71,8 +71,11 @@ Public Module FeedReader
         {"party", Aliases("party", "partyabbr", "partycode", "partyname", "politicalparty")},
         {"votes", Aliases("votes", "votecount", "totalvotes", "votetotal", "numvotes", "tally", "count")},
         {"winner", Aliases("winner", "iswinner", "elected", "won", "iselected")},
-        {"incumbent", Aliases("incumbent", "isincumbent")}
+        {"incumbent", Aliases("incumbent", "isincumbent")},
+        {"writein", Aliases("writein", "iswritein")}
     }
+
+    Private ReadOnly AreaNodeNames As New HashSet(Of String) From {"county", "reportingunit", "jurisdiction", "area", "region"}
 
     Private ReadOnly Inheritable As New HashSet(Of String) From {"level", "state", "county", "city", "district"}
 
@@ -182,6 +185,24 @@ Public Module FeedReader
             .SeatNumber = ContestField(contestNode, "seatnumber", profile)
         }
 
+        ' "Governor (Vote for 1)" -> "Governor" and 1 winner
+        Dim voteFor = Regex.Match(c.Office, "\s*\(\s*vote\s+for\s+(\d+)\s*\)\s*$", RegexOptions.IgnoreCase)
+        If voteFor.Success Then
+            c.Winners = Integer.Parse(voteFor.Groups(1).Value)
+            c.Office = c.Office.Substring(0, voteFor.Index).Trim()
+        End If
+
+        ' which county / reporting area the contest sits under
+        Dim up = contestNode.Parent
+        While up IsNot Nothing
+            If AreaNodeNames.Contains(FeedNode.Norm(up.Name)) Then
+                c.Area = Lookup(up, Aliases("name", "countyname", "areaname", "county", "id"))
+                If c.Area <> "" AndAlso c.County = "" AndAlso FeedNode.Norm(up.Name) = "county" Then c.County = c.Area
+                Exit While
+            End If
+            up = up.Parent
+        End While
+
         Dim rep As Integer, tot As Integer, hasTot As Boolean
         If ParsePrecincts(ContestField(contestNode, "precinctsreporting", profile), rep, tot, hasTot) Then
             c.PrecinctsReporting = rep
@@ -206,7 +227,8 @@ Public Module FeedReader
                 .FullName = name,
                 .Party = CandidateField(cn, "party", profile),
                 .Winner = IsTruthy(CandidateField(cn, "winner", profile)),
-                .Incumbent = IsTruthy(CandidateField(cn, "incumbent", profile))
+                .Incumbent = IsTruthy(CandidateField(cn, "incumbent", profile)),
+                .WriteIn = IsTruthy(CandidateField(cn, "writein", profile))
             }
             Dim rawVotes = CandidateField(cn, "votes", profile)
             fc.Votes = ParseCount(rawVotes)

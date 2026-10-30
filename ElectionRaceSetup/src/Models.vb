@@ -24,6 +24,15 @@ Public Class Candidate
     End Property
 End Class
 
+''' <summary>A county (or similar) breakdown of a race. Votes and Precincts use backslashes, as in the sample: "3\4", "2\20".</summary>
+Public Class SubRaceInfo
+    Public Property SubType As String = "COUNTY"
+    Public Property Location As String = ""
+    Public Property Votes As String = ""
+    Public Property Precincts As String = ""
+    Public Property Winner As String = ""
+End Class
+
 ''' <summary>One race, as it will be sent to Election Manager.</summary>
 Public Class Race
     Public Property ID As String = ""
@@ -45,6 +54,7 @@ Public Class Race
     Public Property FeedId As String = ""
 
     Public ReadOnly Property Candidates As New List(Of Candidate)
+    Public ReadOnly Property SubRaces As New List(Of SubRaceInfo)
 
     ''' <summary>Problems that stop the race from being sent.</summary>
     Public ReadOnly Property Errors As New List(Of String)

@@ -61,6 +61,7 @@ Imports System.Xml
             TestEngine()
             TestResultsWire()
             TestFetcher()
+            TestMontereyFeed()
             Console.WriteLine()
             Console.WriteLine($"{_checks - _failures}/{_checks} checks passed")
             Return If(_failures = 0, 0, 1)
@@ -641,6 +642,106 @@ Imports System.Xml
             Check(failed, "an HTTP 500 raises an error")
             serverTask.Wait(3000)
             http.Stop()
+        End Sub
+
+        Private Sub TestMontereyFeed()
+            Console.WriteLine("Multi-county feed (Monterey + Santa Cruz + San Benito)")
+            Dim races = Load(SampleFile("monterey_setup_races.csv")).Races
+            Dim contests = FeedReader.Read(File.ReadAllText(SampleFile("monterey_feed_excerpt.xml")))
+            Eq(contests.Count, 66, "66 contests read: 36 + 26 + 4")
+            Eq(contests.Where(Function(c) c.Area = "San Benito").Count(), 4, "county names are read from the feed")
+            Eq(contests(0).Office, "Governor", "(Vote for 1) is taken off the contest name")
+            Eq(contests(0).Winners.Value, 1, "...and kept as the number of winners")
+            Eq(contests(0).Area, "Monterey", "area from the county element")
+            Eq(contests(0).PrecinctsReporting.Value, 10, "precincts from ""10 of 208""")
+            Eq(contests(0).PrecinctsTotal.Value, 208, "total from ""10 of 208""")
+            Check(contests.Where(Function(c) c.Area = "Santa Cruz").All(Function(c) Not c.PrecinctsReporting.HasValue), "Santa Cruz gives no precinct counts")
+            Check(contests.SelectMany(Function(c) c.Candidates).Any(Function(k) k.WriteIn), "write_in flags are read")
+
+            Dim engine As New ResultsEngine
+            Dim items = engine.Evaluate(contests, races, "11/3/2026", "CSV", True, {"San Benito"}, True)
+            Eq(engine.SkippedCount, 4, "4 San Benito contests skipped")
+
+            Dim unmatched = items.Where(Function(i) i.Status = ResultStatus.Unmatched).ToList()
+            Dim notReady = String.Join(" | ", items.Where(Function(i) i.Status <> ResultStatus.Ready).Select(Function(i) $"{i.Status}: {i.Contest.Office} [{i.Areas}] {String.Join(" / ", i.Notes)}"))
+            Dim readyCount = items.Where(Function(i) i.Status = ResultStatus.Ready).Count()
+            Check(unmatched.Count = 1 AndAlso unmatched(0).Contest.Office.StartsWith("G - Scotts Valley"), "only the Scotts Valley measure (no setup race) is unmatched" & If(unmatched.Count = 1, "", "  -> " & notReady))
+            Check(readyCount = 44, $"all 44 setup races are ready (got {readyCount})" & If(readyCount = 44, "", "  -> " & notReady))
+            Eq(items.Where(Function(i) i.Status = ResultStatus.Held).Count(), 0, "nothing held")
+            Eq(items.Where(Function(i) i.Race IsNot Nothing).Select(Function(i) i.Race.ID).Distinct().Count(), 44, "each setup race got exactly one result row")
+
+            Dim byId = items.Where(Function(i) i.Race IsNot Nothing).ToDictionary(Function(i) i.Race.ID, StringComparer.OrdinalIgnoreCase)
+            If byId.Count < 44 Then Return
+
+            Dim gov = byId("CA-GOV")
+            Eq(gov.Contests.Count, 2, "Governor: Monterey and Santa Cruz added together")
+            Eq(gov.Areas, "Monterey + Santa Cruz", "areas listed")
+            Eq(String.Join(",", VotesIn(gov)), "1500,1506", "Governor votes are Monterey + Santa Cruz")
+            Eq(gov.Outgoing.PrecinctsReporting, 10, "precincts reporting added up")
+            Eq(gov.Outgoing.PrecinctsTotal, 208, "precincts total added up")
+            Eq(gov.Outgoing.SubRaces.Count, 2, "two county sub-races")
+            Eq(gov.Outgoing.SubRaces(0).Votes, "1000\1003", "Monterey sub-race votes, in setup candidate order")
+            Eq(gov.Outgoing.SubRaces(0).Precincts, "10\208", "Monterey sub-race precincts")
+            Eq(gov.Outgoing.SubRaces(1).Votes, "500\503", "Santa Cruz sub-race votes")
+            Check(gov.Xml.Contains("<SUBRACE>") AndAlso gov.Xml.Contains("<LOCATION>Santa Cruz</LOCATION>"), "sub-races written to the XML")
+            Check(gov.Notes.Any(Function(n) n.Contains("Added together")), "the note says counties were added")
+            Check(gov.Notes.Any(Function(n) n.Contains("Precinct counts not given")), "the note says Santa Cruz gave no precincts")
+
+            Eq(byId("CA-AD28").Contests.Count, 1, "Assembly 28 is Santa Cruz only")
+            Eq(byId("CA-AD29").Contests.Count, 2, "Assembly 29 in both counties despite different wording")
+            Eq(byId("CA-TREASURER").Contests.Count, 2, """State Treasurer"" and ""Treasurer"" pair with one race")
+            Eq(byId("CA-BOE2").Contests.Count, 2, "different spellings of Board of Equalization District 2")
+            Eq(byId("CA-CD18").Contests.Count, 2, "U.S. Representative District 18 / 18th Congressional District")
+            Eq(byId("CA-CD19").Contests.Count, 2, "District 19, both counties")
+            Eq(byId("CA-PROP1").Contests.Count, 2, """Proposition 1"" and ""1 - The Veterans And Affordable Housing Bond Act""")
+            Check(VotesIn(byId("CA-PROP1")).All(Function(v) v > 0), "BONDS YES / BONDS NO count as Yes / No")
+            Eq(byId("CA-PROP2").Contests.Count, 2, "Proposition 2: no mix-up with other numbers")
+            Eq(byId("CA-PROP37").Contests.Count, 2, "Proposition 37")
+            Eq(byId("CA-GROBAN").Contests.Count, 2, "Justice Groban in both wordings")
+            Eq(byId("CA-WILSON").Contests.Count, 2, "Justice Wilson, not Chung")
+            Eq(byId("CA-CHUNG").Contests.Count, 2, "Justice Chung")
+
+            Eq(byId("KC-UNION").Contests(0).Office, "King City Union School District Governing Board Member", "King City Union Elementary pairs with its own contest")
+            Eq(byId("KC-JOINT").Contests(0).Office, "King City Joint Unified School District Governing Board Member", "King City Joint Unified pairs with its own contest")
+            Eq(byId("GUSD").Contests(0).Office, "Greenfield Unified School District Governing Board Member", "Greenfield Unified is not Greenfield Union")
+            Eq(byId("GUESD-1").Contests(0).Office, "Greenfield Union School District Governing Board Member Trustee Area 1", "Greenfield Union trustee area 1")
+            Eq(byId("SMC-JUHSD").Contests(0).Office, "South Monterey County Joint Union High School District Governing Board Member", "South Monterey County JUHSD")
+
+            Eq(byId("SAL-MAYOR").Contests(0).Office, "City of Salinas Mayor", "Salinas mayor")
+            Eq(byId("SAL-D2").Contests(0).Office, "City of Salinas Member, City Council District 2", "Salinas council district 2, not district 3")
+            Eq(byId("MRY-MAYOR").Contests(0).Office, "City of Monterey Mayor", "Monterey mayor")
+            Eq(byId("CARMEL-CC").Contests(0).Office, "City of Carmel-By-The-Sea Member, City Council", "Carmel council")
+            Eq(byId("WAT-D3").Contests(0).Area, "Santa Cruz", "Watsonville district 3 (Santa Cruz)")
+            Eq(byId("SCZ-MAYOR").Contests(0).Office, "City of Santa Cruz Mayor", "Santa Cruz mayor")
+            Eq(byId("CAP-CC").Contests(0).Office, "City of Capitola Councilmember", "Capitola councilmember")
+            Eq(byId("PAJARO-4").Contests(0).Area, "Santa Cruz", "Pajaro Valley trustee area 4")
+            Eq(byId("MRY-MEASE").Contests(0).Area, "Monterey", "Measure E Monterey County, not Santa Cruz's Measure E")
+            Eq(byId("SC-MEASE").Contests(0).Area, "Santa Cruz", "Measure E Santa Cruz County")
+            Eq(byId("SC-MEASD").Contests(0).Area, "Santa Cruz", "Measure D Santa Cruz County")
+            Eq(byId("SAL-MEASG").Contests(0).Office, "Measure G: City of Salinas", "Measure G Salinas")
+            Eq(byId("SAL-MEASH").Contests(0).Office, "Measure H: City of Salinas", "Measure H Salinas")
+            Eq(byId("CARMEL-USD-I").Contests(0).Office, "Measure I: Carmel Unified School District", "Measure I Carmel USD")
+
+            ' names that differ: Don / DONALD P. (DON) WAGNER, Peter Verbica / PETER COE VERBICA, Chuck / CHARLES "CHUCK", DODGE, JR
+            Eq(byId("CA-SOS").MatchedCandidates, 4, "Wagner and Weber matched in both counties")
+            Eq(byId("CA-CD19").MatchedCandidates, 4, "Peter Verbica matched to PETER COE VERBICA")
+            Eq(byId("PGUSD-1").MatchedCandidates, 3, "Chuck Brinker matched to CHARLES ""CHUCK"" BRINKER")
+            Eq(byId("PAJARO-4").MatchedCandidates, 2, """DANIEL DODGE, JR"" and ""ERIBERTO ESTRADA, IV"" matched")
+            Check(byId("SAND-CC").Notes.Any(Function(n) n.Contains("SALVATORE M. CARBONE")), "flagged named write-ins are ignored, not held")
+            Check(byId("CAP-CC").Notes.Any(Function(n) n.Contains("Unqualified Write In")), "Unqualified Write In lines are ignored")
+
+            ' not skipping San Benito: its 50-candidate primary ballot must never be sent automatically
+            Dim everything = New ResultsEngine().Evaluate(contests, races, "11/3/2026", "CSV", True)
+            Dim sbItems = everything.Where(Function(i) i.Contests.Any(Function(c) c.Area = "San Benito")).ToList()
+            Eq(sbItems.Count, 4, "the four San Benito contests join the four races they belong to")
+            Check(sbItems.All(Function(i) i.Status = ResultStatus.Held), "if San Benito is not skipped, those races are HELD (its primary ballot lists candidates not in the setup races)")
+            Check(sbItems.All(Function(i) i.Notes.Any(Function(n) n.Contains("(San Benito)"))), "the notes name San Benito")
+
+            Eq(New ResultsEngine().Evaluate(contests, races, "11/3/2026", "CSV", True, {"San Benito"}).Single(Function(i) i.Race IsNot Nothing AndAlso i.Race.ID = "CA-GOV").Outgoing.SubRaces.Count, 0, "sub-races are off unless asked for")
+
+            Dim csv = PairingReport.Build(items, races)
+            Check(csv.StartsWith("Status,Areas,Feed contest"), "pairing report has a header")
+            Check(csv.Contains("G - Scotts Valley TOT") AndAlso csv.Contains("Closest 1"), "pairing report lists the unmatched contest")
         End Sub
 
     End Module

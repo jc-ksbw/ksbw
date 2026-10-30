@@ -34,6 +34,9 @@ Public Class ResultsForm
     Private txtSource As TextBox
     Private txtHeaders As TextBox
     Private txtProfile As TextBox
+    Private txtSkip As TextBox
+    Private ckSubs As CheckBox
+    Private btnReport As Button
     Private numInterval As NumericUpDown
     Private ckAuto As CheckBox
     Private btnPoll As Button
@@ -65,6 +68,8 @@ Public Class ResultsForm
         txtProfile.Text = s.FeedProfile
         numInterval.Value = Math.Max(numInterval.Minimum, Math.Min(numInterval.Maximum, s.FeedIntervalSec))
         ckAuto.Checked = s.FeedAuto
+        txtSkip.Text = s.FeedSkipAreas
+        ckSubs.Checked = s.FeedSubRaces
 
         For Each kv In CrosswalkStore.Load(_crosswalkPath)
             _engine.Crosswalk(kv.Key) = kv.Value
@@ -107,6 +112,10 @@ Public Class ResultsForm
         feedTable.Controls.Add(MakeLabel("Mapping file (optional)"), 0, 2)
         feedTable.Controls.Add(txtProfile, 1, 2)
         feedTable.Controls.Add(btnProfileBrowse, 2, 2)
+        txtSkip = New TextBox With {.Dock = DockStyle.Fill}
+        feedTable.Controls.Add(MakeLabel("Skip counties"), 0, 3)
+        feedTable.Controls.Add(txtSkip, 1, 3)
+        feedTable.Controls.Add(MakeLabel("e.g. San Benito; separate with ;"), 2, 3)
 
         numInterval = New NumericUpDown With {.Minimum = 5, .Maximum = 3600, .Value = 60, .Width = 65}
         ckAuto = New CheckBox With {.Text = "Send changes automatically", .AutoSize = True, .Margin = New Padding(12, 6, 0, 0)}
@@ -117,7 +126,12 @@ Public Class ResultsForm
         AddHandler ckAuto.CheckedChanged, Sub() SaveSettings()
 
         Dim controlRow As New FlowLayoutPanel With {.Dock = DockStyle.Top, .AutoSize = True, .Padding = New Padding(8, 4, 8, 0)}
-        controlRow.Controls.AddRange({MakeLabel("Check every (s)"), numInterval, btnPoll, btnFetch, ckAuto})
+        ckSubs = New CheckBox With {.Text = "Send county breakdown (sub-races)", .AutoSize = True, .Margin = New Padding(12, 6, 0, 0)}
+        AddHandler ckSubs.CheckedChanged, Sub()
+                                              SaveSettings()
+                                              If _contests.Count > 0 Then Reevaluate()
+                                          End Sub
+        controlRow.Controls.AddRange({MakeLabel("Check every (s)"), numInterval, btnPoll, btnFetch, ckAuto, ckSubs})
 
         lblInfo = New Label With {.Dock = DockStyle.Top, .Height = 24, .Padding = New Padding(10, 6, 0, 0)}
         lblSummary = New Label With {.Dock = DockStyle.Top, .Height = 24, .Padding = New Padding(10, 4, 0, 0), .Text = "Fetch the feed to see its contests."}
@@ -130,7 +144,8 @@ Public Class ResultsForm
         grid.Columns.Add(New DataGridViewCheckBoxColumn With {.Name = SendCol, .HeaderText = "Send", .Width = 45})
         grid.Columns.Add(New DataGridViewTextBoxColumn With {.Name = "colStatus", .HeaderText = "Status", .Width = 80, .ReadOnly = True})
         grid.Columns.Add(New DataGridViewTextBoxColumn With {.Name = "colOffice", .HeaderText = "Feed contest", .Width = 220, .ReadOnly = True})
-        grid.Columns.Add(New DataGridViewTextBoxColumn With {.Name = "colFeedId", .HeaderText = "Feed ID", .Width = 70, .ReadOnly = True})
+        grid.Columns.Add(New DataGridViewTextBoxColumn With {.Name = "colAreas", .HeaderText = "Counties", .Width = 130, .ReadOnly = True})
+        grid.Columns.Add(New DataGridViewTextBoxColumn With {.Name = "colFeedId", .HeaderText = "Feed ID", .Width = 60, .ReadOnly = True})
         grid.Columns.Add(New DataGridViewComboBoxColumn With {.Name = RaceCol, .HeaderText = "Setup race (pick to pair by hand)", .Width = 260, .FlatStyle = FlatStyle.Flat})
         grid.Columns.Add(New DataGridViewTextBoxColumn With {.Name = "colPrec", .HeaderText = "Precincts", .Width = 80, .ReadOnly = True})
         grid.Columns.Add(New DataGridViewTextBoxColumn With {.Name = "colVotes", .HeaderText = "Total votes", .Width = 80, .ReadOnly = True})
@@ -152,7 +167,9 @@ Public Class ResultsForm
         AddHandler btnResetSent.Click, AddressOf OnResetClick
 
         Dim actions As New FlowLayoutPanel With {.Dock = DockStyle.Bottom, .AutoSize = True, .Padding = New Padding(8, 4, 8, 4)}
-        actions.Controls.AddRange({btnSend, btnCheckReady, btnUncheckAll, btnResetSent})
+        btnReport = New Button With {.Text = "Export pairing report...", .AutoSize = True}
+        AddHandler btnReport.Click, AddressOf OnReportClick
+        actions.Controls.AddRange({btnSend, btnCheckReady, btnUncheckAll, btnReport, btnResetSent})
 
         txtLog = New TextBox With {
             .Multiline = True, .ReadOnly = True, .ScrollBars = ScrollBars.Vertical, .Dock = DockStyle.Fill,
@@ -202,6 +219,8 @@ Public Class ResultsForm
         s.FeedProfile = txtProfile.Text.Trim()
         s.FeedIntervalSec = CInt(numInterval.Value)
         s.FeedAuto = ckAuto.Checked
+        s.FeedSkipAreas = txtSkip.Text.Trim()
+        s.FeedSubRaces = ckSubs.Checked
         s.Save()
     End Sub
 
@@ -215,6 +234,7 @@ Public Class ResultsForm
         btnSend.Enabled = _main.Client.IsConnected AndAlso _items.Any(Function(it) it.Race IsNot Nothing)
         btnCheckReady.Enabled = _items.Count > 0
         btnUncheckAll.Enabled = _items.Count > 0
+        btnReport.Enabled = _items.Count > 0
         btnPoll.Text = If(_timer.Enabled, "Stop polling", "Start polling")
         lblState.Text = If(_main.Client.IsConnected, "Connected to Election Manager's MOS server.", "Not connected - connect in the main window to send.")
         lblState.ForeColor = If(_main.Client.IsConnected, Color.DarkGreen, Color.DarkRed)
@@ -302,7 +322,8 @@ Public Class ResultsForm
         Dim races = _main.SetupRaces
         If races.Count = 0 Then Log("No setup races are loaded. Open the race CSV in the main window first, so results can be paired.")
 
-        _items = _engine.Evaluate(_contests, races, _main.ElectionDateText(), _main.SourceName, _main.IsTest)
+        Dim skip = txtSkip.Text.Split(";"c, ","c).Select(Function(x) x.Trim()).Where(Function(x) x <> "").ToList()
+        _items = _engine.Evaluate(_contests, races, _main.ElectionDateText(), _main.SourceName, _main.IsTest, skip, ckSubs.Checked)
         If _main.Client.PendingCount = 0 Then _pending.Clear()
         Rebuild(races)
 
@@ -312,7 +333,9 @@ Public Class ResultsForm
         Dim same = _items.Where(Function(it) it.Status = ResultStatus.Unchanged OrElse it.Status = ResultStatus.Sent).Count()
         Dim paired = New HashSet(Of String)(_items.Where(Function(it) it.Race IsNot Nothing).Select(Function(it) it.Race.ID), StringComparer.OrdinalIgnoreCase)
         Dim missing = races.Where(Function(r) Not paired.Contains(r.ID)).Count()
-        lblSummary.Text = $"{_items.Count} contests: {ready} ready, {held} held, {none} with no match, {same} unchanged.  {missing} setup race(s) have no feed data."
+        Dim fedContests = _items.Sum(Function(it) it.Contests.Count)
+        lblSummary.Text = $"{_items.Count} races/contests from {fedContests} feed contests: {ready} ready, {held} held, {none} with no match, {same} unchanged." &
+                          If(_engine.SkippedCount > 0, $"  {_engine.SkippedCount} skipped.", "") & $"  {missing} setup race(s) have no feed data."
         UpdateButtons()
     End Sub
 
@@ -330,12 +353,17 @@ Public Class ResultsForm
             grid.Rows.Clear()
             For Each it In _items
                 Dim c = it.Contest
-                Dim prec = If(c.PrecinctsReporting.HasValue, c.PrecinctsReporting.Value.ToString(), "?") &
-                           If(it.Outgoing IsNot Nothing AndAlso it.Outgoing.PrecinctsTotal > 0, " / " & it.Outgoing.PrecinctsTotal, "")
-                Dim idx = grid.Rows.Add(IsChecked(it) AndAlso it.Race IsNot Nothing, StatusText(it), c.Office, c.FeedId,
+                Dim prec As String
+                If it.Outgoing IsNot Nothing Then
+                    prec = it.Outgoing.PrecinctsReporting.ToString() & If(it.Outgoing.PrecinctsTotal > 0, " / " & it.Outgoing.PrecinctsTotal, "")
+                Else
+                    prec = If(c.PrecinctsReporting.HasValue, c.PrecinctsReporting.Value.ToString(), "?")
+                End If
+                Dim title = c.Office & If(it.Contests.Count > 1, $"  (+{it.Contests.Count - 1} more)", "")
+                Dim idx = grid.Rows.Add(IsChecked(it) AndAlso it.Race IsNot Nothing, StatusText(it), title, If(it.Areas <> "", it.Areas, c.Area), c.FeedId,
                                         If(it.Race IsNot Nothing, RaceLabel(it.Race), ""), prec,
                                         If(it.Race IsNot Nothing, it.TotalVotes.ToString("N0"), ""),
-                                        If(it.Race IsNot Nothing, $"{it.MatchedCandidates}/{c.Candidates.Count}", c.Candidates.Count.ToString()),
+                                        If(it.Race IsNot Nothing, $"{it.MatchedCandidates}/{it.Contests.Sum(Function(x) x.Candidates.Count)}", c.Candidates.Count.ToString()),
                                         String.Join("  ", it.Notes))
                 Dim row = grid.Rows(idx)
                 row.Tag = it
@@ -363,11 +391,13 @@ Public Class ResultsForm
             _checks(it.Contest.Key) = CBool(grid.Rows(e.RowIndex).Cells(SendCol).Value)
         ElseIf grid.Columns(e.ColumnIndex).Name = RaceCol Then
             Dim label = Convert.ToString(grid.Rows(e.RowIndex).Cells(RaceCol).Value)
-            If label = "" Then
-                _engine.Crosswalk.Remove(it.Contest.Key)
-            Else
-                _engine.Crosswalk(it.Contest.Key) = label.Substring(0, label.IndexOf(LabelSep, StringComparison.Ordinal))
-            End If
+            For Each c In it.Contests
+                If label = "" Then
+                    _engine.Crosswalk.Remove(c.Key)
+                Else
+                    _engine.Crosswalk(c.Key) = label.Substring(0, label.IndexOf(LabelSep, StringComparison.Ordinal))
+                End If
+            Next
             CrosswalkStore.Save(_crosswalkPath, _engine.Crosswalk)
             Log($"Paired ""{it.Contest.Office}"" with {If(label = "", "(nothing)", label.Substring(0, label.IndexOf(LabelSep, StringComparison.Ordinal)))}.")
             _checks.Remove(it.Contest.Key)
@@ -467,6 +497,18 @@ Public Class ResultsForm
                      UpdateButtons()
                      If connected Then _warnedDisconnected = False
                  End Sub)
+    End Sub
+
+    Private Sub OnReportClick(sender As Object, e As EventArgs)
+        Using dlg As New SaveFileDialog With {.Filter = "CSV files (*.csv)|*.csv", .FileName = "pairing-report.csv", .Title = "Save pairing report"}
+            If dlg.ShowDialog(Me) <> DialogResult.OK Then Return
+            Try
+                File.WriteAllText(dlg.FileName, PairingReport.Build(_items, _main.SetupRaces), New System.Text.UTF8Encoding(True))
+                Log("Saved pairing report to " & dlg.FileName)
+            Catch ex As Exception
+                MessageBox.Show(Me, "Could not save the report:" & vbCrLf & ex.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+        End Using
     End Sub
 
     Private Sub OnResetClick(sender As Object, e As EventArgs)

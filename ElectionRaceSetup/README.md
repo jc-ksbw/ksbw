@@ -123,6 +123,37 @@ connection, election date, source name and TEST/LIVE setting of the main window)
    Closing the results window hides it and polling carries on; quitting the app stops it.
 6. **Manual use:** **Fetch now**, review, then **Send checked**.
 
+**Feeds that report by county** (a `<county name="...">` around the contests, as in the Monterey /
+Santa Cruz / San Benito feed): the same race usually appears once per county, often worded
+differently ("Governor", "Treasurer" vs "State Treasurer", "Proposition 1" vs "1 - The Veterans
+And Affordable Housing Bond Act Of 2026", "US Representative 18th Congressional District" vs
+"United States Representative District 18"). The app pairs each county's contest with the setup
+race separately, then **adds the counties together** so each setup race is sent once, with the
+combined votes and precinct counts. The Counties column shows which counties went into each
+row. Things that make this reliable:
+
+* A trailing "(Vote for N)" is removed from contest names and kept as the number of winners.
+* The **candidates** are used as evidence as well as the wording: the same names on the ballot
+  pair two differently-worded contests, and a contest whose candidates share nobody with a
+  setup race is never paired with it ("Governor" will not land on "Lieutenant Governor").
+* Words that appear in few setup races (names, places) count for more than common ones
+  ("District", "City"); "1 - ..." is read as Proposition 1 and "D - ..." as Measure D;
+  common abbreviations are understood (USD, Equal., Appellate, Councilmember, 6th / Sixth).
+* Lines flagged `write_in` and "Unqualified Write In" are ignored when they are not in the setup race.
+* **Skip counties:** list counties to leave out (for example `San Benito`, whose feed is last
+  June's primary). Skipped contests are not read, paired or sent.
+* **Send county breakdown (sub-races):** also sends each county's own numbers inside the race
+  (in the layout of the AP sample). Off by default; it has not been tried against Election
+  Manager, so test it on a practice election.
+* A race is held, not sent, if one county lists a candidate the setup race does not have, so a
+  county with an unrelated ballot can never be quietly added in.
+
+**When something will not pair:** click **Export pairing report...**. The CSV lists every feed
+contest next to the setup race it was paired with (or the three closest, with scores), plus
+setup races that received no feed data. Fix a leftover in one of three ways: pick the setup
+race from the drop-down (remembered), put the feed's name for it in the setup CSV's **Feed ID**
+column, or reword the setup race.
+
 Sent for each race: votes, precincts reporting and total, and the feed's winner flag. Not yet
 handled: county/sub-race breakdowns and percentages. Election Manager's own "Use Wire Winner
 Flag" setting decides whether it acts on the winner flag.
@@ -132,7 +163,13 @@ Sample feeds in `sample/` pair with `sample_races.csv`: `sample_feed.json` (one 
 `sample_feed_mapping.json` (an explicit mapping for the XML). The JSON sample deliberately
 includes a contest that has no setup race, so you can see the "No match" row.
 
+`monterey_feed_excerpt.xml` reproduces the contest and candidate names of the Monterey and Santa
+Cruz county feed (plus a few San Benito primary contests), with made-up vote counts.
+`monterey_setup_races.csv` is a **stand-in** setup file whose race names are worded differently on
+purpose; the tests pair the two. Your own setup CSV will word things its own way, so check the
+pairing report on the first real fetch.
+
 ## Next steps
 
-Candidate-level pairing by hand (for names the automatic rules cannot match), county sub-races,
-and reading feeds that split one contest across several result groups.
+Candidate-level pairing by hand (for names the automatic rules cannot match) and reading feeds
+that split one contest across several result groups that are not counties.

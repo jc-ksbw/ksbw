@@ -18,6 +18,8 @@ Public Class AppSettings
     Public Property FeedProfile As String = ""
     Public Property FeedIntervalSec As Integer = 60
     Public Property FeedAuto As Boolean
+    Public Property FeedSkipAreas As String = ""
+    Public Property FeedSubRaces As Boolean
 
     Private Shared ReadOnly Property FilePath As String
         Get
@@ -52,6 +54,8 @@ Public Class AppSettings
                     Case "FeedProfile" : s.FeedProfile = value
                     Case "FeedIntervalSec" : s.FeedIntervalSec = ParseInt(value, s.FeedIntervalSec)
                     Case "FeedAuto" : s.FeedAuto = String.Equals(value, "true", StringComparison.OrdinalIgnoreCase)
+                    Case "FeedSkipAreas" : s.FeedSkipAreas = value
+                    Case "FeedSubRaces" : s.FeedSubRaces = String.Equals(value, "true", StringComparison.OrdinalIgnoreCase)
                 End Select
             Next
         Catch
@@ -74,7 +78,9 @@ Public Class AppSettings
                 "FeedHeaders=" & FeedHeaders,
                 "FeedProfile=" & FeedProfile,
                 "FeedIntervalSec=" & FeedIntervalSec.ToString(CultureInfo.InvariantCulture),
-                "FeedAuto=" & FeedAuto.ToString()
+                "FeedAuto=" & FeedAuto.ToString(),
+                "FeedSkipAreas=" & FeedSkipAreas,
+                "FeedSubRaces=" & FeedSubRaces.ToString()
             })
         Catch
         End Try

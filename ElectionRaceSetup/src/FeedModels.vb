@@ -10,6 +10,9 @@ Public Class FeedCandidate
     Public Property Votes As Long? = 0
     Public Property Winner As Boolean
     Public Property Incumbent As Boolean
+
+    ''' <summary>The feed itself marks this as a write-in.</summary>
+    Public Property WriteIn As Boolean
 End Class
 
 ''' <summary>One contest (race) as the feed describes it, before it is paired with a setup race.</summary>
@@ -27,6 +30,12 @@ Public Class FeedContest
     Public Property SeatNumber As String = ""
     Public Property PrecinctsReporting As Integer?
     Public Property PrecinctsTotal As Integer?
+
+    ''' <summary>The county (or other reporting area) this contest was reported under. Blank if the feed has no such grouping.</summary>
+    Public Property Area As String = ""
+
+    ''' <summary>From a "(Vote for N)" in the contest name.</summary>
+    Public Property Winners As Integer?
     Public ReadOnly Property Candidates As New List(Of FeedCandidate)
     Public ReadOnly Property Warnings As New List(Of String)
 

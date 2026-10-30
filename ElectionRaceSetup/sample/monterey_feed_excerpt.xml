@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="utf-8"?>
+<election_results generated_at="2026-10-30T05:57:40+00:00" election_date="2026-06-02">
+<county name="Monterey">
+<last_error/>
+<turnout registered_voters="0" ballots_cast="0"/>
+<contest name="Governor (Vote for 1)">
+<precincts_reporting>10 of 208</precincts_reporting>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>STEVE HILTON</name><party>REP</party><votes>1000</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>XAVIER BECERRA</name><party>DEM</party><votes>1003</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="Lieutenant Governor (Vote for 1)">
+<precincts_reporting>10 of 208</precincts_reporting>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>GLORIA ROMERO</name><party>REP</party><votes>1010</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>FIONA MA</name><party>DEM</party><votes>1013</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="Secretary of State (Vote for 1)">
+<precincts_reporting>10 of 208</precincts_reporting>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>DONALD P. (DON) WAGNER</name><party>REP</party><votes>1020</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>SHIRLEY N. WEBER</name><party>DEM</party><votes>1023</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="Controller (Vote for 1)">
+<precincts_reporting>10 of 208</precincts_reporting>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>MALIA M. COHEN</name><party>DEM</party><votes>1030</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>HERB W MORGAN</name><party>REP</party><votes>1033</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="State Treasurer (Vote for 1)">
+<precincts_reporting>10 of 208</precincts_reporting>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>JENNIFER HAWKS</name><party>REP</party><votes>1040</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>ELENI KOUNALAKIS</name><party>DEM</party><votes>1043</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="State Board of Equalization Board Member District 2 (Vote for 1)">
+<precincts_reporting>10 of 208</precincts_reporting>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>JOHN PIMENTEL</name><party>DEM</party><votes>1050</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>SALLY J. LIEBER</name><party>DEM</party><votes>1053</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="United States Representative District 18 (Vote for 1)">
+<precincts_reporting>5 of 112</precincts_reporting>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>ZOE LOFGREN</name><party>DEM</party><votes>1060</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>SHANE LEWIS</name><party>REP</party><votes>1063</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="United States Representative District 19 (Vote for 1)">
+<precincts_reporting>5 of 96</precincts_reporting>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>JIMMY PANETTA</name><party>DEM</party><votes>1070</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>PETER COE VERBICA</name><party>REP</party><votes>1073</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="Member of the State Assembly District 29 (Vote for 1)">
+<precincts_reporting>5 of 123</precincts_reporting>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>DENNIS P. SANCHEZ</name><party>REP</party><votes>1080</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>ROBERT RIVAS</name><party>DEM</party><votes>1083</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="Member of the State Assembly District 30 (Vote for 1)">
+<precincts_reporting>5 of 85</precincts_reporting>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>DAWN ADDIS</name><party>DEM</party><votes>1090</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>SHANNON KESSLER</name><party>REP</party><votes>1093</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="Associate Justice of the Supreme Court (Joshua Groban) (Vote for 1)">
+<precincts_reporting>10 of 208</precincts_reporting>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>YES</name><party/><votes>1100</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>NO</name><party/><votes>1103</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="Associate Justice, Court of Appeal, Sixth District (Charles E. Wilson II) (Vote for 1)">
+<precincts_reporting>10 of 208</precincts_reporting>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>YES</name><party/><votes>1110</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>NO</name><party/><votes>1113</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="Associate Justice, Court of Appeal, Sixth District (Frederick S. Chung) (Vote for 1)">
+<precincts_reporting>10 of 208</precincts_reporting>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>YES</name><party/><votes>1120</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>NO</name><party/><votes>1123</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="Superintendent of Public Instruction (Vote for 1)">
+<precincts_reporting>10 of 208</precincts_reporting>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>SONJA SHAW</name><party/><votes>1130</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>RICHARD BARRERA</name><party/><votes>1133</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>Write-in</name><party/><votes>0</votes><percent/><write_in>true</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="Monterey County Board of Education Governing Board Member Trustee Area 1 (Vote for 1)">
+<precincts_reporting>3 of 37</precincts_reporting>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>MEGAN WHILDEN</name><party/><votes>1140</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>RITA PATEL</name><party/><votes>1143</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>Write-in</name><party/><votes>0</votes><percent/><write_in>true</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="King City Union School District Governing Board Member (Vote for 3)">
+<precincts_reporting>2 of 8</precincts_reporting>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>SUSAN E KING</name><party/><votes>1150</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>YESENIA ZAVALA</name><party/><votes>1153</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>FRANKY LOPEZ JR</name><party/><votes>1156</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>SONIA VALERIO QUIROZ</name><party/><votes>1159</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>MONIQUE D ROSS</name><party/><votes>1162</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>Write-in</name><party/><votes>0</votes><percent/><write_in>true</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="King City Joint Unified School District Governing Board Member (Vote for 5)">
+<precincts_reporting>2 of 12</precincts_reporting>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>MINDY HUNT</name><party/><votes>1160</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>SUSAN E KING</name><party/><votes>1163</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>YESENIA ZAVALA</name><party/><votes>1166</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>FRANKY LOPEZ JR</name><party/><votes>1169</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>MIGUEL LOMELI</name><party/><votes>1172</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>SONIA VALERIO QUIROZ</name><party/><votes>1175</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>LINDA BENWAY</name><party/><votes>1178</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>MONIQUE D ROSS</name><party/><votes>1181</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>DAVID GABONI</name><party/><votes>1184</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>LESLIE GIRARD</name><party/><votes>1187</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>Write-in</name><party/><votes>0</votes><percent/><write_in>true</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="South Monterey County Joint Union High School District Governing Board Member (Vote for 3)">
+<precincts_reporting>2 of 18</precincts_reporting>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>MIGUEL R. LOMELI</name><party/><votes>1170</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>PAUL DAKE</name><party/><votes>1173</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>SONIA VALERIO QUIROZ</name><party/><votes>1176</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>LESLIE GIRARD</name><party/><votes>1179</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>Write-in</name><party/><votes>0</votes><percent/><write_in>true</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="Greenfield Unified School District Governing Board Member (Vote for 5)">
+<precincts_reporting>2 of 7</precincts_reporting>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>SONIA HEREDIA</name><party/><votes>1180</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>DAVID KONG</name><party/><votes>1183</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>LORENA CHAVEZ</name><party/><votes>1186</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>DENISE JAIME</name><party/><votes>1189</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>LUCILA AYALA</name><party/><votes>1192</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>PAUL DAKE</name><party/><votes>1195</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>JOSEFINA SILVA</name><party/><votes>1198</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>JUERGEN B. SMITH</name><party/><votes>1201</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>GABRIELA MORA</name><party/><votes>1204</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>JOSE MADRID</name><party/><votes>1207</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>Write-in</name><party/><votes>0</votes><percent/><write_in>true</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="Greenfield Union School District Governing Board Member Trustee Area 1 (Vote for 1)">
+<precincts_reporting>1 of 3</precincts_reporting>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>DAVID KONG</name><party/><votes>1190</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>JOSEFINA SILVA</name><party/><votes>1193</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>Write-in</name><party/><votes>0</votes><percent/><write_in>true</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="Pacific Grove Unified School District Governing Board Member Trustee Area 1 (Vote for 1)">
+<precincts_reporting>1 of 2</precincts_reporting>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>CHARLES "CHUCK" BRINKER</name><party/><votes>1200</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>STEPHEN BENNETT</name><party/><votes>1203</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>DAN MILLER</name><party/><votes>1206</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>Write-in</name><party/><votes>0</votes><percent/><write_in>true</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="City of Salinas Mayor (Vote for 1)">
+<precincts_reporting>20 of 53</precincts_reporting>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>DENNIS DONOHUE</name><party/><votes>1210</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>PETER SZALAI</name><party/><votes>1213</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>HEZEKIAH GONZALEZ</name><party/><votes>1216</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>DANIEL MUÑOZ</name><party/><votes>1219</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>Write-in</name><party/><votes>0</votes><percent/><write_in>true</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="City of Salinas Member, City Council District 2 (Vote for 1)">
+<precincts_reporting>3 of 6</precincts_reporting>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>TONY BARRERA</name><party/><votes>1220</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>JOSE GUERRA</name><party/><votes>1223</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>Write-in</name><party/><votes>0</votes><percent/><write_in>true</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="City of Salinas Member, City Council District 3 (Vote for 1)">
+<precincts_reporting>3 of 10</precincts_reporting>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>MARGARET C. D'ARRIGO</name><party/><votes>1230</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>CARY SWENSEN</name><party/><votes>1233</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>BRENT BAGLEY</name><party/><votes>1236</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>Write-in</name><party/><votes>0</votes><percent/><write_in>true</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="City of Carmel-By-The-Sea Mayor (Vote for 1)">
+<precincts_reporting>1 of 2</precincts_reporting>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>DAVID BOLAND</name><party/><votes>1240</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>HANS BUDER</name><party/><votes>1243</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>Write-in</name><party/><votes>0</votes><percent/><write_in>true</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="City of Carmel-By-The-Sea Member, City Council (Vote for 2)">
+<precincts_reporting>1 of 2</precincts_reporting>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>STEFAN KARAPETKOV</name><party/><votes>1250</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>ALISSANDRA DRAMOV</name><party/><votes>1253</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>BOBBY RICHARDS</name><party/><votes>1256</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>Write-in</name><party/><votes>0</votes><percent/><write_in>true</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="City of Monterey Mayor (Vote for 1)">
+<precincts_reporting>5 of 15</precincts_reporting>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>TYLLER WILLIAMSON</name><party/><votes>1260</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>VINCE MALFITANO</name><party/><votes>1263</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>Write-in</name><party/><votes>0</votes><percent/><write_in>true</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="City of Pacific Grove Member, City Council, 2 Year (Vote for 1)">
+<precincts_reporting>2 of 6</precincts_reporting>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>JAMES ORLANDO OGLE III</name><party/><votes>1270</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>LORI MCDONNELL</name><party/><votes>1273</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>Write-in</name><party/><votes>0</votes><percent/><write_in>true</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="City of Sand City Member, City Council (Vote for 2)">
+<precincts_reporting>1 of 1</precincts_reporting>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>LUKE KILPATRICK</name><party/><votes>1280</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>JUSTIN R. RUMPS</name><party/><votes>1283</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>Write-in</name><party/><votes>0</votes><percent/><write_in>true</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>SALVATORE M. CARBONE</name><party/><votes>1289</votes><percent/><write_in>true</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>KIM SCUDDER</name><party/><votes>1292</votes><percent/><write_in>true</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="Proposition 1 (Vote for 1)">
+<precincts_reporting>10 of 208</precincts_reporting>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>YES</name><party/><votes>1290</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>NO</name><party/><votes>1293</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="Proposition 2 (Vote for 1)">
+<precincts_reporting>10 of 208</precincts_reporting>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>YES</name><party/><votes>1300</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>NO</name><party/><votes>1303</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="Proposition 37 (Vote for 1)">
+<precincts_reporting>10 of 208</precincts_reporting>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>YES</name><party/><votes>1310</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>NO</name><party/><votes>1313</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="Measure I: Carmel Unified School District (Vote for 1)">
+<precincts_reporting>3 of 19</precincts_reporting>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>YES</name><party/><votes>1320</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>NO</name><party/><votes>1323</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="Measure E: County of Monterey (Vote for 1)">
+<precincts_reporting>10 of 208</precincts_reporting>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>YES</name><party/><votes>1330</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>NO</name><party/><votes>1333</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="Measure G: City of Salinas (Vote for 1)">
+<precincts_reporting>20 of 53</precincts_reporting>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>YES</name><party/><votes>1340</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>NO</name><party/><votes>1343</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="Measure H: City of Salinas (Vote for 1)">
+<precincts_reporting>20 of 53</precincts_reporting>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>YES</name><party/><votes>1350</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>NO</name><party/><votes>1353</votes><percent/><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+</county>
+<county name="Santa Cruz">
+<last_error/>
+<turnout registered_voters="0" ballots_cast="0"/>
+<contest name="Governor (Vote for 1)">
+<precincts_reporting/>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>STEVE HILTON</name><party>REP</party><votes>500</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>XAVIER BECERRA</name><party>DEM</party><votes>503</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="Lieutenant Governor (Vote for 1)">
+<precincts_reporting/>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>GLORIA ROMERO</name><party>REP</party><votes>510</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>FIONA MA</name><party>DEM</party><votes>513</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="Secretary of State (Vote for 1)">
+<precincts_reporting/>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>DONALD P (DON) WAGNER</name><party>REP</party><votes>520</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>SHIRLEY N WEBER</name><party>DEM</party><votes>523</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="Controller (Vote for 1)">
+<precincts_reporting/>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>MALIA M COHEN</name><party>DEM</party><votes>530</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>HERB W MORGAN</name><party>REP</party><votes>533</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="Treasurer (Vote for 1)">
+<precincts_reporting/>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>JENNIFER HAWKS</name><party>REP</party><votes>540</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>ELENI KOUNALAKIS</name><party>DEM</party><votes>543</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="Board of Equalization, District 2 (Vote for 1)">
+<precincts_reporting/>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>JOHN PIMENTEL</name><party>DEM</party><votes>550</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>SALLY J LIEBER</name><party>DEM</party><votes>553</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="US Representative 18th Congressional District (Vote for 1)">
+<precincts_reporting/>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>ZOE LOFGREN</name><party>DEM</party><votes>560</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>SHANE LEWIS</name><party>REP</party><votes>563</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="US Representative 19th Congressional District (Vote for 1)">
+<precincts_reporting/>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>JIMMY PANETTA</name><party>DEM</party><votes>570</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>PETER COE VERBICA</name><party>REP</party><votes>573</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="State Assembly Member 28th District (Vote for 1)">
+<precincts_reporting/>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>CAROL PEFLEY</name><party>REP</party><votes>580</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>GAIL PELLERIN</name><party>DEM</party><votes>583</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="State Assembly Member 29th District (Vote for 1)">
+<precincts_reporting/>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>ROBERT RIVAS</name><party>DEM</party><votes>590</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>DENNIS P SANCHEZ</name><party>REP</party><votes>593</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="State Assembly Member 30th District (Vote for 1)">
+<precincts_reporting/>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>DAWN ADDIS</name><party>DEM</party><votes>600</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>SHANNON KESSLER</name><party>REP</party><votes>603</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="Supreme Court Associate Justice Joshua Groban (Vote for 1)">
+<precincts_reporting/>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>YES</name><party/><votes>610</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>NO</name><party/><votes>613</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="Associate Justice 6th Appellate Dist. Charles E Wilson II (Vote for 1)">
+<precincts_reporting/>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>YES</name><party/><votes>620</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>NO</name><party/><votes>623</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="Associate Justice 6th Appellate Dist. Frederick S Chung (Vote for 1)">
+<precincts_reporting/>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>YES</name><party/><votes>630</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>NO</name><party/><votes>633</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="Superintendent of Public Instruction (Vote for 1)">
+<precincts_reporting/>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>SONJA SHAW</name><party/><votes>640</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>RICHARD BARRERA</name><party/><votes>643</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>Write-in</name><party/><votes>0</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>Unqualified Write In</name><party/><votes>0</votes><percent>0.0</percent><write_in>true</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="Pajaro Valley Unified School District Governing Board Member - Trustee Area 4 (Vote for 1)">
+<precincts_reporting/>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>DANIEL DODGE, JR</name><party/><votes>650</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>ERIBERTO ESTRADA, IV</name><party/><votes>653</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>Write-in</name><party/><votes>0</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>Unqualified Write In</name><party/><votes>0</votes><percent>0.0</percent><write_in>true</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>Margarita Carrillo</name><party/><votes>662</votes><percent>0.0</percent><write_in>true</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="City of Capitola Councilmember (Vote for 3)">
+<precincts_reporting/>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>PETER WILK</name><party/><votes>660</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>TROY "TJ" WELCH</name><party/><votes>663</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>CAMI CORVIN</name><party/><votes>666</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>JOE CLARKE</name><party/><votes>669</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>TORY DEL FAVERO</name><party/><votes>672</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>Write-in</name><party/><votes>0</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>Unqualified Write In 1</name><party/><votes>0</votes><percent>0.0</percent><write_in>true</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>Unqualified Write In 2</name><party/><votes>0</votes><percent>0.0</percent><write_in>true</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>Unqualified Write In 3</name><party/><votes>0</votes><percent>0.0</percent><write_in>true</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="City of Santa Cruz Mayor (Vote for 1)">
+<precincts_reporting/>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>RYAN COONERTY</name><party/><votes>670</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>AMI CHEN MILLS</name><party/><votes>673</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>Write-in</name><party/><votes>0</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>Unqualified Write In</name><party/><votes>0</votes><percent>0.0</percent><write_in>true</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="City of Watsonville Councilmember - Dist 3 (Vote for 1)">
+<precincts_reporting/>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>MARIA OROZCO</name><party/><votes>680</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>Write-in</name><party/><votes>0</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>Unqualified Write In</name><party/><votes>0</votes><percent>0.0</percent><write_in>true</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="Felton Fire Protection District Director (Vote for 2)">
+<precincts_reporting/>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>CRAIG WINTER</name><party/><votes>690</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>NORMAN CRANDELL</name><party/><votes>693</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>JAMES ANDERSON</name><party/><votes>696</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>BILL FINLAYSON</name><party/><votes>699</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>Write-in</name><party/><votes>0</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="1 - The Veterans And Affordable Housing Bond Act Of 2026 (Vote for 1)">
+<precincts_reporting/>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>BONDS YES</name><party/><votes>700</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>BONDS NO</name><party/><votes>703</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="2 - Save For California's Future Act (Vote for 1)">
+<precincts_reporting/>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>YES</name><party/><votes>710</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>NO</name><party/><votes>713</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="37 - Creates Loan Program For Middle-income Buyers Of Qualified New Homes (Vote for 1)">
+<precincts_reporting/>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>YES</name><party/><votes>720</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>NO</name><party/><votes>723</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="D - Offshore Drilling - Majority to Pass (Vote for 1)">
+<precincts_reporting/>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>YES</name><party/><votes>730</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>NO</name><party/><votes>733</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="E - Sales Tax - Majority to Pass (Vote for 1)">
+<precincts_reporting/>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>YES</name><party/><votes>740</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>NO</name><party/><votes>743</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="G - Scotts Valley TOT - Majority to Pass (Vote for 1)">
+<precincts_reporting/>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>YES</name><party/><votes>750</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>NO</name><party/><votes>753</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+</county>
+<county name="San Benito">
+<last_error/>
+<turnout registered_voters="0" ballots_cast="0"/>
+<contest name="Registered Turnout Governor">
+<precincts_reporting>26 of 26</precincts_reporting>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>MARGARET TROWE</name><party>NPP</party><votes>90000</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>TONY K. THURMOND</name><party>DEM</party><votes>90003</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>THUNDER PARLEY</name><party>DEM</party><votes>90006</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>KATIE PORTER</name><party>DEM</party><votes>90009</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>TOM WOODARD</name><party>LIB</party><votes>90012</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>LEO SAMUEL ZACKY</name><party>REP</party><votes>90015</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>STEVE HILTON</name><party>REP</party><votes>90018</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>XAVIER BECERRA</name><party>DEM</party><votes>90021</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="Lieutenant Governor">
+<precincts_reporting>26 of 26</precincts_reporting>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>MICHAEL TUBBS</name><party>DEM</party><votes>90010</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>TIM MYERS</name><party>DEM</party><votes>90013</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>FIONA MA</name><party>DEM</party><votes>90016</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>OLIVER MA</name><party>DEM</party><votes>90019</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>EBIE LYNCH</name><party>REP</party><votes>90022</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>GLORIA ROMERO</name><party>REP</party><votes>90025</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="Member State Board of Equal. District 2">
+<precincts_reporting>26 of 26</precincts_reporting>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>JOHN PIMENTEL</name><party>DEM</party><votes>90020</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>JOHN W. ZARUKA</name><party>REP</party><votes>90023</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>MARK MCCOMAS</name><party>REP</party><votes>90026</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>J BRETT MARYMEE</name><party>REP</party><votes>90029</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>SALLY J. LIEBER</name><party>DEM</party><votes>90032</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>BILL SHIREMAN</name><party>REP</party><votes>90035</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+<contest name="US Congress District 18">
+<precincts_reporting>26 of 26</precincts_reporting>
+<total_votes>0</total_votes><under_votes>0</under_votes><over_votes>0</over_votes><warning/>
+<candidate><name>SHANE M. LEWIS</name><party>REP</party><votes>90030</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>ZOE LOFGREN</name><party>DEM</party><votes>90033</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>CHRIS DEMERS</name><party>NPP</party><votes>90036</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+<candidate><name>LUIS ARREGUIN</name><party>DEM</party><votes>90039</votes><percent>0.0</percent><write_in>false</write_in><write_in_detail>false</write_in_detail></candidate>
+</contest>
+</county>
+</election_results>

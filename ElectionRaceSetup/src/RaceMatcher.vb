@@ -1,6 +1,7 @@
 Option Strict On
 Option Infer On
 
+Imports System.Collections.Concurrent
 Imports System.Globalization
 Imports System.Text
 Imports System.Text.RegularExpressions
@@ -14,15 +15,31 @@ Public Module RaceMatcher
     ''' <summary>...and when the runner-up scores at least this much lower.</summary>
     Public Const AcceptMargin As Double = 0.1
 
-    Private ReadOnly StopWords As New HashSet(Of String) From {"the", "of", "for", "a", "an", "and", "to", "in", "no", "number", "nr"}
+    Private ReadOnly StopWords As New HashSet(Of String) From {
+        "the", "of", "for", "a", "an", "and", "to", "in", "no", "number", "nr", "member", "members", "congressional", "vote"}
 
     Private ReadOnly Synonyms As New Dictionary(Of String, String) From {
         {"rep", "house"}, {"reps", "house"}, {"representative", "house"}, {"representatives", "house"},
-        {"congressman", "house"}, {"congresswoman", "house"},
+        {"congressman", "house"}, {"congresswoman", "house"}, {"congress", "house"},
         {"senator", "senate"}, {"senators", "senate"},
         {"gov", "governor"}, {"lt", "lieutenant"}, {"dist", "district"}, {"distr", "district"},
-        {"prop", "proposition"}, {"measure", "proposition"}, {"atty", "attorney"}, {"supt", "superintendent"}
+        {"prop", "proposition"}, {"measure", "proposition"}, {"atty", "attorney"}, {"supt", "superintendent"},
+        {"assemblymember", "assembly"}, {"assemblyman", "assembly"}, {"assemblywoman", "assembly"}, {"assm", "assembly"},
+        {"councilmember", "council"}, {"councilmembers", "council"}, {"councilman", "council"}, {"councilwoman", "council"}, {"councilmen", "council"},
+        {"appellate", "appeal"}, {"appeals", "appeal"}, {"equal", "equalization"},
+        {"comm", "community"}, {"elem", "elementary"}, {"sch", "school"}, {"jt", "joint"},
+        {"first", "1"}, {"second", "2"}, {"third", "3"}, {"fourth", "4"}, {"fifth", "5"},
+        {"sixth", "6"}, {"seventh", "7"}, {"eighth", "8"}, {"ninth", "9"}, {"tenth", "10"}
     }
+
+    ''' <summary>Abbreviations that stand for several words.</summary>
+    Private ReadOnly Expansions As New Dictionary(Of String, String) From {
+        {"usd", "unified school district"}, {"uhsd", "union high school district"}, {"ccd", "community college district"},
+        {"cc", "community college"}, {"hs", "high school"}, {"boe", "board equalization"}
+    }
+
+    Private ReadOnly TokenCache As New ConcurrentDictionary(Of String, HashSet(Of String))
+    Private ReadOnly NameCache As New ConcurrentDictionary(Of String, List(Of String))
 
     Private Function StripAccents(s As String) As String
         Dim sb As New StringBuilder(s.Length)
@@ -32,64 +49,200 @@ Public Module RaceMatcher
         Return sb.ToString()
     End Function
 
-    ''' <summary>Lower-case word tokens of an office/location description, with common abbreviations unified.</summary>
+    ''' <summary>
+    ''' Word tokens of an office/location description with abbreviations unified. Also removes a trailing
+    ''' "(Vote for N)", reads "1 - Some Bond Act" as "Proposition 1" and "D - Some Tax" as "Measure D".
+    ''' The returned set is shared; do not change it.
+    ''' </summary>
     Public Function Tokens(text As String) As HashSet(Of String)
-        Dim t = StripAccents(If(text, "")).ToLowerInvariant()
+        Dim key = If(text, "")
+        Dim cached As HashSet(Of String) = Nothing
+        If TokenCache.TryGetValue(key, cached) Then Return cached
+
+        Dim t = StripAccents(key).ToLowerInvariant()
         t = t.Replace("'", "").Replace(ChrW(&H2019), "")
+        t = Regex.Replace(t, "\(\s*vote\s+for\s+\d+\s*\)", " ")
+        Dim lead = Regex.Match(t, "^\s*(\d{1,3})\s+-\s+")
+        If lead.Success Then
+            t = "proposition " & lead.Groups(1).Value
+        Else
+            Dim letter = Regex.Match(t, "^\s*([a-z]{1,2}(?:-\d+)?)\s+-\s+(.*)$")
+            If letter.Success Then t = "proposition " & letter.Groups(1).Value & " " & letter.Groups(2).Value
+        End If
         t = Regex.Replace(t, "\bu\.\s*s\.?", " us ")
         t = t.Replace("united states", " us ")
         t = Regex.Replace(t, "(\d+)(st|nd|rd|th)\b", "$1")
         t = Regex.Replace(t, "[^a-z0-9]+", " ")
+
         Dim result As New HashSet(Of String)
         For Each w In t.Split(" "c)
             If w = "" OrElse StopWords.Contains(w) Then Continue For
+            Dim expanded As String = Nothing
+            If Expansions.TryGetValue(w, expanded) Then
+                For Each x In expanded.Split(" "c)
+                    result.Add(x)
+                Next
+                Continue For
+            End If
             Dim mapped As String = Nothing
-            result.Add(If(Synonyms.TryGetValue(w, mapped), mapped, w))
+            Dim word = If(Synonyms.TryGetValue(w, mapped), mapped, w)
+            If Not StopWords.Contains(word) Then result.Add(word)
         Next
+        If TokenCache.Count > 50000 Then TokenCache.Clear()
+        TokenCache(key) = result
         Return result
     End Function
 
-    Private Function RaceText(office As String, seatName As String, seatNumber As String, district As String, county As String, city As String) As String
-        Return office & " " & seatName & " " & seatNumber & If(district <> "", " district " & district, "") & " " & county & " " & city
+    ' Word weights: a word found in few setup races (a name, a place) says more than one found in many ("district").
+    Private _weights As Dictionary(Of String, Double)
+
+    ''' <summary>Learns how common each word is across the setup races. Call before scoring a batch of contests.</summary>
+    Public Sub Prepare(races As IEnumerable(Of Race))
+        Dim df As New Dictionary(Of String, Integer)
+        Dim n = 0
+        For Each r In races
+            n += 1
+            For Each t In Tokens(RaceText(r))
+                df(t) = If(df.ContainsKey(t), df(t) + 1, 1)
+            Next
+        Next
+        Dim w As New Dictionary(Of String, Double)
+        For Each kv In df
+            w(kv.Key) = Math.Log((n + 1.0) / (kv.Value + 0.5)) + 0.2
+        Next
+        _weights = w
+    End Sub
+
+    Private Function Weight(token As String) As Double
+        If _weights Is Nothing Then Return 1
+        Dim v As Double
+        Return If(_weights.TryGetValue(token, v), v, 0.3)
+    End Function
+
+    Private Function WeightOf(tokens As IEnumerable(Of String)) As Double
+        Dim sum = 0.0
+        For Each t In tokens
+            sum += Weight(t)
+        Next
+        Return sum
     End Function
 
     Private Function Numbers(tokens As HashSet(Of String)) As HashSet(Of String)
         Return New HashSet(Of String)(tokens.Where(Function(t) t.All(AddressOf Char.IsDigit)))
     End Function
 
-    Private Function SamePlace(a As String, b As String) As Boolean
-        Dim x = Tokens(a)
-        Dim y = Tokens(b)
+    Private Function PlaceTokens(place As String) As HashSet(Of String)
+        Dim x = New HashSet(Of String)(Tokens(place))
         x.Remove("county")
-        y.Remove("county")
         x.Remove("city")
-        y.Remove("city")
-        Return x.SetEquals(y)
+        x.Remove("town")
+        Return x
     End Function
 
-    ''' <summary>0 to 1: how likely the feed contest and the setup race are the same race. 0 means incompatible.</summary>
-    Public Function Score(contest As FeedContest, race As Race) As Double
-        If contest.State <> "" AndAlso race.State <> "" AndAlso Not String.Equals(contest.State, race.State, StringComparison.OrdinalIgnoreCase) Then Return 0
-        If contest.Party <> "" AndAlso race.Party <> "" AndAlso Not PartiesMatch(contest.Party, race.Party) Then Return 0
-        If contest.County <> "" AndAlso race.County <> "" AndAlso Not SamePlace(contest.County, race.County) Then Return 0
-        If contest.City <> "" AndAlso race.City <> "" AndAlso Not SamePlace(contest.City, race.City) Then Return 0
+    Private Function SamePlace(a As String, b As String) As Boolean
+        Return PlaceTokens(a).SetEquals(PlaceTokens(b))
+    End Function
 
-        Dim a = Tokens(RaceText(contest.Office, contest.SeatName, contest.SeatNumber, contest.District, contest.County, contest.City))
-        Dim b = Tokens(RaceText(race.Office, race.SeatName, race.SeatNumber, race.District, race.County, race.City))
+    ' ---------------------------------------------------------------------------------------------
+    ' Contests and races as comparable text
+
+    Private Function ContestText(c As FeedContest) As String
+        Return c.Office & " " & c.SeatName & " " & c.SeatNumber & If(c.District <> "", " district " & c.District, "") &
+               " " & c.City & If(c.City = "" AndAlso c.Area = "", " " & c.County, "")
+    End Function
+
+    Private Function RaceText(r As Race) As String
+        Return r.Office & " " & r.SeatName & " " & r.SeatNumber & If(r.District <> "", " district " & r.District, "") &
+               " " & r.City & If(r.City = "", " " & r.County, "")
+    End Function
+
+    ''' <summary>0 to 1 from the wording alone.</summary>
+    Private Function TextScore(contest As FeedContest, race As Race) As Double
+        Dim a = Tokens(ContestText(contest))
+        Dim b = Tokens(RaceText(race))
         If a.Count = 0 OrElse b.Count = 0 Then Return 0
+
+        ' The county a contest was reported under counts as part of its wording only when the setup race names it too.
+        If contest.Area <> "" Then
+            Dim withArea = New HashSet(Of String)(a)
+            For Each t In PlaceTokens(contest.Area)
+                If b.Contains(t) Then withArea.Add(t)
+            Next
+            a = withArea
+        End If
 
         Dim na = Numbers(a)
         Dim nb = Numbers(b)
-        If na.Count > 0 AndAlso nb.Count > 0 AndAlso Not na.SetEquals(nb) Then Return 0
+        Dim numberFactor = 1.0
+        If na.Count > 0 AndAlso nb.Count > 0 Then
+            If Not (na.IsSubsetOf(nb) OrElse nb.IsSubsetOf(na)) Then Return 0
+            If Not na.SetEquals(nb) Then numberFactor = 0.85
+        ElseIf (na.Count > 0) <> (nb.Count > 0) Then
+            numberFactor = 0.6
+        End If
 
-        Dim shared_ = a.Intersect(b).Count()
-        Dim jaccard = shared_ / CDbl(a.Union(b).Count())
-        Dim containment = shared_ / CDbl(Math.Min(a.Count, b.Count))
-        Dim result = (jaccard + containment) / 2
+        Dim sharedWeight = WeightOf(a.Intersect(b))
+        Dim weightA = WeightOf(a)
+        Dim weightB = WeightOf(b)
+        Dim jaccard = sharedWeight / (weightA + weightB - sharedWeight)
+        Dim containment = sharedWeight / Math.Min(weightA, weightB)
+        Dim result = (jaccard + containment) / 2 * numberFactor
 
-        If (na.Count > 0) <> (nb.Count > 0) Then result *= 0.6
-        If (contest.Party <> "") <> (race.Party <> "") Then result *= 0.9
+        ' A city race has to name the city, somewhere in the contest's own wording.
+        If race.City <> "" AndAlso contest.City = "" Then
+            Dim city = PlaceTokens(race.City)
+            If city.Count > 0 AndAlso Not city.IsSubsetOf(a) Then result *= 0.5
+        End If
         Return result
+    End Function
+
+    ' ---------------------------------------------------------------------------------------------
+    ' Candidate evidence
+
+    Private Function IsYesNo(name As String) As Boolean
+        Dim t = NameTokens(name)
+        Return t.Count = 1 AndAlso (t(0) = "yes" OrElse t(0) = "no")
+    End Function
+
+    Private Function NamedFeed(c As FeedContest) As List(Of FeedCandidate)
+        Return c.Candidates.Where(Function(f) Not f.WriteIn AndAlso Not IsWriteIn(f.FullName) AndAlso Not IsYesNo(f.FullName)).ToList()
+    End Function
+
+    Private Function NamedSetup(r As Race) As List(Of Candidate)
+        Return r.Candidates.Where(Function(s) Not IsWriteIn(s.DisplayName) AndAlso Not IsYesNo(s.DisplayName)).ToList()
+    End Function
+
+    ''' <summary>Hard conflicts (different state, party, county or city) make a pairing impossible.</summary>
+    Private Function Conflicts(contest As FeedContest, race As Race) As Boolean
+        If contest.State <> "" AndAlso race.State <> "" AndAlso Not String.Equals(contest.State, race.State, StringComparison.OrdinalIgnoreCase) Then Return True
+        If contest.Party <> "" AndAlso race.Party <> "" AndAlso Not PartiesMatch(contest.Party, race.Party) Then Return True
+        If contest.County <> "" AndAlso race.County <> "" AndAlso Not SamePlace(contest.County, race.County) Then Return True
+        If contest.City <> "" AndAlso race.City <> "" AndAlso Not SamePlace(contest.City, race.City) Then Return True
+        Return False
+    End Function
+
+    ''' <summary>
+    ''' 0 to 1: how likely the feed contest and the setup race are the same race. 0 means incompatible.
+    ''' Two kinds of evidence: the wording, and the candidates. The same people on the ballot is strong
+    ''' evidence even when the two sides word the office very differently; when both sides have named
+    ''' candidates and not one of them is shared, the pairing is almost certainly wrong.
+    ''' </summary>
+    Public Function Score(contest As FeedContest, race As Race) As Double
+        If Conflicts(contest, race) Then Return 0
+        Dim text = TextScore(contest, race)
+
+        Dim feedNamed = NamedFeed(contest)
+        Dim setupNamed = NamedSetup(race)
+        If feedNamed.Count = 0 OrElse setupNamed.Count = 0 Then Return text
+
+        Dim map = MatchCandidates(feedNamed, setupNamed)
+        Dim matched = map.Where(Function(i) i >= 0).Count()
+        If matched = 0 Then Return text * 0.3
+
+        Dim overlap = matched / CDbl(feedNamed.Count)
+        Dim coverage = matched / CDbl(setupNamed.Count)
+        Dim byPeople = If(overlap >= 0.67, 0.5 + 0.5 * Math.Min(overlap, coverage), 0.0)
+        Return Math.Max(text, byPeople)
     End Function
 
     ''' <summary>D matches DEM, R matches REP, and so on (first letter).</summary>
@@ -107,9 +260,15 @@ Public Module RaceMatcher
         Public Property Suggestion As String = ""
     End Class
 
+    ''' <summary>The best-scoring setup races for a feed contest, best first (zero scores left out).</summary>
+    Public Function Rank(contest As FeedContest, races As IEnumerable(Of Race), take As Integer) As List(Of KeyValuePair(Of Race, Double))
+        Return races.Select(Function(r) New KeyValuePair(Of Race, Double)(r, Score(contest, r))).
+                     Where(Function(kv) kv.Value > 0).OrderByDescending(Function(kv) kv.Value).Take(take).ToList()
+    End Function
+
     ''' <summary>
     ''' Order of preference: the Feed ID column in the setup CSV, a saved manual pairing, then the best
-    ''' automatic text match. Returns a result with Race = Nothing when nothing is safe to pick.
+    ''' automatic match. Returns a result with Race = Nothing when nothing is safe to pick.
     ''' </summary>
     Public Function FindRace(contest As FeedContest, races As IEnumerable(Of Race), crosswalk As Dictionary(Of String, String)) As RaceMatch
         Dim list = races.ToList()
@@ -125,28 +284,31 @@ Public Module RaceMatcher
             If saved IsNot Nothing Then Return New RaceMatch With {.Race = saved, .Score = 1, .How = "paired by hand"}
         End If
 
-        Dim scored = list.Select(Function(r) New With {.Race = r, .Score = RaceMatcher.Score(contest, r)}).
-                          OrderByDescending(Function(x) x.Score).ToList()
-        If scored.Count = 0 OrElse scored(0).Score <= 0 Then Return New RaceMatch()
+        Dim ranked = Rank(contest, list, 2)
+        If ranked.Count = 0 Then Return New RaceMatch()
 
-        Dim best = scored(0)
-        Dim second = If(scored.Count > 1, scored(1).Score, 0.0)
-        Dim sug = $"closest: {best.Race.ID} ({best.Race.Office}), score {best.Score:0.00}"
-        If best.Score >= AcceptScore AndAlso best.Score - second >= AcceptMargin Then
-            Return New RaceMatch With {.Race = best.Race, .Score = best.Score, .How = $"auto, score {best.Score:0.00}"}
+        Dim best = ranked(0)
+        Dim second = If(ranked.Count > 1, ranked(1).Value, 0.0)
+        Dim sug = $"closest: {best.Key.ID} ({best.Key.Office}), score {best.Value:0.00}"
+        If best.Value >= AcceptScore AndAlso best.Value - second >= AcceptMargin Then
+            Return New RaceMatch With {.Race = best.Key, .Score = best.Value, .How = $"auto, score {best.Value:0.00}"}
         End If
-        If best.Score >= 0.4 Then Return New RaceMatch With {.Suggestion = sug, .Score = best.Score}
+        If best.Value >= 0.4 Then Return New RaceMatch With {.Suggestion = sug, .Score = best.Value}
         Return New RaceMatch()
     End Function
 
     ' ---------------------------------------------------------------------------------------------
-    ' Candidates
+    ' Candidate names
 
     Private ReadOnly NameSuffixes As New HashSet(Of String) From {"jr", "sr", "ii", "iii", "iv"}
 
     ''' <summary>Name tokens for comparing people: no accents, punctuation, nicknames in quotes, suffixes, or "Last, First" order.</summary>
     Public Function NameTokens(name As String) As List(Of String)
-        Dim t = If(name, "").Trim()
+        Dim key = If(name, "")
+        Dim cached As List(Of String) = Nothing
+        If NameCache.TryGetValue(key, cached) Then Return cached
+
+        Dim t = key.Trim()
         t = Regex.Replace(t, """[^""]*""|" & ChrW(&H201C) & "[^" & ChrW(&H201D) & "]*" & ChrW(&H201D) & "|\([^)]*\)", " ")
         Dim comma = t.IndexOf(","c)
         If comma > 0 Then
@@ -160,7 +322,12 @@ Public Module RaceMatcher
         End If
         t = StripAccents(t).ToLowerInvariant().Replace("'", "").Replace(ChrW(&H2019), "")
         t = Regex.Replace(t, "[^a-z0-9]+", " ")
-        Return t.Split(" "c).Where(Function(w) w <> "" AndAlso Not NameSuffixes.Contains(w)).ToList()
+        Dim result = t.Split(" "c).Where(Function(w) w <> "" AndAlso Not NameSuffixes.Contains(w)).ToList()
+        ' "BONDS YES" / "BONDS NO" are just Yes and No
+        If result.Count = 2 AndAlso result(0) = "bonds" AndAlso (result(1) = "yes" OrElse result(1) = "no") Then result = New List(Of String) From {result(1)}
+        If NameCache.Count > 50000 Then NameCache.Clear()
+        NameCache(key) = result
+        Return result
     End Function
 
     Private ReadOnly Nicknames As New Dictionary(Of String, String) From {
@@ -188,15 +355,36 @@ Public Module RaceMatcher
         Return x = y OrElse x.StartsWith(y, StringComparison.Ordinal) OrElse y.StartsWith(x, StringComparison.Ordinal)
     End Function
 
-    Private Function SetupName(c As Candidate) As List(Of String)
-        If c.FullName <> "" Then Return NameTokens(c.FullName)
-        Return NameTokens(String.Join(" ", {c.FirstName, c.MiddleName, c.LastName}.Where(Function(s) s <> "")))
+    Private Function SetupNameText(c As Candidate) As String
+        If c.FullName <> "" Then Return c.FullName
+        Return String.Join(" ", {c.FirstName, c.MiddleName, c.LastName}.Where(Function(s) s <> ""))
+    End Function
+
+    ''' <summary>
+    ''' The name as tokens, plus (when the name has a nickname in quotes or brackets) a version where the
+    ''' nickname replaces the first name: TROY "TJ" WELCH gives [troy welch] and [tj welch].
+    ''' </summary>
+    Private Function NameVariants(name As String) As List(Of List(Of String))
+        Dim result As New List(Of List(Of String)) From {NameTokens(name)}
+        Dim m = Regex.Match(If(name, ""), """([^""]+)""|" & ChrW(&H201C) & "([^" & ChrW(&H201D) & "]+)" & ChrW(&H201D) & "|\(([^)]+)\)")
+        If m.Success Then
+            Dim nick = If(m.Groups(1).Success, m.Groups(1).Value, If(m.Groups(2).Success, m.Groups(2).Value, m.Groups(3).Value))
+            Dim nickTokens = NameTokens(nick)
+            Dim baseTokens = result(0)
+            If nickTokens.Count >= 1 AndAlso nickTokens.Count <= 2 AndAlso baseTokens.Count >= 2 AndAlso Not IsWriteIn(nick) Then
+                Dim alt As New List(Of String)(nickTokens)
+                alt.AddRange(baseTokens.Skip(1))
+                result.Add(alt)
+            End If
+        End If
+        Return result
     End Function
 
     ''' <summary>
     ''' For each feed candidate, the index of the setup candidate it is (or -1). Four passes from strictest
     ''' to loosest: same name; same first and last; same last name and a compatible first name (nickname,
-    ''' prefix or initial); same last name when one side gives only a last name. A pass never guesses between two equally good setup candidates.
+    ''' prefix or initial); same last name when one side gives only a last name. A pass never guesses
+    ''' between two equally good setup candidates.
     ''' </summary>
     Public Function MatchCandidates(feed As IList(Of FeedCandidate), setup As IList(Of Candidate)) As Integer()
         Dim result(feed.Count - 1) As Integer
@@ -204,24 +392,26 @@ Public Module RaceMatcher
             result(i) = -1
         Next
         Dim used As New HashSet(Of Integer)
-        Dim fTok = feed.Select(Function(f) NameTokens(f.FullName)).ToList()
-        Dim sTok = setup.Select(AddressOf SetupName).ToList()
+        Dim fVar = feed.Select(Function(f) NameVariants(f.FullName)).ToList()
+        Dim sVar = setup.Select(Function(s) NameVariants(SetupNameText(s))).ToList()
 
         For pass = 1 To 4
             For i = 0 To feed.Count - 1
-                If result(i) >= 0 OrElse fTok(i).Count = 0 Then Continue For
-                Dim f = fTok(i)
+                If result(i) >= 0 OrElse fVar(i)(0).Count = 0 Then Continue For
                 Dim hits As New List(Of Integer)
                 For j = 0 To setup.Count - 1
-                    If used.Contains(j) OrElse sTok(j).Count = 0 Then Continue For
-                    Dim s = sTok(j)
-                    Dim ok As Boolean
-                    Select Case pass
-                        Case 1 : ok = f.SequenceEqual(s)
-                        Case 2 : ok = f.Count >= 2 AndAlso s.Count >= 2 AndAlso f(0) = s(0) AndAlso f.Last() = s.Last()
-                        Case 3 : ok = f.Count >= 2 AndAlso s.Count >= 2 AndAlso f.Last() = s.Last() AndAlso FirstNamesCompatible(f(0), s(0))
-                        Case Else : ok = f.Last() = s.Last() AndAlso (f.Count = 1 OrElse s.Count = 1)
-                    End Select
+                    If used.Contains(j) OrElse sVar(j)(0).Count = 0 Then Continue For
+                    Dim ok = False
+                    For Each f In fVar(i)
+                        For Each s In sVar(j)
+                            Select Case pass
+                                Case 1 : ok = ok OrElse f.SequenceEqual(s)
+                                Case 2 : ok = ok OrElse (f.Count >= 2 AndAlso s.Count >= 2 AndAlso f(0) = s(0) AndAlso f.Last() = s.Last())
+                                Case 3 : ok = ok OrElse (f.Count >= 2 AndAlso s.Count >= 2 AndAlso f.Last() = s.Last() AndAlso FirstNamesCompatible(f(0), s(0)))
+                                Case Else : ok = ok OrElse (f.Count > 0 AndAlso s.Count > 0 AndAlso f.Last() = s.Last() AndAlso (f.Count = 1 OrElse s.Count = 1))
+                            End Select
+                        Next
+                    Next
                     If ok Then hits.Add(j)
                 Next
                 If hits.Count > 1 Then
@@ -238,11 +428,12 @@ Public Module RaceMatcher
         Return result
     End Function
 
-    ''' <summary>"Write-in", "Scattering" and similar lines the setup CSV usually does not list.</summary>
+    ''' <summary>"Write-in", "Unqualified Write In 2", "Scattering" and similar lines the setup CSV usually does not list.</summary>
     Public Function IsWriteIn(name As String) As Boolean
         Dim t = String.Join(" ", NameTokens(name))
         Return t.StartsWith("write in", StringComparison.Ordinal) OrElse t.StartsWith("writein", StringComparison.Ordinal) OrElse
-               t.StartsWith("scattering", StringComparison.Ordinal) OrElse t = "other" OrElse t = "others"
+               t.StartsWith("unqualified write", StringComparison.Ordinal) OrElse t.StartsWith("scattering", StringComparison.Ordinal) OrElse
+               t = "other" OrElse t = "others"
     End Function
 
 End Module

@@ -74,6 +74,16 @@ Public Module WireBuilder
 
         o.Append(vbTab).Append("</CANDIDATES>").Append(vbLf)
         o.Append(vbTab).Append("<SUBRACES>").Append(vbLf)
+        For Each sr In race.SubRaces
+            o.Append(vbTab).Append(vbTab).Append("<SUBRACE>").Append(vbLf)
+            o.Append(vbTab).Append(vbTab).Append(vbTab).Append("<TYPE>").Append(Esc(sr.SubType)).Append("</TYPE>").Append(vbLf)
+            o.Append(vbTab).Append(vbTab).Append(vbTab).Append("<LOCATION>").Append(Esc(sr.Location)).Append("</LOCATION>").Append(vbLf)
+            o.Append(vbTab).Append(vbTab).Append(vbTab).Append("<VOTES>").Append(Esc(sr.Votes)).Append("</VOTES>").Append(vbLf)
+            o.Append(vbTab).Append(vbTab).Append(vbTab).Append("<DELEGATES></DELEGATES>").Append(vbLf)
+            o.Append(vbTab).Append(vbTab).Append(vbTab).Append("<PRECINCTS>").Append(Esc(sr.Precincts)).Append("</PRECINCTS>").Append(vbLf)
+            o.Append(vbTab).Append(vbTab).Append(vbTab).Append("<WINNER>").Append(Esc(sr.Winner)).Append("</WINNER>").Append(vbLf)
+            o.Append(vbTab).Append(vbTab).Append("</SUBRACE>").Append(vbLf)
+        Next
         o.Append(vbTab).Append("</SUBRACES>").Append(vbLf)
         o.Append("</RACE>")
         Return o.ToString()
